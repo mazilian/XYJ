@@ -1,5 +1,5 @@
 
-//»ğ¼ıÍ² by hexiu
+//ç«ç®­ç­’ by hexiu
 
 #include <ansi.h>
 #include <weapon.h>
@@ -9,39 +9,39 @@
 inherit MACE;
 
 mapping default_dirs = ([
-        "north":        "±±",
-        "south":        "ÄÏ",
-        "east":         "¶«",
-        "west":         "Î÷",
-        "northup":      "±±±ß",
-        "southup":      "ÄÏ±ß",
-        "eastup":       "¶«±ß",
-        "westup":       "Î÷±ß",
-        "northdown":    "±±±ß",
-        "southdown":    "ÄÏ±ß",
-        "eastdown":     "¶«±ß",
-        "westdown":     "Î÷±ß",
-        "northeast":    "¶«±±",
-        "northwest":    "Î÷±±",
-        "southeast":    "¶«ÄÏ",
-        "southwest":    "Î÷ÄÏ",
-        "up":           "ÉÏ",
-        "down":         "ÏÂ",
-        "out":          "Íâ",
-        "enter":        "Àï",
+        "north":        "åŒ—",
+        "south":        "å—",
+        "east":         "ä¸œ",
+        "west":         "è¥¿",
+        "northup":      "åŒ—è¾¹",
+        "southup":      "å—è¾¹",
+        "eastup":       "ä¸œè¾¹",
+        "westup":       "è¥¿è¾¹",
+        "northdown":    "åŒ—è¾¹",
+        "southdown":    "å—è¾¹",
+        "eastdown":     "ä¸œè¾¹",
+        "westdown":     "è¥¿è¾¹",
+        "northeast":    "ä¸œåŒ—",
+        "northwest":    "è¥¿åŒ—",
+        "southeast":    "ä¸œå—",
+        "southwest":    "è¥¿å—",
+        "up":           "ä¸Š",
+        "down":         "ä¸‹",
+        "out":          "å¤–",
+        "enter":        "é‡Œ",
 ]);
 
 void create()
 {
-        set_name(HIC"»ğ¼ıÍ²"NOR, ({"rocket launcher","mace","launcher"}));
+        set_name(HIC"ç«ç®­ç­’"NOR, ({"rocket launcher","mace","launcher"}));
         set_weight(8000);
         if(clonep())
                 set_default_object(__FILE__);
         else {
-	set("long", "Ò»¾ß»ğ¼ıÍ²£¬ËÆºõ¿ÉÒÔ·¢Éä(fire)¡£\nÀïÃæÒÑ¾­×°ÁËÒ»Ã¶»ğ¼ıµ¯"+HIG"<·ÇÖÂËÀ>¡£"NOR);
-	set("orilong", "Ò»¾ß»ğ¼ıÍ²£¬ËÆºõ¿ÉÒÔ·¢Éä(fire)¡£");
+	set("long", "ä¸€å…·ç«ç®­ç­’ï¼Œä¼¼ä¹å¯ä»¥å‘å°„(fire)ã€‚\né‡Œé¢å·²ç»è£…äº†ä¸€æšç«ç®­å¼¹"+HIG"<éè‡´æ­»>ã€‚"NOR);
+	set("orilong", "ä¸€å…·ç«ç®­ç­’ï¼Œä¼¼ä¹å¯ä»¥å‘å°„(fire)ã€‚");
 
-        set("unit", "¾ß");
+        set("unit", "å…·");
         set("value", 100000);
         set("no_put",1);
         set("no_sell",1);
@@ -82,24 +82,24 @@ int do_fire(string arg)
 	mapping exit;
 
 	if ( this_object()->query("rocket_in") == 0 )
-         return notify_fail("»¹Ã»ÓĞ×°µ¯£¡\n");
+         return notify_fail("è¿˜æ²¡æœ‰è£…å¼¹ï¼\n");
 	if (this_player()->query_temp("weapon") != this_object())
-		return notify_fail("ÄãÃ»ÓĞ×°±¸Õâ¼şÎäÆ÷£¡\n");
+		return notify_fail("ä½ æ²¡æœ‰è£…å¤‡è¿™ä»¶æ­¦å™¨ï¼\n");
 
 
-	if( !arg ) return notify_fail("ÄãÒªÍùÄÄ¸ö·½Ïò¿ª»ğ£¿\n");
+	if( !arg ) return notify_fail("ä½ è¦å¾€å“ªä¸ªæ–¹å‘å¼€ç«ï¼Ÿ\n");
 	env = environment(this_player());
-	//if(!env) return notify_fail("ÄãÄÄÀïÒ²ÈÓ²»³öÈ¥¡£\n");
+	//if(!env) return notify_fail("ä½ å“ªé‡Œä¹Ÿæ‰”ä¸å‡ºå»ã€‚\n");
 
 	if( !mapp(exit = env->query("exits")) || !exit[arg] ||  undefinedp(exit[arg]) )
-		return notify_fail("Õâ¸ö·½Ïò·¢Éä²»³öÈ¥¡£\n");
+		return notify_fail("è¿™ä¸ªæ–¹å‘å‘å°„ä¸å‡ºå»ã€‚\n");
      dest = exit[arg];
 
 	//if (dest && objectp(dest))
 	  //  obj = dest;
 	//else if( !(obj = load_object(dest)) )
 	  if( !(obj = load_object(dest)) )
-	        return notify_fail("ÄãÒª·¢ÉäµÄÇøÓò»¹Ã»ÓĞÁ¬Í¨¡£\n");
+	        return notify_fail("ä½ è¦å‘å°„çš„åŒºåŸŸè¿˜æ²¡æœ‰è¿é€šã€‚\n");
 
 	if( !undefinedp(default_dirs[arg]) )
 		dir = default_dirs[arg];
@@ -108,12 +108,12 @@ int do_fire(string arg)
 	srocket = new("/obj/toy/rocket");
     if (this_object()->query("dead")) srocket->set("dead",1);
 	
-	message_vision("$NÒ»¿Û°â»ú£¬Ò»Ã¶»ğ¼ıµ¯Ïò"+dir+"·ÉÁË¹ıÈ¥¡£\n",this_player());
+	message_vision("$Nä¸€æ‰£æ‰³æœºï¼Œä¸€æšç«ç®­å¼¹å‘"+dir+"é£äº†è¿‡å»ã€‚\n",this_player());
 
 	//this_object()->set("set_done",1);
 	//srocket->set("no_get",1);
 	srocket->move(obj);
-	tell_object(environment(srocket),HIW"Ò»Ã¶»ğ¼ıµ¯ÉäÁË¹ıÀ´£¡\n"NOR);
+	tell_object(environment(srocket),HIW"ä¸€æšç«ç®­å¼¹å°„äº†è¿‡æ¥ï¼\n"NOR);
     srocket->bomb();
 	this_object()->set("rocket_in",0);
     this_object()->set("long",this_object()->query("orilong"));
@@ -132,34 +132,34 @@ int do_install(string arg)
    string dead_arg;
    
 
-   if( !arg)  return notify_fail("ÄãÏë×°Ê²Ã´£¿\n");
+   if( !arg)  return notify_fail("ä½ æƒ³è£…ä»€ä¹ˆï¼Ÿ\n");
 
    crocket=present(arg, who);
    if (! present(arg, who)) 
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™ä¸œè¥¿ã€‚\n");
    if (crocket->query("name") == me->query("name") ) 
-                return notify_fail("×°×Ô¼º£¿\n");
+                return notify_fail("è£…è‡ªå·±ï¼Ÿ\n");
    if (! crocket->query("is_rocket")) 
-        	return notify_fail("ÕâÍæÒÕ×°²»½øÈ¥¡£\n");
-   if (who->is_busy()) return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+        	return notify_fail("è¿™ç©è‰ºè£…ä¸è¿›å»ã€‚\n");
+   if (who->is_busy()) return notify_fail("ä½ æ­£å¿™ç€å‘¢ã€‚\n");
    
    if (me->query("rocket_in"))
-        	return notify_fail(me->query("name")+"ÒÑ¾­×°µ¯ÁË¡£\n");
+        	return notify_fail(me->query("name")+"å·²ç»è£…å¼¹äº†ã€‚\n");
    
    //if (me->query("anqi/now") >0 && me->query("anqi/type") != aq->query("name") )
-   //    	return notify_fail(me->query("name")+"²»ÄÜ×°²»Í¬ÖÖÀàµÄ°µÆ÷¡£\n");
+   //    	return notify_fail(me->query("name")+"ä¸èƒ½è£…ä¸åŒç§ç±»çš„æš—å™¨ã€‚\n");
    //else  
      
-     message_vision( "$N½«Ò»"
-		+crocket->query("unit")+crocket->query("name")+"×°½ø"+me->query("name")+"Àï¡£\n",who);
+     message_vision( "$Nå°†ä¸€"
+		+crocket->query("unit")+crocket->query("name")+"è£…è¿›"+me->query("name")+"é‡Œã€‚\n",who);
      
      
-	 if (crocket->query("dead")) me->set("dead",1);//dead_arg=HIR"<ÖÂËÀ>"NOR;
-	 //else {dead_arg=HIG"<·ÇÖÂËÀ>"NOR;}
+	 if (crocket->query("dead")) me->set("dead",1);//dead_arg=HIR"<è‡´æ­»>"NOR;
+	 //else {dead_arg=HIG"<éè‡´æ­»>"NOR;}
      
-        me->set("long",me->query("orilong")+"\nÀïÃæÒÑ¾­×°ÁËÒ»" 
+        me->set("long",me->query("orilong")+"\né‡Œé¢å·²ç»è£…äº†ä¸€" 
 		
-		+crocket->query("unit")+crocket->query("name")+"¡£\n");
+		+crocket->query("unit")+crocket->query("name")+"ã€‚\n");
 		
 		me->set("rocket_in",1);
      //who->start_busy(3);

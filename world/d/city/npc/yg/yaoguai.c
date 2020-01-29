@@ -27,7 +27,7 @@ void leave()
       if(this_object()) { 
         if(environment())
           message("vision",HIB + name() + 
-		  "¥‹¡Àº∏¥‹æÕ≤ªº˚¡À°£\n" NOR,environment());
+		  "Á™ú‰∫ÜÂá†Á™úÂ∞±‰∏çËßÅ‰∫Ü„ÄÇ\n" NOR,environment());
         destruct(this_object());
       }
       return;
@@ -66,7 +66,7 @@ string invocation(object who, int level)
 	where=me->query("name")+"("+
 	    capitalize(me->query("id"))+")";
 	if(env)
-	  where+="‘⁄"+MISC_D->find_place(env);
+	  where+="Âú®"+MISC_D->find_place(env);
 
 	if(query("daoxing")>10000 ||
 		query("combat_exp")>10000)
@@ -98,8 +98,8 @@ int do_block(string arg)
 
     t=who->query_temp("mieyao/allow_to_leave");
     if(t==0 || random(3)>0) {
-	tell_object(who,"ƒ„’˝“™¿Îø™£¨∫ˆ»ªø¥º˚ ≤√¥∂´Œ˜‘⁄—€«∞“ªªŒ£¨"+
-		"≤ª”…µ√Õ£¡Àœ¬¿¥°£\n");
+	tell_object(who,"‰Ω†Ê≠£Ë¶ÅÁ¶ªÂºÄÔºåÂøΩÁÑ∂ÁúãËßÅ‰ªÄ‰πà‰∏úË•øÂú®ÁúºÂâç‰∏ÄÊôÉÔºå"+
+		"‰∏çÁî±ÂæóÂÅú‰∫Ü‰∏ãÊù•„ÄÇ\n");
 	who->set_temp("mieyao/allow_to_leave",1);
 	return 1;
     } 
@@ -122,7 +122,7 @@ void die()
 		owner = query("owner");
 
         if( stringp(owner) && objectp(owner_ob = find_player(owner)) ) {
-	            message_vision("$N≤“Ω–“ª…˘£¨À¿¡À°£\n",this_object());
+	            message_vision("$NÊÉ®Âè´‰∏ÄÂ£∞ÔºåÊ≠ª‰∫Ü„ÄÇ\n",this_object());
 		    owner_ob->set("mieyao/done1",1);
 		    
 		    max_kee=query("max_kee");
@@ -144,9 +144,9 @@ void die()
 
 		    MONITOR_D->report_system_object_msg(owner_ob, str);
 
-		    tell_object(owner_ob, "ƒ„µ√µΩ¡À"+chinese_number(exp_r)
-			    +"µ„Œ‰—ßæ≠—È∫Õ"+chinese_number(pot_r)+
-			    "µ„«±ƒ‹£°\n");
+		    tell_object(owner_ob, "‰Ω†ÂæóÂà∞‰∫Ü"+chinese_number(exp_r)
+			    +"ÁÇπÊ≠¶Â≠¶ÁªèÈ™åÂíå"+chinese_number(pot_r)+
+			    "ÁÇπÊΩúËÉΩÔºÅ\n");
 			
 			if(owner_ob->query("mieyao/npcid1"))
 			{
@@ -165,13 +165,13 @@ void die()
 				if(questnpc && random(base) == random(base))
 				{
 					owner_ob->add("mieyao/search", 1);
-					tell_object(owner_ob, HIG+"ƒ„ªÒµ√¡À“ª¥Œ π”√"+HIW+"ŒÂπÌ∞·‘À£®ask yuan tiangang about search£©"+HIG+"µƒª˙ª·£¨ƒø«∞π≤"+owner_ob->query("mieyao/search")+"¥Œ"+NOR+"\n");
-					//questnpc->command("tell "+owner_ob->query("id")+" œ¬¥Œ»Ù—∞≤ªµΩ—˝ƒßµƒ◊Ÿº££¨ø…«ÎŒ“À„…œ“ªÿ‘£®search£©");
+					tell_object(owner_ob, HIG+"‰Ω†Ëé∑Âæó‰∫Ü‰∏ÄÊ¨°‰ΩøÁî®"+HIW+"‰∫îÈ¨ºÊê¨ËøêÔºàask yuan tiangang about searchÔºâ"+HIG+"ÁöÑÊú∫‰ºöÔºåÁõÆÂâçÂÖ±"+owner_ob->query("mieyao/search")+"Ê¨°"+NOR+"\n");
+					//questnpc->command("tell "+owner_ob->query("id")+" ‰∏ãÊ¨°Ëã•ÂØª‰∏çÂà∞Â¶ñÈ≠îÁöÑË∏™ËøπÔºåÂèØËØ∑ÊàëÁÆó‰∏ä‰∏ÄÂç¶ÔºàsearchÔºâ");
 					owner_ob->delete("mieyao/npcid1");
 				}
 			}
         } else {
-	    message_vision("$NÀ¿¡À°£\n",this_object());
+	    message_vision("$NÊ≠ª‰∫Ü„ÄÇ\n",this_object());
 	}
 
 	destruct(this_object());

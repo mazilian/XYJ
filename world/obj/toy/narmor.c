@@ -13,33 +13,33 @@ string trans(string edes)
 	 
 		 switch(edes)
 		 {
-		 case "armor_prop/dodge":			cdes="Çá¹¦";break;
-		 case "armor_prop/parry":			cdes="ÕĞ¼Ü";break;
-         case "armor_prop/spells":			cdes="·¨Êõ";break;
-         case "armor_prop/strength":		cdes="Ìå¸ñ";break;
-	     case "armor_prop/constitution":	cdes="¸ù¹Ç";break;
-	     case "armor_prop/intelligence":	cdes="ÎòĞÔ";break;
-	     case "armor_prop/spirituality":	cdes="ÁéĞÔ";break;
-		 case "armor_prop/composure":		cdes="¶¨Á¦";break;
-		 case "armor_prop/courage":			cdes="µ¨Ê¶";break;
-		 case "armor_prop/karma":			cdes="¸£Ôµ";break;
-		 case "armor_prop/personality":		cdes="ÈİÃ²";break;
-		 case "armor_prop/armor_vs_force":  cdes="ÓùÆø";break;
-		 case "armor_prop/attack":			cdes="¹¥»÷";break;
-	     case "armor_prop/unarmed":			cdes="¸ñ¶·";break;
-		 case "armor_prop/sword":			cdes="½£·¨";break;
-		 case "armor_prop/blade":			cdes="µ¶·¨";break;
-		 case "armor_prop/spear":			cdes="Ç¹·¨";break;
-		 case "armor_prop/whip":			cdes="±Ş·¨";break;
-		 case "armor_prop/fork":			cdes="²æ·¨";break;
-		 case "armor_prop/rake":			cdes="°Ò·¨";break;
-		 case "armor_prop/mace":			cdes="ïµ·¨";break;
-	     case "armor_prop/staff":			cdes="ÕÈ·¨";break;
-		 case "armor_prop/stick":			cdes="¹÷·¨";break;
-		 case "armor_prop/axe":			    cdes="¸«·¨";break;
-		 case "armor_prop/hammer":			cdes="´¸·¨";break;
-		 case "armor_prop/dagger":			cdes="¶Ì±ø";break;
-		 case "armor_prop/throwing":	    cdes="°µÆ÷";break;
+		 case "armor_prop/dodge":			cdes="è½»åŠŸ";break;
+		 case "armor_prop/parry":			cdes="æ‹›æ¶";break;
+         case "armor_prop/spells":			cdes="æ³•æœ¯";break;
+         case "armor_prop/strength":		cdes="ä½“æ ¼";break;
+	     case "armor_prop/constitution":	cdes="æ ¹éª¨";break;
+	     case "armor_prop/intelligence":	cdes="æ‚Ÿæ€§";break;
+	     case "armor_prop/spirituality":	cdes="çµæ€§";break;
+		 case "armor_prop/composure":		cdes="å®šåŠ›";break;
+		 case "armor_prop/courage":			cdes="èƒ†è¯†";break;
+		 case "armor_prop/karma":			cdes="ç¦ç¼˜";break;
+		 case "armor_prop/personality":		cdes="å®¹è²Œ";break;
+		 case "armor_prop/armor_vs_force":  cdes="å¾¡æ°”";break;
+		 case "armor_prop/attack":			cdes="æ”»å‡»";break;
+	     case "armor_prop/unarmed":			cdes="æ ¼æ–—";break;
+		 case "armor_prop/sword":			cdes="å‰‘æ³•";break;
+		 case "armor_prop/blade":			cdes="åˆ€æ³•";break;
+		 case "armor_prop/spear":			cdes="æªæ³•";break;
+		 case "armor_prop/whip":			cdes="é­æ³•";break;
+		 case "armor_prop/fork":			cdes="å‰æ³•";break;
+		 case "armor_prop/rake":			cdes="è€™æ³•";break;
+		 case "armor_prop/mace":			cdes="é”æ³•";break;
+	     case "armor_prop/staff":			cdes="æ–æ³•";break;
+		 case "armor_prop/stick":			cdes="æ£æ³•";break;
+		 case "armor_prop/axe":			    cdes="æ–§æ³•";break;
+		 case "armor_prop/hammer":			cdes="é”¤æ³•";break;
+		 case "armor_prop/dagger":			cdes="çŸ­å…µ";break;
+		 case "armor_prop/throwing":	    cdes="æš—å™¨";break;
 		 
 		 }
 	 
@@ -62,17 +62,17 @@ string *typ = ({
 });
 
 string *names = ({
-  "ÑıÄ§¿ø¼×",
-  "ÑıÄ§³¤Ñ¥",
-  "ÑıÄ§Õ½ÅÛ",
-  "ÑıÄ§»¤Ö¸",
-  "ÑıÄ§»¤ÕÆ",
-  "ÑıÄ§Í·¿ø",
-  "ÑıÄ§ÏîÁ´",
-  "ÑıÄ§¶ÜÅÆ",
-  "ÑıÄ§Åû·ç",
-  "ÑıÄ§»¤Ñü",
-  "ÑıÄ§»¤Íó",
+  "å¦–é­”ç›”ç”²",
+  "å¦–é­”é•¿é´",
+  "å¦–é­”æˆ˜è¢",
+  "å¦–é­”æŠ¤æŒ‡",
+  "å¦–é­”æŠ¤æŒ",
+  "å¦–é­”å¤´ç›”",
+  "å¦–é­”é¡¹é“¾",
+  "å¦–é­”ç›¾ç‰Œ",
+  "å¦–é­”æŠ«é£",
+  "å¦–é­”æŠ¤è…°",
+  "å¦–é­”æŠ¤è…•",
 });
 
 string *ids = ({
@@ -194,7 +194,7 @@ void setr(string msg)
 
 	msg+=trans(atta[x])+"+"+numa+"\n";
 	msg+=trans(atta[y])+"+"+numb+"\n";
-	msg+="Ìå¸ñ+"+numc+"\n";
+	msg+="ä½“æ ¼+"+numc+"\n";
 	msg+=trans(attb[z])+"+"+numd+"\n";
 	msg=HIR+msg+NOR;
 
@@ -224,10 +224,10 @@ void setm(string msg)
 	set(attb[x],nume);
 	
 
-    msg+="Çá¹¦+"+numa+"\n";
-	msg+="ÕĞ¼Ü+"+numb+"\n";
-	msg+="·¨Êõ+"+numc+"\n";
-	msg+="Ìå¸ñ+"+numd+"\n";
+    msg+="è½»åŠŸ+"+numa+"\n";
+	msg+="æ‹›æ¶+"+numb+"\n";
+	msg+="æ³•æœ¯+"+numc+"\n";
+	msg+="ä½“æ ¼+"+numd+"\n";
 	msg+=trans(attb[x])+"+"+nume+"\n";
 	msg=HIM+msg+NOR;
 
@@ -245,10 +245,10 @@ void create()
 
    int i,j;
    string msg;
-   set("unit", "¼ş");
+   set("unit", "ä»¶");
    set("value", 40000);
    set("material", "bone");
-   msg="ÕâÊÇÒ»¼şÑıÄ§ÒÅÂäµÄ·À¾ß£¬·¢×ÅÓÄÓÄµÄ¹â¡£\n"+"×°±¸ÊôĞÔ£º\n";
+   msg="è¿™æ˜¯ä¸€ä»¶å¦–é­”é—è½çš„é˜²å…·ï¼Œå‘ç€å¹½å¹½çš„å…‰ã€‚\n"+"è£…å¤‡å±æ€§ï¼š\n";
   i = random(sizeof(names));
   j = random(100);
   

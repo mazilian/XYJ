@@ -7,7 +7,7 @@
 #include <ansi.h>
 inherit NPC;
 
-#define SYNTAX "÷∏¡Ó∏Ò Ω£∫tellme [player_id] sell <id>\n"
+#define SYNTAX "Êåá‰ª§Ê†ºÂºèÔºötellme [player_id] sell <id>\n"
 
 int check_ratio(object me, object ob);
 int do_tellme(string arg);
@@ -23,12 +23,12 @@ void give_baozi(object cook, object me, string OBNAME, int reward);
 
 void create()
 {
-  set_name("˜˙ Ûæ´", ({"yan shu", "yanshu", "monster", "chu zi", "cook"}));
+  set_name("ÈºπÈº†Á≤æ", ({"yan shu", "yanshu", "monster", "chu zi", "cook"}));
   set("long",
-"À˚º∏æ≠–ﬁ¡∑£¨÷’”⁄≥…¡À»À–Œ°£µ´“ÚÀ˚ÃÏ…˙—€æ¶æÕ≤ª∫√£¨∂¥¿Ô√ª»À\n"
-"œ≤ª∂À˚°£»Ù≤ª «“ÚŒ™À˚’Ùµ√∫√∞¸◊”£¨‘Á±ª”Ò Û∏œ≥ˆ»•¡À°£\n");
-  set("title", "≥¯◊”");
-  set("gender", "ƒ––‘");
+"‰ªñÂá†Áªè‰øÆÁªÉÔºåÁªà‰∫éÊàê‰∫Ü‰∫∫ÂΩ¢„ÄÇ‰ΩÜÂõ†‰ªñÂ§©ÁîüÁúºÁùõÂ∞±‰∏çÂ•ΩÔºåÊ¥ûÈáåÊ≤°‰∫∫\n"
+"ÂñúÊ¨¢‰ªñ„ÄÇËã•‰∏çÊòØÂõ†‰∏∫‰ªñËí∏ÂæóÂ•ΩÂåÖÂ≠êÔºåÊó©Ë¢´ÁéâÈº†Ëµ∂Âá∫Âéª‰∫Ü„ÄÇ\n");
+  set("title", "Âé®Â≠ê");
+  set("gender", "Áî∑ÊÄß");
   set("per", 10);
   set("age", 25);
   set("str", 70);
@@ -37,11 +37,11 @@ void create()
   set("daoxing", 5000);
 
   set("inquiry", ([
-		"name": " ≤√¥√˚◊÷£°Œ“◊‘º∫∂º≤ªº«µ√¡À£°",
-		"here": "’‚¿Ô «≥¯∑ø£¨ƒ„ø¥≤ª≥ˆ¿¥£ø",
-		"rumors" : "∞¶£¨ƒ«∞◊√´¿œ Û”÷»•◊•¡À∏ˆ∫Õ…–£¨ªπ «µ√Œ“¿¥’Ù£°’Ê∑≥£°",
-		"∫Õ…–": "’“±»À»•Œ £°",
-		"»À»‚∞¸◊”": "ƒ„≤ª∏¯Œ“ªÓ»À£¨Œ“‘ı√¥’Ù£ø£°",
+		"name": "‰ªÄ‰πàÂêçÂ≠óÔºÅÊàëËá™Â∑±ÈÉΩ‰∏çËÆ∞Âæó‰∫ÜÔºÅ",
+		"here": "ËøôÈáåÊòØÂé®ÊàøÔºå‰Ω†Áúã‰∏çÂá∫Êù•Ôºü",
+		"rumors" : "ÂîâÔºåÈÇ£ÁôΩÊØõËÄÅÈº†ÂèàÂéªÊäì‰∫Ü‰∏™ÂíåÂ∞öÔºåËøòÊòØÂæóÊàëÊù•Ëí∏ÔºÅÁúüÁÉ¶ÔºÅ",
+		"ÂíåÂ∞ö": "ÊâæÂà´‰∫∫ÂéªÈóÆÔºÅ",
+		"‰∫∫ËÇâÂåÖÂ≠ê": "‰Ω†‰∏çÁªôÊàëÊ¥ª‰∫∫ÔºåÊàëÊÄé‰πàËí∏ÔºüÔºÅ",
 		]));
   setup();
   carry_object("/d/obj/cloth/linen")->wear();
@@ -71,34 +71,34 @@ int do_sell(string arg)
   int no_pk;
   
 
-  if (!arg) return notify_fail("ƒ„“™¬Ù ≤√¥£ø\n");
-  if(me->is_busy()) return notify_fail("ƒ„’˝√¶◊≈ƒÿ°£\n");
-  if(is_busy()) return notify_fail("∂‘∑Ω’˝√¶◊≈ƒÿ°£\n");
+  if (!arg) return notify_fail("‰Ω†Ë¶ÅÂçñ‰ªÄ‰πàÔºü\n");
+  if(me->is_busy()) return notify_fail("‰Ω†Ê≠£ÂøôÁùÄÂë¢„ÄÇ\n");
+  if(is_busy()) return notify_fail("ÂØπÊñπÊ≠£ÂøôÁùÄÂë¢„ÄÇ\n");
   if(query_temp("processing"))
-    return notify_fail(CYN"˜˙ Ûæ´≈≠µ¿£∫√ªø¥Œ“’˝√¶◊≈’Ù∞¸◊”ƒÿ¬Ô£°£ø\n"NOR);
+    return notify_fail(CYN"ÈºπÈº†Á≤æÊÄíÈÅìÔºöÊ≤°ÁúãÊàëÊ≠£ÂøôÁùÄËí∏ÂåÖÂ≠êÂë¢ÂòõÔºÅÔºü\n"NOR);
   if(environment(cook)!=find_object("/d/qujing/wudidong/kitchen.c"))
-    return notify_fail(CYN"˜˙ Ûæ´“°Õ∑µ¿£∫’‚¿Ô≤ª «Œ“µƒ≥¯∑ø£¨ƒ„æÕÀ„∞—‘≠¡œ∏¯¡ÀŒ“Œ““≤√ª∑®◊ˆ≥…∞¸◊”°£\n"NOR);
-  if (me->query("family/family_name") != "œ›ø’…ΩŒﬁµ◊∂¥")
-      return notify_fail(CYN"˜˙ Ûæ´◊–œ∏¥Ú¡ø¡Àƒ„º∏—€£¨µ¿£∫ƒ„ «ƒƒ∂˘¿¥µƒ£øŒ“‘ı√¥≤ª»œµ√ƒ„£ø\n" NOR);
+    return notify_fail(CYN"ÈºπÈº†Á≤æÊëáÂ§¥ÈÅìÔºöËøôÈáå‰∏çÊòØÊàëÁöÑÂé®ÊàøÔºå‰Ω†Â∞±ÁÆóÊääÂéüÊñôÁªô‰∫ÜÊàëÊàë‰πüÊ≤°Ê≥ïÂÅöÊàêÂåÖÂ≠ê„ÄÇ\n"NOR);
+  if (me->query("family/family_name") != "Èô∑Á©∫Â±±Êó†Â∫ïÊ¥û")
+      return notify_fail(CYN"ÈºπÈº†Á≤æ‰ªîÁªÜÊâìÈáè‰∫Ü‰Ω†Âá†ÁúºÔºåÈÅìÔºö‰Ω†ÊòØÂì™ÂÑøÊù•ÁöÑÔºüÊàëÊÄé‰πà‰∏çËÆ§Âæó‰Ω†Ôºü\n" NOR);
   ob=present(arg, me);
   if (!ob || !objectp(ob))
-      return notify_fail("ƒ„√ª”–’‚—˘ "+arg+"°£\n");
+      return notify_fail("‰Ω†Ê≤°ÊúâËøôÊ†∑ "+arg+"„ÄÇ\n");
   if (!ob->is_character())
-      return notify_fail(CYN "˜˙ Ûæ´“°¡À“°Õ∑£¨Àµµ¿£∫’‚∂˘ «≥¯∑ø£¨≤ª «∑œ∆∑ªÿ ’’æ°£\n" NOR);
+      return notify_fail(CYN "ÈºπÈº†Á≤æÊëá‰∫ÜÊëáÂ§¥ÔºåËØ¥ÈÅìÔºöËøôÂÑøÊòØÂé®ÊàøÔºå‰∏çÊòØÂ∫üÂìÅÂõûÊî∂Á´ô„ÄÇ\n" NOR);
   if (me->query("wudidong/sell_allowed")> time())
-      return notify_fail(CYN"˜˙ Û≈≠µ¿£∫ƒ„‘ı√¥∏’»•æÕ”÷¿¥¡À£°£øøœ∂® «¬∑±ﬂºÒµƒ£°Œ“¿œ‘∂æÕŒ≈µΩ“ªπ…∂Ò≥Ù£°\n"NOR);
-  if (ob->query("race") != "»À¿‡")
-      return notify_fail(CYN"˜˙ Ûæ´¬Óµ¿£∫ªÎ’ £°Ω–ƒ„»•≈™»À»‚¿¥£¨’‚ «»À¬£°£ø\n"NOR);
-  baoziexp=ob->query("combat_exp")+ob->query("daoxing");// baoziexp  «±ª¬Ù’ﬂµƒ«ø∂»°£
+      return notify_fail(CYN"ÈºπÈº†ÊÄíÈÅìÔºö‰Ω†ÊÄé‰πàÂàöÂéªÂ∞±ÂèàÊù•‰∫ÜÔºÅÔºüËÇØÂÆöÊòØË∑ØËæπÊç°ÁöÑÔºÅÊàëËÄÅËøúÂ∞±ÈóªÂà∞‰∏ÄËÇ°ÊÅ∂Ëá≠ÔºÅ\n"NOR);
+  if (ob->query("race") != "‰∫∫Á±ª")
+      return notify_fail(CYN"ÈºπÈº†Á≤æÈ™ÇÈÅìÔºöÊµëÂ∏êÔºÅÂè´‰Ω†ÂéªÂºÑ‰∫∫ËÇâÊù•ÔºåËøôÊòØ‰∫∫ÂêóÔºÅÔºü\n"NOR);
+  baoziexp=ob->query("combat_exp")+ob->query("daoxing");// baoziexp ÊòØË¢´ÂçñËÄÖÁöÑÂº∫Â∫¶„ÄÇ
   no_pk=me->query_condition("no_pk_time");
   if (userp(ob) && (baoziexp<5000 || no_pk>480) )
-      return notify_fail(CYN "˜˙ Ûæ´“°¡À“°Õ∑£¨Àµµ¿£∫’‚»‚≤ª–¬œ £¨Œ“≤ª“™°£\n" NOR);
+      return notify_fail(CYN "ÈºπÈº†Á≤æÊëá‰∫ÜÊëáÂ§¥ÔºåËØ¥ÈÅìÔºöËøôËÇâ‰∏çÊñ∞È≤úÔºåÊàë‰∏çË¶Å„ÄÇ\n" NOR);
   if (ob->query_temp("last_fainted_from") &&
 	  ob->query_temp("last_fainted_from")!=me->query("id"))
-      return notify_fail(CYN"˜˙ Ûæ´÷Â¡À÷Â√º£¨µ¿£∫’‚ «ƒ„ƒƒ¿ÔºÒ¿¥µƒ£ø‘ı√¥∂º≥Ù¡À£ø\n");
-  message_vision("$NΩ´‘Œµπ¡Àµƒ$nΩª∏¯≥¯◊”°£\n", me, ob);
-  message_vision(CYN "$N–¶√–√–µÿ¥’µΩ$n…Ì±ﬂ£¨µ¿£∫Œ““ªø¥æÕ÷™µ¿ƒ„øœ∂®”–ªı°£\n"NOR, cook,me);
-  message_vision(CYN"$N£∫“‘∫Û‘Ÿ”–æÕ∏œΩÙÀÕ¿¥£¨øœ∂®≤ªª·ø˜¡Àƒ„µƒ£°\n"NOR, cook);
+      return notify_fail(CYN"ÈºπÈº†Á≤æÁö±‰∫ÜÁö±ÁúâÔºåÈÅìÔºöËøôÊòØ‰Ω†Âì™ÈáåÊç°Êù•ÁöÑÔºüÊÄé‰πàÈÉΩËá≠‰∫ÜÔºü\n");
+  message_vision("$NÂ∞ÜÊôïÂÄí‰∫ÜÁöÑ$n‰∫§ÁªôÂé®Â≠ê„ÄÇ\n", me, ob);
+  message_vision(CYN "$NÁ¨ëÁúØÁúØÂú∞ÂáëÂà∞$nË∫´ËæπÔºåÈÅìÔºöÊàë‰∏ÄÁúãÂ∞±Áü•ÈÅì‰Ω†ËÇØÂÆöÊúâË¥ß„ÄÇ\n"NOR, cook,me);
+  message_vision(CYN"$NÔºö‰ª•ÂêéÂÜçÊúâÂ∞±Ëµ∂Á¥ßÈÄÅÊù•ÔºåËÇØÂÆö‰∏ç‰ºö‰∫è‰∫Ü‰Ω†ÁöÑÔºÅ\n"NOR, cook);
   ratio=check_ratio(me, ob);
   base_reward=check_base_reward(ob, ratio);
   reward = base_reward * ratio/100+1;
@@ -151,7 +151,7 @@ int do_sell(string arg)
   ob->set("wudidong/last_sold_by", me->query("id"));
   ob->add("wudidong/sold_count", 1);
   me->add_temp("wudidong/received_renroubao", 1);
-  message_vision(CYN"$N∂‘$nµ¿£∫…‘µ»“ªª·£¨Œ“¬Ì…œæÕ’Ù°£\n"NOR, cook, me);
+  message_vision(CYN"$NÂØπ$nÈÅìÔºöÁ®çÁ≠â‰∏Ä‰ºöÔºåÊàëÈ©¨‰∏äÂ∞±Ëí∏„ÄÇ\n"NOR, cook, me);
   call_out("give_baozi", 15+random(20), cook, me, ob->query("name"), reward);
   set_temp("processing", 1);
   if (userp(ob))
@@ -162,179 +162,7 @@ int do_sell(string arg)
       me->apply_condition("no_pk_time",no_pk+240);
 
       remove_call_out("revive");
-      message_vision(CYN"$N∏ﬂ–ÀµÿÀµµ¿£∫∫Ÿ£¨’‚∏ˆÃÿ–¬œ £¨÷±Ω”’Ù¡À∞…£°\n"NOR, cook);
-      message_vision("$NΩ´$n»”Ω¯¡À’Ù¡˝°£\n", cook,ob);
+      message_vision(CYN"$NÈ´òÂÖ¥Âú∞ËØ¥ÈÅìÔºöÂòøÔºåËøô‰∏™ÁâπÊñ∞È≤úÔºåÁõ¥Êé•Ëí∏‰∫ÜÂêßÔºÅ\n"NOR, cook);
+      message_vision("$NÂ∞Ü$nÊâîËøõ‰∫ÜËí∏Á¨º„ÄÇ\n", cook,ob);
       CHANNEL_D->do_channel(this_object(), "rumor",
-	sprintf("%sª%sΩ»•◊ˆ¡À∞¸◊”°£\n",ob->name(1), me->name(1)));
-      ob->move("/d/qujing/wudidong/steamer");
-      message("vision", "÷ªÃ˝°∏ﬂÀ°πµƒ“ª…˘£¨"+ob->name()+"±ª»”¡ÀΩ¯¿¥°£\n",
-			environment(ob), ob);
-      ob->set("startroom_old", ob->query("startroom"));
-      ob->set("startroom", environment(ob));
-      ob->save();
-      ob->revive();
-  }
-  else
-  {
-      message_vision("$N¿˚À˜µÿΩ´$n∑≈‘⁄∞∏∞Â…œ£¨∂Á≥…¡À»‚œ⁄°£\n",cook,ob);
-      message_vision("$NΩ´»‚œ⁄π¸…œ√Ê∑€£¨»”Ω¯¡À’Ù¡˝°£\n",cook);
-      ob->move("/d/qujing/wudidong/steamer");
-      destruct(ob);
-  }
-  return 1;
-}
-
-int check_ratio(object me, object ob)
-{
-    int ratio;
-    int myexp, baoziexp;
-
-    baoziexp=(ob->query("combat_exp")+ob->query("daoxing"))/2;// baoziexp  «±ª¬Ù’ﬂµƒ«ø∂»°£
-    myexp=me->query("combat_exp")+me->query("daoxing");// myexp  «¬Ù’ﬂµƒ«ø∂»°£
-
-    if (myexp==0) myexp=1;
-    ratio=baoziexp*100/myexp;		// ratio  «±ª¬Ù’ﬂ≥˝¬Ù◊≈µƒ∞Ÿ∑÷±»°£
-    if (ratio>150) ratio = 150;		// »Áπ˚∞Ÿ∑÷±»Ã´∏ﬂ£®>2£©£¨‘Úµ±◊˜–“‘À¥¶¿Ì°£…Ëªÿ100%
-    else if (ratio < 100)
-      ratio = ratio * ratio / 100;	// »Áπ˚Ã´µÕ£¨∆Ω∑Ω£¨∑¿÷π∏ﬂ ÷…±Ã´µÕµƒNPC°¢ÕÊº“°£
-    return ratio;
-}
-
-int check_base_reward(object baozi, int ratio)
-{ 
-    int base_reward;
-    int baoziexp=baozi->query("combat_exp")+baozi->query("daoxing");
-    int adjust=ratio/10;
-
-    //increased to be compatible with other quests...weiqi, 990220
-    if(baoziexp>1000000)
-        base_reward=1000;
-    else if(baoziexp>500000)
-        base_reward=800;
-    else if(baoziexp>100000)
-        base_reward=500;
-    else if(baoziexp>50000)
-        base_reward=350;
-    else if(baoziexp>10000)
-        base_reward=200;
-    else if(baoziexp>5000)
-        base_reward=100;
-    else if(baoziexp>1000)
-        base_reward=50;
-    else base_reward=30;
-
-    if (userp(baozi)) base_reward *= 2;		// »Ù¬ÙÕÊº“£¨Ω±¿¯º”±∂°£
-
-    return base_reward;
-}
-
-void move_ob(object ob)
-{
-  return;
-}
-
-void destroy(object ob)
-{
-  destruct(ob);
-  return;
-}
-/************************************************************/
-
-void give_baozi(object cook, object me, string OBNAME, int reward)
-{
-    object baozi;
-
-    delete_temp("processing");
-    message_vision(CYN"$NΩ“ø™’Ù¡˝µƒ∏«◊”Œ≈¡ÀŒ≈£¨—€æ¶“ª¡¡£¨µ¿£∫ Ï¡À£°\n"NOR, cook);
-    if(!me || me->query("env/invisibility") || !present(me, environment(cook)))
-    {
-	tell_room(environment(cook), CYN"˜˙ Ûæ´Ãæ¡Àø⁄∆¯£¨µ¿£∫∞¶£¨’‚√¥œ„µƒ∞¸◊”£¨ø¥¿¥"+me->name()+" «√ª∏£œÌ ‹¡À°£\n"NOR);
-	return;
-    }
-    baozi=new(__DIR__"obj/renroubao");
-    baozi->set("type", "”–Ω±¿¯");
-    baozi->set("reward", reward);
-    baozi->set("owner", me->query("id"));
-    baozi->set("long", "
-
-“ª∏ˆœ„≈Á≈Á°¢»»Ã⁄Ã⁄µƒ»À»‚∞¸◊”£¨æ›Àµ»‚œ⁄ «
-"+OBNAME+"µƒ»‚◊ˆµƒ£¨…œ√Êªπ’¥◊≈“ª–©—™Àø°£
-∆‰»‚Œ∂µ¿÷Æœ √¿£¨≤ª”…µ√»√»À¥πœ—”˚µŒ°£\n");
-    baozi->move(cook);
-    command("give baozi to "+me->query("id"));
-    return;
-}
-
-/************************************************************/
-int do_manifest(string arg)
-{
-    object me=this_player();
-    mapping list, ind_list;
-    int i, j;
-
-    if(!wizardp(me)) return 0;
-    list=query("pot_monitor");
-    i=sizeof(keys(list));
-    while(i--)
-    {
-	tell_object(me, keys(list)[i]+"\n");
-	ind_list=list[i];
-	j=sizeof(ind_list);
-	tell_object(me, "j is "+j);
-	while(j--)
-	{
-	    tell_object(me, "\t"+keys(ind_list)[j]);
-	    tell_object(me, "\t: "+ind_list[keys(ind_list)[j]]+"\n");
-	}
-    }
-    return 1;
-}
-
-int do_tellme(string arg)
-{
-    object me=this_player(), seller, baozi;
-    string butcher, meat, msg;
-    int ratio, baoziexp, sellerexp, base_reward, pot_reward, reward;
-
-    if (!wizardp(me)) return 0;
-    if (!arg) return notify_fail(SYNTAX);
-    sscanf(arg, "%s sell %s", butcher, meat);
-
-    if (!meat) return notify_fail("±ÿ–ÎÃ·π©±ª¬Ù’ﬂµƒ√˚◊÷°£\n");
-    if (!objectp(baozi=present(meat, environment(me))))
-	baozi=find_player(meat);
-    if (!baozi) baozi=find_living(meat);
-    if (!baozi) return notify_fail("ƒø«∞”Œœ∑÷–’“≤ªµΩ’‚Œª "+meat+" °£\n");
-    if (!butcher) seller=this_player();
-    else 
-    {
-	seller=find_player(butcher);
-	if (!seller) return notify_fail("’‚Œª "+butcher+" œ÷‘⁄≤ª‘⁄”Œœ∑÷–°£\n");    
-    }
-    ratio=check_ratio(seller, baozi);
-    base_reward=check_base_reward(baozi, ratio);
-    reward=ratio*base_reward/100;
-    msg=GRN+seller->query("name")+"£®æ≠—È£∫"+(seller->query("combat_exp")+seller->query("daoxing"))+"£©£¨";
-    msg+="¬Ù"+baozi->query("name")+"£®æ≠—È£∫"+(baozi->query("combat_exp")+baozi->query("daoxing"))+"£©°£\n";
-    msg+="ª˘±æΩ±¿¯Œ™ "+base_reward+" æ≠—È£¨∂˛»À«ø∂»±»¿˝Œ™ "+ratio+"£•\n";
-    msg+=seller->query("name")+"µ√ "+reward+" æ≠—È°£\n"NOR;
-    tell_object(me, msg);
-    return 1;
-}
-
-int do_giveme(string arg)
-{
-    int exp;
-    object me=this_player(), dummy;
-
-    if (!arg) exp=2*me->query("combat_exp");
-
-    dummy=new(__DIR__"dummy");
-    dummy->move(me);
-    tell_object(me, "ƒ„µ√µΩ¡À“ª∏ˆ≤‚ ‘¥Û√◊°£\n");
-    dummy->unconcious();
-    dummy->set("combat_exp", exp);
-    dummy->set_temp("last_fainted_from", me->query("id"));
-    return 1;
-}
-
+	sprintf("%s

@@ -1,8 +1,8 @@
 #/d/huanggong/npc/wu53.c
-dbase (["kee":100,"age":18,"max_kee":100,"weapon":0,"eff_gin":100,"eff_kee":100,"can_speak":1,"unit":"Î»","title":"Îı°ñÌ½»¨","per":30,"spi":20,"con":17,"force_factor":1,"cor":14,"int":30,"cps":26,"str":30,"mana":10,"kar":28,"gender":"ÄĞĞÔ","id":"jin shi","name":"Îä½øÊ¿","startroom":"/d/huanggong/ywc5c","sen":100,"max_gin":100,"combat_exp":100,"daoxing":100,"armor":0,"gin":100,"long":"Îı°ñÌ½»¨¡£","limbs":({"Í·²¿","¾±²¿","ĞØ¿Ú","ºóĞÄ","×ó¼ç","ÓÒ¼ç","×ó±Û","ÓÒ±Û","×óÊÖ","ÓÒÊÖ","Ñü¼ä","Ğ¡¸¹","×óÍÈ","ÓÒÍÈ","×ó½Å","ÓÒ½Å",}),"current_player":"none of us","attitude":"heroism","actions":,"new_player":1,"max_force":10,"force":10,"default_actions":,"eff_sen":100,"short":"Îä½øÊ¿(Jin shi)","no_unconcious":1,"max_sen":100,"max_mana":10,"race":"ÈËÀà",])
+dbase (["kee":100,"age":18,"max_kee":100,"weapon":0,"eff_gin":100,"eff_kee":100,"can_speak":1,"unit":"ä½","title":"é”¡æ¦œæ¢èŠ±","per":30,"spi":20,"con":17,"force_factor":1,"cor":14,"int":30,"cps":26,"str":30,"mana":10,"kar":28,"gender":"ç”·æ€§","id":"jin shi","name":"æ­¦è¿›å£«","startroom":"/d/huanggong/ywc5c","sen":100,"max_gin":100,"combat_exp":100,"daoxing":100,"armor":0,"gin":100,"long":"é”¡æ¦œæ¢èŠ±ã€‚","limbs":({"å¤´éƒ¨","é¢ˆéƒ¨","èƒ¸å£","åå¿ƒ","å·¦è‚©","å³è‚©","å·¦è‡‚","å³è‡‚","å·¦æ‰‹","å³æ‰‹","è…°é—´","å°è…¹","å·¦è…¿","å³è…¿","å·¦è„š","å³è„š",}),"current_player":"none of us","attitude":"heroism","actions":,"new_player":1,"max_force":10,"force":10,"default_actions":,"eff_sen":100,"short":"æ­¦è¿›å£«(Jin shi)","no_unconcious":1,"max_sen":100,"max_mana":10,"race":"äººç±»",])
 skills (["dodge":1,"sword":1,"unarmed":1,"parry":1,"spells":1,"force":1,])
 learned (["dodge":0,"sword":0,"unarmed":0,"parry":0,"spells":0,"force":0,])
-categories ({"½ğ°ñ","Òø°ñ","Í­°ñ","Ìú°ñ","Îı°ñ",})
-positions ({"×´Ôª","°ñÑÛ","Ì½»¨",})
+categories ({"é‡‘æ¦œ","é“¶æ¦œ","é“œæ¦œ","é“æ¦œ","é”¡æ¦œ",})
+positions ({"çŠ¶å…ƒ","æ¦œçœ¼","æ¢èŠ±",})
 limits ({200000,100000,50000,10000,1000,})
 rooms ({"b","a","c",})

@@ -17,11 +17,11 @@ int main(object me, string arg)
 	
 	if(environment(me)->query("no_fight")  ||
 	   environment(me)->query("no_magic") )
-	      return notify_fail("°²È«ÇøÄÚ½ûÖ¹Á·¹¦¡£\n");
+	      return notify_fail("å®‰å…¨åŒºå†…ç¦æ­¢ç»ƒåŠŸã€‚\n");
 	
 
         if( !arg)
-           return notify_fail("ÄãÒª»¨¶àÉÙÆøÁ·¹¦£¿\n");
+           return notify_fail("ä½ è¦èŠ±å¤šå°‘æ°”ç»ƒåŠŸï¼Ÿ\n");
 
         if( !sscanf(arg, "%d", kee_cost) )
 		{
@@ -29,11 +29,11 @@ int main(object me, string arg)
 			{	
 
             if( (int)me->query("max_force") < 500  )
-				return notify_fail("ÄãµÄ¹¦Á¦»¹²»¹»ÕâÑùÓÃ£¡\n");
+				return notify_fail("ä½ çš„åŠŸåŠ›è¿˜ä¸å¤Ÿè¿™æ ·ç”¨ï¼\n");
 
 
 			if((int)me->query("force") > (int)me->query("max_force") * 2-120)
-			    return notify_fail("ÄãµÄÄÚÁ¦³äÓ¯£¡\n");
+			    return notify_fail("ä½ çš„å†…åŠ›å……ç›ˆï¼\n");
 			else    
 					{ 
 			          kee_cost=me->query("kee")-20;
@@ -42,7 +42,7 @@ int main(object me, string arg)
 			//	tell_object(me,"ok\n");
 			}
         else
-           return notify_fail("ÄãÒª»¨¶àÉÙÆøÁ·¹¦£¿\n");
+           return notify_fail("ä½ è¦èŠ±å¤šå°‘æ°”ç»ƒåŠŸï¼Ÿ\n");
 		}
           
 
@@ -53,20 +53,20 @@ int main(object me, string arg)
         }
 	      
         if (me->is_busy() || me->query_temp("pending/exercising"))
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if( me->is_fighting() )
-		return notify_fail("Õ½¶·ÖĞ²»ÄÜÁ·ÄÚ¹¦£¬»á×ß»ğÈëÄ§¡£\n");
+		return notify_fail("æˆ˜æ–—ä¸­ä¸èƒ½ç»ƒå†…åŠŸï¼Œä¼šèµ°ç«å…¥é­”ã€‚\n");
 
 	if( !stringp(me->query_skill_mapped("force")) )
-		return notify_fail("Äã±ØĞëÏÈÓÃ enable Ñ¡ÔñÄãÒªÓÃµÄÄÚ¹¦ĞÄ·¨¡£\n");
+		return notify_fail("ä½ å¿…é¡»å…ˆç”¨ enable é€‰æ‹©ä½ è¦ç”¨çš„å†…åŠŸå¿ƒæ³•ã€‚\n");
 
-	if( kee_cost < 20 ) return notify_fail("Äã×îÉÙÒª»¨ 20 µã¡¸Æø¡¹²ÅÄÜÁ·¹¦¡£\n");
+	if( kee_cost < 20 ) return notify_fail("ä½ æœ€å°‘è¦èŠ± 20 ç‚¹ã€Œæ°”ã€æ‰èƒ½ç»ƒåŠŸã€‚\n");
 
 	if( (int)me->query("kee") < kee_cost )
-		return notify_fail("ÄãÏÖÔÚµÄÆøÌ«ÉÙÁË£¬ÎŞ·¨²úÉúÄÚÏ¢ÔËĞĞÈ«Éí¾­Âö¡£\n");
+		return notify_fail("ä½ ç°åœ¨çš„æ°”å¤ªå°‘äº†ï¼Œæ— æ³•äº§ç”Ÿå†…æ¯è¿è¡Œå…¨èº«ç»è„‰ã€‚\n");
 
-	write("Äã×øÏÂÀ´ÔËÆøÓÃ¹¦£¬Ò»¹ÉÄÚÏ¢¿ªÊ¼ÔÚÌåÄÚÁ÷¶¯¡£\n");
+	write("ä½ åä¸‹æ¥è¿æ°”ç”¨åŠŸï¼Œä¸€è‚¡å†…æ¯å¼€å§‹åœ¨ä½“å†…æµåŠ¨ã€‚\n");
 
 	busy_time=kee_cost/20;
 	me->start_busy(busy_time*2 + 1);
@@ -106,11 +106,11 @@ int exec_int(object me, object where, int busy_time,int ex_max)
 
 	me->receive_damage("kee", 20);
 	me->add("force", force_gain);
-//	tell_object(me,"ÄãÄ¿Ç°µÄmax"+chinese_number(ex_max)+"\n");
+//	tell_object(me,"ä½ ç›®å‰çš„max"+chinese_number(ex_max)+"\n");
 
 if( ex_max==1 && (int)me->query("force") > (int)me->query("max_force") * 2-force_gain )
 	{
-	//tell_object(me,"ÄãµÄÄÚÁ¦ÒÑ´òÂú£¡\n");
+	//tell_object(me,"ä½ çš„å†…åŠ›å·²æ‰“æ»¡ï¼\n");
 	call_out("finish", 1, me);
 	return 1;
 	}
@@ -119,9 +119,9 @@ if( ex_max==1 && (int)me->query("force") > (int)me->query("max_force") * 2-force
 		{
                 if( (int)me->query("max_force") >=
               (int)me->query_max_force() ) {
-                        tell_object(me,"µ±ÄãµÄÄÚÏ¢±é²¼È«Éí¾­ÂöÊ±È´Ã»ÓĞ¹¦Á¦ÌáÉıµÄ¼£Ïó£¬ËÆºõÄÚÁ¦ĞŞÎªÒÑ¾­Óöµ½ÁËÆ¿¾±¡£\n");
+                        tell_object(me,"å½“ä½ çš„å†…æ¯éå¸ƒå…¨èº«ç»è„‰æ—¶å´æ²¡æœ‰åŠŸåŠ›æå‡çš„è¿¹è±¡ï¼Œä¼¼ä¹å†…åŠ›ä¿®ä¸ºå·²ç»é‡åˆ°äº†ç“¶é¢ˆã€‚\n");
 		}else{
-                        tell_object(me, "ÄãµÄÄÚÁ¦ÔöÇ¿ÁË£¡\n");
+                        tell_object(me, "ä½ çš„å†…åŠ›å¢å¼ºäº†ï¼\n");
                         me->add("max_force", 1);
 
 if ( (int)me->query("max_force") > (int)me->query("maximum_force"))
@@ -154,20 +154,20 @@ int finish(object me)
 {
 	me->delete_temp("pending/exercising");
 	me->start_busy(1);
-	tell_object(me, "ÄãĞĞ¹¦Íê±Ï£¬ÎüÒ»¿ÚÆø£¬»º»ºÕ¾ÁËÆğÀ´¡£\n");
+	tell_object(me, "ä½ è¡ŒåŠŸå®Œæ¯•ï¼Œå¸ä¸€å£æ°”ï¼Œç¼“ç¼“ç«™äº†èµ·æ¥ã€‚\n");
 	return 1;
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : exercise|dazuo [<ºÄ·Ñ¡¸Æø¡¹µÄÁ¿>]
-	   exercise|dazuo 0 £ºÍ£Ö¹´ò×ø
+æŒ‡ä»¤æ ¼å¼ : exercise|dazuo [<è€—è´¹ã€Œæ°”ã€çš„é‡>]
+	   exercise|dazuo 0 ï¼šåœæ­¢æ‰“å
 
-ÔËÆøÁ·¹¦£¬¿ØÖÆÌåÄÚµÄÆøÔÚ¸÷¾­Âö¼äÁ÷¶¯£¬½åÒÔÑµÁ·ÈËÌå¼¡Èâ¹Ç÷ÀµÄÄÍ
-Á¦¡¢±¬·¢Á¦£¬²¢ÇÒÓÃÄÚÁ¦µÄĞÎÊ½½«ÄÜÁ¿´¢±¸ÏÂÀ´¡£
+è¿æ°”ç»ƒåŠŸï¼Œæ§åˆ¶ä½“å†…çš„æ°”åœ¨å„ç»è„‰é—´æµåŠ¨ï¼Œè—‰ä»¥è®­ç»ƒäººä½“è‚Œè‚‰éª¨éª¼çš„è€
+åŠ›ã€çˆ†å‘åŠ›ï¼Œå¹¶ä¸”ç”¨å†…åŠ›çš„å½¢å¼å°†èƒ½é‡å‚¨å¤‡ä¸‹æ¥ã€‚
 
-Çë²Î¿¼ help stats
+è¯·å‚è€ƒ help stats
 HELP
         );
         return 1;

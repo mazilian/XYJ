@@ -1,5 +1,5 @@
 // add by hexiu
-// Ç¹Àï¼Óïµ
+// æªé‡ŒåŠ é”
 
 #include <ansi.h>
 #include <weapon.h>
@@ -17,28 +17,28 @@ int perform(object me, object target)
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹ÕâÒ»ÕĞ¡¸Ç¹Àï¼Óïµ¡¹£¿\n");
+                return notify_fail("ä½ è¦å¯¹è°æ–½å±•è¿™ä¸€æ‹›ã€Œæªé‡ŒåŠ é”ã€ï¼Ÿ\n");
 
 	if(!me->is_fighting())
-                return notify_fail("¡¸Ç¹Àï¼Óïµ¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ£¡\n");
+                return notify_fail("ã€Œæªé‡ŒåŠ é”ã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ï¼\n");
 
 	if((int)me->query("max_force") < 500)
-		return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
         if((int)me->query("force") < 500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼\n");
 
 	if((int)me->query("sen") < 250)
-		return notify_fail("ÄãµÄ¾«Éñ²»×ã£¬Ã»·¨×ÓÊ©ÓÃÍâ¹¦£¡\n");
+		return notify_fail("ä½ çš„ç²¾ç¥ä¸è¶³ï¼Œæ²¡æ³•å­æ–½ç”¨å¤–åŠŸï¼\n");
 
 	if((int)me->query_skill("bawang-qiang",1) < 100)
-		return notify_fail("ÄãµÄ°ÔÍõÇ¹¼¶±ğ»¹²»¹»£¬Ê¹ÓÃÕâÒ»ÕĞ»áÓĞÀ§ÄÑ!\n");
+		return notify_fail("ä½ çš„éœ¸ç‹æªçº§åˆ«è¿˜ä¸å¤Ÿï¼Œä½¿ç”¨è¿™ä¸€æ‹›ä¼šæœ‰å›°éš¾!\n");
 
 	if((int)me->query_skill("wusi-mace",1) < 100)
-		return notify_fail("ÄãµÄÎŞË½ïµ¼¶±ğ»¹²»¹»£¬Ê¹ÓÃÕâÒ»ÕĞ»áÓĞÀ§ÄÑ!\n");
+		return notify_fail("ä½ çš„æ— ç§é”çº§åˆ«è¿˜ä¸å¤Ÿï¼Œä½¿ç”¨è¿™ä¸€æ‹›ä¼šæœ‰å›°éš¾!\n");
      
 	if(me->query_temp("QJ_perform"))
-        return notify_fail("¾øÕĞ²»ÄÜÓÃÌ«¶à!\n");
+        return notify_fail("ç»æ‹›ä¸èƒ½ç”¨å¤ªå¤š!\n");
 
     ob=target->query_temp("weapon");
 	weapon1=me->query_temp("weapon");
@@ -46,25 +46,25 @@ int perform(object me, object target)
 	weapon2=present("mace", me);
 	
 	if(!objectp(weapon2)) 
-		return notify_fail("Ã»ïµÔõÃ´Ç¹Àï¼Óïµ?\n");
+		return notify_fail("æ²¡é”æ€ä¹ˆæªé‡ŒåŠ é”?\n");
 
-	message_vision(HIC"\n$NÔË×ã¾«Éñ£¬¶¶ÊÖ´Ì³öÒ»Ç¹!\n"NOR, me, target);
+	message_vision(HIC"\n$Nè¿è¶³ç²¾ç¥ï¼ŒæŠ–æ‰‹åˆºå‡ºä¸€æª!\n"NOR, me, target);
 	
     me->set_temp("BWQ_perform", 7);
 	COMBAT_D->do_attack(me, target, weapon1);
     me->delete_temp("BWQ_perform");
 	
-    if((int)me->query_skill("bawang-qiang",1) > 200 && me->query("family/family_name") == "½«¾ü¸®" )
+    if((int)me->query_skill("bawang-qiang",1) > 200 && me->query("family/family_name") == "å°†å†›åºœ" )
 	{  
 		if(target->query_temp("no_parry")==0 && ob !=0)
-		{message_vision(HIC"\n$NÒ»·´ÊÖ£¬Ë¦Ç¹µ´¿ªÁË$nÊÖÖĞµÄ"+ob->query("name")+"!\n"NOR, me, target);
+		{message_vision(HIC"\n$Nä¸€åæ‰‹ï¼Œç”©æªè¡å¼€äº†$næ‰‹ä¸­çš„"+ob->query("name")+"!\n"NOR, me, target);
 	target->set_temp("no_parry",1);
 	call_out("remove_no_parry",me->query_skill("bawang-qiang",1)/20+random(3),target);}
-		else {write("¶Ô·½ÑÛÏÂ²»ÄÜÕĞ¼Ü£¡\n");}
+		else {write("å¯¹æ–¹çœ¼ä¸‹ä¸èƒ½æ‹›æ¶ï¼\n");}
 	
 	}
 
-        message_vision(HIC"\n³Ã×Å$nÊÖÃ¦½ÅÂÒ£¬$N³é³ö"+weapon2->query("name")+HIC"»÷³öÁ½ÏÂ"NOR, me, target);
+        message_vision(HIC"\nè¶ç€$næ‰‹å¿™è„šä¹±ï¼Œ$NæŠ½å‡º"+weapon2->query("name")+HIC"å‡»å‡ºä¸¤ä¸‹"NOR, me, target);
 
 	weapon1->unequip();
 	if(sweapon) sweapon->unequip();
@@ -117,6 +117,6 @@ void remove_no_parry(object target)
 {
 	if (!target) return;
 	target->delete_temp("no_parry");
-	message_vision(HIY"\n$N»î¶¯ÁËÒ»ÏÂ·¢ÂéµÄÊÖÍó£¡\n"NOR,target);
+	message_vision(HIY"\n$Næ´»åŠ¨äº†ä¸€ä¸‹å‘éº»çš„æ‰‹è…•ï¼\n"NOR,target);
 	return;
 }

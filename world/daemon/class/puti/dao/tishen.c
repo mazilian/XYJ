@@ -12,34 +12,34 @@ int cast(object me, object target)
     t=me->query("no_dead_time");
 
 	if( me->is_busy())
-		return notify_fail("ÄãÕıÃ¦×ÅÄØ£¬ÏÈÓ¦¸¶ÑÛÇ°µÄÊÂ°É¡£\n");
+		return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼Œå…ˆåº”ä»˜çœ¼å‰çš„äº‹å§ã€‚\n");
 
 	if( (int)me->query("mana") < 300 )
-		return notify_fail("ÄãµÄ·¨Á¦²»¹»ÁË£¡\n");
+		return notify_fail("ä½ çš„æ³•åŠ›ä¸å¤Ÿäº†ï¼\n");
 
 	if( (int)me->query("sen") < (int)me->query("max_sen")/5 )
-		return notify_fail("Äã¾«ÉñÌ«²î£¬ÄÑÒÔ¼¯ÖĞ¾«Á¦ÄîÖä¡£\n");
+		return notify_fail("ä½ ç²¾ç¥å¤ªå·®ï¼Œéš¾ä»¥é›†ä¸­ç²¾åŠ›å¿µå’’ã€‚\n");
 
 	if( (int)me->query_skill("dao", 1) < 200)
-		return notify_fail("ÄãÎ´ÔøÑ§»áÌæÉí¡£\n");
+		return notify_fail("ä½ æœªæ›¾å­¦ä¼šæ›¿èº«ã€‚\n");
 
     if(me->query_temp("no_dead"))
-           return notify_fail("ÄãÑÛÏÂÓĞÌæÉí¡£\n");
+           return notify_fail("ä½ çœ¼ä¸‹æœ‰æ›¿èº«ã€‚\n");
 
 	if(t<time()&&time()<t+1800)
-		return notify_fail("ÄãÓÃÌæÉíµÄÊ±³½»¹Î´µ½¡£\n");
+		return notify_fail("ä½ ç”¨æ›¿èº«çš„æ—¶è¾°è¿˜æœªåˆ°ã€‚\n");
 
 	
 
      
-	message_vision(HIC"$Nà«à«µÄÄîÁË¼¸¾äÖäÓï,»¯ÁË¼¸µÀ·û£¡\n"NOR,me);
+	message_vision(HIC"$Nå–ƒå–ƒçš„å¿µäº†å‡ å¥å’’è¯­,åŒ–äº†å‡ é“ç¬¦ï¼\n"NOR,me);
 	me->add("mana", -300);
 	
 	if(time()>t+1800)
 	{
 	me->set("no_dead_time",time());
 	me->set_temp("no_dead",1);
-	message_vision(HIC"$NºÃÏñ·ûÖäÆğ×÷ÓÃÁË£¡\n"NOR,me);
+	message_vision(HIC"$Nå¥½åƒç¬¦å’’èµ·ä½œç”¨äº†ï¼\n"NOR,me);
 	call_out("remove_no_dead",1800,me);
 	}
 	return 5;
@@ -52,7 +52,7 @@ void remove_no_dead(object me)
 { if (!me) return;
   if (!me->query_temp("no_dead")) return;
   if (me) me->delete_temp("no_dead");
-message_vision(HIC"$N¸Ğ¾õ·ûÖäÒşÒşµÄÏûÉ¢ÁË£¡\n"NOR,me);
+message_vision(HIC"$Næ„Ÿè§‰ç¬¦å’’éšéšçš„æ¶ˆæ•£äº†ï¼\n"NOR,me);
 return;
 
 }

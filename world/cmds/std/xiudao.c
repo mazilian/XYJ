@@ -23,26 +23,26 @@ int main(object me, string arg)
 	where = environment(me);
 	
 	if(where->query("no_fight") || where->query("no_magic") )
-	     return notify_fail("°²È«ÇøÄÚ½ûÖ¹Á·¹¦¡£\n");
+	     return notify_fail("å®‰å…¨åŒºå†…ç¦æ­¢ç»ƒåŠŸã€‚\n");
 	
 //	if (!where->query("jingzuo_room"))
-//		return notify_fail("´Ë´¦²»ÒË¾²×øĞŞÁ·£¡\n");
+//		return notify_fail("æ­¤å¤„ä¸å®œé™åä¿®ç»ƒï¼\n");
 
 	if ( (xiudao_lvl = me->query_skill("spells")) < 20 ) 
-		return notify_fail("Äã·¨ÊõĞŞÎªÌ«µÍ£¬²»ÄÜĞĞ¹¦ĞŞÁ¶£¡\n");
+		return notify_fail("ä½ æ³•æœ¯ä¿®ä¸ºå¤ªä½ï¼Œä¸èƒ½è¡ŒåŠŸä¿®ç‚¼ï¼\n");
 
 	if (me->is_busy() || me->query_temp("pending/exercising")
 		|| me->query_temp("doing_xiudao"))
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+		return notify_fail("ä½ ç°åœ¨æ­£å¿™ç€å‘¢ã€‚\n");
 
 	if( me->is_fighting() )
-		return notify_fail("Õ½¶·ÖĞĞŞµÀ£¬ÕÒËÀ°¡£¿£¡\n");
+		return notify_fail("æˆ˜æ–—ä¸­ä¿®é“ï¼Œæ‰¾æ­»å•Šï¼Ÿï¼\n");
 
 	if( (int)me->query("sen") * 100 / (int)me->query("max_sen") < 50 )
-		return notify_fail("ÄãÏÖÔÚÉñÖÇ²»Çå£¬ÔÙÁ¶¿ÖÅÂÒª×ß»ğÈëÄ§£¡\n");
+		return notify_fail("ä½ ç°åœ¨ç¥æ™ºä¸æ¸…ï¼Œå†ç‚¼ææ€•è¦èµ°ç«å…¥é­”ï¼\n");
 
 	if( (int)me->query("kee") * 100 / (int)me->query("max_kee") < 50 )
-		return notify_fail("ÄãÏÖÔÚÌåÁ¦²»¹»£¬ÔÙÁ·¾ÍÒªÀÛËÀÁË£¡\n");
+		return notify_fail("ä½ ç°åœ¨ä½“åŠ›ä¸å¤Ÿï¼Œå†ç»ƒå°±è¦ç´¯æ­»äº†ï¼\n");
 
 	pot_gain = xiudao_lvl/20 + random(3);
 	busy_time = random(7200)/pot_gain/100+2;
@@ -50,7 +50,7 @@ int main(object me, string arg)
 	busy_time *= pot_gain;
 	pot_gain += (int)me->query("obstacle/number")*pot_gain/2/obstacle_size;
 	if (me->query("food") + me->query("water") < 20) busy_time *= 2;
-	message_vision(HIY "$N±ÕÉÏÑÛ¾¦£¬ÅÌÏ¥×øÏÂ£¬×ìÀïÄ¬Ä¬ÄîÄî²»ÖªÔÚËµĞ©Ê²Ã´¡£\n" NOR, me);
+	message_vision(HIY "$Né—­ä¸Šçœ¼ç›ï¼Œç›˜è†åä¸‹ï¼Œå˜´é‡Œé»˜é»˜å¿µå¿µä¸çŸ¥åœ¨è¯´äº›ä»€ä¹ˆã€‚\n" NOR, me);
 	me->start_busy(busy_time+2);
 	me->set_temp("doing_xiudao",1);
 
@@ -85,9 +85,9 @@ me->trace("Pot Gain ["+pot_gain+"]");
     me->delete_temp("doing_xiudao");
     if(MISC_D->random_capture(me,500,0)) return;
 
-	message_vision(HIY "$N»º»ºÕö¿ªÑÛ¾¦£¬³¤ÊæÒ»¿ÚÆøÕ¾ÁËÆğÀ´¡£\n" NOR, me);
+	message_vision(HIY "$Nç¼“ç¼“çå¼€çœ¼ç›ï¼Œé•¿èˆ’ä¸€å£æ°”ç«™äº†èµ·æ¥ã€‚\n" NOR, me);
 
-	tell_object(me, HIC "ÄãµÄµÀĞĞÔö¼ÓÁË" + chinese_number(pot_gain*3) + "Ê±³½£¡\n" NOR);
+	tell_object(me, HIC "ä½ çš„é“è¡Œå¢åŠ äº†" + chinese_number(pot_gain*3) + "æ—¶è¾°ï¼\n" NOR);
  //       if ((me->query("potential") + pot_gain - me->query("learned_points")) < 101)
                 me->add("daoxing", pot_gain);
 //	else
@@ -109,9 +109,9 @@ me->trace("Pot Gain ["+pot_gain+"]");
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : xiudao
+æŒ‡ä»¤æ ¼å¼ : xiudao
 
-¾²×øĞŞÁ¶ÒÔÌá¸ßµÀĞĞ¡£
+é™åä¿®ç‚¼ä»¥æé«˜é“è¡Œã€‚
 HELP
         );
         return 1;

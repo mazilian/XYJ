@@ -7,13 +7,13 @@ inherit THROWING;
 
 void create()
 {
-  set_name("¡ñ½ğµ¤É°¡ñ", ({"jindan sha", "sha"}));
+  set_name("â—é‡‘ä¸¹ç ‚â—", ({"jindan sha", "sha"}));
   if( clonep() )
     set_default_object(__FILE__);
   else {
-    set("long", "Ò»Ğ©ÉÁÉÁ·¢¹âµÄ½ğµ¤É°¡£\n");
-    set("unit", "Ğ©");
-    set("base_unit", "¿Å");
+    set("long", "ä¸€äº›é—ªé—ªå‘å…‰çš„é‡‘ä¸¹ç ‚ã€‚\n");
+    set("unit", "äº›");
+    set("base_unit", "é¢—");
     set("base_weight", 40);
     set("base_value", 1);
   }
@@ -22,9 +22,9 @@ void create()
   //set("rigidity",100);
   set("never_tear",1);
 	set("no_sell",1);
-	set("no_drop","È¥À¬»ø¶Ñ¶ª°É£¬ÂÒÈÓ»áÎÛÈ¾»·¾³!\n");
-	set("no_give","×Ü¹Ü·¢µÄ×°±¸£¬¿É²»ÄÜÂÒËÍÈËÓ´£¡\n");
-	set("no_get","ÏëÄÃ×Ü¹Ü¿ò¿ò·¢µÄ×°±¸£¿×öÃÎ°É!\n");
+	set("no_drop","å»åƒåœ¾å †ä¸¢å§ï¼Œä¹±æ‰”ä¼šæ±¡æŸ“ç¯å¢ƒ!\n");
+	set("no_give","æ€»ç®¡å‘çš„è£…å¤‡ï¼Œå¯ä¸èƒ½ä¹±é€äººå“Ÿï¼\n");
+	set("no_get","æƒ³æ‹¿æ€»ç®¡æ¡†æ¡†å‘çš„è£…å¤‡ï¼Ÿåšæ¢¦å§!\n");
   init_throwing(180);
   setup();
 }

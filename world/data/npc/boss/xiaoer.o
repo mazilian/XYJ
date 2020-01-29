@@ -1,8 +1,8 @@
 #/d/city/npc/xiaoer.c
-dbase (["kar":18,"eff_kee":594,"startroom":"/d/city/kezhan","mana":0,"vendor_goods":(["huasheng":"/d/ourhome/obj/huasheng","jitui":"/d/ourhome/obj/jitui","zhinan":"/d/obj/misc/xiaqi-zhinan","ball":"/d/obj/misc/crystalball","jinpai":"/d/obj/misc/tiaozhanpai","gourou":"/d/ourhome/obj/gourou","jiudai":"/d/moon/obj/jiudai",]),"max_price":20,"sen":264,"eff_gin":268,"gin":268,"combat_exp":1000,"gender":"ÄĞĞÔ","max_gin":268,"id":"xiao er","name":"µêĞ¡¶ş","eff_sen":264,"attitude":"friendly","env":(["immortal":0,]),"can_speak":1,"shen_type":1,"race":"ÈËÀà","limbs":({"Í·²¿","¾±²¿","ĞØ¿Ú","ºóĞÄ","×ó¼ç","ÓÒ¼ç","×ó±Û","ÓÒ±Û","×óÊÖ","ÓÒÊÖ","Ñü¼ä","Ğ¡¸¹","×óÍÈ","ÓÒÍÈ","×ó½Å","ÓÒ½Å",}),"force":0,"shop_title":"µêĞ¡¶ş","default_actions":,"shop_id":({"waiter","xiaoer","xiao","er",}),"actions":,"per":14,"max_sen":264,"spi":14,"bellicosity":0,"age":26,"con":28,"cor":16,"atman":0,"unit":"Î»","kee":594,"int":11,"cps":17,"max_kee":594,"str":26,])
+dbase (["kar":18,"eff_kee":594,"startroom":"/d/city/kezhan","mana":0,"vendor_goods":(["huasheng":"/d/ourhome/obj/huasheng","jitui":"/d/ourhome/obj/jitui","zhinan":"/d/obj/misc/xiaqi-zhinan","ball":"/d/obj/misc/crystalball","jinpai":"/d/obj/misc/tiaozhanpai","gourou":"/d/ourhome/obj/gourou","jiudai":"/d/moon/obj/jiudai",]),"max_price":20,"sen":264,"eff_gin":268,"gin":268,"combat_exp":1000,"gender":"ç”·æ€§","max_gin":268,"id":"xiao er","name":"åº—å°äºŒ","eff_sen":264,"attitude":"friendly","env":(["immortal":0,]),"can_speak":1,"shen_type":1,"race":"äººç±»","limbs":({"å¤´éƒ¨","é¢ˆéƒ¨","èƒ¸å£","åå¿ƒ","å·¦è‚©","å³è‚©","å·¦è‡‚","å³è‡‚","å·¦æ‰‹","å³æ‰‹","è…°é—´","å°è…¹","å·¦è…¿","å³è…¿","å·¦è„š","å³è„š",}),"force":0,"shop_title":"åº—å°äºŒ","default_actions":,"shop_id":({"waiter","xiaoer","xiao","er",}),"actions":,"per":14,"max_sen":264,"spi":14,"bellicosity":0,"age":26,"con":28,"cor":16,"atman":0,"unit":"ä½","kee":594,"int":11,"cps":17,"max_kee":594,"str":26,])
 skills (["unarmed":10,])
 learned (["unarmed":0,])
 SAVE_NAME "xiaoer"
 price_ratio 10
-bidder_long "ÑÖÂŞµØ¸®µÚ¶ş´úµÜ×Ó ÉÕ»ğ¹¤(Wszkba)¡£"
+bidder_long "é˜ç½—åœ°åºœç¬¬äºŒä»£å¼Ÿå­ çƒ§ç«å·¥(Wszkba)ã€‚"
 close_time 1381125047

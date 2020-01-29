@@ -5,22 +5,22 @@ inherit MACE;
 
 void create()
 {
-              set_name("¾«¸Ö»¢Î²±Ş", ({ "jinggang mace", "mace" }) );
+              set_name("ç²¾é’¢è™å°¾é­", ({ "jinggang mace", "mace" }) );
         set_weight(12000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                   set("unit", "¸ù");
-                   set("long", "ÕâÊÇÒ»¸ùÎŞµĞ»¢Î²±Ş¡£\n");
+                   set("unit", "æ ¹");
+                   set("long", "è¿™æ˜¯ä¸€æ ¹æ— æ•Œè™å°¾é­ã€‚\n");
                    set("value", 0);
                    set("no_sell", 1);
                    set("material", "iron");
-set("wield_msg", "$N²ÙÆğÒ»¸ù$n£¬ÍşÃÍµØ°ÚÁË¸ö¼ÜÊ½¡£\n");
-set("unwield_msg", "$NĞ¡ĞÄÒíÒí½«$n±ğ»ØÑü¼ä¡£\n");
+set("wield_msg", "$Næ“èµ·ä¸€æ ¹$nï¼Œå¨çŒ›åœ°æ‘†äº†ä¸ªæ¶å¼ã€‚\n");
+set("unwield_msg", "$Nå°å¿ƒç¿¼ç¿¼å°†$nåˆ«å›è…°é—´ã€‚\n");
                    set("no_sell",1);
-                   set("no_drop","È¥À¬»ø¶Ñ¶ª°É£¬ÂÒÈÓ»áÎÛÈ¾»·¾³!\n");
-                   set("no_give","×Ü¹Ü·¢µÄ×°±¸£¬¿É²»ÄÜÂÒËÍÈËÓ´£¡\n");
-                   set("no_get","ÏëÄÃ×Ü¹Ü¿ò¿ò·¢µÄ×°±¸£¿×öÃÎ°É!\n");
+                   set("no_drop","å»åƒåœ¾å †ä¸¢å§ï¼Œä¹±æ‰”ä¼šæ±¡æŸ“ç¯å¢ƒ!\n");
+                   set("no_give","æ€»ç®¡å‘çš„è£…å¤‡ï¼Œå¯ä¸èƒ½ä¹±é€äººå“Ÿï¼\n");
+                   set("no_get","æƒ³æ‹¿æ€»ç®¡æ¡†æ¡†å‘çš„è£…å¤‡ï¼Ÿåšæ¢¦å§!\n");
  
         }
          init_mace(65);

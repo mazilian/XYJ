@@ -1,11 +1,11 @@
 #/d/city/npc/yang.c
-dbase (["eff_kee":300,"kar":17,"long":"ÑîÀÏ°åÊÇ³¤°²³ÇÀï×æ´«µÄÃûÒ½¡£ËäÈ»ÄêÇá£¬È´ÔçÒÑÃûÉùÔÚÍâ¡£","startroom":"/d/city/yaopu","mana":0,"vendor_goods":(["yao":"/d/obj/drug/jinchuang","taogan":"/d/obj/drug/fake-tao","dan":"/d/obj/drug/hunyuandan",]),"channel":(["tell_count":1,]),"sen":200,"eff_gin":580,"gin":580,"inquiry":(["ÁÆÉË":,"ÖÎÉË":,"¿ªÒ©":,]),"max_gin":580,"gender":"ÄĞĞÔ","combat_exp":10000,"id":"yang zhongshun","name":"ÑîÖĞË³","eff_sen":200,"score":0,"attitude":"friendly","disable_type":" <»èÃÔ²»ĞÑ>","env":(["wimpy":50,]),"can_speak":1,"race":"ÈËÀà","limbs":({"Í·²¿","¾±²¿","ĞØ¿Ú","ºóĞÄ","×ó¼ç","ÓÒ¼ç","×ó±Û","ÓÒ±Û","×óÊÖ","ÓÒÊÖ","Ñü¼ä","Ğ¡¸¹","×óÍÈ","ÓÒÍÈ","×ó½Å","ÓÒ½Å",}),"force":0,"called":1,"default_actions":,"potential":100,"actions":,"title":"Ò©ÆÌÕÆ¹ñ","per":26,"spi":30,"max_sen":200,"con":23,"age":37,"bellicosity":0,"atman":0,"unit":"Î»","cor":27,"last_sleep":1380690376,"int":29,"kee":300,"cps":17,"str":13,"max_kee":300,])
+dbase (["eff_kee":300,"kar":17,"long":"æ¨è€æ¿æ˜¯é•¿å®‰åŸé‡Œç¥–ä¼ çš„ååŒ»ã€‚è™½ç„¶å¹´è½»ï¼Œå´æ—©å·²åå£°åœ¨å¤–ã€‚","startroom":"/d/city/yaopu","mana":0,"vendor_goods":(["yao":"/d/obj/drug/jinchuang","taogan":"/d/obj/drug/fake-tao","dan":"/d/obj/drug/hunyuandan",]),"channel":(["tell_count":1,]),"sen":200,"eff_gin":580,"gin":580,"inquiry":(["ç–—ä¼¤":,"æ²»ä¼¤":,"å¼€è¯":,]),"max_gin":580,"gender":"ç”·æ€§","combat_exp":10000,"id":"yang zhongshun","name":"æ¨ä¸­é¡º","eff_sen":200,"score":0,"attitude":"friendly","disable_type":" <æ˜è¿·ä¸é†’>","env":(["wimpy":50,]),"can_speak":1,"race":"äººç±»","limbs":({"å¤´éƒ¨","é¢ˆéƒ¨","èƒ¸å£","åå¿ƒ","å·¦è‚©","å³è‚©","å·¦è‡‚","å³è‡‚","å·¦æ‰‹","å³æ‰‹","è…°é—´","å°è…¹","å·¦è…¿","å³è…¿","å·¦è„š","å³è„š",}),"force":0,"called":1,"default_actions":,"potential":100,"actions":,"title":"è¯é“ºæŒæŸœ","per":26,"spi":30,"max_sen":200,"con":23,"age":37,"bellicosity":0,"atman":0,"unit":"ä½","cor":27,"last_sleep":1380690376,"int":29,"kee":300,"cps":17,"str":13,"max_kee":300,])
 skills (["unarmed":60,"dodge":60,"literate":70,])
 learned (["unarmed":334,"dodge":1,"literate":0,])
 SAVE_NAME "yangzhongshun"
 price_ratio 10
 owner_id "yiren"
-owner_name "Ğ¡µÀÊ¿"
-owner_long "·½´çÉ½ÈıĞÇ¶´µÚÈı´úµÜ×Ó Ğ¡µÀÊ¿(Yiren)¡£"
-bidder_long "·½´çÉ½ÈıĞÇ¶´µÚÈı´úµÜ×Ó Ğ¡µÀÊ¿(Yiren)¡£"
+owner_name "å°é“å£«"
+owner_long "æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´ç¬¬ä¸‰ä»£å¼Ÿå­ å°é“å£«(Yiren)ã€‚"
+bidder_long "æ–¹å¯¸å±±ä¸‰æ˜Ÿæ´ç¬¬ä¸‰ä»£å¼Ÿå­ å°é“å£«(Yiren)ã€‚"
 close_time 1381169023

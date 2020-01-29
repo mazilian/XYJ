@@ -17,33 +17,33 @@ int perform(object me, object target)
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹ÕâÒ»ÕĞ¡¸±©·çÖèÓê¡¹£¿\n");
+                return notify_fail("ä½ è¦å¯¹è°æ–½å±•è¿™ä¸€æ‹›ã€Œæš´é£éª¤é›¨ã€ï¼Ÿ\n");
 
      
 
         if((int)me->query("max_force") < 500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 
         if((int)me->query("force") < 500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¡\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼\n");
 
         if((int)me->query("sen") < 500 )
-                return notify_fail("ÄãµÄ¾«Éñ²»×ã£¬Ã»·¨×ÓÊ©ÓÃÍâ¹¦£¡\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ä¸è¶³ï¼Œæ²¡æ³•å­æ–½ç”¨å¤–åŠŸï¼\n");
 
         if((int)me->query_skill("hanshasheying", 1) < 100)
-                return notify_fail("ÄãµÄº¬É³ÉäÓ°¼¶±ğ»¹²»¹»£¬Ê¹ÓÃÕâÒ»ÕĞ»áÓĞÀ§ÄÑ£¡\n");
+                return notify_fail("ä½ çš„å«æ²™å°„å½±çº§åˆ«è¿˜ä¸å¤Ÿï¼Œä½¿ç”¨è¿™ä¸€æ‹›ä¼šæœ‰å›°éš¾ï¼\n");
               
         if (me->query_skill_mapped("force")!="huntian-qigong")
-                return notify_fail("±©·çÖèÓê±ØĞëÅäºÏ»ëÌìÆø¹¦²ÅÄÜÊ¹ÓÃ¡£\n");
+                return notify_fail("æš´é£éª¤é›¨å¿…é¡»é…åˆæµ‘å¤©æ°”åŠŸæ‰èƒ½ä½¿ç”¨ã€‚\n");
 
         if (me->query_temp("rain_busy"))
-                return notify_fail("¾øÕĞÀÄÊ¹¾Í²»ÁéÁË£¡\n");
+                return notify_fail("ç»æ‹›æ»¥ä½¿å°±ä¸çµäº†ï¼\n");
               
         //me->delete("env/brief_message");
         //target->delete("env/brief_message");
 
-        message_vision(MAG"\n°µ´¦ÒşÒşÏÔ³ö$NµÄÉíÓ°£¬Ö»¼û$NÒ»ÑïÊÖ!\n"NOR,me,target);
-		message_vision(HIC"\nÊıÃ¶"+weapon->query("name")+"±©·çÖèÓê°ãµÄÏò$n·ÉÀ´!\n"NOR,me,target);
+        message_vision(MAG"\næš—å¤„éšéšæ˜¾å‡º$Nçš„èº«å½±ï¼Œåªè§$Nä¸€æ‰¬æ‰‹!\n"NOR,me,target);
+		message_vision(HIC"\næ•°æš"+weapon->query("name")+"æš´é£éª¤é›¨èˆ¬çš„å‘$né£æ¥!\n"NOR,me,target);
 
         
         

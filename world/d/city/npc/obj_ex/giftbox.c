@@ -1,5 +1,5 @@
 
-// renshen-guo.c ÈË²Î¹û
+// renshen-guo.c äººå‚æžœ
 // suppose to be able to be given and got,
 // please let me know before changing...weiqi980417
 
@@ -20,15 +20,15 @@ void init()
 
 void create()
 {
-	set_name(HIW "ÀñÆ·ºÐ" NOR, ({"lipin box", "lipin", "box"}));
+	set_name(HIW "ç¤¼å“ç›’" NOR, ({"lipin box", "lipin", "box"}));
 	set_weight(100);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¸ö");
-		set("long", "Ò»¸ö×°ÊÎ¾«ÃÀµÄÀñÆ·ºÐ,²»·Á´ò¿ª(open)À´¿´¿´¡£\n");
+		set("unit", "ä¸ª");
+		set("long", "ä¸€ä¸ªè£…é¥°ç²¾ç¾Žçš„ç¤¼å“ç›’,ä¸å¦¨æ‰“å¼€(open)æ¥çœ‹çœ‹ã€‚\n");
 		set("value", 0);
-		set("drug_type", "²¹Æ·");
+		set("drug_type", "è¡¥å“");
                 set("no_sell",1);
 		set("no_drop",1);
 		set("no_get",1);
@@ -48,10 +48,10 @@ int do_open(string arg)
 	string msg;
 	object me = this_player();
   
-	if (!id(arg)) return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+	if (!id(arg)) return notify_fail("ä½ è¦æ‰“å¼€ä»€ä¹ˆï¼Ÿ\n");
 	if (me->query("wizgift/newbiegift") > 1)
 	{  
-	   tell_object(me,"ÄãÎªÊ²Ã´ÕâÃ´Ì°ÐÄÄØ?\n");
+	   tell_object(me,"ä½ ä¸ºä»€ä¹ˆè¿™ä¹ˆè´ªå¿ƒå‘¢?\n");
 	   destruct(this_object()); 
 	   return 1;
 	}
@@ -63,12 +63,12 @@ int do_open(string arg)
 me->add("daoxing",20000);
 me->add("potential",50000);
 	me->save();
-	msg=HIY"$NÐ¡ÐÄÒíÒíµØ°ÑºÐ×Ó´ò¿ªÀ´£¬Í»È»ºÐÖÐÉä³öÒ»Æ¬½ð¹â£¬»ÎµÃ$N"+
-		"Õö²»¿ªÑÛ¡£\n"NOR;
+	msg=HIY"$Nå°å¿ƒç¿¼ç¿¼åœ°æŠŠç›’å­æ‰“å¼€æ¥ï¼Œçªç„¶ç›’ä¸­å°„å‡ºä¸€ç‰‡é‡‘å…‰ï¼Œæ™ƒå¾—$N"+
+		"çä¸å¼€çœ¼ã€‚\n"NOR;
         message_vision(msg,me);
-        write("ÄãµÄµÀÐÐ£¬ÎäÑ§£¬Ç±ÄÜ¶¼Ôö¼ÓÁË!\n");
+        write("ä½ çš„é“è¡Œï¼Œæ­¦å­¦ï¼Œæ½œèƒ½éƒ½å¢žåŠ äº†!\n");
         log_file("static/NEWBIEGIFTopen","["+ctime(time())+"] "+
-	sprintf("%s(%s)´ò¿ªÁË%O\n",
+	sprintf("%s(%s)æ‰“å¼€äº†%O\n",
          this_player()->query("name"),this_player()->query("id"),
          this_object()));
 

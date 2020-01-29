@@ -1,9 +1,9 @@
 #/d/huanggong/npc/wu22.c
-dbase (["age":18,"kee":100,"max_kee":100,"weapon":0,"long":"Òø°ñ°ñÑÛ¡£","eff_kee":100,"potential":1,"title":"Òø°ñ°ñÑÛ","race":"ÈËÀà","gin":100,"per":30,"spi":27,"force_factor":1,"con":15,"cor":12,"int":30,"cps":27,"mana":10,"str":30,"kar":15,"current_player":"none of us","gender":"ÄĞĞÔ","new_player":1,"name":"Îä½øÊ¿","id":"jin shi","startroom":"/d/huanggong/ywc2a","sen":100,"combat_exp":100,"max_gin":100,"daoxing":100,"no_unconcious":1,"armor":0,"attitude":"heroism","limbs":({"Í·²¿","¾±²¿","ĞØ¿Ú","ºóĞÄ","×ó¼ç","ÓÒ¼ç","×ó±Û","ÓÒ±Û","×óÊÖ","ÓÒÊÖ","Ñü¼ä","Ğ¡¸¹","×óÍÈ","ÓÒÍÈ","×ó½Å","ÓÒ½Å",}),"eff_gin":100,"actions":,"unit":"Î»","default_actions":,"max_force":10,"force":10,"short":"Îä½øÊ¿(Jin shi)","eff_sen":100,"max_mana":10,"can_speak":1,"max_sen":100,])
+dbase (["age":18,"kee":100,"max_kee":100,"weapon":0,"long":"é“¶æ¦œæ¦œçœ¼ã€‚","eff_kee":100,"potential":1,"title":"é“¶æ¦œæ¦œçœ¼","race":"äººç±»","gin":100,"per":30,"spi":27,"force_factor":1,"con":15,"cor":12,"int":30,"cps":27,"mana":10,"str":30,"kar":15,"current_player":"none of us","gender":"ç”·æ€§","new_player":1,"name":"æ­¦è¿›å£«","id":"jin shi","startroom":"/d/huanggong/ywc2a","sen":100,"combat_exp":100,"max_gin":100,"daoxing":100,"no_unconcious":1,"armor":0,"attitude":"heroism","limbs":({"å¤´éƒ¨","é¢ˆéƒ¨","èƒ¸å£","åå¿ƒ","å·¦è‚©","å³è‚©","å·¦è‡‚","å³è‡‚","å·¦æ‰‹","å³æ‰‹","è…°é—´","å°è…¹","å·¦è…¿","å³è…¿","å·¦è„š","å³è„š",}),"eff_gin":100,"actions":,"unit":"ä½","default_actions":,"max_force":10,"force":10,"short":"æ­¦è¿›å£«(Jin shi)","eff_sen":100,"max_mana":10,"can_speak":1,"max_sen":100,])
 skills (["dodge":1,"sword":1,"unarmed":1,"parry":1,"spells":1,"force":1,])
 learned (["dodge":0,"sword":0,"unarmed":0,"parry":0,"spells":0,"force":0,])
 skill_map ([])
-categories ({"½ğ°ñ","Òø°ñ","Í­°ñ","Ìú°ñ","Îı°ñ",})
-positions ({"×´Ôª","°ñÑÛ","Ì½»¨",})
+categories ({"é‡‘æ¦œ","é“¶æ¦œ","é“œæ¦œ","é“æ¦œ","é”¡æ¦œ",})
+positions ({"çŠ¶å…ƒ","æ¦œçœ¼","æ¢èŠ±",})
 limits ({200000,100000,50000,10000,1000,})
 rooms ({"b","a","c",})

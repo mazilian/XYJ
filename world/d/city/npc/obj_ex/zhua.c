@@ -4,9 +4,9 @@ inherit DAGGER;
 
 void create()
 {
-  set_name("¶ÌÌú×¦", ({ "tie zhua", "zhua", "dagger" }) );
+  set_name("çŸ­é“çˆª", ({ "tie zhua", "zhua", "dagger" }) );
   init_dagger(25);
-  set("unit", "¸ù");
+  set("unit", "æ ¹");
   set_weight(300);
   if( clonep() )
      set_default_object(__FILE__);
@@ -15,11 +15,11 @@ void create()
     set("material", "tron");
 
   }
-  set("wield_msg","$NÄÃÆğ$nÎÕÔÚÊÖÀï¡£\n");
+  set("wield_msg","$Næ‹¿èµ·$næ¡åœ¨æ‰‹é‡Œã€‚\n");
   set("no_sell",1);
-				set("no_drop","È¥À¬»ø¶Ñ¶ª°É£¬ÂÒÈÓ»áÎÛÈ¾»·¾³!\n");
-				set("no_give","×Ü¹Ü·¢µÄ×°±¸£¬¿É²»ÄÜÂÒËÍÈËÓ´£¡\n");
-				set("no_get","ÏëÄÃ×Ü¹Ü¿ò¿ò·¢µÄ×°±¸£¿×öÃÎ°É!\n");
+				set("no_drop","å»åƒåœ¾å †ä¸¢å§ï¼Œä¹±æ‰”ä¼šæ±¡æŸ“ç¯å¢ƒ!\n");
+				set("no_give","æ€»ç®¡å‘çš„è£…å¤‡ï¼Œå¯ä¸èƒ½ä¹±é€äººå“Ÿï¼\n");
+				set("no_get","æƒ³æ‹¿æ€»ç®¡æ¡†æ¡†å‘çš„è£…å¤‡ï¼Ÿåšæ¢¦å§!\n");
   setup();
 }
 

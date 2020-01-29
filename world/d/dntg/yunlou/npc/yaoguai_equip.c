@@ -15,28 +15,28 @@ string give_equip(object me,object guai)
   if (lev == 4 )
 	 { 
 	  command_function("rumor "+ 
-	    "ÌıËµ"+me->query("name")+"½µ·şÁË"+guai->query("name")+"»ñµÃÁËÒâÍâ¾ªÏ²£¡");
+	    "å¬è¯´"+me->query("name")+"é™æœäº†"+guai->query("name")+"è·å¾—äº†æ„å¤–æƒŠå–œï¼");
 	 }
 	  else
 	  {
 		  command_function("rumor "+ 
-	    "ÌıËµ"+me->query("name")+"½µ·şÁË"+guai->query("name")+"»ñµÃÁËÒâÍâÊÕ»ñ£¡");
+	    "å¬è¯´"+me->query("name")+"é™æœäº†"+guai->query("name")+"è·å¾—äº†æ„å¤–æ”¶è·ï¼");
 	  }
   
 	  
 	  if (eq->move(me))
       {
-	  tell_object(me,"ÄãµÃµ½ÁËÒ»¼ş×°±¸£¡\n");
+	  tell_object(me,"ä½ å¾—åˆ°äº†ä¸€ä»¶è£…å¤‡ï¼\n");
 	  }
       else 
 	  {
 		  if(eq->move(environment(guai)))
-             tell_object(environment(guai),"Ò»¼ş×°±¸µôÁËÏÂÀ´£¡\n");
+             tell_object(environment(guai),"ä¸€ä»¶è£…å¤‡æ‰äº†ä¸‹æ¥ï¼\n");
 		  else
 		  {
 			  eq->move("/d/city/kezhen.c");
 			  tell_object(environment(eq),
-                        "ÅéµØÒ»Éù£¬ÌìÉÏµôÏÂÒ»¸ö¶«Î÷£¡\n");
+                        "ç °åœ°ä¸€å£°ï¼Œå¤©ä¸Šæ‰ä¸‹ä¸€ä¸ªä¸œè¥¿ï¼\n");
 
 		  }
 

@@ -11,35 +11,35 @@ if( !target
 ||      !target->is_character()
 ||      target->is_corpse()
 ||      target==me)
-return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹ÕâÒ»ÕÐ¡¸´óÄ®Ñã¸è¡¹£¿\n");
+return notify_fail("ä½ è¦å¯¹è°æ–½å±•è¿™ä¸€æ‹›ã€Œå¤§æ¼ é›æ­Œã€ï¼Ÿ\n");
 if(!me->is_fighting())
-return notify_fail("¡¸´óÄ®Ñã¸è¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ£¡\n");
+return notify_fail("ã€Œå¤§æ¼ é›æ­Œã€åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ï¼\n");
 if((int)me->query("max_force") < 500 )
-return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿï¼\n");
 if((int)me->query("force") < 500 )
-return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¡\n");
+return notify_fail("ä½ çš„å†…åŠ›ä¸è¶³ï¼\n");
 if((int)me->query("sen") < 500 )
-return notify_fail("ÄãµÄ¾«Éñ²»×ã£¬Ã»·¨×ÓÊ©ÓÃÍâ¹¦£¡\n");
+return notify_fail("ä½ çš„ç²¾ç¥žä¸è¶³ï¼Œæ²¡æ³•å­æ–½ç”¨å¤–åŠŸï¼\n");
 if((int)me->query_skill("yange-blade", 1) < 80)
-return notify_fail("ÄãµÄÑã¸èµ¶·¨¼¶±ð»¹²»¹»£¬Ê¹ÓÃÕâÒ»ÕÐ»áÓÐÀ§ÄÑ£¡\n");
+return notify_fail("ä½ çš„é›æ­Œåˆ€æ³•çº§åˆ«è¿˜ä¸å¤Ÿï¼Œä½¿ç”¨è¿™ä¸€æ‹›ä¼šæœ‰å›°éš¾ï¼\n");
 if (me->query_skill_mapped("force")!="zhenyuan-force")
-return notify_fail("´óÄ®Ñã¸è±ØÐëÅäºÏÕòÔªÉñ¹¦²ÅÄÜÊ¹ÓÃ¡£\n");
+return notify_fail("å¤§æ¼ é›æ­Œå¿…é¡»é…åˆé•‡å…ƒç¥žåŠŸæ‰èƒ½ä½¿ç”¨ã€‚\n");
 
 me->delete("env/brief_message");
 target->delete("env/brief_message");
 
-message_vision(HIR"\n$N´óºÈÒ»Éù,Ö»¼û·ÉÉ³×ßÊ¯,´óÑãÄÏÐÐ,¡¸´óÄ®Ñã¸è¡¹Ò»ÕÐÒ»ÆøºÇ³É!!!\n"NOR,me,target);
+message_vision(HIR"\n$Nå¤§å–ä¸€å£°,åªè§é£žæ²™èµ°çŸ³,å¤§é›å—è¡Œ,ã€Œå¤§æ¼ é›æ­Œã€ä¸€æ‹›ä¸€æ°”å‘µæˆ!!!\n"NOR,me,target);
 
-// message_vision( HIY  "¹Â³ÇÂäÈÕ£¡\n" NOR,me,target);
+// message_vision( HIY  "å­¤åŸŽè½æ—¥ï¼\n" NOR,me,target);
 me->set_temp("yange_perform", 1);
 COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
-// message_vision( HIC  "´óÄ®ÇîÇï£¡\n" NOR,me,target);
+// message_vision( HIC  "å¤§æ¼ ç©·ç§‹ï¼\n" NOR,me,target);
 me->set_temp("yange_perform", 2);
 COMBAT_D->do_attack(me, target, me->query_temp("weapon")); 
-// message_vision( HIG  "±ß·çÆ®Ò¡£¡\n" NOR,me,target);
+// message_vision( HIG  "è¾¹é£Žé£˜æ‘‡ï¼\n" NOR,me,target);
 me->set_temp("yange_perform", 4);
 COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
-// message_vision( HIW  "ÈûÑãÄÏ·É£¡\n" NOR,me,target);
+// message_vision( HIW  "å¡žé›å—é£žï¼\n" NOR,me,target);
 me->set_temp("yange_perform", 6);
 COMBAT_D->do_attack(me, target, me->query_temp("weapon"));       
 me->delete_temp("yange_perform");      

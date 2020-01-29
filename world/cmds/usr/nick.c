@@ -10,10 +10,10 @@ int main(object me, string arg)
 	int i;
 	string newarg, str1, str2;
 	
-	if( !arg ) return notify_fail("��Ҫ���Լ�ȡʲô�ºţ�\n");
+	if( !arg ) return notify_fail("你要替自己取什么绰号？\n");
 	
-if ( me->query("nickname")=="���˷绯�ѱ���ֹ"NOR )
-return notify_fail("����ʱ�������ôº�!\n");
+if ( me->query("nickname")=="有伤风化已被禁止"NOR )
+return notify_fail("你暂时不能设置绰号!\n");
 	if( arg=="none" ) {
 	me->delete("nickname");
 	return 1;
@@ -21,7 +21,7 @@ return notify_fail("����ʱ�������ôº�!\n");
 
 	while(i--) {
                	if( arg[i]<' ' ) {
-                       	return notify_fail("�Բ������ͷ�β����ÿ�����Ԫ��\n");
+                       	return notify_fail("对不起，你的头衔不能用控制字元。\n");
                	}
        	}
 
@@ -49,7 +49,7 @@ return notify_fail("����ʱ�������ôº�!\n");
 
 if ( (i = strlen(newarg)) > 30 )
 		return notify_fail
-		    ("��Ĵº�̫���ˣ���һ����һ��ġ�����һ��ġ�\n");
+		    ("你的绰号太长了，想一个短一点的、响亮一点的。\n");
 
 	me->set("nickname", arg + NOR);
 	write("Ok.\n");
@@ -58,24 +58,24 @@ if ( (i = strlen(newarg)) > 30 )
 int help(object me)
 {
         write(@HELP
-ָ���ʽ : nick <���, �º�>
-	   nick none	ȡ��
+指令格式 : nick <外号, 绰号>
+	   nick none	取消
  
-���ָ���������Ϊ�Լ�ȡһ�����������Ż�ͷ�Σ������ϣ���ڴº���
-ʹ�� ANSI �Ŀ�����Ԫ�ı���ɫ�����������µĿ����ִ���
+这个指令可以让你为自己取一个响亮的名号或头衔，你如果希望在绰号中
+使用 ANSI 的控制字元改变颜色，可以用以下的控制字串：
 
 HELP +
-"$BLK$ - "BLK"��ɫ"NOR"		$NOR$ - �ָ�������ɫ\n"+
-"$RED$ - "RED"��ɫ"NOR"		$HIR$ - "HIR"����ɫ"NOR"\n"+
-"$GRN$ - "GRN"��ɫ"NOR"		$HIG$ - "HIG"����ɫ"NOR"\n"+
-"$YEL$ - "YEL"����ɫ"NOR"		$HIY$ - "HIY"��ɫ"NOR"\n"+
-"$BLU$ - "BLU"����ɫ"NOR"		$HIB$ - "HIB"��ɫ"NOR"\n"+
-"$MAG$ - "MAG"ǳ��ɫ"NOR"		$HIM$ - "HIM"�ۺ�ɫ"NOR"\n"+
-"$CYN$ - "CYN"����ɫ"NOR"		$HIC$ - "HIC"����ɫ"NOR"\n"+
-"$WHT$ - "WHT"ǳ��ɫ"NOR"		$HIW$ - "HIW"��ɫ"NOR"\n"+
+"$BLK$ - "BLK"黑色"NOR"		$NOR$ - 恢复正常颜色\n"+
+"$RED$ - "RED"红色"NOR"		$HIR$ - "HIR"亮红色"NOR"\n"+
+"$GRN$ - "GRN"绿色"NOR"		$HIG$ - "HIG"亮绿色"NOR"\n"+
+"$YEL$ - "YEL"土黄色"NOR"		$HIY$ - "HIY"黄色"NOR"\n"+
+"$BLU$ - "BLU"深蓝色"NOR"		$HIB$ - "HIB"蓝色"NOR"\n"+
+"$MAG$ - "MAG"浅紫色"NOR"		$HIM$ - "HIM"粉红色"NOR"\n"+
+"$CYN$ - "CYN"蓝绿色"NOR"		$HIC$ - "HIC"天青色"NOR"\n"+
+"$WHT$ - "WHT"浅灰色"NOR"		$HIW$ - "HIW"白色"NOR"\n"+
 @HELP
  
-����ϵͳ�Զ������ִ�β�˼�һ�� $NOR$��
+其中系统自动会在字串尾端加一个 $NOR$。
 
 HELP
         );

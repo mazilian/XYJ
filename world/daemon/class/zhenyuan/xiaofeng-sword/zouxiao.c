@@ -1,5 +1,5 @@
 // cracked by vikee 2/09/2002   vikee@263.net
-// zouxiao.c  ±Ìóï´«Çé  
+// zouxiao.c  ç¢§ç®«ä¼ æƒ…  
 
 #include <ansi.h>
 inherit SSERVER;
@@ -18,38 +18,38 @@ int perform(object me, object target)
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("ÄãÒª¶ÔË­×àóï£¿\n");
+                return notify_fail("ä½ è¦å¯¹è°å¥ç®«ï¼Ÿ\n");
         
-  if(target->is_busy()) return notify_fail("¶Ô·½ÕýÃ¦×ÅÄØ£¬Ã»Ê±¼äÀíÄã£®£®£®\n");
+  if(target->is_busy()) return notify_fail("å¯¹æ–¹æ­£å¿™ç€å‘¢ï¼Œæ²¡æ—¶é—´ç†ä½ ï¼Žï¼Žï¼Ž\n");
         if( !me->is_fighting(target) )
-                return notify_fail("´ó¼Ò¶¼ºÜÃ¦£¬Ã»ÈËÓÐÊ±¼äÌýÄã´µ´µ´ò´ò¡£\n");
+                return notify_fail("å¤§å®¶éƒ½å¾ˆå¿™ï¼Œæ²¡äººæœ‰æ—¶é—´å¬ä½ å¹å¹æ‰“æ‰“ã€‚\n");
 
         if (!weapon || weapon->query("music/type") != "xiao")
-                return notify_fail("ÄãÊÖÀïµÄ¼Ò»ï´µ²»³öµ÷×Ó¡£\n");
+                return notify_fail("ä½ æ‰‹é‡Œçš„å®¶ä¼™å¹ä¸å‡ºè°ƒå­ã€‚\n");
 
         if (me->query_skill_mapped("force")!="zhenyuan-force")
-                return notify_fail("Ö»ÓÐÓÃÕòÔªÉñ¹¦²ÅÄÜÔËÁ¦´µóï¡£\n");
+                return notify_fail("åªæœ‰ç”¨é•‡å…ƒç¥žåŠŸæ‰èƒ½è¿åŠ›å¹ç®«ã€‚\n");
 
         if (me->query_skill("xiaofeng-sword",1)<50)
-                return notify_fail("ÄãµÄÏþ·ç²ÐÔÂ½£»¹µÃÔÙÁ·Á·¡£\n");
+                return notify_fail("ä½ çš„æ™“é£Žæ®‹æœˆå‰‘è¿˜å¾—å†ç»ƒç»ƒã€‚\n");
 
         if (me->query_skill("zouxiao",1)<60)
-                return notify_fail("Äã×àóïµÄ¹¦·ò»¹²»¹»£¬ÔÙºÃºÃÁ·Á·°É¡£\n");
+                return notify_fail("ä½ å¥ç®«çš„åŠŸå¤«è¿˜ä¸å¤Ÿï¼Œå†å¥½å¥½ç»ƒç»ƒå§ã€‚\n");
 
         if (target->query_skill("literate",1)<50)
-                return notify_fail("¶ÔËû´µóï£¿»¹²»Èç¶ÔÅ£µ¯ÇÙÄØ¡£\n");
+                return notify_fail("å¯¹ä»–å¹ç®«ï¼Ÿè¿˜ä¸å¦‚å¯¹ç‰›å¼¹ç´å‘¢ã€‚\n");
 
         if((int)me->query("force") < 200 )
-                return notify_fail("ÄãµÄÄÚÁ¦»¹²»µ½»ðºò¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›è¿˜ä¸åˆ°ç«å€™ã€‚\n");
 
         if((int)me->query("kee") < 200 )
-                return notify_fail("ÄãµÄÌåÁ¦ÒÑ¾­²»¹»ÁË£¡\n");
+                return notify_fail("ä½ çš„ä½“åŠ›å·²ç»ä¸å¤Ÿäº†ï¼\n");
 
         if((int)me->query("sen") < 200 )
-                return notify_fail("ÄãÎÞ·¨¼¯ÖÐ¾«Á¦£¡\n");
+                return notify_fail("ä½ æ— æ³•é›†ä¸­ç²¾åŠ›ï¼\n");
 
-        msg = HIC "\n$N¾ÙÆð"+weapon->query("name")+HIW"£¬¶Ô×Å$n×àÆðÁËÒ»Çú£¬óïÉùÆàÁ¹£¬"
-                  +"ËÆÊÇÌ¾Ï¢£¬ÓÖËÆ¿ÞÆü£¬¸ú×ÅóïÉù²ü¶¶£¬·¢³öÉªÉªÉª¶ÏÐøÖ®Òô£¬ÈçÊÇÒ»µÎµÎÐ¡ÓêÂäÉÏÊ÷Ò¶¡£\n" NOR,
+        msg = HIC "\n$Nä¸¾èµ·"+weapon->query("name")+HIW"ï¼Œå¯¹ç€$nå¥èµ·äº†ä¸€æ›²ï¼Œç®«å£°å‡„å‡‰ï¼Œ"
+                  +"ä¼¼æ˜¯å¹æ¯ï¼Œåˆä¼¼å“­æ³£ï¼Œè·Ÿç€ç®«å£°é¢¤æŠ–ï¼Œå‘å‡ºç‘Ÿç‘Ÿç‘Ÿæ–­ç»­ä¹‹éŸ³ï¼Œå¦‚æ˜¯ä¸€æ»´æ»´å°é›¨è½ä¸Šæ ‘å¶ã€‚\n" NOR,
 
         me->add("sen", -150);
         me->add("kee", -150);
@@ -71,14 +71,14 @@ int perform(object me, object target)
 
         if( random(100*ap/dp) <  2 ) 
             {
-             msg += HIW "$n³å×ÅÄã±ÉÒâµÄÀäÐ¦µÀ£º¾ÍÕâµã±¾ÊÂ£¬Ò²À´êÝÐ¦´ó·½£¿"
-                        +"$N¶ÙÊ±ÐßÀ¢ÄÑµ±¡£\n"NOR;
+             msg += HIW "$nå†²ç€ä½ é„™æ„çš„å†·ç¬‘é“ï¼šå°±è¿™ç‚¹æœ¬äº‹ï¼Œä¹Ÿæ¥è´»ç¬‘å¤§æ–¹ï¼Ÿ"
+                        +"$Né¡¿æ—¶ç¾žæ„§éš¾å½“ã€‚\n"NOR;
              message_vision(msg, me, target);
              me->start_busy(3+random(5));
             } 
         else if( random(100*ap/dp) <  20 )
             {
-             msg += HIW "¿É$n³å¶ú²»ÎÅ£¬²»ÎªËù¶¯¡£\n"NOR;
+             msg += HIW "å¯$nå†²è€³ä¸é—»ï¼Œä¸ä¸ºæ‰€åŠ¨ã€‚\n"NOR;
              message_vision(msg, me, target);
              me->start_busy(random(3));
             } 
@@ -87,7 +87,7 @@ int perform(object me, object target)
             {
      //      target->receive_damage("kee",damage,me);
              target->receive_damage("sen",damage,me);
-             msg += HIW "$nÌýÁËóïÉù£¬ÐÄÖÐÄªÃûÆäÃîµÄ¸Ðµ½Ò»ÕóËá³þ£¬±¯´ÓÖÐÀ´£¬ÀáË®Õýä¹ä¹ÂäÏÂ¡£\n"NOR;
+             msg += HIW "$nå¬äº†ç®«å£°ï¼Œå¿ƒä¸­èŽ«åå…¶å¦™çš„æ„Ÿåˆ°ä¸€é˜µé…¸æ¥šï¼Œæ‚²ä»Žä¸­æ¥ï¼Œæ³ªæ°´æ­£æ¶”æ¶”è½ä¸‹ã€‚\n"NOR;
              message_vision(msg, me, target);
              COMBAT_D->report_status(target); 
              target->start_busy(5+random(5));

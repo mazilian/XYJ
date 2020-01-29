@@ -12,19 +12,19 @@ inherit F_DBASE;
 
 int wiz_lock_level = WIZ_LOCK_LEVEL;
 string *banned_name = ({
-	"Äã", "ÎÒ", "Ëû", "Ëı", "Ëü", "Ëü", "½­ÔóÃñ", "µËĞ¡Æ½", "ÀîÅô", "ÖìéÅ»ù",
+	"ä½ ", "æˆ‘", "ä»–", "å¥¹", "å®ƒ", "å®ƒ", "æ±Ÿæ³½æ°‘", "é‚“å°å¹³", "æé¹", "æœ±æ¦•åŸº",
 });
 string *legalid;
 
-string *default_name=({"ºï×Ó","ºüÀê", "ÀÏÊó", 
-	               "òßòÑ","¼×³æ","ºûµû","òåòå",
-		       "ó«òë","Æ°³æ","»È³æ","ó¬ó°",
-			"Å£", "ÀÏ»¢", "ÍÃ×Ó",
-			"¹·","Ã¨ßä","Ñò","Öí",
-			"ÂæÍÕ","ÎÚ¹ê","Éß","Óã¶ù",
-			"Â¹","Âí","Ï¬Å£"});
-string *default_prefix=({"Ğ¡","´ó","ÀÏ","°×","»Æ","ºÚ","»¨","»Ò",
-	"Ö½","Ä¾Í·","Ê¯Í·","Äà","»ÆÃ«","ºÚ½Ç","ºÚ·ç",});
+string *default_name=({"çŒ´å­","ç‹ç‹¸", "è€é¼ ", 
+	               "èœ»èœ“","ç”²è™«","è´è¶","èˆèˆ",
+		       "è³è‚","ç“¢è™«","è—è™«","èŸ‹èŸ€",
+			"ç‰›", "è€è™", "å…”å­",
+			"ç‹—","çŒ«å’ª","ç¾Š","çŒª",
+			"éª†é©¼","ä¹Œé¾Ÿ","è›‡","é±¼å„¿",
+			"é¹¿","é©¬","çŠ€ç‰›"});
+string *default_prefix=({"å°","å¤§","è€","ç™½","é»„","é»‘","èŠ±","ç°",
+	"çº¸","æœ¨å¤´","çŸ³å¤´","æ³¥","é»„æ¯›","é»‘è§’","é»‘é£",});
 
 int new_start=0;
 
@@ -47,7 +47,7 @@ private void confirm_gift(string yn,object ob,object user);
 void create() 
 {
 	seteuid(getuid());
-	set("channel_id", "Á¬Ïß¾«Áé");
+	set("channel_id", "è¿çº¿ç²¾çµ");
         set("id", "logind");
 
 	legalid = explode(read_file(BANNED_ID), "\n");
@@ -66,7 +66,7 @@ void logind_user_log()
             ((total=total_count)?total:user)+"\n"+
             user+"\n"+
             UPTIME_CMD->report_str()+"\n"+
-            "Î÷ÓÎ¼Ç\n");
+            "è¥¿æ¸¸è®°\n");
     call_out("logind_user_log",600);
 }
 
@@ -103,10 +103,10 @@ void logon(object ob)
 
 #ifdef GB_AND_BIG5
     cat(BANNER);
-    write("            Î÷ÓÎ¼Ç»¶Ó­ÄúÀ´·Ã£¡Ê¹ÓÃ¹ú±êÂëµÄÍæ¼ÒÇë¼üÈë£ºgb\n");
-    write("           ¦è´å°OÅwªï±z¨Ó³X¡I¨Ï¥Î¤j¤­½Xªºª±®a½ĞÁä¤J¡Gbig5\n\n");
+    write("            è¥¿æ¸¸è®°æ¬¢è¿æ‚¨æ¥è®¿ï¼ä½¿ç”¨å›½æ ‡ç çš„ç©å®¶è¯·é”®å…¥ï¼šgb\n");
+    write("           ï¹æ‘ç™˜èˆ§îçœ¤ã„“ç î“ã„ãƒî˜ãçµî€™î€ç”¢å«é¾„î—°î“big5\n\n");
     write("    [If there is no response after ENTER, please try Ctrl-ENTER]\n");
-    write("        [ÌáÊ¾£ºÈç¹û°´ENTER¼üºóÏµÍ³Ã»ÓĞÏìÓ¦£¬ÇëÊÔ Ctrl-ENTER]\n\n");
+    write("        [æç¤ºï¼šå¦‚æœæŒ‰ENTERé”®åç³»ç»Ÿæ²¡æœ‰å“åº”ï¼Œè¯·è¯• Ctrl-ENTER]\n\n");
     write("         Welcome to Xi You Ji! Select GB or BIG5 (gb/big5):");
     input_to( (: encoding :), ob );
 #else
@@ -126,7 +126,7 @@ private void encoding(string arg, object ob)
 	
 
 	if(!arg || arg=="") {
-	    write("\nSelect ¹ú±êÂë GB or ¤j¤­½X BIG5 (gb/big5):");
+	    write("\nSelect å›½æ ‡ç  GB or î˜ãçµ BIG5 (gb/big5):");
 	    input_to( (: encoding :), ob );
 	    return;
 	} else if(arg[0..0]=="g" || arg[0..0]=="G")
@@ -134,7 +134,7 @@ private void encoding(string arg, object ob)
 	else if(arg[0..0]=="b" || arg[0..0]=="B")
 	    encode=1;
 	else {
-	    write("\nSelect ¹ú±êÂë GB or ¤j¤­½X BIG5 (gb/big5):");
+	    write("\nSelect å›½æ ‡ç  GB or î˜ãçµ BIG5 (gb/big5):");
 	    input_to( (: encoding :), ob );
 	    return;
 	}
@@ -166,7 +166,7 @@ private void encoding(string arg, object ob)
 // try strict ban here...weiqi.
 
 	if ("/adm/daemons/band"->is_strict_banned(query_ip_number(ob)) == 1) {
-	   	write("ÄúµÄµØÖ·ÔÚ±¾ MUD Ö®ĞÅÓş±»ÈËÆÆ»µÁË¡£\n");
+	   	write("æ‚¨çš„åœ°å€åœ¨æœ¬ MUD ä¹‹ä¿¡èª‰è¢«äººç ´åäº†ã€‚\n");
 	   	destruct(ob);
 		log_file( "ALLCONT", sprintf("kicked out, strict_banned\n"));
 	   	return;
@@ -206,10 +206,10 @@ private void encoding(string arg, object ob)
 	// snowcat Mar 11 1998
 	ttl_cnt = total_players();
 	if (ttl_cnt == 0) 
-		printf("Ä¿Ç°"); // info not available
+		printf("ç›®å‰"); // info not available
 	else 
-		printf("Ä¿Ç°¹²ÓĞ%dÎ»Íæ¼ÒÔÚÏßÉÏ¡£±¾Õ¾", ttl_cnt );
-	printf("¹²ÓĞ%dÎ»Î×Ê¦¡¢%dÎ»Íæ¼Ò£¬ÒÔ¼°%dÎ»ÔÚ³¢ÊÔÁ¬Ïß¡£\n\n",
+		printf("ç›®å‰å…±æœ‰%dä½ç©å®¶åœ¨çº¿ä¸Šã€‚æœ¬ç«™", ttl_cnt );
+	printf("å…±æœ‰%dä½å·«å¸ˆã€%dä½ç©å®¶ï¼Œä»¥åŠ%dä½åœ¨å°è¯•è¿çº¿ã€‚\n\n",
 		wiz_cnt, ppl_cnt, login_cnt );
 
 	// mon 11/7/98
@@ -224,7 +224,7 @@ private void encoding(string arg, object ob)
 // reduce number of pending login users.
 #ifdef MAX_USERS
 	if(sizeof(usr)>(MAX_USERS+10)) {
-	    write("¶Ô²»Æğ£¬"+MUD_NAME+"µÄÍæ¼ÒÒÑ¾­Ì«¶àÁË£¬Çë´ı»á¶ùÔÙÀ´¡£\n");
+	    write("å¯¹ä¸èµ·ï¼Œ"+MUD_NAME+"çš„ç©å®¶å·²ç»å¤ªå¤šäº†ï¼Œè¯·å¾…ä¼šå„¿å†æ¥ã€‚\n");
 	    destruct(ob);
 	    return;
 	}
@@ -236,12 +236,12 @@ private void encoding(string arg, object ob)
 	//mon 10/15/97 to prevent flooding illegal ID after login.
 
 #ifndef GB_AND_BIG5
-        write("[ÌáÊ¾£ºÈç¹û°´ENTER¼üºóÏµÍ³Ã»ÓĞÏìÓ¦£¬ÇëÊÔ Ctrl-ENTER]\n\n");
+        write("[æç¤ºï¼šå¦‚æœæŒ‰ENTERé”®åç³»ç»Ÿæ²¡æœ‰å“åº”ï¼Œè¯·è¯• Ctrl-ENTER]\n\n");
 #endif
         
 	//we do not welcome young kid playing mud. weiqi...971220.
-	write("¼øÓÚÑ§ÉúµÄÖ÷ÒªÈÎÎñÊÇÑ§Ï°£¬±¾ÓÎÏ·²»»¶Ó­ÖĞĞ¡Ñ§ÉúÀ´Íæ¡£\n");
-	write("ÄúÊÇ·ñÊÇÖĞĞ¡Ñ§Ñ§Éú»òÄêÁä¸üĞ¡£¿(yes/no)");
+	write("é‰´äºå­¦ç”Ÿçš„ä¸»è¦ä»»åŠ¡æ˜¯å­¦ä¹ ï¼Œæœ¬æ¸¸æˆä¸æ¬¢è¿ä¸­å°å­¦ç”Ÿæ¥ç©ã€‚\n");
+	write("æ‚¨æ˜¯å¦æ˜¯ä¸­å°å­¦å­¦ç”Ÿæˆ–å¹´é¾„æ›´å°ï¼Ÿ(yes/no)");
 	input_to( (: if_young :), ob );
 }
 
@@ -260,26 +260,26 @@ private void if_young(string arg, object ob)
         }
 
         if(arg=="\n" || arg=="") {
-	    write("ÄúÊÇ·ñÊÇÖĞĞ¡Ñ§Ñ§Éú»òÄêÁä¸üĞ¡£¿(yes/no)");
+	    write("æ‚¨æ˜¯å¦æ˜¯ä¸­å°å­¦å­¦ç”Ÿæˆ–å¹´é¾„æ›´å°ï¼Ÿ(yes/no)");
 	    input_to( (: if_young :), ob );
 	    return;
 	}
 
 	if( arg[0..0] == "y" || arg[0..0] == "Y" )
 	{
-		write("\nºÃ£¬¸Ï½ôÈ¥Ñ§Ï°²ÅÊÇÕıµÀÀí¡£\n");
+		write("\nå¥½ï¼Œèµ¶ç´§å»å­¦ä¹ æ‰æ˜¯æ­£é“ç†ã€‚\n");
 		destruct(ob);
 		return;
 	}
 
 	if( arg[0..0] != "n" && arg[0..0] != "N" ) {
-	    write("ÄúÊÇ·ñÊÇÖĞĞ¡Ñ§Ñ§Éú»òÄêÁä¸üĞ¡£¿(yes/no)");
+	    write("æ‚¨æ˜¯å¦æ˜¯ä¸­å°å­¦å­¦ç”Ÿæˆ–å¹´é¾„æ›´å°ï¼Ÿ(yes/no)");
 	    input_to( (: if_young :), ob );
 	    return;
 	}
 
 	cat(XYJ_SITES);
-	write("\nÄúµÄÓ¢ÎÄÃû×Ö£º£¨ĞÂÍæ¼ÒÇë¼üÈë new ×¢²á£©");
+	write("\næ‚¨çš„è‹±æ–‡åå­—ï¼šï¼ˆæ–°ç©å®¶è¯·é”®å…¥ new æ³¨å†Œï¼‰");
 	input_to( (: get_id :), ob);
 }
 
@@ -307,7 +307,7 @@ private void get_id(string arg, object ob)
 
 	arg = lower_case(arg);
 	if( !check_legal_id(arg, 0)) {
-		write("ÄúµÄÓ¢ÎÄÃû×Ö£º");
+		write("æ‚¨çš„è‹±æ–‡åå­—ï¼š");
 		input_to("get_id", ob);
 		return;
 	}
@@ -321,7 +321,7 @@ private void get_id(string arg, object ob)
 		// i.e., ppl exist. (has nothing to do with whether it interactive) -- mon 3/15/99
 		//if( !ppl || !interactive(ppl) ) 
 		if( !ppl ) {
-		  write("¶Ô²»Æğ£¬"+MUD_NAME+"µÄÍæ¼ÒÒÑ¾­Ì«¶àÁË£¬Çë´ı»á¶ùÔÙÀ´¡£\n");
+		  write("å¯¹ä¸èµ·ï¼Œ"+MUD_NAME+"çš„ç©å®¶å·²ç»å¤ªå¤šäº†ï¼Œè¯·å¾…ä¼šå„¿å†æ¥ã€‚\n");
 		  destruct(ob);
 		  return;
 		} 
@@ -329,8 +329,8 @@ private void get_id(string arg, object ob)
 #endif
 
 	if( wiz_level(arg) < wiz_lock_level ) {
-		write("¶Ô²»Æğ£¬" + MUD_NAME + "Ä¿Ç°ÏŞÖÆÎ×Ê¦µÈ¼¶ " + WIZ_LOCK_LEVEL
-			+ " ÒÔÉÏµÄÈË²ÅÄÜÁ¬Ïß¡£\n");
+		write("å¯¹ä¸èµ·ï¼Œ" + MUD_NAME + "ç›®å‰é™åˆ¶å·«å¸ˆç­‰çº§ " + WIZ_LOCK_LEVEL
+			+ " ä»¥ä¸Šçš„äººæ‰èƒ½è¿çº¿ã€‚\n");
 		destruct(ob);
 		return;
 	}
@@ -373,7 +373,7 @@ private void get_id(string arg, object ob)
 	}
 
       if(NowLogin>=MaxLimit) {
-	      write(sprintf("¶Ô²»Æğ£¬´ÓÄãµÄIPµØÖ·²»ÄÜÍ¬Ê±µÇÂ¼%sÎ»ÈËÎï¡£\n",
+	      write(sprintf("å¯¹ä¸èµ·ï¼Œä»ä½ çš„IPåœ°å€ä¸èƒ½åŒæ—¶ç™»å½•%sä½äººç‰©ã€‚\n",
 		      chinese_number(MaxLimit+1)));
               destruct(ob);
               return;
@@ -392,23 +392,23 @@ private void get_id(string arg, object ob)
 //		confirm_id("Yes", ob);
 //		return;
 	} else if (arg=="new") { // new player login
-		write("\nÇëÊäÈë×¢²áÑûÇëÂë£º");
+		write("\nè¯·è¾“å…¥æ³¨å†Œé‚€è¯·ç ï¼š");
 		input_to("get_invite_code",ob);
 		return;
 	} else if( file_size(ob->query_save_file() 
 		    + __SAVE_EXTENSION__) >= 0 ) {
 		if( ob->restore() ) {
-			write("ÇëÊäÈëÏàÓ¦ÃÜÂë£º");
+			write("è¯·è¾“å…¥ç›¸åº”å¯†ç ï¼š");
 			input_to("get_passwd", 1, ob);
 			return;
 		}
-		write("ÄúµÄÈËÎï´¢´æµµ³öÁËÒ»Ğ©ÎÊÌâ£¬ÇëÀûÓÃ guest ÈËÎïÍ¨ÖªÎ×Ê¦´¦Àí¡£\n");
+		write("æ‚¨çš„äººç‰©å‚¨å­˜æ¡£å‡ºäº†ä¸€äº›é—®é¢˜ï¼Œè¯·åˆ©ç”¨ guest äººç‰©é€šçŸ¥å·«å¸ˆå¤„ç†ã€‚\n");
 		destruct(ob);
 		return;
 	} 
 	
-        write("Ã»ÓĞÕâ¸öÍæ¼Ò£®£®£®\n");
-	write("ÄúµÄÓ¢ÎÄÃû×Ö£º£¨ĞÂÍæ¼ÒÇë¼üÈë new ×¢²á£©");
+        write("æ²¡æœ‰è¿™ä¸ªç©å®¶ï¼ï¼ï¼\n");
+	write("æ‚¨çš„è‹±æ–‡åå­—ï¼šï¼ˆæ–°ç©å®¶è¯·é”®å…¥ new æ³¨å†Œï¼‰");
 	input_to("get_id", ob);
 	return;
 }
@@ -421,7 +421,7 @@ private void get_invite_code(string arg, object ob)
 
 	if(arg == "")
 	{
-		write("\nÇëÊäÈë×¢²áÑûÇëÂë£º");
+		write("\nè¯·è¾“å…¥æ³¨å†Œé‚€è¯·ç ï¼š");
 		input_to("get_invite_code", ob);
 		return;
 	}
@@ -438,23 +438,23 @@ private void get_invite_code(string arg, object ob)
 	}
 	if(!npc)
 	{
-		write("\nÏµÍ³Òì³££¬ÇëÉÔºòÖØÊÔ");
-		write("\nÇëÊäÈë×¢²áÑûÇëÂë£º");
+		write("\nç³»ç»Ÿå¼‚å¸¸ï¼Œè¯·ç¨å€™é‡è¯•");
+		write("\nè¯·è¾“å…¥æ³¨å†Œé‚€è¯·ç ï¼š");
 		input_to("get_invite_code", ob);
 		return;
 	}
 	code_user = npc->query("yqm/#"+arg);
-	write("\nÊäÈëµÄ×¢²áÑûÇëÂë£º["+arg+"]["+code_user+"]");
+	write("\nè¾“å…¥çš„æ³¨å†Œé‚€è¯·ç ï¼š["+arg+"]["+code_user+"]");
 	if(!code_user)
 	{
-		write("\nÇëÊäÈë×¢²áÑûÇëÂë£º");
+		write("\nè¯·è¾“å…¥æ³¨å†Œé‚€è¯·ç ï¼š");
 		input_to("get_invite_code", ob);
 		return;
 	}
 	key = npc->query("yqm/"+code_user+"/"+arg);
 	if(!key || key != "")
 	{
-		write("\nÇëÊäÈë×¢²áÑûÇëÂë£º");
+		write("\nè¯·è¾“å…¥æ³¨å†Œé‚€è¯·ç ï¼š");
 		input_to("get_invite_code", ob);
 		return;
 	}
@@ -463,7 +463,7 @@ private void get_invite_code(string arg, object ob)
 	npc->save();
 	ob->set_temp("yqm/code", arg);
 
-	write("\nÇëÄú¸ø×Ô¼ºÈ¡Ò»¸öÓ¢ÎÄÃû×Ö£º");
+	write("\nè¯·æ‚¨ç»™è‡ªå·±å–ä¸€ä¸ªè‹±æ–‡åå­—ï¼š");
 	input_to("get_new_id",ob);
 }
 
@@ -485,14 +485,14 @@ private void get_new_id(string arg, object ob)
         }
 
         if(!arg) {
-                write("\nÇëÄú¸ø×Ô¼ºÈ¡Ò»¸öÓ¢ÎÄÃû×Ö£º");
+                write("\nè¯·æ‚¨ç»™è‡ªå·±å–ä¸€ä¸ªè‹±æ–‡åå­—ï¼š");
 		input_to("get_new_id", ob);
 		return;
         }
 
 	arg = lower_case(arg);
 	if( !check_legal_id(arg, 1)) {
-                write("\nÇëÄú¸ø×Ô¼ºÈ¡Ò»¸öÓ¢ÎÄÃû×Ö£º");
+                write("\nè¯·æ‚¨ç»™è‡ªå·±å–ä¸€ä¸ªè‹±æ–‡åå­—ï¼š");
 		input_to("get_new_id", ob);
 		return;
 	}
@@ -505,16 +505,16 @@ private void get_new_id(string arg, object ob)
 
 	ppl = find_body(arg);
 	if(ppl || arg=="guest" || arg=="new") {
-	    write("Õâ¸öÃû×ÖÒÑ¾­±»±ğµÄÍæ¼ÒÊ¹ÓÃÁË£®£®£®");
-            write("\nÇëÄú¸ø×Ô¼ºÈ¡Ò»¸öÓ¢ÎÄÃû×Ö£º");
+	    write("è¿™ä¸ªåå­—å·²ç»è¢«åˆ«çš„ç©å®¶ä½¿ç”¨äº†ï¼ï¼ï¼");
+            write("\nè¯·æ‚¨ç»™è‡ªå·±å–ä¸€ä¸ªè‹±æ–‡åå­—ï¼š");
 	    input_to("get_new_id",ob);
 	    return;
 	}
 
 	if( file_size(ob->query_save_file() 
 		    + __SAVE_EXTENSION__) >= 0 ) {
-	    write("Õâ¸öÃû×ÖÒÑ¾­±»±ğµÄÍæ¼ÒÊ¹ÓÃÁË£®£®£®");
-            write("\nÇëÄú¸ø×Ô¼ºÈ¡Ò»¸öÓ¢ÎÄÃû×Ö£º");
+	    write("è¿™ä¸ªåå­—å·²ç»è¢«åˆ«çš„ç©å®¶ä½¿ç”¨äº†ï¼ï¼ï¼");
+            write("\nè¯·æ‚¨ç»™è‡ªå·±å–ä¸€ä¸ªè‹±æ–‡åå­—ï¼š");
 	    input_to("get_new_id",ob);
 	    return;
 	} 
@@ -532,8 +532,8 @@ private void get_passwd(string pass, object ob)
 	my_pass = ob->query("password");
 	if( crypt(pass, my_pass) != my_pass ||
 	 !SECURITY_D->match_wiz_site(ob, query_ip_number(ob)) ) {
-		write("ÃÜÂë´íÎó£¡");
-		write("ÇëÖØĞÂÁ¬Ïß£¬¼üÈëÕıÈ·µÄÃÜÂë»òÁíÈ¡Ò»¸öĞÂµÄÓ¢ÎÄÃû×Ö¡£\n");
+		write("å¯†ç é”™è¯¯ï¼");
+		write("è¯·é‡æ–°è¿çº¿ï¼Œé”®å…¥æ­£ç¡®çš„å¯†ç æˆ–å¦å–ä¸€ä¸ªæ–°çš„è‹±æ–‡åå­—ã€‚\n");
 		if((id=ob->query("id")) && member_array(id,
 			SECURITY_D->get_wizlist())!=-1)
 		  log_file("wizlogin",ctime(time())+" "+id+
@@ -556,7 +556,7 @@ private void get_passwd(string pass, object ob)
 			reconnect(ob, user);
 			return;
 		}
-		write("ÄúÒª½«ÁíÒ»¸öÁ¬ÏßÖĞµÄÏàÍ¬ÈËÎï¸Ï³öÈ¥£¬È¡¶ø´úÖ®Âğ£¿(y/n)");
+		write("æ‚¨è¦å°†å¦ä¸€ä¸ªè¿çº¿ä¸­çš„ç›¸åŒäººç‰©èµ¶å‡ºå»ï¼Œå–è€Œä»£ä¹‹å—ï¼Ÿ(y/n)");
 		input_to("confirm_relogin", ob, user);
 		return;
 	}
@@ -576,7 +576,7 @@ private void get_passwd(string pass, object ob)
 	if(ob) destruct(ob);
 	return;
 
-//	write("ÇëÄúÖØĞÂ´´ÔìÕâ¸öÈËÎï¡£\n");
+//	write("è¯·æ‚¨é‡æ–°åˆ›é€ è¿™ä¸ªäººç‰©ã€‚\n");
 //	confirm_id("y", ob);
 }
 
@@ -585,7 +585,7 @@ private void confirm_relogin(string yn, object ob, object user)
 	object old_link;
 
 	if( yn=="" ) {
-		write("ÄúÒª½«ÁíÒ»¸öÁ¬ÏßÖĞµÄÏàÍ¬ÈËÎï¸Ï³öÈ¥£¬È¡¶ø´úÖ®Âğ£¿(y/n)");
+		write("æ‚¨è¦å°†å¦ä¸€ä¸ªè¿çº¿ä¸­çš„ç›¸åŒäººç‰©èµ¶å‡ºå»ï¼Œå–è€Œä»£ä¹‹å—ï¼Ÿ(y/n)");
 		input_to("confirm_relogin", ob, user);
 		return;
 	}	
@@ -593,12 +593,12 @@ private void confirm_relogin(string yn, object ob, object user)
 	if( (yn[0]!='y' && yn[0]!='Y') || !user ) {
 	    // user may be destructed during the process.
 	    // so I put in this check. mon 4/15/98
-		write("ºÃ°É£¬»¶Ó­ÏÂ´ÎÔÙÀ´¡£\n");
+		write("å¥½å§ï¼Œæ¬¢è¿ä¸‹æ¬¡å†æ¥ã€‚\n");
 		destruct(ob);
 		return;
 	} else {
-		tell_object(user, "ÓĞÈË´Ó±ğ´¦( " + query_ip_number(ob)
-			+ " )Á¬ÏßÈ¡´úÄãËù¿ØÖÆµÄÈËÎï¡£\n");
+		tell_object(user, "æœ‰äººä»åˆ«å¤„( " + query_ip_number(ob)
+			+ " )è¿çº¿å–ä»£ä½ æ‰€æ§åˆ¶çš„äººç‰©ã€‚\n");
 		log_file( "USAGE", sprintf("%s(%s) replaced by %s (%s)\n",
 		user->query("name"), user->query("id"),
 			query_ip_number(ob), ctime(time()) ) );
@@ -627,13 +627,13 @@ private void confirm_id(string yn, object ob)
 {
     /*
 	if( yn=="" ) {
-		write("Ê¹ÓÃÕâ¸öÃû×Ö½«»á´´ÔìÒ»¸öĞÂµÄÈËÎï£¬ÄúÈ·¶¨Âğ(y/n)£¿");
+		write("ä½¿ç”¨è¿™ä¸ªåå­—å°†ä¼šåˆ›é€ ä¸€ä¸ªæ–°çš„äººç‰©ï¼Œæ‚¨ç¡®å®šå—(y/n)ï¼Ÿ");
 		input_to("confirm_id", ob);
 		return;
 	}	
 
 	if( yn[0]!='y' && yn[0]!='Y' ) {
-		write("ºÃ°É£¬ÄÇÃ´ÇëÖØĞÂÊäÈëÄúµÄÓ¢ÎÄÃû×Ö£º");
+		write("å¥½å§ï¼Œé‚£ä¹ˆè¯·é‡æ–°è¾“å…¥æ‚¨çš„è‹±æ–‡åå­—ï¼š");
 		input_to("get_id", ob);
 		return;
 	}
@@ -642,13 +642,13 @@ private void confirm_id(string yn, object ob)
 
 	write( @TEXT
 
-ÇëÄú¸ø×Ô¼ºÏëÒ»¸ö·ûºÏ¡¼Î÷ÓÎ¼Ç¡½Éñ»°ÊÀ½çµÄÖĞÎÄÃû×Ö¡£Õâ
-¸öÃû×Ö½«´ú±íÄãÔÚÎ÷ÓÎ¼ÇÖĞµÄÈËÎï£¬¶øÇÒÍùºó½«²»ÄÜÔÙ¸ü¸Ä¡£
-Çë²»ÒªÈ¡Ò»Ğ©²»ÑÅ»òÊÇÈİÒ×Ôì³ÉËûÈËÀ§ÈÅµÄÃû×Ö¡£
+è¯·æ‚¨ç»™è‡ªå·±æƒ³ä¸€ä¸ªç¬¦åˆã€–è¥¿æ¸¸è®°ã€—ç¥è¯ä¸–ç•Œçš„ä¸­æ–‡åå­—ã€‚è¿™
+ä¸ªåå­—å°†ä»£è¡¨ä½ åœ¨è¥¿æ¸¸è®°ä¸­çš„äººç‰©ï¼Œè€Œä¸”å¾€åå°†ä¸èƒ½å†æ›´æ”¹ã€‚
+è¯·ä¸è¦å–ä¸€äº›ä¸é›…æˆ–æ˜¯å®¹æ˜“é€ æˆä»–äººå›°æ‰°çš„åå­—ã€‚
 
 TEXT
 	);
-	write("ÄúµÄÖĞÎÄÃû×Ö£º");
+	write("æ‚¨çš„ä¸­æ–‡åå­—ï¼š");
 	ob->set_temp("get_name",0);
 	input_to("get_name", ob);
 }
@@ -666,12 +666,12 @@ private void get_name(string arg, object ob)
 		arg=default_prefix[random(sizeof(default_prefix))]+
 		    default_name[random(sizeof(default_name))];
 
-		write("ÒòÎªÄã²»ÄÜÊäÈëÊÊµ±µÄÖĞÎÄÃû×Ö£¬ÏµÍ³Ö¸¶¨ÄãµÄÃû×ÖÎª£º"+
+		write("å› ä¸ºä½ ä¸èƒ½è¾“å…¥é€‚å½“çš„ä¸­æ–‡åå­—ï¼Œç³»ç»ŸæŒ‡å®šä½ çš„åå­—ä¸ºï¼š"+
 			arg+"\n");
-		write("ÇëÔÚ½øÈëÓÎÏ·ºóÇëÎ×Ê¦°ïÖúĞŞ¸Ä¡£\n");
+		write("è¯·åœ¨è¿›å…¥æ¸¸æˆåè¯·å·«å¸ˆå¸®åŠ©ä¿®æ”¹ã€‚\n");
 
 	    } else {
-		write("ÄúµÄÖĞÎÄÃû×Ö£º");
+		write("æ‚¨çš„ä¸­æ–‡åå­—ï¼š");
 		input_to("get_name", ob);
 		return;
 	    }
@@ -679,7 +679,7 @@ private void get_name(string arg, object ob)
 
 	printf("%O\n", ob);
 	ob->set("name", arg);
-	write("ÇëÉè¶¨ÄúµÄÃÜÂë£º");
+	write("è¯·è®¾å®šæ‚¨çš„å¯†ç ï¼š");
 	input_to("new_password", 1, ob);
 }
 
@@ -687,12 +687,12 @@ private void new_password(string pass, object ob)
 {
 	write("\n");
 	if( strlen(pass)<5 ) {
-		write("ÃÜÂëÖÁÉÙÒªÓÉÎå¸ö×Ö·û×é³É£¬ÇëÖØÉèÄúµÄÃÜÂë£º");
+		write("å¯†ç è‡³å°‘è¦ç”±äº”ä¸ªå­—ç¬¦ç»„æˆï¼Œè¯·é‡è®¾æ‚¨çš„å¯†ç ï¼š");
 		input_to("new_password", 1, ob);
 		return;
 	}
 	ob->set("password", crypt(pass,0) );
-	write("ÇëÔÙÊäÈëÒ»´ÎÄúµÄÃÜÂë£¬ÒÔÈ·ÈÏÄúÃ»¼Ç´í£º");
+	write("è¯·å†è¾“å…¥ä¸€æ¬¡æ‚¨çš„å¯†ç ï¼Œä»¥ç¡®è®¤æ‚¨æ²¡è®°é”™ï¼š");
 	input_to("confirm_password", 1, ob);
 }
 
@@ -702,12 +702,12 @@ private void confirm_password(string pass, object ob)
 	write("\n");
 	old_pass = ob->query("password");
 	if( crypt(pass, old_pass)!=old_pass ) {
-		write("ÄúÁ½´ÎÊäÈëµÄÃÜÂë²¢²»Ò»Ñù£¬ÇëÖØĞÂÉè¶¨Ò»´ÎÃÜÂë£º");
+		write("æ‚¨ä¸¤æ¬¡è¾“å…¥çš„å¯†ç å¹¶ä¸ä¸€æ ·ï¼Œè¯·é‡æ–°è®¾å®šä¸€æ¬¡å¯†ç ï¼š");
 		input_to("new_password", 1, ob);
 		return;
 	}
 
-	write("ÄúµÄµç×ÓÓÊ¼şµØÖ·£º");
+	write("æ‚¨çš„ç”µå­é‚®ä»¶åœ°å€ï¼š");
 	input_to("get_email",  ob);
 }
 
@@ -730,20 +730,20 @@ private void get_email(string email, object ob)
 	}
 	if(!npc)
 	{
-		write("\nÏµÍ³Òì³££¬ÇëÉÔºòÖØÊÔ");
+		write("\nç³»ç»Ÿå¼‚å¸¸ï¼Œè¯·ç¨å€™é‡è¯•");
 		return;
 	}
 	code_user = npc->query("yqm/#"+code);
 	if(!code_user)
 	{
-		write("\nÑûÇëÂëÒì³££¬ÇëÖØĞÂÊäÈë£º");
+		write("\né‚€è¯·ç å¼‚å¸¸ï¼Œè¯·é‡æ–°è¾“å…¥ï¼š");
 		input_to("get_invite_code", ob);
 		return;
 	}
 	key = npc->query("yqm/"+code_user+"/"+code);
 	if(!key || key != "#")
 	{
-		write("\nÑûÇëÂëÒì³££¬ÇëÖØĞÂÊäÈë£º");
+		write("\né‚€è¯·ç å¼‚å¸¸ï¼Œè¯·é‡æ–°è¾“å…¥ï¼š");
 		input_to("get_invite_code", ob);
 		return;
 	}
@@ -764,24 +764,24 @@ private void get_email(string email, object ob)
 	user->set("yqm/code", code);
 	ob->delete_temp("yqm/code");
 
-	write("ÄúÒª°çÑİÄĞĞÔ(m)µÄ½ÇÉ«»òÅ®ĞÔ(f)µÄ½ÇÉ«£¿");
+	write("æ‚¨è¦æ‰®æ¼”ç”·æ€§(m)çš„è§’è‰²æˆ–å¥³æ€§(f)çš„è§’è‰²ï¼Ÿ");
 	input_to("get_gender", ob, user);
 }
 
 private void get_gender(string gender, object ob, object user)
 {
 	if( gender=="" ) {
-		write("ÄúÒª°çÑİÄĞĞÔ(m)µÄ½ÇÉ«»òÅ®ĞÔ(f)µÄ½ÇÉ«£¿");
+		write("æ‚¨è¦æ‰®æ¼”ç”·æ€§(m)çš„è§’è‰²æˆ–å¥³æ€§(f)çš„è§’è‰²ï¼Ÿ");
 		input_to("get_gender", ob, user);
 		return;
 	}
 
 	if( gender[0]=='m' || gender[0]=='M' )
-		user->set("gender", "ÄĞĞÔ");
+		user->set("gender", "ç”·æ€§");
 	else if( gender[0]=='f' || gender[0]=='F' )
-		user->set("gender", "Å®ĞÔ" );
+		user->set("gender", "å¥³æ€§" );
 	else {
-		write("¶Ô²»Æğ£¬ÄúÖ»ÄÜÑ¡ÔñÄĞĞÔ(m)»òÅ®ĞÔ(f)µÄ½ÇÉ«£º");
+		write("å¯¹ä¸èµ·ï¼Œæ‚¨åªèƒ½é€‰æ‹©ç”·æ€§(m)æˆ–å¥³æ€§(f)çš„è§’è‰²ï¼š");
 		input_to("get_gender", ob, user);
 		return;
 	}
@@ -800,7 +800,7 @@ object make_body(object ob)
         }
 	user = new(ob->query("body"));
 	if(!user) {
-		write("ÏÖÔÚ¿ÉÄÜÓĞÈËÕıÔÚĞŞ¸ÄÍæ¼ÒÎï¼şµÄ³ÌÊ½£¬ÎŞ·¨½øĞĞ¸´ÖÆ¡£\n");
+		write("ç°åœ¨å¯èƒ½æœ‰äººæ­£åœ¨ä¿®æ”¹ç©å®¶ç‰©ä»¶çš„ç¨‹å¼ï¼Œæ— æ³•è¿›è¡Œå¤åˆ¶ã€‚\n");
 		write(err+"\n");
 		return 0;
 	}
@@ -839,7 +839,7 @@ private void confirm_gift(string yn, object ob, object user)
 	user->set("no_gift",1);
 
 	    CHAR_D->setup_char(user); //setup user weight. mon 11/7/97
-	    user->set("title", "ÆÕÍ¨°ÙĞÕ");
+	    user->set("title", "æ™®é€šç™¾å§“");
 	    user->set("birthday", time() );
 	    user->set("potential", 99);
 	    user->set("food", user->max_food_capacity());
@@ -878,7 +878,7 @@ varargs void enter_world(object ob, object user, int silent)
 
 	exec(user, ob);
 
-	write("Ä¿Ç°È¨ÏŞ£º" + wizhood(user) + "\n");
+	write("ç›®å‰æƒé™ï¼š" + wizhood(user) + "\n");
 	user->setup();
 
 	// In case of new player, we save them here right aftre setup 
@@ -928,7 +928,7 @@ varargs void enter_world(object ob, object user, int silent)
 		}
 		
 		if(!wizardp(user) || !user->query("env/invisibility"))
-		tell_room(startroom, user->query("name") + "Á¬Ïß½øÈëÕâ¸öÊÀ½ç¡£\n",
+		tell_room(startroom, user->query("name") + "è¿çº¿è¿›å…¥è¿™ä¸ªä¸–ç•Œã€‚\n",
 			({user}));
 	     }
 		
@@ -939,13 +939,13 @@ varargs void enter_world(object ob, object user, int silent)
                 }
 		num=mbx->query_new_mail();
 		if( num>0 ) {
-	          write( GRN + "\nÇ§ÀïÑÛ¸æËßÄã£ºÓĞÄú"
+	          write( GRN + "\nåƒé‡Œçœ¼å‘Šè¯‰ä½ ï¼šæœ‰æ‚¨"
 		    +chinese_number(num)+
-		    "·âĞÅ£¡Çëµ½ÄÏ³Ç¿ÍÕ»À´Ò»ÌË£®£®£®\n\n" + NOR);
+		    "å°ä¿¡ï¼è¯·åˆ°å—åŸå®¢æ ˆæ¥ä¸€è¶Ÿï¼ï¼ï¼\n\n" + NOR);
 		}
 		destruct(mbx);
 		CHANNEL_D->do_channel( this_object(), "sys",
-			sprintf("%sÓÉ%sÁ¬Ïß½øÈë¡£", user->name()+"("+capitalize(user->query("id")) + ")", query_ip_name(user)) );
+			sprintf("%sç”±%sè¿çº¿è¿›å…¥ã€‚", user->name()+"("+capitalize(user->query("id")) + ")", query_ip_name(user)) );
 	}
 
 	UPDATE_D->check_user(user, 0);
@@ -976,10 +976,10 @@ varargs void reconnect(object ob, object user, int silent)
 
 	user->reconnect();
 	if( !silent && !user->query("env/invisibility")) {
-		tell_room(environment(user), user->query("name") + "ÖØĞÂÁ¬Ïß»Øµ½Õâ¸öÊÀ½ç¡£\n",
+		tell_room(environment(user), user->query("name") + "é‡æ–°è¿çº¿å›åˆ°è¿™ä¸ªä¸–ç•Œã€‚\n",
 		({user}));
 		CHANNEL_D->do_channel( this_object(), "sys",
-			sprintf("%sÓÉ%sÖØĞÂÁ¬Ïß½øÈë¡£", user->query("name")+"(" + capitalize(user->query("id")) + ")", query_ip_name(user)) );
+			sprintf("%sç”±%sé‡æ–°è¿çº¿è¿›å…¥ã€‚", user->query("name")+"(" + capitalize(user->query("id")) + ")", query_ip_name(user)) );
 	}
 	UPDATE_D->check_user(user, 1); // this is for reconnect.
 }
@@ -991,12 +991,12 @@ int check_legal_id(string id, int insaneid)
 	i = strlen(id);
 	
 	if( (strlen(id) < 3) || (strlen(id) > 8 ) ) {
-		write("¶Ô²»Æğ£¬ÄãµÄÓ¢ÎÄÃû×Ö±ØĞëÊÇ 3 µ½ 8 ¸öÓ¢ÎÄ×ÖÄ¸¡£\n");
+		write("å¯¹ä¸èµ·ï¼Œä½ çš„è‹±æ–‡åå­—å¿…é¡»æ˜¯ 3 åˆ° 8 ä¸ªè‹±æ–‡å­—æ¯ã€‚\n");
 		return 0;
 	}
 	while(i--)
 		if( id[i]<'a' || id[i]>'z' ) {
-			write("¶Ô²»Æğ£¬ÄãµÄÓ¢ÎÄÃû×ÖÖ»ÄÜÓÃÓ¢ÎÄ×ÖÄ¸¡£\n");
+			write("å¯¹ä¸èµ·ï¼Œä½ çš„è‹±æ–‡åå­—åªèƒ½ç”¨è‹±æ–‡å­—æ¯ã€‚\n");
 			return 0;
 		}
 
@@ -1006,12 +1006,12 @@ int check_legal_id(string id, int insaneid)
 	  for(i=0; i<sizeof(legalid); i++)   {
            if(legalid[i][0..0]=="*") { // wildcard match
 	     if(strsrch(id, legalid[i][1..])!=-1) {
-		  write("¶Ô²»Æğ£¬ÕâÖÖÃû×Ö»áÔì³ÉÆäËûÈËµÄÀ§ÈÅ¡£\n");
+		  write("å¯¹ä¸èµ·ï¼Œè¿™ç§åå­—ä¼šé€ æˆå…¶ä»–äººçš„å›°æ‰°ã€‚\n");
 		  return 0;
              }
 	   } else {
 	       if( id == legalid[i] )   { // exact match
-		   write("¶Ô²»Æğ£¬ÕâÖÖÃû×Ö»áÔì³ÉÆäËûÈËµÄÀ§ÈÅ¡£\n");
+		   write("å¯¹ä¸èµ·ï¼Œè¿™ç§åå­—ä¼šé€ æˆå…¶ä»–äººçš„å›°æ‰°ã€‚\n");
 		   return 0;
 	       }
 	   }
@@ -1027,21 +1027,21 @@ int check_legal_name(string name)
 	i = strlen(name);
 	
 	if( (strlen(name) < 2) || (strlen(name) > 12 ) ) {
-		write("¶Ô²»Æğ£¬ÄãµÄÖĞÎÄÃû×Ö±ØĞëÊÇÒ»µ½Áù¸öÖĞÎÄ×Ö¡£\n");
+		write("å¯¹ä¸èµ·ï¼Œä½ çš„ä¸­æ–‡åå­—å¿…é¡»æ˜¯ä¸€åˆ°å…­ä¸ªä¸­æ–‡å­—ã€‚\n");
 		return 0;
 	}
 	while(i--) {
 		if( name[i]<=' ' ) {
-			write("¶Ô²»Æğ£¬ÄãµÄÖĞÎÄÃû×Ö²»ÄÜÓÃ¿ØÖÆ×Ö·û¡£\n");
+			write("å¯¹ä¸èµ·ï¼Œä½ çš„ä¸­æ–‡åå­—ä¸èƒ½ç”¨æ§åˆ¶å­—ç¬¦ã€‚\n");
 			return 0;
 		}
 		if( i%2==0 && !is_chinese(name[i..<0]) ) {
-			write("¶Ô²»Æğ£¬ÇëÄúÓÃ¡¸ÖĞÎÄ¡¹È¡Ãû×Ö¡£\n");
+			write("å¯¹ä¸èµ·ï¼Œè¯·æ‚¨ç”¨ã€Œä¸­æ–‡ã€å–åå­—ã€‚\n");
 			return 0;
 		}
 	}
 	if( member_array(name, banned_name)!=-1 ) {
-		write("¶Ô²»Æğ£¬ÕâÖÖÃû×Ö»áÔì³ÉÆäËûÈËµÄÀ§ÈÅ¡£\n");
+		write("å¯¹ä¸èµ·ï¼Œè¿™ç§åå­—ä¼šé€ æˆå…¶ä»–äººçš„å›°æ‰°ã€‚\n");
 		return 0;
 	}
 

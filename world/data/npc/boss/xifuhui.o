@@ -1,8 +1,8 @@
 #/d/city/npc/boss.c
-dbase (["kar":19,"eff_kee":416,"startroom":"/d/city/xifuhui","mana":0,"sen":520,"eff_gin":484,"gin":484,"inquiry":(["here":"ÕâÀïÊÇÏ²¸£»á£¬³ÇÖĞ´ó»§ÈË¼Ò½á»é¶¼ÒªÀ´ÕâÀï°ÚÏ²ÑçÁ¨¡£","¾ÆÏ¯":,"Ï¯":,"Ñç":,"name":"ÔÚÏÂ±ãÊÇÕâÀïµÄÀÏ°å¡£","money":,"party":,"Ï²Ñç":,]),"combat_exp":50000,"max_gin":484,"gender":"Å®ĞÔ","name":"ÀÏº¦³æ","id":"xifuhui boss","daoxing":50000,"eff_sen":520,"attitude":"friendly","can_speak":1,"race":"ÈËÀà","limbs":({"Í·²¿","¾±²¿","ĞØ¿Ú","ºóĞÄ","×ó¼ç","ÓÒ¼ç","×ó±Û","ÓÒ±Û","×óÊÖ","ÓÒÊÖ","Ñü¼ä","Ğ¡¸¹","×óÍÈ","ÓÒÍÈ","×ó½Å","ÓÒ½Å",}),"force":0,"default_actions":,"actions":,"title":"Ï²¸£»áÀÏ°åÄï","per":20,"max_sen":520,"spi":24,"age":32,"con":12,"cor":13,"atman":0,"unit":"Î»","kee":416,"int":17,"cps":20,"max_kee":416,"str":21,])
+dbase (["kar":19,"eff_kee":416,"startroom":"/d/city/xifuhui","mana":0,"sen":520,"eff_gin":484,"gin":484,"inquiry":(["here":"è¿™é‡Œæ˜¯å–œç¦ä¼šï¼ŒåŸä¸­å¤§æˆ·äººå®¶ç»“å©šéƒ½è¦æ¥è¿™é‡Œæ‘†å–œå®´å“©ã€‚","é…’å¸­":,"å¸­":,"å®´":,"name":"åœ¨ä¸‹ä¾¿æ˜¯è¿™é‡Œçš„è€æ¿ã€‚","money":,"party":,"å–œå®´":,]),"combat_exp":50000,"max_gin":484,"gender":"å¥³æ€§","name":"è€å®³è™«","id":"xifuhui boss","daoxing":50000,"eff_sen":520,"attitude":"friendly","can_speak":1,"race":"äººç±»","limbs":({"å¤´éƒ¨","é¢ˆéƒ¨","èƒ¸å£","åå¿ƒ","å·¦è‚©","å³è‚©","å·¦è‡‚","å³è‡‚","å·¦æ‰‹","å³æ‰‹","è…°é—´","å°è…¹","å·¦è…¿","å³è…¿","å·¦è„š","å³è„š",}),"force":0,"default_actions":,"actions":,"title":"å–œç¦ä¼šè€æ¿å¨˜","per":20,"max_sen":520,"spi":24,"age":32,"con":12,"cor":13,"atman":0,"unit":"ä½","kee":416,"int":17,"cps":20,"max_kee":416,"str":21,])
 skills (["unarmed":100,"dodge":100,"parry":100,])
 learned (["unarmed":0,"dodge":0,"parry":0,])
 SAVE_NAME "xifuhui"
 price_ratio 10
-bidder_long "ÄÏº£ÆÕÍÓÉ½µÚÈı´úµÜ×Ó Ã÷÷©(Manyu)¡£"
+bidder_long "å—æµ·æ™®é™€å±±ç¬¬ä¸‰ä»£å¼Ÿå­ æ˜é³—(Manyu)ã€‚"
 close_time 1381158609

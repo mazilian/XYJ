@@ -6,12 +6,12 @@ inherit ITEM;
 
 void create() {
 
-  set_name("ÌôÕ½½ðÅÆ", ({"tiaozhan jinpai","jinpai","pai"}));
+  set_name("æŒ‘æˆ˜é‡‘ç‰Œ", ({"tiaozhan jinpai","jinpai","pai"}));
   set_weight(200);
   set("value",1000000);
-  set("unit", "Ãæ");
-  set("long", "Ò»Ãæ½ðÅÆ£¬ÉÏÃæ¿Ì×Å¡°ÓÑÒêµÚÒ»£¬±ÈÎäµÚ¶þ¡±°Ë¸ö×Ö¡£\n"+
-      "Äã¿ÉÒÔÆ¾ÕâÃæ½ðÅÆÏòÆäËûÍæ¼ÒÌôÕ½(challenge)£¡\n");
+  set("unit", "é¢");
+  set("long", "ä¸€é¢é‡‘ç‰Œï¼Œä¸Šé¢åˆ»ç€â€œå‹è°Šç¬¬ä¸€ï¼Œæ¯”æ­¦ç¬¬äºŒâ€å…«ä¸ªå­—ã€‚\n"+
+      "ä½ å¯ä»¥å‡­è¿™é¢é‡‘ç‰Œå‘å…¶ä»–çŽ©å®¶æŒ‘æˆ˜(challenge)ï¼\n");
  // set("value", 1000);
   setup();
 }
@@ -27,18 +27,18 @@ int do_challenge(string arg) {
 
   if (!userp(me)) return 0;
   if ((!arg) || (!who=find_player(arg))) 
-    return notify_fail("ÄãÒªÏòË­ÌôÕ½£¿\n");
-  if (who==me) return notify_fail("ÌôÕ½×ÔÎÒ£¬ÓÐÖ¾Æø£¡\n");
+    return notify_fail("ä½ è¦å‘è°æŒ‘æˆ˜ï¼Ÿ\n");
+  if (who==me) return notify_fail("æŒ‘æˆ˜è‡ªæˆ‘ï¼Œæœ‰å¿—æ°”ï¼\n");
   old=me->query_temp("leitai/challenge");
-  if (who==old)   return notify_fail("ÄãÒÑ¾­ÔÚÏòËûÌôÕ½ÁË¡£\n");
+  if (who==old)   return notify_fail("ä½ å·²ç»åœ¨å‘ä»–æŒ‘æˆ˜äº†ã€‚\n");
   if (old) {
-     write("Äã¹À¼Æ´ò²»¹ý"+old->query("name")+"£¬¾ö¶¨²»ºÍËû´òÁË¡£\n");
+     write("ä½ ä¼°è®¡æ‰“ä¸è¿‡"+old->query("name")+"ï¼Œå†³å®šä¸å’Œä»–æ‰“äº†ã€‚\n");
      old->delete_temp("leitai/being_challenged");
-     tell_object(old,me->query("name")+"µÈÄã²»µ½£¬ÒÔÎªÄã²»¸ÒÈ¥£¬¾ö¶¨²»ºÍÄã´òÁË¡£\n");
+     tell_object(old,me->query("name")+"ç­‰ä½ ä¸åˆ°ï¼Œä»¥ä¸ºä½ ä¸æ•¢åŽ»ï¼Œå†³å®šä¸å’Œä½ æ‰“äº†ã€‚\n");
   }
-  message_vision("$NÏëÏò"+who->query("name")+RANK_D->query_respect(who)+"ÌÖ½ÌÇÐ´èÎä¹¦·¨Êõ¡£\n",me);
-  tell_object(who,me->query("name")+"¸æËßÄã£º"+RANK_D->query_rude(who)+
-   "£¬ÓÐÃ»ÓÐµ¨×ÓºÍÎÒ´òÉÏÒ»¼Ü(defend)£¿£¡ÎÒÔÚÀÞÌ¨µÈÄã£¡\n");
+  message_vision("$Næƒ³å‘"+who->query("name")+RANK_D->query_respect(who)+"è®¨æ•™åˆ‡ç£‹æ­¦åŠŸæ³•æœ¯ã€‚\n",me);
+  tell_object(who,me->query("name")+"å‘Šè¯‰ä½ ï¼š"+RANK_D->query_rude(who)+
+   "ï¼Œæœ‰æ²¡æœ‰èƒ†å­å’Œæˆ‘æ‰“ä¸Šä¸€æž¶(defend)ï¼Ÿï¼æˆ‘åœ¨æ“‚å°ç­‰ä½ ï¼\n");
 
 
   me->set_temp("leitai/challenge",who);

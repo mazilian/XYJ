@@ -38,7 +38,7 @@ int main(object me, string arg)
 	string IAC  = "\xFF"; // 255
 
 	if(!wizardp(me))
-		return notify_fail("命令尚未开放！");
+		return notify_fail("鍛戒护灏氭湭寮�鏀撅紒");
 
 	printf("[" + "printf test" + "]" + "\n");
 
@@ -109,11 +109,11 @@ private void ex_print()
 	input_to( (: echo_back :) );*/
 
 	printf(ANSI_ESC + "[4z<SEND href=\"jump\">" + "Emote Jump" + ANSI_ESC + "[4z</SEND>" + "\r\n");
-	printf(ANSI_ESC + "[4z<FONT \"Microsoft YaHei\">This text is in a fancy font [中文 雅黑]" + ANSI_ESC + "[4z</FONT>" + "\r\n");
-	printf(ANSI_ESC + "[4z<FONT \"SimSun\">This text is in a fancy font [中文 宋体]" + ANSI_ESC + "[4z</FONT>" + "\r\n");
-	printf(ANSI_ESC + "[4z<FONT \"SimHei\">This text is in a fancy font [中文 黑体]" + ANSI_ESC + "[4z</FONT>" + "\r\n");
-	printf(ANSI_ESC + "[4z<FONT \"Consolas\">[Consolas 中文 宋体]" + ANSI_ESC + "[4z</FONT>" + "\r\n");
-	printf(ANSI_ESC + "[4z<FONT \"Courier New\">[Courier New 中文 宋体]" + ANSI_ESC + "[4z</FONT>" + "\r\n");
+	printf(ANSI_ESC + "[4z<FONT \"Microsoft YaHei\">This text is in a fancy font [涓枃 闆呴粦]" + ANSI_ESC + "[4z</FONT>" + "\r\n");
+	printf(ANSI_ESC + "[4z<FONT \"SimSun\">This text is in a fancy font [涓枃 瀹嬩綋]" + ANSI_ESC + "[4z</FONT>" + "\r\n");
+	printf(ANSI_ESC + "[4z<FONT \"SimHei\">This text is in a fancy font [涓枃 榛戜綋]" + ANSI_ESC + "[4z</FONT>" + "\r\n");
+	printf(ANSI_ESC + "[4z<FONT \"Consolas\">[Consolas 涓枃 瀹嬩綋]" + ANSI_ESC + "[4z</FONT>" + "\r\n");
+	printf(ANSI_ESC + "[4z<FONT \"Courier New\">[Courier New 涓枃 瀹嬩綋]" + ANSI_ESC + "[4z</FONT>" + "\r\n");
 	printf(ANSI_ESC + "[4z<A href=\"http://www.zuggsoft.com\">Click here for zMUD" + ANSI_ESC + "[4z</A>" + "\r\n");
 	printf(ANSI_ESC + "[4z<SEND href=\"command1|command2|command3\" hing=\"right click to see menu|Item 1|Item 2|Item 2\">this is a menu link (right click)" + ANSI_ESC + "[4z</SEND>" + "\r\n");
 	printf(ANSI_ESC + "[4z<IMAGE fname=\"937c08579bd03c48bf259c24104ba4f6.jpg\" url=\"http://baike.baidu.com/cms/rc/r/image/2013-07-24/\">"+"\r\n");
@@ -126,9 +126,9 @@ private void ex_print()
 int help(object me)
 {
 	write(@HELP
-指令格式 : wow
+鎸囦护鏍煎紡 : wow
  
-这个指令可以进入 WoW ~ ~ ~
+杩欎釜鎸囦护鍙互杩涘叆 WoW ~ ~ ~
  
 HELP
     );

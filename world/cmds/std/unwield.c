@@ -9,7 +9,7 @@ int main(object me, string arg)
 	string str;
 	int i;
 
-	if( !arg ) return notify_fail("ÄãÒªÍÑµôÊ²Ã´£¿\n");
+	if( !arg ) return notify_fail("ä½ è¦è„±æ‰ä»€ä¹ˆï¼Ÿ\n");
 
 	if (arg=="all")
 	{
@@ -20,20 +20,20 @@ int main(object me, string arg)
 			{
 			 sweapon->unequip();
 			 if( !stringp(str = sweapon->query("unwield_msg")) )
-             str = "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n";
+             str = "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n";
 		     message_vision(str, me, sweapon);
 			}
 
 	         weapon->unequip();	
 			 if( !stringp(str = weapon->query("unwield_msg")) )
-             str = "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n";
+             str = "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n";
 		     message_vision(str, me, weapon);
 			
 			return 1;
 	    }
 		else
 		{
-               return notify_fail("Äã²¢Ã»ÓĞ×°±¸ÈÎºÎÎäÆ÷¡£\n");
+               return notify_fail("ä½ å¹¶æ²¡æœ‰è£…å¤‡ä»»ä½•æ­¦å™¨ã€‚\n");
 		}
 
 
@@ -44,15 +44,15 @@ int main(object me, string arg)
 	else
 	{
 	if( !objectp(ob = present(arg, me)) )
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
 
 //	if( (string)ob->query("equipped")!="wielded"&&(string)ob->query("equipped")!="second_wield" )
 	if( (string)ob->query("equipped")!="wielded")
-		return notify_fail("Äã²¢Ã»ÓĞ×°±¸ÕâÑù¶«Î÷×÷ÎªÎäÆ÷¡£\n");
+		return notify_fail("ä½ å¹¶æ²¡æœ‰è£…å¤‡è¿™æ ·ä¸œè¥¿ä½œä¸ºæ­¦å™¨ã€‚\n");
 
 	if( ob->unequip() ) {
 		if( !stringp(str = ob->query("unwield_msg")) )
-			str = "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n";
+			str = "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n";
 		message_vision(str, me, ob);
 		return 1;
 	} else
@@ -63,9 +63,9 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : unwield|fangxia <ÎïÆ·Ãû>
+æŒ‡ä»¤æ ¼å¼ : unwield|fangxia <ç‰©å“å>
  
-Õâ¸öÖ¸ÁîÈÃÄã·ÅÏÂÊÖÖĞµÄÎäÆ÷¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ æ”¾ä¸‹æ‰‹ä¸­çš„æ­¦å™¨ã€‚
  
 HELP
     );

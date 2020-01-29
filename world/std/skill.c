@@ -36,7 +36,7 @@ int valid_effect(object me, object weapon, string action_name, int skill)
 // This function should return the type of the skill. The skill type now
 // affects if the skill requires combat exp in order to be learned (see
 // /cmds/std/learn.c ) and the ranking of a skill level (see 
-// /cmds/usr/skills.c )¡£
+// /cmds/usr/skills.c )ã€‚
 // Currently we have only 2 types of skill: "martial" and "knowledge".
 
 string type() { return "martial"; }
@@ -68,7 +68,7 @@ int exert_function(object me, string arg)
 
 	if( sscanf(arg, "%s %s", func, target)==2 ) {
 		target_ob = present(target, environment(me));
-		if( !target_ob ) return notify_fail("ÕâÀïÃ»ÓÐ " + target + "¡£\n");
+		if( !target_ob ) return notify_fail("è¿™é‡Œæ²¡æœ‰ " + target + "ã€‚\n");
 	} else {
 		func = arg;
 		target_ob = me;
@@ -88,7 +88,7 @@ int perform_action(object me, string arg)
 
 	if( sscanf(arg, "%s %s", action, target)==2 ) {
 		target_ob = present(target, environment(me));
-		if( !target_ob ) return notify_fail("ÕâÀïÃ»ÓÐ " + target + "¡£\n");
+		if( !target_ob ) return notify_fail("è¿™é‡Œæ²¡æœ‰ " + target + "ã€‚\n");
 	} else {
 		action = arg;
 	}
@@ -107,7 +107,7 @@ int cast_spell(object me, string spell, object target)
 {
 	string file;
 
-//	notify_fail("ÄãËùÑ¡ÓÃµÄÖäÎÄÏµÖÐÃ»ÓÐÕâÖÖÖäÎÄ¡£\n");
+//	notify_fail("ä½ æ‰€é€‰ç”¨çš„å’’æ–‡ç³»ä¸­æ²¡æœ‰è¿™ç§å’’æ–‡ã€‚\n");
 
 	if( !stringp(file = (string)this_object()->cast_spell_file(spell))
         ||      file_size(file + ".c") <= 0 )
@@ -120,7 +120,7 @@ int conjure_magic(object me, string spell, object target)
 {
 	string file;
 
-	notify_fail("ÄãËùÑ¡ÓÃµÄ·¨ÊõÏµÖÐÃ»ÓÐÕâÖÖ·¨Êõ¡£\n");
+	notify_fail("ä½ æ‰€é€‰ç”¨çš„æ³•æœ¯ç³»ä¸­æ²¡æœ‰è¿™ç§æ³•æœ¯ã€‚\n");
 
 	if( !stringp(file = (string)this_object()->conjure_magic_file(spell))
 	||	file_size(file + ".c") <= 0 )
@@ -148,39 +148,39 @@ string level_description(int level)
 {
 	int grade;
 	string *skill_level_desc = ({
-		BLU "³õÑ§Õ§Á·" NOR,
-		BLU "³õ¿úÃÅ¾¶" NOR,
-		HIB "´ÖÍ¨Æ¤Ã«" NOR,
-		HIB "ÂÔÖªÒ»¶þ" NOR,
-		YEL "°ëÉú²»Êì" NOR,
-		YEL "ÂíÂí»¢»¢" NOR,
-		HIY "ÒÑÓÐÐ¡³É" NOR,
-		HIY "½¥Èë¼Ñ¾³" NOR,
-		HIM "¼ÝÇá¾ÍÊì" NOR,
-		HIM "ÁËÈ»ÓÚÐØ" NOR,
-		HIR "³öÀà°ÎÝÍ" NOR,
-		HIR "ÐÄÁìÉñ»á" NOR,
-		MAG "ÉñºõÆä¼¼" NOR,
-		MAG "³öÉñÈë»¯" NOR,
-		CYN "»íÈ»¹áÍ¨" NOR,
-		CYN "µÇ·åÔì¼«" NOR,
-		HIC "¾ÙÊÀÎÞË«" NOR,
-		HIC "Ò»´ú×ÚÊ¦" NOR,
-		HIC "Õð¹Åîå½ñ" NOR,
-		HIW "Éî²»¿É²â" NOR
+		BLU "åˆå­¦ä¹ç»ƒ" NOR,
+		BLU "åˆçª¥é—¨å¾„" NOR,
+		HIB "ç²—é€šçš®æ¯›" NOR,
+		HIB "ç•¥çŸ¥ä¸€äºŒ" NOR,
+		YEL "åŠç”Ÿä¸ç†Ÿ" NOR,
+		YEL "é©¬é©¬è™Žè™Ž" NOR,
+		HIY "å·²æœ‰å°æˆ" NOR,
+		HIY "æ¸å…¥ä½³å¢ƒ" NOR,
+		HIM "é©¾è½»å°±ç†Ÿ" NOR,
+		HIM "äº†ç„¶äºŽèƒ¸" NOR,
+		HIR "å‡ºç±»æ‹”èƒ" NOR,
+		HIR "å¿ƒé¢†ç¥žä¼š" NOR,
+		MAG "ç¥žä¹Žå…¶æŠ€" NOR,
+		MAG "å‡ºç¥žå…¥åŒ–" NOR,
+		CYN "è±ç„¶è´¯é€š" NOR,
+		CYN "ç™»å³°é€ æž" NOR,
+		HIC "ä¸¾ä¸–æ— åŒ" NOR,
+		HIC "ä¸€ä»£å®—å¸ˆ" NOR,
+		HIC "éœ‡å¤é“„ä»Š" NOR,
+		HIW "æ·±ä¸å¯æµ‹" NOR
 	});
 	string *knowledge_level_desc = ({
-		BLU "ÐÂÑ§Õ§ÓÃ" NOR,
-		HIB "³õ¿úÃÅ¾¶" NOR,
-		HIB "ÂÔÖªÒ»¶þ" NOR,
-		YEL "ÂíÂí»¢»¢" NOR,
-		YEL "ÒÑÓÐÐ¡³É" NOR,
-		CYN "ÐÄÁìÉñ»á" NOR,
-		CYN "ÁËÈ»ÓÚÐØ" NOR,
-		CYN "»íÈ»¹áÍ¨" NOR,
-		HIC "¾ÙÊÀÎÞË«" NOR,
-		HIC "Õð¹Åîå½ñ" NOR,
-		HIW "Éî²»¿É²â" NOR
+		BLU "æ–°å­¦ä¹ç”¨" NOR,
+		HIB "åˆçª¥é—¨å¾„" NOR,
+		HIB "ç•¥çŸ¥ä¸€äºŒ" NOR,
+		YEL "é©¬é©¬è™Žè™Ž" NOR,
+		YEL "å·²æœ‰å°æˆ" NOR,
+		CYN "å¿ƒé¢†ç¥žä¼š" NOR,
+		CYN "äº†ç„¶äºŽèƒ¸" NOR,
+		CYN "è±ç„¶è´¯é€š" NOR,
+		HIC "ä¸¾ä¸–æ— åŒ" NOR,
+		HIC "éœ‡å¤é“„ä»Š" NOR,
+		HIW "æ·±ä¸å¯æµ‹" NOR
 	});
 
 	grade = level / 15;

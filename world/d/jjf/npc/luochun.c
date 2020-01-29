@@ -1,6 +1,6 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 //created 8-8-97 pickle
-//ÂŞ´º
+//ç½—æ˜¥
  
 
 inherit F_MASTER;
@@ -9,15 +9,15 @@ string try_me(object me);
 
 void create()
 {
-  set_name("ÂŞ´º", ({"luo chun", "luo", "chun", "luochun"}));
+  set_name("ç½—æ˜¥", ({"luo chun", "luo", "chun", "luochun"}));
   set ("long", @LONG
-ÂŞ´ºÊÇÂŞ¸®µÄĞÄ¸¹¼Ò½«£¬°ìÊÂÉõÊÇµÃÁ¦¡£´«ËµËûÊÇÂŞÒÕµÄË½Éú×Ó£¬
-ÊÇÂŞ³ÉµÄÇ×¸ç¸ç¡£ÂŞ´ºµÄÒ»ÊÖ°ÔÍõÇ¹Ê¹µÃ´¿ÊìÎŞ±È£¬ÔÚÕ½³¡ÉÏÔø¾­
-ÆÄÁ¢Õ½¹¦¡£
+ç½—æ˜¥æ˜¯ç½—åºœçš„å¿ƒè…¹å®¶å°†ï¼ŒåŠäº‹ç”šæ˜¯å¾—åŠ›ã€‚ä¼ è¯´ä»–æ˜¯ç½—è‰ºçš„ç§ç”Ÿå­ï¼Œ
+æ˜¯ç½—æˆçš„äº²å“¥å“¥ã€‚ç½—æ˜¥çš„ä¸€æ‰‹éœ¸ç‹æªä½¿å¾—çº¯ç†Ÿæ— æ¯”ï¼Œåœ¨æˆ˜åœºä¸Šæ›¾ç»
+é¢‡ç«‹æˆ˜åŠŸã€‚
 LONG);
 
-  set("title", "ÂŞ¸®¼Ò½«");
-  set("gender", "ÄĞĞÔ");
+  set("title", "ç½—åºœå®¶å°†");
+  set("gender", "ç”·æ€§");
   set("age", 40);
   set("str", 50);
   set("cor", 50);
@@ -48,7 +48,7 @@ LONG);
   set("max_force", 1500);
   set("force_factor", 20);
  
-  create_family("½«¾ü¸®", 2, "À¶");
+  create_family("å°†å†›åºœ", 2, "è“");
   setup();
  
   carry_object("/d/obj/weapon/spear/tieqiang")->wield();
@@ -57,7 +57,7 @@ LONG);
 
 int accept_fight(object me)
 {
-  command("say ÔÚÕâÀï´ò¼Ü£¬²»ÅÂ¾ª¶¯ÁËÂ¥ÉÏµÄ¹óÈË£¿\n");
+  command("say åœ¨è¿™é‡Œæ‰“æ¶ï¼Œä¸æ€•æƒŠåŠ¨äº†æ¥¼ä¸Šçš„è´µäººï¼Ÿ\n");
   return 0;
 }
 
@@ -65,7 +65,7 @@ int attempt_apprentice(object me)
 {
   string myname=RANK_D->query_respect(me);
   command("pat "+me->query("id"));
-  command("say ºÜºÃ£¬Ê±ÏÂÕıÊÇÓÃÈËÖ®¼Ê"+myname+"¶à¼ÓÅ¬Á¦£¬ËûÈÕ±Ø¶¨ÓĞ³É¡£");
+  command("say å¾ˆå¥½ï¼Œæ—¶ä¸‹æ­£æ˜¯ç”¨äººä¹‹é™…"+myname+"å¤šåŠ åŠªåŠ›ï¼Œä»–æ—¥å¿…å®šæœ‰æˆã€‚");
   command("recruit " + me->query("id") );
   return 1;
 }

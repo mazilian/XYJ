@@ -1,6 +1,6 @@
 // cracked by vikee 2/09/2002   vikee@263.net
 
-//µ¶¹â½£Ó°
+//åˆ€å…‰å‰‘å½±
 
 #include <ansi.h>
 #include <combat.h>
@@ -17,17 +17,17 @@ int perform(object me, object target)
 
       if (!weapon) return 0;
       if (me->query_temp("wzg-powerup"))
-        return notify_fail("Ð¡ÐÄ×ß»ðÈëÄ§£¡\n");
+        return notify_fail("å°å¿ƒèµ°ç«å…¥é­”ï¼\n");
       if (!me->is_fighting())
-             return notify_fail("ÄãÃ»ÓÐÔÚ´ò¼Ü£¡\n");
+             return notify_fail("ä½ æ²¡æœ‰åœ¨æ‰“æž¶ï¼\n");
       if (me->query_skill("zhenyuan-force",1)<80)
-          return notify_fail("ÄãµÄÄÚ¹¦Ì«²î£¬»¹²»ÄÜÒÔ½£»¯ÕÈ¡£\n");
+          return notify_fail("ä½ çš„å†…åŠŸå¤ªå·®ï¼Œè¿˜ä¸èƒ½ä»¥å‰‘åŒ–æ–ã€‚\n");
       if (me->query_skill("sanqing-jian",1)<80) 
-          return notify_fail("Äã»¹ÊÇÏÈ°Ñ¾«Á¦¼¯ÖÐÔÚ½£·¨ÉÏ°É¡£\n");
+          return notify_fail("ä½ è¿˜æ˜¯å…ˆæŠŠç²¾åŠ›é›†ä¸­åœ¨å‰‘æ³•ä¸Šå§ã€‚\n");
     if (me->query_skill("fumo-zhang",1)<80)
-        return notify_fail("ÄãµÄ·üÄ§Ì«²î¾¢ÁË¡£\n");
+        return notify_fail("ä½ çš„ä¼é­”å¤ªå·®åŠ²äº†ã€‚\n");
       if (me->query("force")<200)
-           return notify_fail("ÄãÄÚÁ¦²»¼Ì£¬ÄÑÒÔ³öÕÐ¡£\n");
+           return notify_fail("ä½ å†…åŠ›ä¸ç»§ï¼Œéš¾ä»¥å‡ºæ‹›ã€‚\n");
      
     me->add("force", -100);
    
@@ -40,8 +40,8 @@ if(!perform_key)
 me->set_temp("perform/"+perform_key, 1);
 me->set_temp("perform/key", perform_key+1);
 
-	message_vision(HIY"$NÎè¶¯ÊÖÖÐ"+weapon->name()+
-     HIY"£¬ÒÔ½£»¯ÕÈ£¬Ê¹³ö·üÄ§ÕÈ·¨£¬¹ÖÕÐµü³ö£¬°Ñ¶ÔÊÖ¿´µÃÑÛ»¨çÔÂÒ£¬Ä¿µÉ¿Ú´ô£¡\n"NOR,me);
+	message_vision(HIY"$NèˆžåŠ¨æ‰‹ä¸­"+weapon->name()+
+     HIY"ï¼Œä»¥å‰‘åŒ–æ–ï¼Œä½¿å‡ºä¼é­”æ–æ³•ï¼Œæ€ªæ‹›è¿­å‡ºï¼ŒæŠŠå¯¹æ‰‹çœ‹å¾—çœ¼èŠ±ç¼­ä¹±ï¼Œç›®çžªå£å‘†ï¼\n"NOR,me);
     weapon->set_temp("original/use_apply_skill",weapon->query("use_apply_skill"));
     weapon->set_temp("original/skill_type",weapon->query("apply/skill_type"));
     weapon->set_temp("original/skill_type2",weapon->query("skill_type"));

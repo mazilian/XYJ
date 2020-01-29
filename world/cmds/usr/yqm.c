@@ -23,14 +23,14 @@ int main(object me, string arg)
 	}
 
 	if(!npc)
-		return notify_fail("ÏµÍ³Òì³££¬ÇëÁªÏµ ¹ÜÀíÔ±");
+		return notify_fail("ç³»ç»Ÿå¼‚å¸¸ï¼Œè¯·è”ç³» ç®¡ç†å‘˜");
 
 	key = "yqm/"+me->query("id");
 	mapYQM = npc->query(key);
 
 	if(!mapYQM)
 	{
-		printf("ÄãÄ¿Ç°Ã»ÓĞ¿ÉÓÃµÄÑûÇëÂë\n");
+		printf("ä½ ç›®å‰æ²¡æœ‰å¯ç”¨çš„é‚€è¯·ç \n");
 		return 1;
 	}
 
@@ -40,12 +40,12 @@ int main(object me, string arg)
 		code_user = mapYQM[arrKey[i]];
 		if(code_user == "" && arg != "used")
 		{
-			printf(HIC "%s" NOR HIW "\t[¿ÉÓÃ]" NOR  "\n"
+			printf(HIC "%s" NOR HIW "\t[å¯ç”¨]" NOR  "\n"
 				, arrKey[i]);
 		}
 		if(code_user != "" && arg == "used")
 		{
-			printf(CYN "%s" NOR WHT "\t[ÒÑ×¢²á %s]" NOR "\n"
+			printf(CYN "%s" NOR WHT "\t[å·²æ³¨å†Œ %s]" NOR "\n"
 				, arrKey[i], code_user);
 		}
 	}
@@ -56,9 +56,9 @@ int main(object me, string arg)
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½£º yqm [used]
+æŒ‡ä»¤æ ¼å¼ï¼š yqm [used]
 
-Õâ¸öÖ¸ÁîÈÃÄã²é¿´Äã ¿ÉÓÃ/ÒÑÓÃ µÄÑûÇëÂëÁĞ±í¡£
+è¿™ä¸ªæŒ‡ä»¤è®©ä½ æŸ¥çœ‹ä½  å¯ç”¨/å·²ç”¨ çš„é‚€è¯·ç åˆ—è¡¨ã€‚
 HELP
 	);
 	return 1;

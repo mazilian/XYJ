@@ -4,20 +4,20 @@ inherit BOOTS;
 
 void create()
 {
-        set_name("Ì¤ÔÆÑ¥", ({ "cloudy shoes", "shoes" }) );
+        set_name("è¸äº‘é´", ({ "cloudy shoes", "shoes" }) );
         set_weight(1700);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ë«");
+                set("unit", "åŒ");
                 set("value", 10000);
                 set("material", "cloth");
                 set("armor_prop/armor", 2);
                 set("armor_prop/dodge", 8);
 				set("no_sell",1);
-				set("no_drop","È¥À¬»ø¶Ñ¶ª°É£¬ÂÒÈÓ»áÎÛÈ¾»·¾³!\n");
-				set("no_give","×Ü¹Ü·¢µÄ×°±¸£¬¿É²»ÄÜÂÒËÍÈËÓ´£¡\n");
-				set("no_get","ÏëÄÃ×Ü¹Ü¿ò¿ò·¢µÄ×°±¸£¿×öÃÎ°É!\n");
+				set("no_drop","å»åƒåœ¾å †ä¸¢å§ï¼Œä¹±æ‰”ä¼šæ±¡æŸ“ç¯å¢ƒ!\n");
+				set("no_give","æ€»ç®¡å‘çš„è£…å¤‡ï¼Œå¯ä¸èƒ½ä¹±é€äººå“Ÿï¼\n");
+				set("no_get","æƒ³æ‹¿æ€»ç®¡æ¡†æ¡†å‘çš„è£…å¤‡ï¼Ÿåšæ¢¦å§!\n");
         }
         setup();
 }

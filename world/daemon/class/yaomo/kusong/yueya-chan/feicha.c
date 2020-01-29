@@ -7,19 +7,19 @@ string msg;
 int extra;
 object weapon;
 if(me->is_busy())
-return notify_fail("ÄãÏÖÔÚÃ»¿Õ£¡£¡\n");
+return notify_fail("ä½ çŽ°åœ¨æ²¡ç©ºï¼ï¼\n");
 extra = me->query_skill("yueya-chan",1) ;
-if ( extra < 80) return notify_fail("ÄãµÄÔÂÑÀ²ù»¹²»¹»´¿Êì£¡\n");
+if ( extra < 80) return notify_fail("ä½ çš„æœˆç‰™é“²è¿˜ä¸å¤Ÿçº¯ç†Ÿï¼\n");
 
 if( !target ) target = offensive_target(me);
 if( !target
 ||	!target->is_character()
 ||	!me->is_fighting(target) )
-return notify_fail("·É²æ¾øÒÕÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+return notify_fail("é£žå‰ç»è‰ºåªèƒ½å¯¹æˆ˜æ–—ä¸­çš„å¯¹æ‰‹ä½¿ç”¨ã€‚\n");
 weapon = me->query_temp("weapon");
 me->add_temp("apply/attack", extra);	
 me->add_temp("apply/damage", extra);	
-message_vision(HIC "$NË«±ÛÒ»Õð£¬Ò»ÕÐ·É²æ¾øÒÕ£¬ÊÖÖÐµÄ"+ weapon->name()+  "·É³ö»÷Ïò$n£¡" NOR,me,target);
+message_vision(HIC "$NåŒè‡‚ä¸€éœ‡ï¼Œä¸€æ‹›é£žå‰ç»è‰ºï¼Œæ‰‹ä¸­çš„"+ weapon->name()+  "é£žå‡ºå‡»å‘$nï¼" NOR,me,target);
 COMBAT_D->do_attack(me, target, me->query_temp("weapon"));
 me->add_temp("apply/attack", -extra);
 me->add_temp("apply/damage", -extra);

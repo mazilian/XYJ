@@ -1,15 +1,15 @@
 #/d/ourhome/honglou/npc/leng.c
-dbase (["eff_kee":442,"kar":29,"startroom":"/d/ourhome/honglou/main","mana":0,"vendor_goods":(["pillow":"/d/obj/misc/pillow","buwawa":"/d/obj/misc/buwawa","camera":"/d/obj/misc/camera","mallet":"/d/obj/misc/mallet",]),"channel":(["last_tell":1380968870,"tell_count":2,]),"sen":546,"eff_gin":292,"gin":292,"max_gin":292,"gender":"ÄĞĞÔ","combat_exp":10000,"name":"Àä×ÓĞË","id":"leng zixing","eff_sen":546,"attitude":"friendly","can_speak":1,"limbs":({"Í·²¿","¾±²¿","ĞØ¿Ú","ºóĞÄ","×ó¼ç","ÓÒ¼ç","×ó±Û","ÓÒ±Û","×óÊÖ","ÓÒÊÖ","Ñü¼ä","Ğ¡¸¹","×óÍÈ","ÓÒÍÈ","×ó½Å","ÓÒ½Å",}),"shen_type":1,"race":"ÈËÀà","force":0,"default_actions":,"potential":7,"actions":,"shop_id":({"gudong","gudong shang",}),"title":"¹Å¶­ÉÌ","per":19,"spi":12,"max_sen":546,"con":11,"age":46,"bellicosity":0,"cor":11,"unit":"Î»","atman":0,"int":30,"kee":442,"cps":19,"str":24,"max_kee":442,])
+dbase (["eff_kee":442,"kar":29,"startroom":"/d/ourhome/honglou/main","mana":0,"vendor_goods":(["pillow":"/d/obj/misc/pillow","buwawa":"/d/obj/misc/buwawa","camera":"/d/obj/misc/camera","mallet":"/d/obj/misc/mallet",]),"channel":(["last_tell":1380968870,"tell_count":2,]),"sen":546,"eff_gin":292,"gin":292,"max_gin":292,"gender":"ç”·æ€§","combat_exp":10000,"name":"å†·å­å…´","id":"leng zixing","eff_sen":546,"attitude":"friendly","can_speak":1,"limbs":({"å¤´éƒ¨","é¢ˆéƒ¨","èƒ¸å£","åå¿ƒ","å·¦è‚©","å³è‚©","å·¦è‡‚","å³è‡‚","å·¦æ‰‹","å³æ‰‹","è…°é—´","å°è…¹","å·¦è…¿","å³è…¿","å·¦è„š","å³è„š",}),"shen_type":1,"race":"äººç±»","force":0,"default_actions":,"potential":7,"actions":,"shop_id":({"gudong","gudong shang",}),"title":"å¤è‘£å•†","per":19,"spi":12,"max_sen":546,"con":11,"age":46,"bellicosity":0,"cor":11,"unit":"ä½","atman":0,"int":30,"kee":442,"cps":19,"str":24,"max_kee":442,])
 skills (["unarmed":30,"dodge":30,])
 learned (["unarmed":340,"dodge":0,])
 SAVE_NAME "honglou_lengzixing"
 price_ratio 10
 owner_id "wxmudjta"
-owner_name "¿×È¸Ã÷Íõ"
-owner_long "´óÑ©É½µÚÈı´úµÜ×Ó ¿×È¸Ã÷Íõ(Wxmudjta)¡£"
+owner_name "å­”é›€æ˜ç‹"
+owner_long "å¤§é›ªå±±ç¬¬ä¸‰ä»£å¼Ÿå­ å­”é›€æ˜ç‹(Wxmudjta)ã€‚"
 bidder "wxmudjta"
-bidder_name "¿×È¸Ã÷Íõ"
-bidder_long "´óÑ©É½µÚÈı´úµÜ×Ó ¿×È¸Ã÷Íõ(Wxmudjta)¡£"
+bidder_name "å­”é›€æ˜ç‹"
+bidder_long "å¤§é›ªå±±ç¬¬ä¸‰ä»£å¼Ÿå­ å­”é›€æ˜ç‹(Wxmudjta)ã€‚"
 bid 100
 close_time 1381115442
 profit 500

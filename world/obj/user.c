@@ -17,14 +17,14 @@ static int last_age_set;
 void create()
 {
 	::create();
-	set_name("Ê¹ÓÃÕßÎï¼ş", ({ "user object", "user", "object" }) );
+	set_name("ä½¿ç”¨è€…ç‰©ä»¶", ({ "user object", "user", "object" }) );
 }
 
 void terminal_type(string term_type)
 {
 	set_temp("terminal_type", term_type);
-	message("system", "ÖÕ¶Ë»úĞÍÌ¬Éè¶¨Îª " + term_type + "¡£\n", this_object());
-	this_object()->trace("ÖÕ¶Ë»úĞÍÌ¬Éè¶¨Îª " + term_type + "\n");
+	message("system", "ç»ˆç«¯æœºå‹æ€è®¾å®šä¸º " + term_type + "ã€‚\n", this_object());
+	this_object()->trace("ç»ˆç«¯æœºå‹æ€è®¾å®šä¸º " + term_type + "\n");
 }
 
 void telnet_suboption(string arg)
@@ -156,7 +156,7 @@ void setup()
             newob->set("owner_id", query("id"));
             newob->set("series_no", fabao_map[fabao_list[i]]);
             if( !newob->restore() )   {
-				tell_object(this_object(), "²»ÄÜ restore fabao. \n");
+				tell_object(this_object(), "ä¸èƒ½ restore fabao. \n");
 				destruct(newob);
 				continue;
 			}
@@ -192,19 +192,19 @@ private void user_dump(int type)
 		case DUMP_NET_DEAD:
 		    if(!query("env/invisibility") ||
 			    !wizardp(this_object()) )
-			tell_room( environment(), query("name") + "¶ÏÏß³¬¹ı"
+			tell_room( environment(), query("name") + "æ–­çº¿è¶…è¿‡"
 				+ chinese_number(NET_DEAD_TIMEOUT/60)
-			       	+ "·ÖÖÓ£¬×Ô¶¯ÍË³öÕâ¸öÊÀ½ç¡£\n");
+			       	+ "åˆ†é’Ÿï¼Œè‡ªåŠ¨é€€å‡ºè¿™ä¸ªä¸–ç•Œã€‚\n");
 		//	command("quit");
 			// mon 7/5/98 to force quit.
 			QUIT_CMD->main(this_object(),"",1);
 			break;
 		case DUMP_IDLE:
 		      if(!wizardp(this_object())){
-			tell_object( this_object(), "¶Ô²»Æğ£¬ÄúÒÑ¾­·¢´ô³¬¹ı " 
-				+ IDLE_TIMEOUT/60 + " ·ÖÖÓÁË£¬ÇëÏÂ´ÎÔÙÀ´¡£\n");
-			tell_room( environment(), "Ò»Õó·ç´µÀ´£¬½«·¢´ôÖĞµÄ" + query("name")
-				+ "»¯ÎªÒ»¶Ñ·É»Ò£¬ÏûÊ§ÁË¡£\n", ({this_object()}));
+			tell_object( this_object(), "å¯¹ä¸èµ·ï¼Œæ‚¨å·²ç»å‘å‘†è¶…è¿‡ " 
+				+ IDLE_TIMEOUT/60 + " åˆ†é’Ÿäº†ï¼Œè¯·ä¸‹æ¬¡å†æ¥ã€‚\n");
+			tell_room( environment(), "ä¸€é˜µé£å¹æ¥ï¼Œå°†å‘å‘†ä¸­çš„" + query("name")
+				+ "åŒ–ä¸ºä¸€å †é£ç°ï¼Œæ¶ˆå¤±äº†ã€‚\n", ({this_object()}));
 			//command("quit");
 			// mon 7/5/98
 			QUIT_CMD->main(this_object(),"",1);
@@ -230,7 +230,7 @@ private void net_dead()
         }
 
 	if( userp(this_object()) ) 
-	    CHANNEL_D->do_channel(this_object(), "sys", "¶ÏÏßÁË¡£",0,1);
+	    CHANNEL_D->do_channel(this_object(), "sys", "æ–­çº¿äº†ã€‚",0,1);
 
 	// used in logind for IP check
 	set_temp("netdead_ip", query_ip_number(this_object()));
@@ -264,7 +264,7 @@ private void do_net_dead()
 	if( userp(this_object()) ) {
 	    call_out("user_dump", NET_DEAD_TIMEOUT, DUMP_NET_DEAD);
 	    if (!this_object()->query("env/invisibility"))
-	        tell_room(environment(), query("name") + "¶ÏÏßÁË¡£\n", this_object());
+	        tell_room(environment(), query("name") + "æ–­çº¿äº†ã€‚\n", this_object());
 	} else {
 		command("quit");
 	}
@@ -278,7 +278,7 @@ void reconnect()
 	remove_netdead_enemy();
 	remove_call_out("user_dump");
 	remove_call_out("do_net_dead");
-	tell_object(this_object(), "ÖØĞÂÁ¬ÏßÍê±Ï¡£\n");
+	tell_object(this_object(), "é‡æ–°è¿çº¿å®Œæ¯•ã€‚\n");
 }
 
 void trace(string msg)

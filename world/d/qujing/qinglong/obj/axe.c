@@ -6,16 +6,16 @@ inherit AXE;
 
 void create()
 {
-	set_name("îá¸«", ({"yue fu", "fu", "axe"}) );
+	set_name("é’ºæ–§", ({"yue fu", "fu", "axe"}) );
 	set_weight(8000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
+		set("unit", "æŠŠ");
 		set("value", 2500);
 		set("material", "iron");
-		set("long", "ÕâÊÇÒ»°Ñ³ÁÖØµÄîá¸«¡£\n");
-		set("wield_msg", "$NÄÃÆğÒ»°Ñ$n£¬à²µØÒ»Îè¡£\n");
+		set("long", "è¿™æ˜¯ä¸€æŠŠæ²‰é‡çš„é’ºæ–§ã€‚\n");
+		set("wield_msg", "$Næ‹¿èµ·ä¸€æŠŠ$nï¼Œå—–åœ°ä¸€èˆã€‚\n");
 	}
 init_axe(80);
 	setup();

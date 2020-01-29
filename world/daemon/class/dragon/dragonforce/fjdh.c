@@ -1,4 +1,4 @@
-//·­½­µ¹º£ÇãÎâÊñ by hexiu
+//ç¿»æ±Ÿå€’æµ·å€¾å´èœ€ by hexiu
 
 #include <ansi.h>
 #include <combat.h>
@@ -15,26 +15,26 @@ int exert(object me, object target)
 	||      !target->is_character()
 	||      target->is_corpse()
 	||      target==me)
-		return notify_fail("ÄãÒªµ¹Ë­£¿\n");
+		return notify_fail("ä½ è¦å€’è°ï¼Ÿ\n");
 
 	if ( me->query_temp("fjdh_busy") == 1)
-        return notify_fail("Ğª»áÔÙ·­£¡\n");
+        return notify_fail("æ­‡ä¼šå†ç¿»ï¼\n");
 
 	where=environment(me);
 	if( where->query("no_fight") )
-		return notify_fail("°²È«ÇøÄÚ²»ÄÜÂÒ½Ğ£¡\n");
+		return notify_fail("å®‰å…¨åŒºå†…ä¸èƒ½ä¹±å«ï¼\n");
 
         if( !me->is_fighting() )
-                return notify_fail("·­½­µ¹º£Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ç¿»æ±Ÿå€’æµ·åªèƒ½åœ¨æˆ˜æ–—ä¸­ä½¿ç”¨ã€‚\n");
 	
 		if( me->query_skill("dragonforce",1) < 200 )
-                return notify_fail("ÄãµÄ¹¦Á¦»¹²»¹»·­½­µ¹º£¡£\n");
+                return notify_fail("ä½ çš„åŠŸåŠ›è¿˜ä¸å¤Ÿç¿»æ±Ÿå€’æµ·ã€‚\n");
 
 
         if( (int)me->query("force") < 200 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†…åŠ›ä¸å¤Ÿã€‚\n");
 	if( (int)me->query("kee") < 100)
-		return notify_fail("ÄãµÄÁ¦Æø²»¹»ÁË¡£\n");
+		return notify_fail("ä½ çš„åŠ›æ°”ä¸å¤Ÿäº†ã€‚\n");
 
 
         skill = me->query_skill("force");
@@ -47,7 +47,7 @@ int exert(object me, object target)
         me->set_temp("no_move",1);
 		call_out("remove_no_move",3,me);
         call_out("remove_effect",6+random(3),me);
-	message_vision(HIR "\n$NÍËºóÁ½²½£¬ÉîÉîµØÎüÒ»¿ÚÆø£¬ÃÍÈ»·¢³ö·­½­µ¹º£µÄÅØÏø£¡\n\n"
+	message_vision(HIR "\n$Né€€åä¸¤æ­¥ï¼Œæ·±æ·±åœ°å¸ä¸€å£æ°”ï¼ŒçŒ›ç„¶å‘å‡ºç¿»æ±Ÿå€’æµ·çš„å’†å“®ï¼\n\n"
 NOR, me);
       
 
@@ -61,19 +61,19 @@ NOR, me);
                         if( (int)target->query("force") < skill * 2 )
                                 target->receive_wound("sen", damage/10, me);
 						if (target->query_temp("no_dodge") == 1) 
-    //                    message_vision(HIY"\n$N»¹ÔÚµØÉÏÅ¿×ÅÄØ£¡\n"NOR,target);
-write("¶Ô·½ÑÛÏÂ»¹ÔÚÅ¿×Å£¡\n");
+    //                    message_vision(HIY"\n$Nè¿˜åœ¨åœ°ä¸Šè¶´ç€å‘¢ï¼\n"NOR,target);
+write("å¯¹æ–¹çœ¼ä¸‹è¿˜åœ¨è¶´ç€ï¼\n");
 						else{
                               target->set_temp("no_dodge",1);
-							  message_vision(HIW"\nÒ»¹Éî¸ÆøÏ®À´£¬Ö±½Ó½«$N»÷µ¹ÔÚµØ£¡\n"NOR,target);
-                     //   tell_object(target, "Äã¾õµÃÒ»¹Éî¸ÆøÏ®À´£¬Ö±½Ó½«Äã³åµ¹ÔÚµØ£¡\n");
+							  message_vision(HIW"\nä¸€è‚¡ç½¡æ°”è¢­æ¥ï¼Œç›´æ¥å°†$Nå‡»å€’åœ¨åœ°ï¼\n"NOR,target);
+                     //   tell_object(target, "ä½ è§‰å¾—ä¸€è‚¡ç½¡æ°”è¢­æ¥ï¼Œç›´æ¥å°†ä½ å†²å€’åœ¨åœ°ï¼\n");
              call_out("no_dodge_end", me->query_skill("dragonforce",1)/20+random(3), target);
 							}
 				}
-				else tell_object(me,HIW "\nºÃÏñÁ¦µÀ²»¹»£¡\n"NOR);
+				else tell_object(me,HIW "\nå¥½åƒåŠ›é“ä¸å¤Ÿï¼\n"NOR);
 	}
 	else 
-		tell_object(me,HIW "\nÔã¸â£¡Á¦µÀ²»¹»£¡\n"NOR);
+		tell_object(me,HIW "\nç³Ÿç³•ï¼åŠ›é“ä¸å¤Ÿï¼\n"NOR);
 
 		COMBAT_D->report_sen_status(target);		
         if( living(target) ) target->kill_ob(me);
@@ -96,6 +96,6 @@ void no_dodge_end(object target)
 {
 	if (!target) return;
 	target->delete_temp("no_dodge");
-	message_vision(HIY"\n$NÅÄÅÄÉíµÄÍÁ£¬ÅÀÁËÆğÀ´£¡\n"NOR,target);
+	message_vision(HIY"\n$Næ‹æ‹èº«çš„åœŸï¼Œçˆ¬äº†èµ·æ¥ï¼\n"NOR,target);
 	return;
 }

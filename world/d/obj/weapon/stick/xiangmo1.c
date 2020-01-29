@@ -5,20 +5,20 @@ inherit STICK;
 
 void create()
 {
-        set_name("½µÄ§°ô", ({"xiangmo bang", "bang"}));
+        set_name("é™é­”æ£’", ({"xiangmo bang", "bang"}));
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
 set("no_drop",1);
 set("no_give",1);
 set("no_put",1);
 		set("no_sell", 1);
-		set("long", "Ò»°Ñµ­ÇàÉ«µÄ¶Ì°ô£¬ÉÏÃæÓĞ°µºìÁ÷¶¯£¬ÈçÍ¬Ò»Ìõ»ğÉß°ãÈÆÔÚ°ôÉÏ¡£\n");
+		set("long", "ä¸€æŠŠæ·¡é’è‰²çš„çŸ­æ£’ï¼Œä¸Šé¢æœ‰æš—çº¢æµåŠ¨ï¼Œå¦‚åŒä¸€æ¡ç«è›‡èˆ¬ç»•åœ¨æ£’ä¸Šã€‚\n");
                 set("value", 20000);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸ºô¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
+                set("wield_msg", "$Nã€Œå‘¼ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
         }
         init_stick(260);
         setup();

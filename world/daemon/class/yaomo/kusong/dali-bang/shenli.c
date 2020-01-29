@@ -15,23 +15,23 @@ int perform(object me, object target)
 	
       if( !target ) target = offensive_target(me);
       if( !target || !target->is_character()||target->is_corpse()||target==me)
-          return notify_fail("ÄãÒª¹¥»÷Ë­£¿\n");
-    //            if(me->query("family/family_name")!="»ğÔÆ¶´")
-// return notify_fail("¡°Ìì´ÍÉñÁ¦¡±Ö»ÓĞ»ğÔÆ¶´ÃÅÈË²Å¿ÉÒÔÓÃ£¡\n");
+          return notify_fail("ä½ è¦æ”»å‡»è°ï¼Ÿ\n");
+    //            if(me->query("family/family_name")!="ç«äº‘æ´")
+// return notify_fail("â€œå¤©èµç¥åŠ›â€åªæœ‰ç«äº‘æ´é—¨äººæ‰å¯ä»¥ç”¨ï¼\n");
       if( (int)me->query_str() < 20 )
-                return notify_fail("Äã±ÛÁ¦Ì«²î, ÎŞ·¨Ê¹ÓÃ¡¸Ìì´ÍÉñÁ¦¡¹¡£\n");   
+                return notify_fail("ä½ è‡‚åŠ›å¤ªå·®, æ— æ³•ä½¿ç”¨ã€Œå¤©èµç¥åŠ›ã€ã€‚\n");   
       if (!target->is_fighting(me))
-             return notify_fail("ÄãÃÇÃ»ÓĞÔÚ´ò¼Ü£¡\n");
+             return notify_fail("ä½ ä»¬æ²¡æœ‰åœ¨æ‰“æ¶ï¼\n");
       if ((int)me->query_skill("force",1)<60)
-          return notify_fail("ÄãµÄÄÚ¹¦Ì«²î¡£\n");
+          return notify_fail("ä½ çš„å†…åŠŸå¤ªå·®ã€‚\n");
       if ((int)me->query_skill("dali-bang",1)<60)
-         return notify_fail("Äã´óÁ¦¹÷·¨»ğºò²»¹»¡£\n");
+         return notify_fail("ä½ å¤§åŠ›æ£æ³•ç«å€™ä¸å¤Ÿã€‚\n");
       if (me->query("force")<500)
-           return notify_fail("ÄãÄÚÁ¦²»¼Ì£¬ÄÑÒÔ³öÕĞ¡£\n");
-      if (me->query_temp("pfm_shenli")) return notify_fail("ÄãÒÑ¾­±»´ÍÓÚÉñÁ¦ÁË¡£\n");
+           return notify_fail("ä½ å†…åŠ›ä¸ç»§ï¼Œéš¾ä»¥å‡ºæ‹›ã€‚\n");
+      if (me->query_temp("pfm_shenli")) return notify_fail("ä½ å·²ç»è¢«èµäºç¥åŠ›äº†ã€‚\n");
 	me->add("force",-100);
-	message_vision(HIW"$NÍ»È»¾ÙÆğÊÖÖĞ"NOR+weapon->name()+
-	HIW"ÏòÌì¸ßº°Ò»Éù¡¸Ìì´ÍÉñÁ¦¡¹!\n"NOR,me,target);
+	message_vision(HIW"$Nçªç„¶ä¸¾èµ·æ‰‹ä¸­"NOR+weapon->name()+
+	HIW"å‘å¤©é«˜å–Šä¸€å£°ã€Œå¤©èµç¥åŠ›ã€!\n"NOR,me,target);
 	me->add("sen",-100);
 
         howlong=me->query_skill("dali-bang",1)/2;
@@ -51,6 +51,6 @@ int remove_ansi(object me,int strength)
 if (!me) return 1;
 	me->add_temp("apply/strength",-me->query_skill("dali-bang",1)/2);
 	me->delete_temp("pfm_shenli");
-	message_vision(HIW"$N·¢¾õÉñÁ¦ÕıÂıÂıÀë¿ª£¡\n"NOR,me);
+	message_vision(HIW"$Nå‘è§‰ç¥åŠ›æ­£æ…¢æ…¢ç¦»å¼€ï¼\n"NOR,me);
 	return 1;	
 }

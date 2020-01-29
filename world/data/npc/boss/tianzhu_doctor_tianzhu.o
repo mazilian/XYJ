@@ -1,9 +1,9 @@
 #/d/qujing/tianzhu/npc/hou.c
-dbase (["kar":26,"eff_kee":442,"startroom":"/d/qujing/tianzhu/yaofang","mana":0,"vendor_goods":(["fen":"/d/qujing/tianzhu/obj/fen","dan":"/d/qujing/tianzhu/obj/dan","wan":"/d/qujing/tianzhu/obj/wan",]),"sen":494,"eff_gin":372,"gin":372,"combat_exp":50000,"gender":"ÄĞĞÔ","max_gin":372,"name":"ºîÀÉÖĞ","id":"hou langzhong","daoxing":30000,"eff_sen":494,"attitude":"friendly","can_speak":1,"race":"ÈËÀà","shen_type":1,"limbs":({"Í·²¿","¾±²¿","ĞØ¿Ú","ºóĞÄ","×ó¼ç","ÓÒ¼ç","×ó±Û","ÓÒ±Û","×óÊÖ","ÓÒÊÖ","Ñü¼ä","Ğ¡¸¹","×óÍÈ","ÓÒÍÈ","×ó½Å","ÓÒ½Å",}),"force":0,"shop_title":"ÀÏÀÉÖĞ","default_actions":,"potential":1,"shop_id":({"langzhong","hou",}),"actions":,"per":21,"max_sen":494,"spi":17,"age":48,"con":10,"atman":0,"unit":"Î»","cor":25,"kee":442,"int":21,"cps":27,"max_kee":442,"str":24,])
+dbase (["kar":26,"eff_kee":442,"startroom":"/d/qujing/tianzhu/yaofang","mana":0,"vendor_goods":(["fen":"/d/qujing/tianzhu/obj/fen","dan":"/d/qujing/tianzhu/obj/dan","wan":"/d/qujing/tianzhu/obj/wan",]),"sen":494,"eff_gin":372,"gin":372,"combat_exp":50000,"gender":"ç”·æ€§","max_gin":372,"name":"ä¾¯éƒä¸­","id":"hou langzhong","daoxing":30000,"eff_sen":494,"attitude":"friendly","can_speak":1,"race":"äººç±»","shen_type":1,"limbs":({"å¤´éƒ¨","é¢ˆéƒ¨","èƒ¸å£","åå¿ƒ","å·¦è‚©","å³è‚©","å·¦è‡‚","å³è‡‚","å·¦æ‰‹","å³æ‰‹","è…°é—´","å°è…¹","å·¦è…¿","å³è…¿","å·¦è„š","å³è„š",}),"force":0,"shop_title":"è€éƒä¸­","default_actions":,"potential":1,"shop_id":({"langzhong","hou",}),"actions":,"per":21,"max_sen":494,"spi":17,"age":48,"con":10,"atman":0,"unit":"ä½","cor":25,"kee":442,"int":21,"cps":27,"max_kee":442,"str":24,])
 skills (["unarmed":30,"parry":30,"dodge":30,])
 learned (["unarmed":16,"parry":0,"dodge":0,])
 SAVE_NAME "tianzhu_doctor_tianzhu"
 price_ratio 10
-bidder_long "Îå×¯¹ÛÕÆÃÅ´óÊ¦½ã Î÷Ìì(Qujing)¡£"
+bidder_long "äº”åº„è§‚æŒé—¨å¤§å¸ˆå§ è¥¿å¤©(Qujing)ã€‚"
 close_time 1381173390
 last_profit 22800

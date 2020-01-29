@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW"º½¿ÕÄ¸½¢<ÁÉÄşºÅ>"NOR, ({ "carrier","aircraft carrier" }) );
+        set_name(HIW"èˆªç©ºæ¯èˆ°<è¾½å®å·>"NOR, ({ "carrier","aircraft carrier" }) );
         set_weight(1500000);
         set_max_encumbrance(1000000);
 		set("no_get",1);
@@ -32,8 +32,8 @@ void create()
 		  c->move(this_object());
                 set_default_object(__FILE__);
         } else {
-                set("unit", "ËÒ");
-                set("long", "ÕâÊÇÒ»ËÒ¾Ş´óµÄº½¿ÕÄ¸½¢£¬ÉÏÃæÍ£·ÅÁËºÜ¶à·É»ú£¡Äã¿ÉÒÔ³¢ÊÔÇëËûĞ­Öú(xiezhu)\n");
+                set("unit", "è‰˜");
+                set("long", "è¿™æ˜¯ä¸€è‰˜å·¨å¤§çš„èˆªç©ºæ¯èˆ°ï¼Œä¸Šé¢åœæ”¾äº†å¾ˆå¤šé£æœºï¼ä½ å¯ä»¥å°è¯•è¯·ä»–ååŠ©(xiezhu)\n");
 					         
                 set("value", 10000000);
         }
@@ -59,24 +59,24 @@ int do_helpfire()
     me=this_player();
 
     if(me->query("mieyao/helpkill")==0)
-		return notify_fail("±¾½¢Î´½Óµ½Ğ­ÖúÄã¹¥»÷µÄÃüÁî£¡\n");
+		return notify_fail("æœ¬èˆ°æœªæ¥åˆ°ååŠ©ä½ æ”»å‡»çš„å‘½ä»¤ï¼\n");
 
 	guai = find_living(me->query("mieyao/ygid"));
 
 	if(!living(guai) || me->query("mieyao/done"))
-		return notify_fail("±¾½¢ÎŞ·¨Ëø¶¨ÄãµÄÄ¿±ê£¡\n");
+		return notify_fail("æœ¬èˆ°æ— æ³•é”å®šä½ çš„ç›®æ ‡ï¼\n");
 
 	if(me->query("mieyao/helpkill") > 0 && living(guai))
 	{
-		message_vision("Ò»ÕóºäÃù£¬Ò»¼ÜÕ½¶·»ú´Óº½Ä¸ÉÏÆğ·ÉÁË£¡\n",me);
+		message_vision("ä¸€é˜µè½°é¸£ï¼Œä¸€æ¶æˆ˜æ–—æœºä»èˆªæ¯ä¸Šèµ·é£äº†ï¼\n",me);
 		fighter=new("/obj/toy/fighter");
 	   if(fighter->move(environment(guai)))
 	   {
-		tell_object(environment(guai),"Ò»ÕóºäÃù£¬Ò»¼ÜÕ½¶·»ú´ÓÔÆ¶Ë¸©³å¶øÏÂ£¡\n");
-		tell_object(environment(guai),HIR"Õ½¶·»úÒ»Õó»úÅÚÉ¨Éä£¡\n"NOR);
+		tell_object(environment(guai),"ä¸€é˜µè½°é¸£ï¼Œä¸€æ¶æˆ˜æ–—æœºä»äº‘ç«¯ä¿¯å†²è€Œä¸‹ï¼\n");
+		tell_object(environment(guai),HIR"æˆ˜æ–—æœºä¸€é˜µæœºç‚®æ‰«å°„ï¼\n"NOR);
 		guai->die();
 		me->add("mieyao/helpkill",-1);
-		tell_object(environment(fighter),"Õ½¶·»úÒ¡ÁËÒ¡³á°ò£¬·É×ßÁË£¡\n");
+		tell_object(environment(fighter),"æˆ˜æ–—æœºæ‘‡äº†æ‘‡ç¿…è†€ï¼Œé£èµ°äº†ï¼\n");
 		destruct(fighter);
 		return 1;
 
@@ -84,13 +84,13 @@ int do_helpfire()
 	   else
 	   {
 		   destruct(fighter);
-		   return notify_fail("±¾½¢ÎŞ·¨Íê³É¹¥»÷ÈÎÎñ£¡\n");
+		   return notify_fail("æœ¬èˆ°æ— æ³•å®Œæˆæ”»å‡»ä»»åŠ¡ï¼\n");
 
 	   
 	   }
 
 	}
 
-	else return notify_fail("±¾½¢Ä¿Ç°ÎŞ·¨Íê³É¹¥»÷ÈÎÎñ£¡\n");
+	else return notify_fail("æœ¬èˆ°ç›®å‰æ— æ³•å®Œæˆæ”»å‡»ä»»åŠ¡ï¼\n");
 
 }

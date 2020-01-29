@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-set("short", "ÌìºÓ");
+set("short", "å¤©æ²³");
 set("long", @LONG
     
-ÎÞÊýÐÇÐÇ»ãºÏ³ÉÁËÕâÌõ¿í¹ãµÄÒøºÓ£¬¾ÝËµÕâÊÇµ±ÄêÍõÄ¸ÄïÄï
-ÓÃËýÍ·ÉÏµÄÒøô¢»®³öµÄ£¬ÔÚÕâÃÀÀöµÄÒøºÓÖ®ÅÏ£¬²»Öª·¢ÉúÁË
-¶àÉÙ¶¯ÈËµÄ¹ÊÊÂ¡£
+æ— æ•°æ˜Ÿæ˜Ÿæ±‡åˆæˆäº†è¿™æ¡å®½å¹¿çš„é“¶æ²³ï¼Œæ®è¯´è¿™æ˜¯å½“å¹´çŽ‹æ¯å¨˜å¨˜
+ç”¨å¥¹å¤´ä¸Šçš„é“¶ç°ªåˆ’å‡ºçš„ï¼Œåœ¨è¿™ç¾Žä¸½çš„é“¶æ²³ä¹‹ç•”ï¼Œä¸çŸ¥å‘ç”Ÿäº†
+å¤šå°‘åŠ¨äººçš„æ•…äº‹ã€‚
 LONG );
 
 
@@ -43,16 +43,16 @@ object horse = who->query_temp("ridee");
 
 if (! horse) 
   {
-  message_vision(HIY "$N×ÝÉíÌø³öÌìºÓ¡£\n" NOR, who);
+  message_vision(HIY "$Nçºµèº«è·³å‡ºå¤©æ²³ã€‚\n" NOR, who);
   who->move(__DIR__"dadao1");
-  message_vision(HIY "$N´ÓÌìºÓÀïÌøÁË³öÀ´¡£\n" NOR, who);
+  message_vision(HIY "$Nä»Žå¤©æ²³é‡Œè·³äº†å‡ºæ¥ã€‚\n" NOR, who);
   }
 else 
   {
-  message_vision(HIY "$N"+horse->query("ride/msg")+"×Å"+horse->name()+"Ìø³öÌìºÓ¡£\n" NOR, who,horse);
+  message_vision(HIY "$N"+horse->query("ride/msg")+"ç€"+horse->name()+"è·³å‡ºå¤©æ²³ã€‚\n" NOR, who,horse);
   who->move(__DIR__"dadao1");
   horse->move(__DIR__"dadao1");
-  message_vision(HIY "$N"+horse->query("ride/msg")+"×Å"+horse->name()+"´ÓÌìºÓÌøÁË³öÀ´¡£\n" NOR, who,horse);
+  message_vision(HIY "$N"+horse->query("ride/msg")+"ç€"+horse->name()+"ä»Žå¤©æ²³è·³äº†å‡ºæ¥ã€‚\n" NOR, who,horse);
   }
 return 1;
 }
@@ -64,7 +64,7 @@ object fu;
 
 if ( who->query("dntg/bmw") != "allow" )
   { 
-  tell_object(who,"Ã»ÊÂ¶ùÂÒºô·ç»½ÓêµÄ£¬²»ÅÂÈÇ»ö£¿\n");
+  tell_object(who,"æ²¡äº‹å„¿ä¹±å‘¼é£Žå”¤é›¨çš„ï¼Œä¸æ€•æƒ¹ç¥¸ï¼Ÿ\n");
   return 1;
   }
 if ( present("feng ling fu", this_player()) 
@@ -73,7 +73,7 @@ if ( present("feng ling fu", this_player())
      && present("dian ling fu", this_player()) 
     )
   {
-  message_vision(HIY "$NÉìÊÖÒ»Ö¸£¬Ìì¿ÕÖÐÆ®¹ýÒ»¶äÎÚÔÆ¡£\n" NOR, who);
+  message_vision(HIY "$Nä¼¸æ‰‹ä¸€æŒ‡ï¼Œå¤©ç©ºä¸­é£˜è¿‡ä¸€æœµä¹Œäº‘ã€‚\n" NOR, who);
   fu=present("feng ling fu", this_player());
   destruct(fu);
   fu=present("yun ling fu", this_player());
@@ -86,7 +86,7 @@ if ( present("feng ling fu", this_player())
   }
 else 
   {
-  message_vision("$N»¹ÊÇ´ÕÆë£¢·ç£¢£¬£¢ÔÆ£¢£¬£¢À×£¢£¬£¢µç£¢ËÄÕÅÁé·ûÔÙÀ´ÏÂÓê°É¡£\n", who);
+  message_vision("$Nè¿˜æ˜¯å‡‘é½ï¼‚é£Žï¼‚ï¼Œï¼‚äº‘ï¼‚ï¼Œï¼‚é›·ï¼‚ï¼Œï¼‚ç”µï¼‚å››å¼ çµç¬¦å†æ¥ä¸‹é›¨å§ã€‚\n", who);
   }
 return 1;
 }
@@ -95,7 +95,7 @@ void get_rain (object who)
 {
   object horse = who->query_temp("ridee");
 
-  message_vision(HIY "×ªË²¼ä£¬Ìì¿ÕÖÐµçÉÁÀ×Ãù£¬ÏÂÆðÁËÆ®ÆÃ´óÓê¡£\n" NOR, who);
+  message_vision(HIY "è½¬çž¬é—´ï¼Œå¤©ç©ºä¸­ç”µé—ªé›·é¸£ï¼Œä¸‹èµ·äº†é£˜æ³¼å¤§é›¨ã€‚\n" NOR, who);
   if ((who->query("dntg/bmw") == "allow")  && (horse) )
     {
     if ((horse->query("kee")>200) && (horse->query("id")=="ma ju"))
@@ -106,8 +106,8 @@ void get_rain (object who)
 void become_horse (object who)
 {
   object horse = who->query_temp("ridee");
-  message_vision("Ð¡Âí¾ÔÔÚÓêÖÐ¸ßÐËµÄ³¤ÃùÒ»Éù¡£\n", who);
-  message_vision(HIY "Ð¡Âí¾Ô³¤´óÁË£¡\n" NOR, who);
+  message_vision("å°é©¬é©¹åœ¨é›¨ä¸­é«˜å…´çš„é•¿é¸£ä¸€å£°ã€‚\n", who);
+  message_vision(HIY "å°é©¬é©¹é•¿å¤§äº†ï¼\n" NOR, who);
   destruct(horse);
   horse = new ("/d/dntg/bmw/npc/horse");
   horse->move(environment(who));
@@ -124,7 +124,7 @@ void fight_river (object who)
   if (environment(who));
     {
     fighter->move(environment(who));
-    message_vision("ºöÈ»ÌìÅîÔªË§¼±¼±Ã¦Ã¦¸ÏÀ´£¬¶ÔÄã´óºÈµÀ£º¸ÒÀ´ÌìºÓÔì´Î£¬·´ÁË²»³É£¿\n", who);
+    message_vision("å¿½ç„¶å¤©è“¬å…ƒå¸…æ€¥æ€¥å¿™å¿™èµ¶æ¥ï¼Œå¯¹ä½ å¤§å–é“ï¼šæ•¢æ¥å¤©æ²³é€ æ¬¡ï¼Œåäº†ä¸æˆï¼Ÿ\n", who);
     fighter->command("follow " + who->query("id"));
     fighter->command("kill " + who->query("id"));
     who->fight_ob(fighter);

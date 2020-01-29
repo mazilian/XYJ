@@ -6,22 +6,22 @@ inherit BLADE;
 
 void create()
 {
-        set_name(RED"ÒûÑªµ¶"NOR, ({"yinxue dao", "dao"}));
+        set_name(RED"é¥®è¡€åˆ€"NOR, ({"yinxue dao", "dao"}));
 
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "Ò»°Ñµ¶Éí°µºìµÄ³¤µ¶£¬µ¶°ÑÉÏÏâÇ¶ÓĞºì±¦Ê¯¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "ä¸€æŠŠåˆ€èº«æš—çº¢çš„é•¿åˆ€ï¼Œåˆ€æŠŠä¸Šé•¶åµŒæœ‰çº¢å®çŸ³ã€‚\n");
              set("no_give", 1);
              set("no_sell", 1);
              set("no_drop", 1);
              set("no_put", 1);
                 set("value", 2500);
                 set("material", "gold");
-                set("wield_msg", "$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ£¡\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²åÈëµ¶ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€åœ°ä¸€å£°æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ï¼\n");
+                set("unwield_msg", "$Nå°†æ‰‹ä¸­çš„$næ’å…¥åˆ€é˜ã€‚\n");
         set("weapon_prop/courage", 15);
 
         }
@@ -34,18 +34,18 @@ mixed hit_ob(object me, object victim,int damage_bonus,int gp)
 {if (50<random(100)) return 0;
         gp=(int)(random(damage_bonus/4));
 if (gp < 1) gp=1;if (gp > 100) gp=100;
-message_vision(HIR"$NÊÖÖĞÒûÑªµ¶Ò»µÀ°µºìÉÁ¹ı¡£\n"NOR,me,victim);
-if(wizardp(me)) tell_object(me,HIY"ÎüÑªÁ¿£º"+gp+"\n"NOR);
+message_vision(HIR"$Næ‰‹ä¸­é¥®è¡€åˆ€ä¸€é“æš—çº¢é—ªè¿‡ã€‚\n"NOR,me,victim);
+if(wizardp(me)) tell_object(me,HIY"å¸è¡€é‡ï¼š"+gp+"\n"NOR);
 //if( (int)me->query("kee")  < 3*(int)me->query("max_kee")/2 ) me->add("kee", gp);
 	call_out("leech",1,me,gp);
 return gp;}
 void leech(object me,int gp)
 {if (!living(me)) return;
 if( (int)me->query("kee")  > 3*(int)me->query("max_kee")/2 )
-{message_vision(HIR"\n$Nºì¹â÷öµ­ÏÂÀ´£¡\n"NOR,me);return;}
+{message_vision(HIR"\n$Nçº¢å…‰é»¯æ·¡ä¸‹æ¥ï¼\n"NOR,me);return;}
 else {me->add("kee", gp);
-message_vision(HIR"\n$N¾õµÃÆøÑªÓĞËù»Ö¸´£¡\n"NOR,me);
-if(wizardp(me)) tell_object(me,HIR"ÎüÑªÁ¿£º"+gp+"\n"NOR);
+message_vision(HIR"\n$Nè§‰å¾—æ°”è¡€æœ‰æ‰€æ¢å¤ï¼\n"NOR,me);
+if(wizardp(me)) tell_object(me,HIR"å¸è¡€é‡ï¼š"+gp+"\n"NOR);
 return;}
 }
 

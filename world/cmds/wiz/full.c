@@ -11,7 +11,7 @@ int main(object ob,string arg)
       {
         me = present(arg, environment(ob));
         if (!me) me =  find_player(arg);
-        if (!me) return notify_fail("ÄãÒª»Ö¸´Ë­µÄ×´Ì¬£¿\n");
+        if (!me) return notify_fail("ä½ è¦æ¢å¤è°çš„çŠ¶æ€ï¼Ÿ\n");
       }
         jin = me->query("max_sen");
         qi =me->query("max_kee");
@@ -34,9 +34,9 @@ int main(object ob,string arg)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : full
+æŒ‡ä»¤æ ¼å¼ : full
 
-´ËÖ¸Áî¿ÉÈÃÄã»Ö¸´ËùÓĞµÄ¾«Æø¡£
+æ­¤æŒ‡ä»¤å¯è®©ä½ æ¢å¤æ‰€æœ‰çš„ç²¾æ°”ã€‚
 HELP
     );
     return 1;

@@ -10,12 +10,12 @@ int exert(object me, object target)
 
 
         if( !me->is_fighting() )
-                return notify_fail("��ζ���ֻ����ս����ʹ�á�\n");
+                return notify_fail("三味真火只能在战斗中使用。\n");
 
         if( (int)me->query("force") < 200 )
-                return notify_fail("�������������\n");
+                return notify_fail("你的内力不够。\n");
 	if( (int)me->query("kee") < 100)
-		return notify_fail("������������ˡ�\n");
+		return notify_fail("你的力气不够了。\n");
 
         skill = me->query_skill("force");
 	force = me->query("max_force");
@@ -24,8 +24,8 @@ int exert(object me, object target)
 	me->receive_wound("kee", 30);
 
         me->start_busy(5);
-	message_vision(HIR "\n$N�˺�������ȭͷ�ڱ������������£���ʱ��Ѫֱð\n
-��Ȼ��$N���г����Ȼ����������������е��ˣ�\n\n"NOR, me);
+	message_vision(HIR "\n$N退后两步，拳头在鼻子上砸了两下，顿时鲜血直冒\n
+忽然从$N口中冲出红橙黄三道火焰烧向所有的人！\n\n"NOR, me);
         ob = all_inventory(environment(me));
         for(i=0; i<sizeof(ob); i++) {
                 if( !living(ob[i]) || ob[i]==me ) continue;
@@ -36,7 +36,7 @@ int exert(object me, object target)
                         ob[i]->receive_damage("kee", damage);
                         if( (int)ob[i]->query("force") < skill * 2 )
                                 ob[i]->receive_wound("kee", damage/2);
-                        tell_object(ob[i], "����㱻�յý�ͷ�ö\n");
+                        tell_object(ob[i], "结果你被烧得焦头烂额！\n");
                 }
 		COMBAT_D->report_status(ob[i]);		
                 if( userp(ob[i]) ) ob[i]->fight_ob(me);

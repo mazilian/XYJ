@@ -7,11 +7,11 @@ int can_enter=1;
 
 void create ()
 {
-	set ("short", "Í¤µ×°µÊÒ");
+	set ("short", "äº­åº•æš—å®¤");
 	set ("long", @LONG
 
-ÕâÊÇÄµµ¤Í¤µ×ÏÂµÄÒ»¼ä°µÊÒ¡£ºÚ¹¾ÁþßËµÄÊ²Ã´Ò²¿´²»Çå¡£ÄãÊÔ×Å
-µ½´¦ÃþÁËÃþ(mo)¡£ 
+è¿™æ˜¯ç‰¡ä¸¹äº­åº•ä¸‹çš„ä¸€é—´æš—å®¤ã€‚é»‘å’•çª¿å’šçš„ä»€ä¹ˆä¹Ÿçœ‹ä¸æ¸…ã€‚ä½ è¯•ç€
+åˆ°å¤„æ‘¸äº†æ‘¸(mo)ã€‚ 
 LONG);
 
 	set("exits", 
@@ -27,7 +27,7 @@ LONG);
 		//__DIR__"obj/huangtong-key" : 1,
 	]));
 
-	create_door("up", "×Àµ×°µÃÅ", "down", DOOR_CLOSED);
+	create_door("up", "æ¡Œåº•æš—é—¨", "down", DOOR_CLOSED);
 	//set("outdoors", "wuzhuang");
 
 	set("no_clean_up", 1);
@@ -65,7 +65,7 @@ int do_mo(string arg)
 	int sen;
 
 	me = this_player();
-	notify_fail("ÄãÊ²Ã´Ò²Ã»Ãþ×Å¡£\n");
+	notify_fail("ä½ ä»€ä¹ˆä¹Ÿæ²¡æ‘¸ç€ã€‚\n");
 	
 	if(me->is_busy()) return 0;
 
@@ -85,7 +85,7 @@ int do_mo(string arg)
 		set("available", 0);
 		key = new(__DIR__"obj/huangtong-key");
 		key -> move(this_object());
-		message_vision("Ö»Ìýµ±£¡µØÒ»Éù£¬Ò»°Ñ»ÆÍ­Ô¿³×µôÔÚµØÉÏ¡£\n", me);
+		message_vision("åªå¬å½“ï¼åœ°ä¸€å£°ï¼Œä¸€æŠŠé»„é“œé’¥åŒ™æŽ‰åœ¨åœ°ä¸Šã€‚\n", me);
 
 		remove_call_out("generate_key");
 		call_out("generate_key", 86400+random(100)*864);// 1.5 day
@@ -97,7 +97,7 @@ int do_mo(string arg)
 			(string)me->query("zhangmen/base_name") 
 			== "/d/qujing/wuzhuang/npc/zhangmen")
 		{
-			message_vision("$NÔÚÇ½ÉÏÃþË÷ÁËÒ»ÏÂ£¬Ö»Ìý¿¦àê£¡Ò»ÉùÒ»µÀ°µÃÅ·­³ö£¬°Ñ$N´øµ½ÁËÒ»¼äÃØÊÒ¡£\n", me);
+			message_vision("$Nåœ¨å¢™ä¸Šæ‘¸ç´¢äº†ä¸€ä¸‹ï¼Œåªå¬å–€åš“ï¼ä¸€å£°ä¸€é“æš—é—¨ç¿»å‡ºï¼ŒæŠŠ$Nå¸¦åˆ°äº†ä¸€é—´ç§˜å®¤ã€‚\n", me);
 			me->move(__DIR__"anshi-more1");
 
 			// mon 10/19/20

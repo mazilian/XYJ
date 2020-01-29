@@ -4,7 +4,7 @@
 #  	For Win32    			                                     #
 ##############################################################################
 
-name : Î÷ÓÎ¼Ç  
+name : è¥¿æ¸¸è®°  
 port number : 8080
 address server ip : 106.187.44.231
 address server port : 6665 
@@ -110,10 +110,10 @@ hash table size : 7001
 object table size : 1501
  
 # default no-matching-action message
-default fail message : Ã»ÓĞÕâ¸öÖ¸Áî»ò¶¯×÷¡£
+default fail message : æ²¡æœ‰è¿™ä¸ªæŒ‡ä»¤æˆ–åŠ¨ä½œã€‚
 
 # default message when error() occurs (optional)
-default error message : [1;33mÄã·¢ÏÖÏµÍ³£Â£Õ£Ç,Çë±¨¸æÎ×Ê¦¡£[2;37;0m
+default error message : [1;33mä½ å‘ç°ç³»ç»Ÿï¼¢ï¼µï¼§,è¯·æŠ¥å‘Šå·«å¸ˆã€‚[2;37;0m
 
 
 

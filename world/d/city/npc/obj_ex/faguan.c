@@ -5,19 +5,19 @@ inherit HEAD;
 
 void create()
 {
-        set_name("ÌìÊ¦·¨¹Ú", ({ "loyal bonnet", "bonnet", "hat" }) );
+        set_name("å¤©å¸ˆæ³•å† ", ({ "loyal bonnet", "bonnet", "hat" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶¥");
-		set("long", "Ò»¶¥»ÆÉ«ÏóÑÀÓñ·¨¹Ú¡£\n");
+                set("unit", "é¡¶");
+		set("long", "ä¸€é¡¶é»„è‰²è±¡ç‰™ç‰æ³•å† ã€‚\n");
                 set("material", "steel");
                 set("value", 1000);
 		set("no_sell", 1);
-				set("no_drop","È¥À¬»ø¶Ñ¶ª°É£¬ÂÒÈÓ»áÎÛÈ¾»·¾³!\n");
-				set("no_give","×Ü¹Ü·¢µÄ×°±¸£¬¿É²»ÄÜÂÒËÍÈËÓ´£¡\n");
-				set("no_get","ÏëÄÃ×Ü¹Ü¿ò¿ò·¢µÄ×°±¸£¿×öÃÎ°É!\n");
+				set("no_drop","å»åƒåœ¾å †ä¸¢å§ï¼Œä¹±æ‰”ä¼šæ±¡æŸ“ç¯å¢ƒ!\n");
+				set("no_give","æ€»ç®¡å‘çš„è£…å¤‡ï¼Œå¯ä¸èƒ½ä¹±é€äººå“Ÿï¼\n");
+				set("no_get","æƒ³æ‹¿æ€»ç®¡æ¡†æ¡†å‘çš„è£…å¤‡ï¼Ÿåšæ¢¦å§!\n");
                 set("armor_prop/armor", 3);
 		set("armor_prop/intelligence", 3);
 		set("armor_prop/personality", 1);

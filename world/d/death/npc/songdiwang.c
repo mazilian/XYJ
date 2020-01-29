@@ -5,9 +5,9 @@ inherit "/d/dntg/hell/wang.c";
 
 void create()
 {
-  set_name("ËÎµÛÍõ", ({"songdi wang", "wang", "songdi"}));
-  set("title", "Òõ¼äÊ®ÍõÖ®");
-  set("gender", "ÄĞĞÔ");
+  set_name("å®‹å¸ç‹", ({"songdi wang", "wang", "songdi"}));
+  set("title", "é˜´é—´åç‹ä¹‹");
+  set("gender", "ç”·æ€§");
   set("age", 100);
   set("class", "youling");
   set("attitude", "friendly");
@@ -57,4 +57,3 @@ void create()
   
 }
 
-ÿ

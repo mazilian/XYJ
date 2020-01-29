@@ -11,7 +11,7 @@ string chinese_daoxing(int);
 void create() {
     set_name(flowers[random(sizeof(flowers))], ({ "flower"}));
   set_weight(100);
-  set("unit", "¶ä");
+  set("unit", "æœµ");
   set("armor_prop/armor", 1);
   set("armor_prop/personality", 2);
   setup();
@@ -28,14 +28,14 @@ int do_eat(string arg) {
   
   if (!arg) return 0;
   if (this_object()!=present(arg,me)) return 0;
-   message_vision(HIC"$N³ÔÏÂÒ»¶ä"+query("name")+HIC"£¬Ö»¾õµÃÏãÆøÆË±Ç£¬³İ¼Õ·Ò·¼¡£\n"NOR,me);
+   message_vision(HIC"$Nåƒä¸‹ä¸€æœµ"+query("name")+HIC"ï¼Œåªè§‰å¾—é¦™æ°”æ‰‘é¼»ï¼Œé½¿é¢ŠèŠ¬èŠ³ã€‚\n"NOR,me);
   if (query("target")==me && score>0) {
 	if (me->query("daoxing") > 5000000) score/=10; //by hexiu
     me->add("daoxing",score);
   qn=score*(20+random(10))/100;
 //if (me->query("potential")-me->query("learned_points")<1000) 
   me->add("potential",qn);
-    tell_object(me,HIC"ÄãµÃµ½ÁË"+chinese_daoxing(score)+"µÀĞĞ£¬"+qn+"µãÇ±ÄÜ¡£\n"NOR);
+    tell_object(me,HIC"ä½ å¾—åˆ°äº†"+chinese_daoxing(score)+"é“è¡Œï¼Œ"+qn+"ç‚¹æ½œèƒ½ã€‚\n"NOR);
   MONITOR_D->report_system_object_msg(me," got "+score+" daoxing "+qn+" pots from baihua-gu.\n" );
   log_file("baihuagu",me->query("id")+" got "+score+" daoxing "+qn+" pots on "+ctime(time())+".\n");
   }
@@ -50,8 +50,8 @@ string chinese_daoxing(int gain) {
              day=(gain-year*1000)/4;
              hour=(gain-year*1000-day*4)*3;
              str="";
-             if(year) str=str+chinese_number(year)+"Äê";
-             if(day) str=str+chinese_number(day)+"Ìì";
-             if(hour) str=str+chinese_number(hour)+"Ê±³½";
+             if(year) str=str+chinese_number(year)+"å¹´";
+             if(day) str=str+chinese_number(day)+"å¤©";
+             if(hour) str=str+chinese_number(hour)+"æ—¶è¾°";
              return str;
 }

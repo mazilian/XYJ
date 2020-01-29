@@ -9,11 +9,11 @@ inherit NPC_SAVE;
 void create()
 {
 		reload(query_save_file());
-        set_name("ÔîÍõÒ¯", ({"zao wangye","wangye"}));
-        set("title", "ÄÏ³Ç¿ÍÕ»");
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç¶ç‹çˆ·", ({"zao wangye","wangye"}));
+        set("title", "å—åŸå®¢æ ˆ");
+        set("gender", "ç”·æ€§" );
         set("age", 16);
-        set("long", "Ò»¸ö±»¹©ÑøµÃÅÖÅÖµÄÔîÍõÒ¯£¬Õı³å×ÅÄãĞ¦£®\n");
+        set("long", "ä¸€ä¸ªè¢«ä¾›å…»å¾—èƒ–èƒ–çš„ç¶ç‹çˆ·ï¼Œæ­£å†²ç€ä½ ç¬‘ï¼\n");
         set("combat_exp", 2000);
         set("attitude", "friendly");
         setup();
@@ -27,26 +27,26 @@ void init()
 int do_yao(string arg)
 {
 	object m,mm,me;
-	message_vision("$NæÒÆ¤Ğ¦Á³µØÏòÔîÍõÒ¯ÎÊµÀ:ÎÒÊÇĞÂÀ´µÄ£¬ÓĞÃ»ÓĞ¼ûÃæÀñÑ½?\n", this_player());
+	message_vision("$Nå¬‰çš®ç¬‘è„¸åœ°å‘ç¶ç‹çˆ·é—®é“:æˆ‘æ˜¯æ–°æ¥çš„ï¼Œæœ‰æ²¡æœ‰è§é¢ç¤¼å‘€?\n", this_player());
 	me=this_player();
 	if ( me->query("wizgift/newbiegift") )
 	{
-		return notify_fail("ÔîÍõÒ¯Ò»µÉÑÛ£ºÏëÃÉÎÒ£¿\n"); 
+		return notify_fail("ç¶ç‹çˆ·ä¸€çªçœ¼ï¼šæƒ³è’™æˆ‘ï¼Ÿ\n"); 
 	}
 //	if ( me->query("combat_exp") < 5000 )
-//	 return notify_fail("ÔîÍõÒ¯ËµµÀ: Ğ¡¼Ò»ïÁ·µã¹¦·òÔÙÀ´°Õ!\n");
+//	 return notify_fail("ç¶ç‹çˆ·è¯´é“: å°å®¶ä¼™ç»ƒç‚¹åŠŸå¤«å†æ¥ç½¢!\n");
 //
 	m=new("/d/city/npc/obj_ex/giftbox");
 //        mm=new("/obj/money/thousand-cash");
 	m->move(this_player());
 //        mm->move(this_player());
 	me->set("wizgift/newbiegift",1);
-	log_file("static/NEWBIEGIFT","["+ctime(time())+"] "+sprintf("%s(%s)´ÓÔîÍõÒ¯´¦µÃµ½ÁË%s(%s)\n",
+	log_file("static/NEWBIEGIFT","["+ctime(time())+"] "+sprintf("%s(%s)ä»ç¶ç‹çˆ·å¤„å¾—åˆ°äº†%s(%s)\n",
 		this_player()->query("name"),this_player()->query("id"),
 		m->query("name"),m->query("id")));
-	message_vision("ÔîÍõÒ¯¸ø$NÒ»¸öÀñÆ·ºĞ.\n", this_player());
-//        message_vision("ÔîÍõÒ¯¸ø$NÒ»ÕÅÒ»Ç§Á½µÄÒøÆ±\n",this_player()); 
-	message_vision("ÔîÍõÒ¯¶Ô$NĞ¦µÀ£ººÃºÃÁ·¡£\n", this_player());
+	message_vision("ç¶ç‹çˆ·ç»™$Nä¸€ä¸ªç¤¼å“ç›’.\n", this_player());
+//        message_vision("ç¶ç‹çˆ·ç»™$Nä¸€å¼ ä¸€åƒä¸¤çš„é“¶ç¥¨\n",this_player()); 
+	message_vision("ç¶ç‹çˆ·å¯¹$Nç¬‘é“ï¼šå¥½å¥½ç»ƒã€‚\n", this_player());
 	return 1;
 }
 
@@ -63,9 +63,9 @@ int accept_object(object who, object item)
 	object me = this_player();
 	if(base_name(item) == "/d/obj/drug/renshen-guo")
 	{
-		command("say ÕâÎ»" + RANK_D->query_respect(me) + "¹ûÈ»ÊÇÎ»ÓĞĞÄÈË£¡");
-		command("say ±ğµÄÎÒ°ï²»ÉÏ£¬µ«¸ø¸öÑûÇëÂëÊÇÃ»ÎÊÌâµÄ¡£");
-		printf( "Äã¿ÉÒÔÓÃ " + HIC +  "yqm" + NOR + " ²é¿´ÒÑ»ñµÃÑûÇëÂëÁĞ±í¡£\n");
+		command("say è¿™ä½" + RANK_D->query_respect(me) + "æœç„¶æ˜¯ä½æœ‰å¿ƒäººï¼");
+		command("say åˆ«çš„æˆ‘å¸®ä¸ä¸Šï¼Œä½†ç»™ä¸ªé‚€è¯·ç æ˜¯æ²¡é—®é¢˜çš„ã€‚");
+		printf( "ä½ å¯ä»¥ç”¨ " + HIC +  "yqm" + NOR + " æŸ¥çœ‹å·²è·å¾—é‚€è¯·ç åˆ—è¡¨ã€‚\n");
 
 		cnt_char = sizeof(base_char);
 		code = "";

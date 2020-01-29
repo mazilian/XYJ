@@ -7,18 +7,18 @@ inherit NPC;
 
 void create()
 {
-        set_name(""HIC"¿ò¿ò"NOR"", ({"zong guan", "null"}));
-        set("long", "ËûÊÇ·¢ËÍ×°±¸µÄ×Ü¹Ü¿ò¿ò,Äã¿ÉÒÔ(list)²é¿´ÏëÒªµÄ¶«Î÷¡£\n");
-	set("gender", "ÄÐÐÔ");
+        set_name(""HIC"æ¡†æ¡†"NOR"", ({"zong guan", "null"}));
+        set("long", "ä»–æ˜¯å‘é€è£…å¤‡çš„æ€»ç®¡æ¡†æ¡†,ä½ å¯ä»¥(list)æŸ¥çœ‹æƒ³è¦çš„ä¸œè¥¿ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 20);
 	set("per", 40);
-        set("title",""HIG"Î÷ÓÎ¼Ç×°±¸×Ü¹Ü"NOR);
+        set("title",""HIG"è¥¿æ¸¸è®°è£…å¤‡æ€»ç®¡"NOR);
 	set_skill("literate", 141);
 	set("chat_chance",5);
     set("chat_msg", ({
-        "¿ò¿òÇáÉù¸æËßÄã£ºÄã¿ÉÒÔÓÃlistÖ¸ÁîÁÐ³öÏëÒªµÄ¶«Î÷£¡\n",
-        "¿ò¿òÇáÉù¸æËßÄã£ºÄã¿ÉÒÔÓÃyaoÖ¸ÁîÏò×Ü¹ÜÎÒË÷È¡×°±¸¡£\n",
-        "¿ò¿òºÜÉñÆøµÄËµ£ºÎÒ¾ÍÊÇ×Ü¹Ü£¬×Ü¹Ü¾ÍÊÇÎÒ£¡\n",               
+        "æ¡†æ¡†è½»å£°å‘Šè¯‰ä½ ï¼šä½ å¯ä»¥ç”¨listæŒ‡ä»¤åˆ—å‡ºæƒ³è¦çš„ä¸œè¥¿ï¼\n",
+        "æ¡†æ¡†è½»å£°å‘Šè¯‰ä½ ï¼šä½ å¯ä»¥ç”¨yaoæŒ‡ä»¤å‘æ€»ç®¡æˆ‘ç´¢å–è£…å¤‡ã€‚\n",
+        "æ¡†æ¡†å¾ˆç¥žæ°”çš„è¯´ï¼šæˆ‘å°±æ˜¯æ€»ç®¡ï¼Œæ€»ç®¡å°±æ˜¯æˆ‘ï¼\n",               
         }));
 	setup();
 	carry_object("/d/obj/cloth/magua")->wear();
@@ -49,7 +49,7 @@ int do_fight(string arg)
 
   if (arg && present(arg,environment(who))==me)
   {
-	message_vision("$N¿´Ñù×ÓÏë´ò¼Ü£¬µ«¿ò¿òºÜÓÐº­Ñø,²»ºÍ$N¶¯´Ö¡£\n",who,me);
+	message_vision("$Nçœ‹æ ·å­æƒ³æ‰“æž¶ï¼Œä½†æ¡†æ¡†å¾ˆæœ‰æ¶µå…»,ä¸å’Œ$NåŠ¨ç²—ã€‚\n",who,me);
      return 1;
   }
   return 0;
@@ -62,7 +62,7 @@ int do_kill(string arg)
 
   if (arg && present(arg,environment(who))==me)
   {
-message_vision("$N¿´Ñù×ÓÏëÉ±ËÀ¿ò¿ò£¬µ«¿ò¿òÊÇÎÄ»¯ÈË,Ã»¸ú$NÒ»°ã¼ûÊ¶¡£\n",who,me);
+message_vision("$Nçœ‹æ ·å­æƒ³æ€æ­»æ¡†æ¡†ï¼Œä½†æ¡†æ¡†æ˜¯æ–‡åŒ–äºº,æ²¡è·Ÿ$Nä¸€èˆ¬è§è¯†ã€‚\n",who,me);
 
     return 1;
   }
@@ -74,7 +74,7 @@ int do_cast(string arg)
   object who = this_player();
   object me = this_object();
 
-  message_vision("$N¶Ô×Å¿ò¿ò½á½á°Í°ÍµÄÄîÁË¼¸¾äÖäÓï£¬×Ô¼º¶¼¸Ð¾õÄÑÌýËÀÁË¡£\n",who,me);
+  message_vision("$Nå¯¹ç€æ¡†æ¡†ç»“ç»“å·´å·´çš„å¿µäº†å‡ å¥å’’è¯­ï¼Œè‡ªå·±éƒ½æ„Ÿè§‰éš¾å¬æ­»äº†ã€‚\n",who,me);
 
   return 1;
 }
@@ -85,7 +85,7 @@ int do_steal(string arg)
   object who = this_player();
   object me = this_object();
 
-  message_vision("$NÏëÍµ¶«Î÷£¬µ«×ÜÊÇÓÐÔôÐÄÃ»Ôôµ¨¡£\n",who,me);
+  message_vision("$Næƒ³å·ä¸œè¥¿ï¼Œä½†æ€»æ˜¯æœ‰è´¼å¿ƒæ²¡è´¼èƒ†ã€‚\n",who,me);
 
   return 1;
 }
@@ -96,7 +96,7 @@ int do_ji(string arg)
   object who = this_player();
   object me = this_object();
 
-  message_vision("$NÏë¶Ô¿ò¿ò¼À·¨±¦£¬Ç°Ë¼ºóÏë£¬»¹ÊÇÃ»¸Ò¡£\n",who,me);
+  message_vision("$Næƒ³å¯¹æ¡†æ¡†ç¥­æ³•å®ï¼Œå‰æ€åŽæƒ³ï¼Œè¿˜æ˜¯æ²¡æ•¢ã€‚\n",who,me);
 
   return 1;
 }
@@ -106,7 +106,7 @@ int do_throw(string arg)
   object who = this_player();
   object me = this_object();
 
-  message_vision("$NÌÍ³ö°µÆ÷£¬¿´ÁË¿´¿ò¿ò£¬ÐÅÐÄ²»×ã£¬ÓÖ°Ñ°µÆ÷ÊÕÁËÆðÀ´¡£\n",who,me);
+  message_vision("$NæŽå‡ºæš—å™¨ï¼Œçœ‹äº†çœ‹æ¡†æ¡†ï¼Œä¿¡å¿ƒä¸è¶³ï¼ŒåˆæŠŠæš—å™¨æ”¶äº†èµ·æ¥ã€‚\n",who,me);
 
   return 1;
 }
@@ -115,18 +115,18 @@ int do_list(string arg)
 {
 	object who = this_player();
 	object me = this_object();
-  message("vision",""HIG"\n©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
-          \n"HIY"¿ø¼×£º"HIC"
-          1.½ð¼×(armor)      2. Åû·ç(pifeng)    3.¶ÜÅÆ(shield)
-          4.Ìú¿ø(kui)        5. Õ½ÅÛ(cloth)     6.Ì¤ÔÆÑ¥(shoes)
-          7.ÌìÊ¦·¨¹Ú(bonnet)
-          \n"HIY"±øÆ÷£º"HIC" 
-           1.½µÄ§°ô(stick)    2.Çàºç½£(sword)    3.ÈíÁú½î(whip)
-           4.½ðµ¶(blade)      5.¶ÌÌú×¦(zhua)     6.»ÆÍ­ìøÕÈ(staff)
-           7.Ðû»¨¸«(axe)      8.ÔÂÑÀ²ù(fork)     9.Ã·»¨´¸(hammer)
-          10.µã½ðÇ¹(spear)   11.·ï»ËÇÙ(qin)     12 »¢Î²±Þ (mace)
-          13.ÁúÍ·¹ÕÕÈ(guai)  14.½ðµ¤É³(sha)
-"HIG"\n©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR"",who,me);
+  message("vision",""HIG"\nâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+          \n"HIY"ç›”ç”²ï¼š"HIC"
+          1.é‡‘ç”²(armor)      2. æŠ«é£Ž(pifeng)    3.ç›¾ç‰Œ(shield)
+          4.é“ç›”(kui)        5. æˆ˜è¢(cloth)     6.è¸äº‘é´(shoes)
+          7.å¤©å¸ˆæ³•å† (bonnet)
+          \n"HIY"å…µå™¨ï¼š"HIC" 
+           1.é™é­”æ£’(stick)    2.é’è™¹å‰‘(sword)    3.è½¯é¾™ç­‹(whip)
+           4.é‡‘åˆ€(blade)      5.çŸ­é“çˆª(zhua)     6.é»„é“œç¦…æ–(staff)
+           7.å®£èŠ±æ–§(axe)      8.æœˆç‰™é“²(fork)     9.æ¢…èŠ±é”¤(hammer)
+          10.ç‚¹é‡‘æžª(spear)   11.å‡¤å‡°ç´(qin)     12 è™Žå°¾éž­ (mace)
+          13.é¾™å¤´æ‹æ–(guai)  14.é‡‘ä¸¹æ²™(sha)
+"HIG"\nâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR"",who,me);
 
   return 1;
 }
@@ -139,23 +139,23 @@ int do_yao(string arg)
 	object me=this_object();
 /*
 	if (who->query("combat_exp")>500000)
-		return notify_fail("Æ¾ÄúµÄ¹¦·ò£¬»¹ÊÇ×Ô¼ºÈ¥´ò×°±¸°É! :P\n");
+		return notify_fail("å‡­æ‚¨çš„åŠŸå¤«ï¼Œè¿˜æ˜¯è‡ªå·±åŽ»æ‰“è£…å¤‡å§! :P\n");
 */
     if (!arg)
-		return notify_fail("ÄãÏëÒªÊ²Ã´£¿±øÆ÷£¿»¹ÊÇ¿ø¼×£¿(±ÈÈç:yao sword)\n");
+		return notify_fail("ä½ æƒ³è¦ä»€ä¹ˆï¼Ÿå…µå™¨ï¼Ÿè¿˜æ˜¯ç›”ç”²ï¼Ÿ(æ¯”å¦‚:yao sword)\n");
 	else 
 	{
 		sscanf(arg,"%s",type);
 			switch(type)
 			{
-			//¿ø¼×
+			//ç›”ç”²
 			case "armor":
 				ob=new("/d/city/npc/obj_ex/armor.c");
 				ob->set("no_sell", 1);
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
 			case "pifeng":
 				ob=new("/d/city/npc/obj_ex/pifeng.c");
@@ -163,7 +163,7 @@ int do_yao(string arg)
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
 			case "shield":
 				ob=new("/d/city/npc/obj_ex/shield.c");
@@ -171,7 +171,7 @@ int do_yao(string arg)
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
 			case "shoes":
 				ob=new("/d/city/npc/obj_ex/shoes.c");
@@ -179,7 +179,7 @@ int do_yao(string arg)
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
 			case "cloth":
 				ob=new("/d/city/npc/obj_ex/cloth.c");
@@ -187,7 +187,7 @@ int do_yao(string arg)
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
 			case "kui":
 				ob=new("/d/city/npc/obj_ex/kui.c");
@@ -195,7 +195,7 @@ int do_yao(string arg)
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
 			case "bonnet":
 				ob=new("/d/city/npc/obj_ex/faguan.c");
@@ -203,16 +203,16 @@ int do_yao(string arg)
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
-				//±øÆ÷
+				//å…µå™¨
 			case "sword":
 				ob=new("/d/city/npc/obj_ex/sword.c");
 				ob->set("no_sell", 1);
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
 			case "whip":
 				ob=new("/d/city/npc/obj_ex/whip.c");
@@ -220,7 +220,7 @@ int do_yao(string arg)
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
 			case "blade":
 				ob=new("/d/city/npc/obj_ex/blade.c");
@@ -228,7 +228,7 @@ int do_yao(string arg)
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
 			case "stick":
 				ob=new("/d/city/npc/obj_ex/stick.c");
@@ -236,7 +236,7 @@ int do_yao(string arg)
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
                         case "spear":
                                 ob=new("/d/city/npc/obj_ex/spear.c");
@@ -244,7 +244,7 @@ int do_yao(string arg)
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
 			case "fork":
 				ob=new("/d/city/npc/obj_ex/fork.c");
@@ -252,7 +252,7 @@ int do_yao(string arg)
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
 			case "hammer":
 				ob=new("/d/city/npc/obj_ex/hammer.c");
@@ -260,7 +260,7 @@ int do_yao(string arg)
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
                           case "qin":
                                   ob=new("/d/city/npc/obj_ex/qin.c");
@@ -268,7 +268,7 @@ int do_yao(string arg)
                                   ob->set("no_drop", 1);
                                   ob->set("no_give", 1);
                                   ob->move(who);
-tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
                                   break;
 			case "axe":
 				ob=new("/d/city/npc/obj_ex/axe.c");
@@ -276,7 +276,7 @@ tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n")
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
 			case "staff":
 				ob=new("/d/city/npc/obj_ex/staff.c");
@@ -284,7 +284,7 @@ tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n")
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;
 			case "zhua":
 				ob=new("/d/city/npc/obj_ex/zhua.c");
@@ -292,7 +292,7 @@ tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n")
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;           
             case "mace":
 				ob=new("/d/city/npc/obj_ex/mace.c");
@@ -300,7 +300,7 @@ tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n")
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;           
             case "guai":
 				ob=new("/d/city/npc/obj_ex/guai.c");
@@ -308,7 +308,7 @@ tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n")
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;           
             case "sha":
 				ob=new("/d/city/npc/obj_ex/jindan.c");
@@ -316,7 +316,7 @@ tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n")
 			        ob->set("no_drop", 1);
         			ob->set("no_give", 1);
 				ob->move(who);
-				tell_object(who,"¿ò¿ò°Ñ"+ob->query("name")+"½»¸øÄã,²¢¸æËßÄã:´øºÃ£¬±ðÂÒ¶ªÅ¶£¡\n");
+				tell_object(who,"æ¡†æ¡†æŠŠ"+ob->query("name")+"äº¤ç»™ä½ ,å¹¶å‘Šè¯‰ä½ :å¸¦å¥½ï¼Œåˆ«ä¹±ä¸¢å“¦ï¼\n");
 				break;           
 			}
 	}

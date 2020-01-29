@@ -6,14 +6,14 @@ inherit NECK;
 
 void create()
 {
-        set_name(HIY"¶¨·çÖé"NOR, ({"dingfeng zhu","dingfeng","zhu"}));
+        set_name(HIY"å®šé£ç "NOR, ({"dingfeng zhu","dingfeng","zhu"}));
         set_weight(800);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
+                set("unit", "æš");
 		set("value", 2000);
-		set("long", "Ò»Ã¶¶¨·çÖé,ËÆºõÒşº¬×ÅÎŞÏŞµÄÁ¦Á¿¡£\n");
+		set("long", "ä¸€æšå®šé£ç ,ä¼¼ä¹éšå«ç€æ— é™çš„åŠ›é‡ã€‚\n");
 		set("no_sell", 1);
 		set("no_put",1);
 		set("no_drop",1);

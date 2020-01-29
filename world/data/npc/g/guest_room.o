@@ -1,4 +1,4 @@
 #/d/wiz/npc/guest.c
-dbase (["kee":330,"age":15,"max_kee":330,"dex":30,"long":"","eff_kee":330,"attitude":"friendly","limbs":({"Í·²¿","¾±²¿","ĞØ¿Ú","ºóĞÄ","×ó¼ç","ÓÒ¼ç","×ó±Û","ÓÒ±Û","×óÊÖ","ÓÒÊÖ","Ñü¼ä","Ğ¡¸¹","×óÍÈ","ÓÒÍÈ","×ó½Å","ÓÒ½Å",}),"race":"ÈËÀà","gin":115,"per":20,"eff_gin":115,"spi":15,"actions":,"unit":"Î»","con":30,"cor":21,"int":30,"cps":26,"default_actions":,"str":30,"kar":29,"gender":"ÄĞĞÔ","startroom":"/d/wiz/guest","id":"xian tong","name":"ÏÉÍ¯","eff_sen":242,"sen":242,"can_speak":1,"max_sen":242,"max_gin":115,"combat_exp":500000,])
+dbase (["kee":330,"age":15,"max_kee":330,"dex":30,"long":"","eff_kee":330,"attitude":"friendly","limbs":({"å¤´éƒ¨","é¢ˆéƒ¨","èƒ¸å£","åå¿ƒ","å·¦è‚©","å³è‚©","å·¦è‡‚","å³è‡‚","å·¦æ‰‹","å³æ‰‹","è…°é—´","å°è…¹","å·¦è…¿","å³è…¿","å·¦è„š","å³è„š",}),"race":"äººç±»","gin":115,"per":20,"eff_gin":115,"spi":15,"actions":,"unit":"ä½","con":30,"cor":21,"int":30,"cps":26,"default_actions":,"str":30,"kar":29,"gender":"ç”·æ€§","startroom":"/d/wiz/guest","id":"xian tong","name":"ä»™ç«¥","eff_sen":242,"sen":242,"can_speak":1,"max_sen":242,"max_gin":115,"combat_exp":500000,])
 SAVE_NAME "guest_room"
 list ([])

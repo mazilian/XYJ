@@ -13,10 +13,10 @@ int other_kee=0, other_sen=0;
 int announced=0;
 
 string *death_msg= ({
-"$NºÈµÀ£ºÄõĞó£¬ÓëÎÒ»ØÌìÉÏÁì×ïÈ¥°É£¡\n$nÑÛ¼ûÎŞÄÎ£¬Ö»ºÃ»¯³É¹ÉÇàÑÌ¸½µ½ÁË$NµÄÊÖÖĞ¡£\n",
-"$nÒ»¿´²»ÊÇ$NµÄ¶ÔÊÖ£¬Ö»µÃ¾ÍµØÒ»¹ö£¬±ä»ØÔ­ĞÎ£¬´òÁË¼¸¸ö×ª£¬ÀÏÀÏÊµÊµµØ×ß¿ªÁË¡£\n",
-"$n´ó½ĞÒ»Éù¡°ÎÒ·şÁË£¬ÎÒ·şÁË£¬ÎÒÍ¶½µ¡£¡£¡±¹Ô¹ÔµØ·üÔÚ$N½ÅÏÂ²»¶¯ÁË¡£\n$NÊÖÒ»»Ó£¬$nÈçÃÉ´óÉâ£¬Ñ±·şµØ×ß¿ªÁË¡£\n",
-"$NºÈµÀ£ºÄõĞó£¬ÓëÎÒ»ØÌìÉÏÁì×ïÈ¥°É£¡\n$nÎŞ¿ÉÄÎºÎ£¬»¯×öÒ»µÀÇà¹â£¬Ö±³åÔÆÏöÈ¥ÁË£®£®£®\n",
+"$Nå–é“ï¼šå­½ç•œï¼Œä¸æˆ‘å›å¤©ä¸Šé¢†ç½ªå»å§ï¼\n$nçœ¼è§æ— å¥ˆï¼Œåªå¥½åŒ–æˆè‚¡é’çƒŸé™„åˆ°äº†$Nçš„æ‰‹ä¸­ã€‚\n",
+"$nä¸€çœ‹ä¸æ˜¯$Nçš„å¯¹æ‰‹ï¼Œåªå¾—å°±åœ°ä¸€æ»šï¼Œå˜å›åŸå½¢ï¼Œæ‰“äº†å‡ ä¸ªè½¬ï¼Œè€è€å®å®åœ°èµ°å¼€äº†ã€‚\n",
+"$nå¤§å«ä¸€å£°â€œæˆ‘æœäº†ï¼Œæˆ‘æœäº†ï¼Œæˆ‘æŠ•é™ã€‚ã€‚â€ä¹–ä¹–åœ°ä¼åœ¨$Nè„šä¸‹ä¸åŠ¨äº†ã€‚\n$Næ‰‹ä¸€æŒ¥ï¼Œ$nå¦‚è’™å¤§èµ¦ï¼Œé©¯æœåœ°èµ°å¼€äº†ã€‚\n",
+"$Nå–é“ï¼šå­½ç•œï¼Œä¸æˆ‘å›å¤©ä¸Šé¢†ç½ªå»å§ï¼\n$næ— å¯å¥ˆä½•ï¼ŒåŒ–åšä¸€é“é’å…‰ï¼Œç›´å†²äº‘éœ„å»äº†ï¼ï¼ï¼\n",
 });
 string *dirs1 = ({
 "/d/city",
@@ -76,108 +76,108 @@ string *dirs3 = ({
 });
 
 string *names1 = ({
-  "Ì¡","ta",
-  "Â¹","lu",
-  "âµ","huan",
-  "¹·","gou",
-  "Öí","zhu",
-  "ºï","hou",
-  "áô","fei",
-  "òş","mang",
+  "ç­","ta",
+  "é¹¿","lu",
+  "ç¾","huan",
+  "ç‹—","gou",
+  "çŒª","zhu",
+  "çŒ´","hou",
+  "ç‹’","fei",
+  "èŸ’","mang",
 });
 
 string *names2 = ({
-  "Í·","tou",
-  "Î²","wei",
-  "½Å","jiao",
-  "×¦","zhua",
-  "×ì","zui",
-  "ÑÀ","ya",
+  "å¤´","tou",
+  "å°¾","wei",
+  "è„š","jiao",
+  "çˆª","zhua",
+  "å˜´","zui",
+  "ç‰™","ya",
 });
 
 string *names3 = ({
-  "»¢","hu",
-  "Ê¨","shi",
-  "±ª","bao",
-  "ĞÜ","xiong",
-  "î¼","pi",
-  "ÀÇ","lang",
-  "±·","bei",
-  "²ò","chai",
+  "è™","hu",
+  "ç‹®","shi",
+  "è±¹","bao",
+  "ç†Š","xiong",
+  "ç½´","pi",
+  "ç‹¼","lang",
+  "ç‹ˆ","bei",
+  "è±º","chai",
 });
 
 string *names4 = ({
-	"ºüÀê","huli",
-	"ºÚĞÜ","heixiong",
-	"¹·ĞÜ","gouxiong",
-	"°×ĞÜ","baixiong",
-	"Ğ«×Ó","xiezi",
-	"ó¸òÜ","chanchu",
-	"òÚò¼","wugong",
-	"ÍÁ±î","tubie",
-	"·É»È","feihuang",
-	"»È³æ","huangchong",
-	"´óÇà³æ","daqingchong",
-	"³ô³æ","chouchong",
-	"ÌøÔé","tiaozao",
-	"Ê­×Ó","shizi",
-	"ÀÏ»¢","laohu",
-	"Ê¨×Ó","shizi",
-	"»ÆÊ¨","huangshi",
-	"ºÚÊ¨","heishi",
-	"°×Ê¨","baishi",
-	"Ò°ÍÃ","yetu",
-	"»¨±ª","huabao",
-	"É½±ª","shanbao",
-	"²İ±ª","caobao",
-	"É½Ñò","shanyang",
-	"Âíºï","mahou",
-	"â¨ºï","mihou",
-	"Ô³ºï","yuanhou",
-	"»ÒÀÇ","huilang",
-	"Ò°Öí","yezhu",
-	"Ö©Öë","zhizhu",
-	"ÂíÂ¹","malu",
-	"°×Â¹","bailu",
-	"»ÒÂ¹","huilu",
-	"ºÚÂ¹","heilu",
-	"É½¼¦","shanji",
-	"Ò°¼¦","yeji",
-	"ïô¼¦","zhiji",
-	"´Ìâ¬","ciwei",
-	"»¨ºüÀê","huahuli",
-	"°×ºüÀê","baihuli",
-	"»ÒºüÀê","huihuli",
-	"ĞÉĞÉ","xingxing",
-	"áôáô","feifei",
-	"°×Âí","baima",
-	"ºìÂí","hongma",
-	"ºÚÂí","heima",
-	"°×Ã¨","baimao",
-	"»¨Ã¨","huamao",
-	"ºÚÃ¨","heimao",
-	"Ò°Ã¨","yemao",
-	"Ò°Âí","yema",
-	"Ò°Â¿","yelu",
-	"°×ÍÃ","baitu",
-	"»ÒÍÃ","huitu",
-	"Ë®Å£","shuiniu",
-	"êóÅ£","maoniu",
-	"Ò°Å£","yeniu",
-	"°×Êó","baishu",
-	"»ÒÊó","huishu",
-	"ºÚÂìÒÏ","heimayi",
-	"ÂìÒÏ","mayi",
-	"°×ÒÏ","baiyi",
-	"É½ÀÏÊó","shanlaoshu",
-	"»¨Éß","huashe",
-	"ÇàÉß","qingshe",
-	"°×Éß","baishe",
-	"»Ò°ßÉß","huibanshe",
-	"¾Şòş","jumang",
-	"Ë®Éß","shuishe",
-	"º£Àê","haili",
-	"ºÓÀê","heli",
+	"ç‹ç‹¸","huli",
+	"é»‘ç†Š","heixiong",
+	"ç‹—ç†Š","gouxiong",
+	"ç™½ç†Š","baixiong",
+	"èå­","xiezi",
+	"èŸ¾èœ","chanchu",
+	"èœˆèš£","wugong",
+	"åœŸé³–","tubie",
+	"é£è—","feihuang",
+	"è—è™«","huangchong",
+	"å¤§é’è™«","daqingchong",
+	"è‡­è™«","chouchong",
+	"è·³èš¤","tiaozao",
+	"è™±å­","shizi",
+	"è€è™","laohu",
+	"ç‹®å­","shizi",
+	"é»„ç‹®","huangshi",
+	"é»‘ç‹®","heishi",
+	"ç™½ç‹®","baishi",
+	"é‡å…”","yetu",
+	"èŠ±è±¹","huabao",
+	"å±±è±¹","shanbao",
+	"è‰è±¹","caobao",
+	"å±±ç¾Š","shanyang",
+	"é©¬çŒ´","mahou",
+	"çŒ•çŒ´","mihou",
+	"çŒ¿çŒ´","yuanhou",
+	"ç°ç‹¼","huilang",
+	"é‡çŒª","yezhu",
+	"èœ˜è››","zhizhu",
+	"é©¬é¹¿","malu",
+	"ç™½é¹¿","bailu",
+	"ç°é¹¿","huilu",
+	"é»‘é¹¿","heilu",
+	"å±±é¸¡","shanji",
+	"é‡é¸¡","yeji",
+	"é›‰é¸¡","zhiji",
+	"åˆºçŒ¬","ciwei",
+	"èŠ±ç‹ç‹¸","huahuli",
+	"ç™½ç‹ç‹¸","baihuli",
+	"ç°ç‹ç‹¸","huihuli",
+	"çŒ©çŒ©","xingxing",
+	"ç‹’ç‹’","feifei",
+	"ç™½é©¬","baima",
+	"çº¢é©¬","hongma",
+	"é»‘é©¬","heima",
+	"ç™½çŒ«","baimao",
+	"èŠ±çŒ«","huamao",
+	"é»‘çŒ«","heimao",
+	"é‡çŒ«","yemao",
+	"é‡é©¬","yema",
+	"é‡é©´","yelu",
+	"ç™½å…”","baitu",
+	"ç°å…”","huitu",
+	"æ°´ç‰›","shuiniu",
+	"ç‰¦ç‰›","maoniu",
+	"é‡ç‰›","yeniu",
+	"ç™½é¼ ","baishu",
+	"ç°é¼ ","huishu",
+	"é»‘èš‚èš","heimayi",
+	"èš‚èš","mayi",
+	"ç™½èš","baiyi",
+	"å±±è€é¼ ","shanlaoshu",
+	"èŠ±è›‡","huashe",
+	"é’è›‡","qingshe",
+	"ç™½è›‡","baishe",
+	"ç°æ–‘è›‡","huibanshe",
+	"å·¨èŸ’","jumang",
+	"æ°´è›‡","shuishe",
+	"æµ·ç‹¸","haili",
+	"æ²³ç‹¸","heli",
 });
 
 int yaoguai_type=0;
@@ -202,11 +202,11 @@ void setname1()
 
 	set_name(name,id);
 
-	set("race", "Ò°ÊŞ");
+	set("race", "é‡å…½");
 	if (random(2) > 0 ) {
-	  set("gender", "ĞÛĞÔ");
+	  set("gender", "é›„æ€§");
 	} else {
-	  set("gender", "´ÆĞÔ");
+	  set("gender", "é›Œæ€§");
 	}
 	yaoguai_type=1;
 }
@@ -218,12 +218,12 @@ void setname2()
     i=(random(sizeof(names4)/2))*2;
     j=random(2);
     
-    name=names4[i]+(j?"¾«":"¹Ö");
+    name=names4[i]+(j?"ç²¾":"æ€ª");
     id=({names4[i+1]+" "+(j?"jing":"guai"),
 	    (j?"jing":"guai")});
 
-    set("race", "Ò°ÊŞ");
-    set("gender",(j?"´ÆĞÔ":"ĞÛĞÔ"));
+    set("race", "é‡å…½");
+    set("gender",(j?"é›Œæ€§":"é›„æ€§"));
     set_name(name,id);
     yaoguai_type=2;
 }
@@ -260,9 +260,9 @@ void create()
 	set_temp("apply/armor", 25);
 	
 	set("limbs", ({
-	       "Í·²¿", "¾±²¿", "ĞØ¿Ú", "ºóĞÄ", "×ó¼ç", "ÓÒ¼ç", "×ó±Û",
-	       "ÓÒ±Û", "×ó×¦", "ÓÒ×¦", "Ñü¼ä", "Ğ¡¸¹", "Ç°ÍÈ", "ºóÍÈ",
-	       "Ç°×¦", "ºó×¦" }) );
+	       "å¤´éƒ¨", "é¢ˆéƒ¨", "èƒ¸å£", "åå¿ƒ", "å·¦è‚©", "å³è‚©", "å·¦è‡‚",
+	       "å³è‡‚", "å·¦çˆª", "å³çˆª", "è…°é—´", "å°è…¹", "å‰è…¿", "åè…¿",
+	       "å‰çˆª", "åçˆª" }) );
 
         setup();
 }
@@ -386,7 +386,7 @@ int random_place(object me, string* dirs)
 		   continue;
 
                if(me->move(newob)) {
-		   message_vision("$N×ßÁË¹ıÀ´¡£\n",me);
+		   message_vision("$Nèµ°äº†è¿‡æ¥ã€‚\n",me);
 		   return 1;
 	       }
 	     }
@@ -411,7 +411,7 @@ void leave()
       if(this_object()) { 
         if(environment())
           message("vision",HIB + name() + 
-		  "Éí×ÓÒ»»Î£¬±ä³ÉÒ»¹ÉÇàÑÌÉ¢È¥ÁË¡£\n" NOR,environment());
+		  "èº«å­ä¸€æ™ƒï¼Œå˜æˆä¸€è‚¡é’çƒŸæ•£å»äº†ã€‚\n" NOR,environment());
 	this_object()->move("/obj/empty");
 	call_out("leave2",5);
       }
@@ -446,38 +446,38 @@ string _invocation(object who, int level)
         set("owner_ob", who);
 
 	if(yaoguai_type==1) {
-        long="Ò»Í·"+name()+"£¬ĞŞÁ·ÁËÓĞ"+
+        long="ä¸€å¤´"+name()+"ï¼Œä¿®ç»ƒäº†æœ‰"+
 	  chinese_number((query("daoxing")/1000/10)*10)+
-	  "¶àÄêµÀĞĞ¡£Ëü";
+	  "å¤šå¹´é“è¡Œã€‚å®ƒ";
         if(random(2)==0) {
-	  set("long",long+"Í¨ÌåÍ¸³öÒ»Ë¿ÏÉÆø¡£\n");
+	  set("long",long+"é€šä½“é€å‡ºä¸€ä¸ä»™æ°”ã€‚\n");
         } else {
-	  set("long",long+"»ìÉíÉÏÏÂÑıÆø±ÆÈË¡£\n");
+	  set("long",long+"æ··èº«ä¸Šä¸‹å¦–æ°”é€¼äººã€‚\n");
         }
 	} else if(yaoguai_type==2) {
 	    int dx=query("daoxing");
-	    long="Ò»Ö»"+query("name")[0..<3]+
-		"£¬ÔÚ"+({"ÉîÉ½ÖĞ","ÃÜÁÖÖĞ","Ò°Íâ",
-			"²İÔ­ÉÏ","Ò°ÁÖÖĞ","¸ßÉ½ÖĞ",
-			"Ã§ÁÖÖĞ","Ã§Ô­ÉÏ","Éî¹ÈÖĞ",
+	    long="ä¸€åª"+query("name")[0..<3]+
+		"ï¼Œåœ¨"+({"æ·±å±±ä¸­","å¯†æ—ä¸­","é‡å¤–",
+			"è‰åŸä¸Š","é‡æ—ä¸­","é«˜å±±ä¸­",
+			"è½æ—ä¸­","è½åŸä¸Š","æ·±è°·ä¸­",
 			})[random(9)]+
-	        "¼³È¡"+({"ÈÕÔÂ","ÌìµØ","ÍòÎï"})[random(3)]+
-		    "¾«»ª£¬ÆÄÓĞÁËĞ©µÀĞĞ¡£\n";
+	        "æ±²å–"+({"æ—¥æœˆ","å¤©åœ°","ä¸‡ç‰©"})[random(3)]+
+		    "ç²¾åï¼Œé¢‡æœ‰äº†äº›é“è¡Œã€‚\n";
             set("long",long);
 	    
 	    if(dx>=10000000)
-		long="ÍòÄê";
+		long="ä¸‡å¹´";
 	    else if(dx>=1000000)
-		long="Ç§Äê";
+		long="åƒå¹´";
 	    else if(dx>=100000)
-		long="°ÙÄê";
+		long="ç™¾å¹´";
 	    else if(dx>10000)
-		long="Ê®Äê";
+		long="åå¹´";
 	    else
-		long="Ğ¡Ğ¡";
+		long="å°å°";
 	    
         set("title",long);
-//  if (!random(3)) set("title","Ã×¹ú¹í×Ó")
+//  if (!random(3)) set("title","ç±³å›½é¬¼å­")
 	}
 
 	lvl=level;
@@ -536,7 +536,7 @@ dirs=dirs+dirs3+dirs2;
 	where=me->query("name")+"("+
 	    capitalize(me->query("id"))+")";
 	if(env)
-	  where+="ÔÚ"+MISC_D->find_place(env);
+	  where+="åœ¨"+MISC_D->find_place(env);
 	return where;
 }
 
@@ -548,12 +548,12 @@ int accept_object (object who, object ob)
   if ((! ob) ||
        ob->value() < 100000)
   {
-    message_vision ("$NÒ»µÉÑÛ£º¾ÍÕâµã¶«Î÷£¿²»Ïë»îÁË£¿£¿£¿\n", me);
+    message_vision ("$Nä¸€çªçœ¼ï¼šå°±è¿™ç‚¹ä¸œè¥¿ï¼Ÿä¸æƒ³æ´»äº†ï¼Ÿï¼Ÿï¼Ÿ\n", me);
     return 1;
   }
   who->set_temp("mieyao/allow_to_go", 1);
-  message_vision ("$NºÙºÙºÙ¼¸Éù¹ÖĞ¦£ºËãÄã×ßÔË£¬¿ì¹ö£¡"
-	  +"¿É±ğÈÃÎÒÔÙ¿´¼ûÄã£¡\n",me);
+  message_vision ("$Nå˜¿å˜¿å˜¿å‡ å£°æ€ªç¬‘ï¼šç®—ä½ èµ°è¿ï¼Œå¿«æ»šï¼"
+	  +"å¯åˆ«è®©æˆ‘å†çœ‹è§ä½ ï¼\n",me);
   return 1;
 }
 
@@ -610,7 +610,7 @@ void init()
 		break;
 
 	    set_leader(who);
-	    message_vision("$N¶¢×Å$n£¬²öµÃÖ±Á÷¿ÚË®£ººÙºÙ£®£®£®\n",
+	    message_vision("$Nç›¯ç€$nï¼Œé¦‹å¾—ç›´æµå£æ°´ï¼šå˜¿å˜¿ï¼ï¼ï¼\n",
 		    this_object(), who);
 	    kill_ob(who);
 	    break;
@@ -619,7 +619,7 @@ void init()
 	    if(query("owner")==this_player()->
 		    query("id")) {
 		if(!announced) {
-		  message_vision("$N¿´¼û$n£¬´ó½ĞÒ»Éù£º¹ş¹ş£¬ËÍÉÏÃÅÀ´µÄÈâ£¡\n",
+		  message_vision("$Nçœ‹è§$nï¼Œå¤§å«ä¸€å£°ï¼šå“ˆå“ˆï¼Œé€ä¸Šé—¨æ¥çš„è‚‰ï¼\n",
 			this_object(), who);
 		  announced=1;
 		}
@@ -635,7 +635,7 @@ void init()
 	    if(query("owner")==this_player()->
 		    query("id")) {
 		if(!announced) {
-		  message_vision("$N¿´¼û$n£¬´ó½ĞÒ»Éù£º¹ş¹ş£¬ËÍÉÏÃÅÀ´µÄÈâ£¡\n",
+		  message_vision("$Nçœ‹è§$nï¼Œå¤§å«ä¸€å£°ï¼šå“ˆå“ˆï¼Œé€ä¸Šé—¨æ¥çš„è‚‰ï¼\n",
 			this_object(), who);
 		  announced=1;
 		}
@@ -675,18 +675,18 @@ int do_block(string arg)
     t=who->query_temp("mieyao/leave_time");
     if(t>0 && time()>t) {
 	who->delete_temp("mieyao/leave_time");
-	message_vision("$n³Ë$NÒ»¸ö²»×¢Òâ£¬¼±Ã¦ÁïÁË¹ıÈ¥¡£\n",me,who);
+	message_vision("$nä¹˜$Nä¸€ä¸ªä¸æ³¨æ„ï¼Œæ€¥å¿™æºœäº†è¿‡å»ã€‚\n",me,who);
 	return 0;
     }
     if(t==0) {
         t=time()+30+random(90);
         who->set_temp("mieyao/leave_time",t);
-	message_vision("$NÃÍµØÌø¹ıÀ´À¹ÔÚ$nÃæÇ°£¬¸ßÉù½ĞµÀ£º\n"+
-		"          ´ËÉ½ÊÇÎÒ¿ª£¬´ËÊ÷ÊÇÎÒÔÔ£¡\n"+
-		"          Òª´ò´ËÂ·¹ı£¬ÁôÏÂÂòÂ·²Æ£¡\n\n",me,who);
+	message_vision("$NçŒ›åœ°è·³è¿‡æ¥æ‹¦åœ¨$né¢å‰ï¼Œé«˜å£°å«é“ï¼š\n"+
+		"          æ­¤å±±æ˜¯æˆ‘å¼€ï¼Œæ­¤æ ‘æ˜¯æˆ‘æ ½ï¼\n"+
+		"          è¦æ‰“æ­¤è·¯è¿‡ï¼Œç•™ä¸‹ä¹°è·¯è´¢ï¼\n\n",me,who);
     } 
     
-    tell_object(who,me->name()+"Ò»°Ñ×¥×¡ÁËÄã£¡\n");
+    tell_object(who,me->name()+"ä¸€æŠŠæŠ“ä½äº†ä½ ï¼\n");
     return 1;
 }
 
@@ -713,10 +713,10 @@ void die()
         if( stringp(owner) && objectp(owner_ob = find_player(owner)) ) {
 	    if(environment(owner_ob)==environment() && living(owner_ob)) {
    message_vision(death_msg[random(sizeof(death_msg))],owner_ob,this_object());
-//            message_vision("$NºÈµÀ£ºÄõĞó£¬ÓëÎÒ»ØÌìÉÏÁì×ïÈ¥°É£¡\n", owner_ob)
-//            message_vision("$NÑÛ¼ûÎŞÄÎ£¬Ö»ºÃ»¯³É¹ÉÇàÑÌ¸½µ½ÁË$nµÄÊÖÖĞ¡£\n", this_object(), owner_ob);
+//            message_vision("$Nå–é“ï¼šå­½ç•œï¼Œä¸æˆ‘å›å¤©ä¸Šé¢†ç½ªå»å§ï¼\n", owner_ob)
+//            message_vision("$Nçœ¼è§æ— å¥ˆï¼Œåªå¥½åŒ–æˆè‚¡é’çƒŸé™„åˆ°äº†$nçš„æ‰‹ä¸­ã€‚\n", this_object(), owner_ob);
 	    } else {
-		message_vision("$NËÀÁË¡£\n",this_object());
+		message_vision("$Næ­»äº†ã€‚\n",this_object());
 	    }
 		    owner_ob->set("mieyao/done",1);
 		    
@@ -744,9 +744,9 @@ void die()
 		    owner_ob->add("combat_exp",exp_r);
 		    owner_ob->add("potential",pot_r);
 
-		    tell_object(owner_ob, "ÄãµÃµ½ÁË"+chinese_number(exp_r)
-			    +"µãÎäÑ§¾­ÑéºÍ"+chinese_number(pot_r)+
-			    "µãÇ±ÄÜ£¡\n");
+		    tell_object(owner_ob, "ä½ å¾—åˆ°äº†"+chinese_number(exp_r)
+			    +"ç‚¹æ­¦å­¦ç»éªŒå’Œ"+chinese_number(pot_r)+
+			    "ç‚¹æ½œèƒ½ï¼\n");
 
 			if(owner_ob->query("mieyao/npcid"))
 			{
@@ -767,13 +767,13 @@ void die()
                   )
 				{
 					owner_ob->add("mieyao/search", 1);
-					tell_object(owner_ob, HIG+"Äã»ñµÃÁËÒ»´ÎÊ¹ÓÃ"+HIW+"ÕÕÑı¾µ£¨ask li jing about search£©"+HIG+"µÄ»ú»á£¬Ä¿Ç°¹²"+owner_ob->query("mieyao/search")+"´Î"+NOR+"\n");
+					tell_object(owner_ob, HIG+"ä½ è·å¾—äº†ä¸€æ¬¡ä½¿ç”¨"+HIW+"ç…§å¦–é•œï¼ˆask li jing about searchï¼‰"+HIG+"çš„æœºä¼šï¼Œç›®å‰å…±"+owner_ob->query("mieyao/search")+"æ¬¡"+NOR+"\n");
 					// questnpc->command("tell "+owner_ob->query("id")+" ");
 					owner_ob->delete("mieyao/npcid");
 				}
 			}
         } else {
-	    message_vision("$NËÀÁË¡£\n",this_object());
+	    message_vision("$Næ­»äº†ã€‚\n",this_object());
 	}
 
 	destruct(this_object());

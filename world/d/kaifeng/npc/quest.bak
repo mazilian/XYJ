@@ -36,13 +36,13 @@
 // the quest format is the following mapping:
 // daoxing :     type     name     id            object         amount
 //---------------------------------------------------------------
-//  1000   : ({ "find",  "ÃØóÅ",   "mi ji" ,     "",             "1" }), 
-//  5000   : ({ "give",  "ÔÖÃñ",   "zai min" ,   "°×Òø(silver)", "5" }), 
-// 12000   : ({ "kill",  "°×¹Ç¾«", "baigu jing", "",             "3" });
+//  1000   : ({ "find",  "ç§˜ç¬ˆ",   "mi ji" ,     "",             "1" }), 
+//  5000   : ({ "give",  "ç¾æ°‘",   "zai min" ,   "ç™½é“¶(silver)", "5" }), 
+// 12000   : ({ "kill",  "ç™½éª¨ç²¾", "baigu jing", "",             "3" });
  
-//ÕÒÒ»±¾ÃØóÅ£¬¾È¼ÃÔÖÃñÎåÁ½Òø×Ó£¬Èı´ò°×¹Ç¾«£®£®£®£®£®£®
+//æ‰¾ä¸€æœ¬ç§˜ç¬ˆï¼Œæ•‘æµç¾æ°‘äº”ä¸¤é“¶å­ï¼Œä¸‰æ‰“ç™½éª¨ç²¾ï¼ï¼ï¼ï¼ï¼ï¼
 
-string my_color=WHT"»Ò"NOR;
+string my_color=WHT"ç°"NOR;
 
 void _quest_done (object who);
 
@@ -226,17 +226,17 @@ int quest_reward (object who, mapping quests, string quest)
 void _quest_done (object who)
 {
   string *strs = ({
-    "ÂıÂıµØÒ»Ğ¡ÍÅ"+my_color+"É«ÏéÔÆÔÚ$NµÄÉí±ßÉıÆğ¡£\n",
-    "$NµÄÉíÉÏÂıÂıÉıÆğÒ»¹É"+my_color+"É«ÏéÔÆ¡£\n",
-    "Ò»Ğ¡¹É"+my_color+"É«ÏéÔÆÔÚ$NµÄÉíÉÏ»º»ºÉıÆğ¡£\n",
-    "Ö»¼û$NµÄÉíÉÏĞìĞìÆ®¸¡ÆğÒ»Ğ¡ÍÅ"+my_color+"É«ÏéÔÆ¡£\n",
-    "Ò»ÍÅ"+my_color+"É«Ğ¡ÏéÔÆÔÚ$NµÄÉíÉÏÂıÂıÉıÆğ¡£\n",
+    "æ…¢æ…¢åœ°ä¸€å°å›¢"+my_color+"è‰²ç¥¥äº‘åœ¨$Nçš„èº«è¾¹å‡èµ·ã€‚\n",
+    "$Nçš„èº«ä¸Šæ…¢æ…¢å‡èµ·ä¸€è‚¡"+my_color+"è‰²ç¥¥äº‘ã€‚\n",
+    "ä¸€å°è‚¡"+my_color+"è‰²ç¥¥äº‘åœ¨$Nçš„èº«ä¸Šç¼“ç¼“å‡èµ·ã€‚\n",
+    "åªè§$Nçš„èº«ä¸Šå¾å¾é£˜æµ®èµ·ä¸€å°å›¢"+my_color+"è‰²ç¥¥äº‘ã€‚\n",
+    "ä¸€å›¢"+my_color+"è‰²å°ç¥¥äº‘åœ¨$Nçš„èº«ä¸Šæ…¢æ…¢å‡èµ·ã€‚\n",
   });
 
   if(!who) return;
 
   message_vision (strs[random(sizeof(strs))],who);
-  tell_object (who, "ÄãµÄÆ·µÂÔö¼ÓÁË¡£\n");
+  tell_object (who, "ä½ çš„å“å¾·å¢åŠ äº†ã€‚\n");
 }
 
 void color_counter(object who)

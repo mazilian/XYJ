@@ -1,8 +1,8 @@
 #/d/city/npc/laowei.c
-dbase (["eff_kee":518,"kar":23,"long":"ÔÓ»õÆÌµÄÀÏ°å£¬Ğ¦ÃĞÃĞµÄ¿´×ÅÄã¡£","startroom":"/d/city/zahuopu","mana":0,"vendor_goods":(["bag":"/d/obj/misc/bag","box":"/d/obj/misc/box","cutan":"/d/obj/food/cutan","seal":"/obj/paper_seal",]),"sen":442,"max_force":200,"eff_gin":356,"gin":356,"max_gin":356,"gender":"ÄĞĞÔ","combat_exp":10000,"id":"wei luqi","name":"ÎºÂ¼Æë","eff_sen":442,"attitude":"peaceful","force_factor":5,"can_speak":1,"limbs":({"Í·²¿","¾±²¿","ĞØ¿Ú","ºóĞÄ","×ó¼ç","ÓÒ¼ç","×ó±Û","ÓÒ±Û","×óÊÖ","ÓÒÊÖ","Ñü¼ä","Ğ¡¸¹","×óÍÈ","ÓÒÍÈ","×ó½Å","ÓÒ½Å",}),"shen_type":1,"race":"ÈËÀà","force":200,"default_actions":,"actions":,"title":"ÔÓ»õÆÌÀÏ°å","per":24,"spi":16,"max_sen":442,"con":20,"age":42,"cor":22,"unit":"Î»","atman":0,"int":18,"kee":518,"cps":12,"str":17,"max_kee":518,])
+dbase (["eff_kee":518,"kar":23,"long":"æ‚è´§é“ºçš„è€æ¿ï¼Œç¬‘çœ¯çœ¯çš„çœ‹ç€ä½ ã€‚","startroom":"/d/city/zahuopu","mana":0,"vendor_goods":(["bag":"/d/obj/misc/bag","box":"/d/obj/misc/box","cutan":"/d/obj/food/cutan","seal":"/obj/paper_seal",]),"sen":442,"max_force":200,"eff_gin":356,"gin":356,"max_gin":356,"gender":"ç”·æ€§","combat_exp":10000,"id":"wei luqi","name":"é­å½•é½","eff_sen":442,"attitude":"peaceful","force_factor":5,"can_speak":1,"limbs":({"å¤´éƒ¨","é¢ˆéƒ¨","èƒ¸å£","åå¿ƒ","å·¦è‚©","å³è‚©","å·¦è‡‚","å³è‡‚","å·¦æ‰‹","å³æ‰‹","è…°é—´","å°è…¹","å·¦è…¿","å³è…¿","å·¦è„š","å³è„š",}),"shen_type":1,"race":"äººç±»","force":200,"default_actions":,"actions":,"title":"æ‚è´§é“ºè€æ¿","per":24,"spi":16,"max_sen":442,"con":20,"age":42,"cor":22,"unit":"ä½","atman":0,"int":18,"kee":518,"cps":12,"str":17,"max_kee":518,])
 skills (["unarmed":30,"dodge":40,"parry":30,])
 learned (["unarmed":0,"dodge":0,"parry":0,])
 SAVE_NAME "city_weiluqi"
 price_ratio 10
-bidder_long "½«¾ü¸®µÚËÄ´úµÜ×Ó ³ÌÌúÅ£(Tcl)¡£"
+bidder_long "å°†å†›åºœç¬¬å››ä»£å¼Ÿå­ ç¨‹é“ç‰›(Tcl)ã€‚"
 close_time 1381122395

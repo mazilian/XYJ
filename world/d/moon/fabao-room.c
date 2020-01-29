@@ -58,38 +58,38 @@ void init()
 
 int is_valid_fabao_command()
 {
-	notify_fail("ÔİÊ±²»ÄÜÁ¶ÖÆ·¨±¦¡£\n");
+	notify_fail("æš‚æ—¶ä¸èƒ½ç‚¼åˆ¶æ³•å®ã€‚\n");
 	return 0;
 }
 
 void create ()
 {
-        set ("short", "Å®æ´²¹Ìì´¦");
+        set ("short", "å¥³å¨²è¡¥å¤©å¤„");
         set ("long", @LONG
 
-ÕâÀïÊÇÒ»Æ¬¿ªÀ«µØ¡£µØÉÏÆÌÂúÁËÒ»¶ÑÓÖÒ»¶ÑÆæĞÎ¹Ö×´É«²Ê°ßìµµÄ
-²ĞÑÒËéÊ¯£¬ÔÚÑ©É«Ó³ÕÕÏÂÒç²ÊÁ÷¹â¡£±ßÉÏÒ»¿é´óÊ¯ÉÏ¿Ì×Å¼¸ĞĞ´ó
-×Ö£º
+è¿™é‡Œæ˜¯ä¸€ç‰‡å¼€é˜”åœ°ã€‚åœ°ä¸Šé“ºæ»¡äº†ä¸€å †åˆä¸€å †å¥‡å½¢æ€ªçŠ¶è‰²å½©æ–‘æ–“çš„
+æ®‹å²©ç¢çŸ³ï¼Œåœ¨é›ªè‰²æ˜ ç…§ä¸‹æº¢å½©æµå…‰ã€‚è¾¹ä¸Šä¸€å—å¤§çŸ³ä¸Šåˆ»ç€å‡ è¡Œå¤§
+å­—ï¼š
 
-		À¥ÂØ¾ø´¦
-		Å®æ´²¹Ìì
-		²ÊÊ¯Î´¾¡
-		ÒÅ¸£ºóÈË
+		æ˜†ä»‘ç»å¤„
+		å¥³å¨²è¡¥å¤©
+		å½©çŸ³æœªå°½
+		é—ç¦åäºº
 
-µ×ÏÂ»¹ÃÜÃÜÂéÂéµØ¿ÌÁËÒ»ÆªĞ¡×Ö(words)£¬¸ôÔ¶ÁËÒ²¿´²»ÇåËµµÄÊÇ
-Ê²Ã´¡£
+åº•ä¸‹è¿˜å¯†å¯†éº»éº»åœ°åˆ»äº†ä¸€ç¯‡å°å­—(words)ï¼Œéš”è¿œäº†ä¹Ÿçœ‹ä¸æ¸…è¯´çš„æ˜¯
+ä»€ä¹ˆã€‚
 LONG);
 
 	set("item_desc", ([ "words" : 
-		"make_fabao     Á¶ÖÆ·¨±¦\n" +
-		"dispose        ×¢Ïû·¨±¦\n" +
-		"list           ÁĞ¾Ù¿ÉÖÆ·¨±¦ÖÖÀà\n" +
-		"upgrade        ·¨±¦ĞŞÁ¶\n" +
-		"cost ·¨±¦      ·¨±¦Á¶ÖÆ¼°ĞŞÁ¶¿ÉÄÜ·ÑÓÃ\n" +
-		"change_name    ¸ø·¨±¦¸ÄÃû\n" +
-		"change_id      ¸ø·¨±¦¸Ä´úºÅ\n" +
-		"change_desc    ¸ø·¨±¦¸ÄÃèÊö\n" +
-		"change_unit    ¸ø·¨±¦¸Äµ¥Î»Ãû³Æ\n\n", ]) );
+		"make_fabao     ç‚¼åˆ¶æ³•å®\n" +
+		"dispose        æ³¨æ¶ˆæ³•å®\n" +
+		"list           åˆ—ä¸¾å¯åˆ¶æ³•å®ç§ç±»\n" +
+		"upgrade        æ³•å®ä¿®ç‚¼\n" +
+		"cost æ³•å®      æ³•å®ç‚¼åˆ¶åŠä¿®ç‚¼å¯èƒ½è´¹ç”¨\n" +
+		"change_name    ç»™æ³•å®æ”¹å\n" +
+		"change_id      ç»™æ³•å®æ”¹ä»£å·\n" +
+		"change_desc    ç»™æ³•å®æ”¹æè¿°\n" +
+		"change_unit    ç»™æ³•å®æ”¹å•ä½åç§°\n\n", ]) );
 
 	set("exits", 
 	([ //sizeof() == 1 
@@ -109,20 +109,20 @@ int do_sm()
 	int  fabao_num;
 		   
 	if( me->query("daoxing") < 20000)
-		return notify_fail("ÄãµÄµÀĞĞÌ«µÍ£¬²»ÄÜ×ÔÔì·¨±¦¡£\n");
+		return notify_fail("ä½ çš„é“è¡Œå¤ªä½ï¼Œä¸èƒ½è‡ªé€ æ³•å®ã€‚\n");
 
 	if( RANK_D->grade_fali( RANK_D->describe_fali( (int)me->query("max_mana") ) ) 
-                < RANK_D->grade_fali(HIB "ÌÚÔÆ¼ÜÎí" NOR) ) //max_mana 360+.
-		return notify_fail("ÄãµÄ·¨Á¦ĞŞÎª²»¹»£¬ÎŞ·¨¿ØÖÆ·¨±¦¡£\n");
+                < RANK_D->grade_fali(HIB "è…¾äº‘æ¶é›¾" NOR) ) //max_mana 360+.
+		return notify_fail("ä½ çš„æ³•åŠ›ä¿®ä¸ºä¸å¤Ÿï¼Œæ— æ³•æ§åˆ¶æ³•å®ã€‚\n");
 		
 	if( me->query("max_force") < 300)
-		return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»£¬ÎŞÁ¦×ÔÔì·¨±¦¡£\n");
+		return notify_fail("ä½ çš„å†…åŠ›ä¿®ä¸ºä¸å¤Ÿï¼Œæ— åŠ›è‡ªé€ æ³•å®ã€‚\n");
 	
 	if( me->query("force") < (me->query("max_force")+100) )
-		return notify_fail("×îºÃÔÚÄÚÁ¦³äÅæÊ±×ÔÔì·¨±¦¡£\n");
+		return notify_fail("æœ€å¥½åœ¨å†…åŠ›å……æ²›æ—¶è‡ªé€ æ³•å®ã€‚\n");
 	
 	if( me->query("mana") < (me->query("max_mana")+100) )
-		return notify_fail("ÄãµÄÄ¿Ç°·¨Á¦²»¹»³äÓ¯£¬ÎŞ·¨¿ØÖÆ·¨±¦¡£\n");
+		return notify_fail("ä½ çš„ç›®å‰æ³•åŠ›ä¸å¤Ÿå……ç›ˆï¼Œæ— æ³•æ§åˆ¶æ³•å®ã€‚\n");
 	
 	fabao_num = 0;		
 	if( me->query("fabao/weapon") )		fabao_num++;
@@ -130,19 +130,19 @@ int do_sm()
 	if( me->query("fabao/armor2") )		fabao_num++;
 	
 	if( fabao_num >= MAX_FABAO )
-		return notify_fail("Äã²»ÄÜÔÙÁ¶ÖÆ·¨±¦ÁË£¬ÇëÓÃ dispose ×¢Ïû²»ÒªµÄ·¨±¦¡£\n");
+		return notify_fail("ä½ ä¸èƒ½å†ç‚¼åˆ¶æ³•å®äº†ï¼Œè¯·ç”¨ dispose æ³¨æ¶ˆä¸è¦çš„æ³•å®ã€‚\n");
 		
-	write("ÄúÒªÔìÄÄÀà·¨±¦£º\n");
+	write("æ‚¨è¦é€ å“ªç±»æ³•å®ï¼š\n");
 	if( !me->query("fabao/weapon") )
-		write("w. ÎäÆ÷\n");
+		write("w. æ­¦å™¨\n");
 	if( !me->query("fabao/armor1") || !me->query("fabao/armor2") )
-		write("a. ·À¾ß\n");
-	write("o. ÆäËû(ÔİÈ±)\n");
+		write("a. é˜²å…·\n");
+	write("o. å…¶ä»–(æš‚ç¼º)\n");
 
 	seteuid(getuid());
 	// Other kinds of fabao can be added too.. if there is somefile
 	// we can use as a default object.
-	write("ÇëÑ¡Ôñ£º(q ¼üÈ¡Ïû)");
+	write("è¯·é€‰æ‹©ï¼š(q é”®å–æ¶ˆ)");
 	input_to( (: get_type :), me );
 	
 	return 1;	
@@ -156,13 +156,13 @@ void get_type(string arg, object ob)
 	if( (arg != "w" || ob->query("fabao/weapon"))
 	  && (arg != "a" || ( ob->query("fabao/armor1")
 	  && ob->query("fabao/armor2") )) )   {
-		write("ÄúÒªÔìÄÄÀà·¨±¦£º\n");
+		write("æ‚¨è¦é€ å“ªç±»æ³•å®ï¼š\n");
 		if( !ob->query("fabao/weapon") )
-			write("w. ÎäÆ÷\n");
+			write("w. æ­¦å™¨\n");
 		if( !ob->query("fabao/armor1") || !ob->query("fabao/armor2") )
-			write("a. ·À¾ß\n");
-	    write("o. ÆäËû(ÔİÈ±)\n");
-	    write("ÇëÑ¡Ôñ£º(q ¼üÈ¡Ïû)");
+			write("a. é˜²å…·\n");
+	    write("o. å…¶ä»–(æš‚ç¼º)\n");
+	    write("è¯·é€‰æ‹©ï¼š(q é”®å–æ¶ˆ)");
 		input_to( (: get_type :), ob );
 		return;
 	}
@@ -170,18 +170,18 @@ void get_type(string arg, object ob)
 	if( arg == "w" )    {
 		ob->set_temp("fabao_type", "weapon");
 		write("\n");
-		write("¿ÉÑ¡ÔñÎäÆ÷ÖÖÀà£º\n");
-		write("1. ¸«  2. µ¶  3. ²æ  4. ´¸  5. ïµ  6. Ç¹\n");
-		write("7. ÕÈ  8. °ô  9. ½£  10. ±Ş\n");
-	    write("ÇëÑ¡Ôñ£º(q ¼üÈ¡Ïû)");
+		write("å¯é€‰æ‹©æ­¦å™¨ç§ç±»ï¼š\n");
+		write("1. æ–§  2. åˆ€  3. å‰  4. é”¤  5. é”  6. æª\n");
+		write("7. æ–  8. æ£’  9. å‰‘  10. é­\n");
+	    write("è¯·é€‰æ‹©ï¼š(q é”®å–æ¶ˆ)");
 	}
 	else if( arg == "a" )   {
 		ob->set_temp("fabao_type", "armor");
 		write("\n");
-		write("¿ÉÑ¡Ôñ·À¾ßÖÖÀà£º\n");
-		write("1. ¼×  2. Ğ¬  3. ÒÂ·ş  4. Ö¸Ì×  5. »¤ÕÆ  6. Í·ÕÖ\n");
-		write("7. ²±Ì×  8. ¶Ü  9. Åû·ç  10. »¤Íó  11. Ñü´ø\n");
-	    write("ÇëÑ¡Ôñ£º(q ¼üÈ¡Ïû)");
+		write("å¯é€‰æ‹©é˜²å…·ç§ç±»ï¼š\n");
+		write("1. ç”²  2. é‹  3. è¡£æœ  4. æŒ‡å¥—  5. æŠ¤æŒ  6. å¤´ç½©\n");
+		write("7. è„–å¥—  8. ç›¾  9. æŠ«é£  10. æŠ¤è…•  11. è…°å¸¦\n");
+	    write("è¯·é€‰æ‹©ï¼š(q é”®å–æ¶ˆ)");
 	}
 	input_to( (: get_subtype :), ob);
 }
@@ -200,18 +200,18 @@ void get_subtype(string arg, object ob)
 		if( arg == "w" )    {
 			fabao_type = "weapon";
 			write("\n");
-			write("¿ÉÑ¡ÔñÎäÆ÷ÖÖÀà£º\n");
-			write("1. ¸«  2. µ¶  3. ²æ  4. ´¸  5. ïµ  6. Ç¹\n");
-			write("7. ÕÈ  8. °ô  9. ½£  10. ±Ş\n");
-	        write("ÇëÑ¡Ôñ£º(q ¼üÈ¡Ïû)");
+			write("å¯é€‰æ‹©æ­¦å™¨ç§ç±»ï¼š\n");
+			write("1. æ–§  2. åˆ€  3. å‰  4. é”¤  5. é”  6. æª\n");
+			write("7. æ–  8. æ£’  9. å‰‘  10. é­\n");
+	        write("è¯·é€‰æ‹©ï¼š(q é”®å–æ¶ˆ)");
 		}
 		else if( arg == "a" )   {
 			fabao_type = "armor";	
 			write("\n");
-			write("¿ÉÑ¡Ôñ·À¾ßÖÖÀà£º\n");
-			write("1. ¼×  2. Ğ¬  3. ÒÂ·ş  4. Ö¸Ì×  5. »¤ÕÆ  6. Í·ÕÖ\n");
-			write("7. ²±Ì×  8. ¶Ü  9. Åû·ç  10. »¤Íó  11. Ñü´ø\n");
-	        write("ÇëÑ¡Ôñ£º(q ¼üÈ¡Ïû)");
+			write("å¯é€‰æ‹©é˜²å…·ç§ç±»ï¼š\n");
+			write("1. ç”²  2. é‹  3. è¡£æœ  4. æŒ‡å¥—  5. æŠ¤æŒ  6. å¤´ç½©\n");
+			write("7. è„–å¥—  8. ç›¾  9. æŠ«é£  10. æŠ¤è…•  11. è…°å¸¦\n");
+	        write("è¯·é€‰æ‹©ï¼š(q é”®å–æ¶ˆ)");
 		}
 		ob->set_temp("fabao_type", fabao_type);
 		input_to( (: get_subtype :), ob);
@@ -221,7 +221,7 @@ void get_subtype(string arg, object ob)
 	ob->set_temp("fabao_subtype",  order);
 
 	write("\n");
-	write("ÇëÉè¶¨Ó¢ÎÄ id £º");
+	write("è¯·è®¾å®šè‹±æ–‡ id ï¼š");
 	input_to( (: get_id :), ob ); 
 }
 
@@ -233,19 +233,19 @@ int check_legal_id(string id)
 	
 	i = strlen(id);
     if( (strlen(id) < 3) || (strlen(id) > 20 ) ) {
-		write("¶Ô²»Æğ£¬Ó¢ÎÄ id ±ØĞëÊÇ 3 µ½ 20 ¸öÓ¢ÎÄ×ÖÄ¸¡£\n");
+		write("å¯¹ä¸èµ·ï¼Œè‹±æ–‡ id å¿…é¡»æ˜¯ 3 åˆ° 20 ä¸ªè‹±æ–‡å­—æ¯ã€‚\n");
 		return 0;
     }
     while(i--)
     	if( id[i] != ' ' && (id[i]<'a' || id[i]>'z') )  {
-    		write("¶Ô²»Æğ£¬Ó¢ÎÄ id Ö»ÄÜÓÃÓ¢ÎÄ×ÖÄ¸¡£\n");
+    		write("å¯¹ä¸èµ·ï¼Œè‹±æ–‡ id åªèƒ½ç”¨è‹±æ–‡å­—æ¯ã€‚\n");
     		return 0;
     	}
     
     legalid = explode(read_file(BANNED_ID), "\n");
     for(i=0; i<sizeof(legalid); i++)   {
     	if( id == legalid[i] )   {
-    		write("¶Ô²»Æğ£¬ÕâÖÖ id »áÔì³ÉÆäËûÈËµÄÀ§ÈÅ¡£\n");
+    		write("å¯¹ä¸èµ·ï¼Œè¿™ç§ id ä¼šé€ æˆå…¶ä»–äººçš„å›°æ‰°ã€‚\n");
     		return 0;
     	}
     }
@@ -260,17 +260,17 @@ int check_legal_name(string name, int max_len)
 	
 	i = strlen(name);
     if( (strlen(name) < 2) || (strlen(name) > max_len ) ) {
-    	write( sprintf("¶Ô²»Æğ£¬·¨±¦ÖĞÎÄ×Ö±ØĞëÊÇ 1 µ½ %d ¸öÖĞÎÄ×Ö¡£\n",
+    	write( sprintf("å¯¹ä¸èµ·ï¼Œæ³•å®ä¸­æ–‡å­—å¿…é¡»æ˜¯ 1 åˆ° %d ä¸ªä¸­æ–‡å­—ã€‚\n",
     	 max_len/2) );
 		return 0;
     }
     while(i--)   {
     	if( name[i]<=' ' )   {
-    		write("¶Ô²»Æğ£¬·¨±¦ÖĞÎÄ×Ö²»ÄÜÓÃ¿ØÖÆ×ÖÔª¡£\n");
+    		write("å¯¹ä¸èµ·ï¼Œæ³•å®ä¸­æ–‡å­—ä¸èƒ½ç”¨æ§åˆ¶å­—å…ƒã€‚\n");
     		return 0;
     	}
     	if( i%2==0 && !is_chinese(name[i..<0]) )  {
-    		write("¶Ô²»Æğ£¬ÇëÄúÓÃ¡¸ÖĞÎÄ¡¹¸ø·¨±¦È¡Ãû×Ö¡£\n");
+    		write("å¯¹ä¸èµ·ï¼Œè¯·æ‚¨ç”¨ã€Œä¸­æ–‡ã€ç»™æ³•å®å–åå­—ã€‚\n");
     		return 0;
     	}
     }
@@ -283,7 +283,7 @@ void get_id(string arg, object ob)
 {
 	arg = lower_case(arg);
 	if( !check_legal_id(arg) )   {
-		write("ÇëÉè¶¨Ó¢ÎÄ id £º");
+		write("è¯·è®¾å®šè‹±æ–‡ id ï¼š");
 		input_to( (: get_id :), ob ); 
 		return;
 	}
@@ -292,7 +292,7 @@ void get_id(string arg, object ob)
 	ob->set_temp("fabao_id",arg);
 	
 	write("\n");
-	write("ÇëÉè¶¨ÖĞÎÄÃû£º(¿É¼ÓÑÕÉ«)");
+	write("è¯·è®¾å®šä¸­æ–‡åï¼š(å¯åŠ é¢œè‰²)");
 	input_to( (: get_name :), ob);
 }
 
@@ -320,7 +320,7 @@ void get_name(string arg, object ob)
         arg = replace_string(arg, "$NOR$", "");
 
 	if( !check_legal_name(arg, 12) )  {
- 	    write("ÇëÉè¶¨ÖĞÎÄÃû£º(¿É¼ÓÑÕÉ«)");
+ 	    write("è¯·è®¾å®šä¸­æ–‡åï¼š(å¯åŠ é¢œè‰²)");
 		input_to( (: get_name :), ob);
 		return;
 	}
@@ -347,14 +347,14 @@ void get_name(string arg, object ob)
 	ob->set_temp("fabao_name", arg + NOR);
 	
 	write("\n");
-	write("ÇëÃèÊö·¨±¦£º");
+	write("è¯·æè¿°æ³•å®ï¼š");
 	input_to( (: get_desc :), ob);
 }
 
 void get_desc(string arg, object ob)
 {
 	if( !check_legal_name(arg, 60) )  {
-		write("ÇëÃèÊö·¨±¦£º");
+		write("è¯·æè¿°æ³•å®ï¼š");
 		input_to( (: get_desc :), ob);
 		return;
 	}
@@ -362,7 +362,7 @@ void get_desc(string arg, object ob)
 	ob->set_temp("fabao_desc",  arg);
 	
 	write("\n");
-	write("·¨±¦ÓÃÁ¿´Ê£º(Return for default)");
+	write("æ³•å®ç”¨é‡è¯ï¼š(Return for default)");
 	input_to( (: get_unit :), ob);
 }
 
@@ -374,7 +374,7 @@ void get_unit(string arg, object ob)
     if( arg == "" )
        fabao_unit = "";
 	else if( !check_legal_name(arg, 2) )  {
- 	   write("·¨±¦ÓÃÁ¿´Ê£º(Return for defult)");
+ 	   write("æ³•å®ç”¨é‡è¯ï¼š(Return for defult)");
 	   input_to( (: get_unit :), ob);
 	   return;
     }
@@ -489,7 +489,7 @@ void build_weapon(object ob)
 	   newob->move(environment(ob));
 	ob->save();
 	
-	write("·¨±¦Á¶ÖÆ³É¹¦¡£\n");
+	write("æ³•å®ç‚¼åˆ¶æˆåŠŸã€‚\n");
 
 	return;
 }
@@ -606,7 +606,7 @@ void build_armor(object ob)
 	   newob->move(environment(ob));
 	ob->save();
 
-	write("·¨±¦Á¶ÖÆ³É¹¦¡£\n");
+	write("æ³•å®ç‚¼åˆ¶æˆåŠŸã€‚\n");
 	
 	return;
 }
@@ -617,15 +617,15 @@ int  do_dispose(string arg)
    object fabao_ob;
   
    if( !arg || arg == "" )
-	  return notify_fail("ÄãÒªÏû³ıÊ²Ã´·¨±¦£¿\n");
+	  return notify_fail("ä½ è¦æ¶ˆé™¤ä»€ä¹ˆæ³•å®ï¼Ÿ\n");
 
    if( !objectp(fabao_ob=present(arg, ob)) )
-      return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷°¡¡£\n");
+      return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿å•Šã€‚\n");
       
    if(!fabao_ob->query("owner_id") || !fabao_ob->query("series_no")) 
-      return notify_fail("ÄÇ¸ö²»ÊÇ·¨±¦Ò®£¡\n");
+      return notify_fail("é‚£ä¸ªä¸æ˜¯æ³•å®è€¶ï¼\n");
       
-   write("ÄãÈ·¶¨Òª»ÙÃğ¸Ã·¨±¦Âğ£¿(y/n)");
+   write("ä½ ç¡®å®šè¦æ¯ç­è¯¥æ³•å®å—ï¼Ÿ(y/n)");
    input_to( (: confirm_dispose :), ob, fabao_ob); 
    return 1;
 }
@@ -648,7 +648,7 @@ void confirm_dispose(string arg, object ob, object fabao_ob)
 			ob->delete("fabao/"+names[i]);
 			fabao_name = fabao_ob->query("name");
 			destruct( fabao_ob );
-			write("Ö»Ìıºä£¡µÄÒ»Éù£¬"+fabao_name+"Õ¨ÁË¿ªÀ´¡£\n");
+			write("åªå¬è½°ï¼çš„ä¸€å£°ï¼Œ"+fabao_name+"ç‚¸äº†å¼€æ¥ã€‚\n");
 			break;
 		 }
 	  }
@@ -659,22 +659,22 @@ void confirm_dispose(string arg, object ob, object fabao_ob)
 
 int  do_list()
 {
-	write("Ä¿Ç°¿ÉÔì·¨±¦ÖÖÀàÓĞ£º\n\n");   
-	write("w. ÎäÆ÷Àà£º\n");
-	write("       ¸«  µ¶  ²æ  ´¸  ïµ  Ç¹\n");
-	write("       ÕÈ  °ô  ½£  ±Ş¡£\n\n");
-	write("a. »¤¾ßÀà£º\n");
-	write("       »¤¼×  Ğ¬  ÒÂ·ş  Ö¸Ì×  »¤ÕÆ  Í·ÕÖ\n");
-	write("       ²±Ì×  ¶Ü  Åû·ç  »¤Íó  Ñü´ø¡£\n\n");
+	write("ç›®å‰å¯é€ æ³•å®ç§ç±»æœ‰ï¼š\n\n");   
+	write("w. æ­¦å™¨ç±»ï¼š\n");
+	write("       æ–§  åˆ€  å‰  é”¤  é”  æª\n");
+	write("       æ–  æ£’  å‰‘  é­ã€‚\n\n");
+	write("a. æŠ¤å…·ç±»ï¼š\n");
+	write("       æŠ¤ç”²  é‹  è¡£æœ  æŒ‡å¥—  æŠ¤æŒ  å¤´ç½©\n");
+	write("       è„–å¥—  ç›¾  æŠ«é£  æŠ¤è…•  è…°å¸¦ã€‚\n\n");
 
-	write("Ä¿Ç°·¨±¦¿ÉĞŞÁ¶ÖÖÀà£º\n\n");
-	write("w. ÎäÆ÷Àà£º\n");
-	write("       ÆøÑªÉËº¦Á¦(attack_qi)£¬\n"); //0-25
-	write("       ¾«ÉñÉËº¦Á¦(attack_shen)¡£\n\n");//0-25
-	write("a. »¤¾ßÀà£º\n");
-	write("       ÆøÑª±£»¤Á¦(defense_qi)£¬\n");//0-25
-	write("       ¾«Éñ±£»¤Á¦(defense_shen)£¬\n");//0-25
-	write("       ÊÕÈ¡µĞÈË·¨±¦(defense_shou)¡£\n\n");//0-25
+	write("ç›®å‰æ³•å®å¯ä¿®ç‚¼ç§ç±»ï¼š\n\n");
+	write("w. æ­¦å™¨ç±»ï¼š\n");
+	write("       æ°”è¡€ä¼¤å®³åŠ›(attack_qi)ï¼Œ\n"); //0-25
+	write("       ç²¾ç¥ä¼¤å®³åŠ›(attack_shen)ã€‚\n\n");//0-25
+	write("a. æŠ¤å…·ç±»ï¼š\n");
+	write("       æ°”è¡€ä¿æŠ¤åŠ›(defense_qi)ï¼Œ\n");//0-25
+	write("       ç²¾ç¥ä¿æŠ¤åŠ›(defense_shen)ï¼Œ\n");//0-25
+	write("       æ”¶å–æ•Œäººæ³•å®(defense_shou)ã€‚\n\n");//0-25
 
 	return 1;
 }
@@ -689,16 +689,16 @@ int do_cost(string arg)
    
 	if( !arg || arg == "" )  
 	{
-		write("ÖÆÔì·¨±¦µÀĞĞ±ØĞëÔÚ¶şÊ®ÄêÒÔÉÏ£¬·¨Á¦ĞŞÎªÖÁÉÙÄÜÌÚÔÆ¼İÎí£¬ÄÚÁ¦ĞŞÎªÖÁÉÙÈıÄêÒÔÉÏ·½¿É¡£\n");
-		write("ĞŞÁ¶·¨±¦Ôò¸ú·¨±¦Ç¿¶ÈÓĞ¹Ø£¬ĞèÒªËğºÄµÀĞĞ£¬·¨Á¦£¬ÄÚÁ¦µÈ¡£\n");		
+		write("åˆ¶é€ æ³•å®é“è¡Œå¿…é¡»åœ¨äºŒåå¹´ä»¥ä¸Šï¼Œæ³•åŠ›ä¿®ä¸ºè‡³å°‘èƒ½è…¾äº‘é©¾é›¾ï¼Œå†…åŠ›ä¿®ä¸ºè‡³å°‘ä¸‰å¹´ä»¥ä¸Šæ–¹å¯ã€‚\n");
+		write("ä¿®ç‚¼æ³•å®åˆ™è·Ÿæ³•å®å¼ºåº¦æœ‰å…³ï¼Œéœ€è¦æŸè€—é“è¡Œï¼Œæ³•åŠ›ï¼Œå†…åŠ›ç­‰ã€‚\n");		
 		return 1;
 	}
   
 	if( !objectp(fabao_ob=present(arg, me)) )
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷°¡¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿å•Šã€‚\n");
       
 	if(!fabao_ob->query("owner_id") || !fabao_ob->query("series_no")) 
-		return notify_fail("ÄÇ¸ö²»ÊÇ·¨±¦Ò®£¡\n");
+		return notify_fail("é‚£ä¸ªä¸æ˜¯æ³•å®è€¶ï¼\n");
       
 	a_qi = fabao_ob->query("fabao/max_attack_qi");
 	a_shen = fabao_ob->query("fabao/max_attack_shen");
@@ -711,7 +711,7 @@ int do_cost(string arg)
 		write( fabao_ob->show_status() );
 		
 		if(a_qi >= 25 )
-			write("ÆøÑªÉËº¦Á¦ÒÑĞŞÁ·µ½¶¥¡£\n\n");
+			write("æ°”è¡€ä¼¤å®³åŠ›å·²ä¿®ç»ƒåˆ°é¡¶ã€‚\n\n");
 		else
 		{
 			dx_req = (a_qi + 1)*100000;
@@ -719,13 +719,13 @@ int do_cost(string arg)
 			dx_cost = ( a_qi + 1)*1000;
 			neili_cost = (a_qi + 1)*3;
 			
-			write("©¤©¤©¤ĞŞÁ¶ÆøÑªÉËº¦Á¦(attack_qi)©¤©¤©¤\n");
-			write("ÒªÇó£ºµÀĞĞ"+chinese_number(dx_req/1000)+"Äê£¬ÄÚÁ¦ĞŞÎª"+chinese_number(neili_req/100)+"Äê¡£\n");
-			write("ËğºÄ£ºµÀĞĞ"+chinese_number(dx_cost/1000)+"Äê£¬ÄÚÁ¦ĞŞÎª"+chinese_number(neili_cost)+"µã(100µãÏàµ±ÓÚÒ»Äê)¡£\n\n");
+			write("â”€â”€â”€ä¿®ç‚¼æ°”è¡€ä¼¤å®³åŠ›(attack_qi)â”€â”€â”€\n");
+			write("è¦æ±‚ï¼šé“è¡Œ"+chinese_number(dx_req/1000)+"å¹´ï¼Œå†…åŠ›ä¿®ä¸º"+chinese_number(neili_req/100)+"å¹´ã€‚\n");
+			write("æŸè€—ï¼šé“è¡Œ"+chinese_number(dx_cost/1000)+"å¹´ï¼Œå†…åŠ›ä¿®ä¸º"+chinese_number(neili_cost)+"ç‚¹(100ç‚¹ç›¸å½“äºä¸€å¹´)ã€‚\n\n");
 		}
 
 		if( a_shen >= 25 )
-			write("¾«ÉñÉËº¦Á¦ÒÑĞŞÁ·µ½¶¥¡£\n\n");
+			write("ç²¾ç¥ä¼¤å®³åŠ›å·²ä¿®ç»ƒåˆ°é¡¶ã€‚\n\n");
 		else
 		{
 			dx_req = ( a_shen + 1)*100000;
@@ -733,9 +733,9 @@ int do_cost(string arg)
 			dx_cost = (a_shen + 1)*1000;
 			fali_cost = ( a_shen + 1)*3;
 			
-			write("©¤©¤©¤ĞŞÁ¶¾«ÉñÉËº¦Á¦(attack_shen)©¤©¤©¤\n");
-			write("ÒªÇó£ºµÀĞĞ"+chinese_number(dx_req/1000)+"Äê£¬·¨Á¦ĞŞÎª"+RANK_D->describe_fali(fali_req)+"¡£\n");
-			write("ËğºÄ£ºµÀĞĞ"+chinese_number(dx_cost/1000)+"Äê£¬·¨Á¦ĞŞÎª"+chinese_number(fali_cost)+"µã¡£\n\n");
+			write("â”€â”€â”€ä¿®ç‚¼ç²¾ç¥ä¼¤å®³åŠ›(attack_shen)â”€â”€â”€\n");
+			write("è¦æ±‚ï¼šé“è¡Œ"+chinese_number(dx_req/1000)+"å¹´ï¼Œæ³•åŠ›ä¿®ä¸º"+RANK_D->describe_fali(fali_req)+"ã€‚\n");
+			write("æŸè€—ï¼šé“è¡Œ"+chinese_number(dx_cost/1000)+"å¹´ï¼Œæ³•åŠ›ä¿®ä¸º"+chinese_number(fali_cost)+"ç‚¹ã€‚\n\n");
 		}
 	}
 
@@ -744,7 +744,7 @@ int do_cost(string arg)
 		write( fabao_ob->show_status() );
 		
 		if( d_qi >= 25 )
-			write("ÆøÑª±£»¤Á¦ÒÑĞŞÁ·µ½¶¥¡£\n\n");
+			write("æ°”è¡€ä¿æŠ¤åŠ›å·²ä¿®ç»ƒåˆ°é¡¶ã€‚\n\n");
 		else
 		{
 			dx_req = ( d_qi + 1)*100000;
@@ -752,13 +752,13 @@ int do_cost(string arg)
 			dx_cost = ( d_qi + 1)*1000;
 			neili_cost = ( d_qi + 1)*3;
 			
-			write("©¤©¤©¤ĞŞÁ¶ÆøÑª±£»¤Á¦(defense_qi)©¤©¤©¤\n");
-			write("ÒªÇó£ºµÀĞĞ"+chinese_number(dx_req/1000)+"Äê£¬ÄÚÁ¦ĞŞÎª"+chinese_number(neili_req/100)+"Äê¡£\n");
-			write("ËğºÄ£ºµÀĞĞ"+chinese_number(dx_cost/1000)+"Äê£¬ÄÚÁ¦ĞŞÎª"+chinese_number(neili_cost)+"µã(100µãÏàµ±ÓÚÒ»Äê)¡£\n\n");
+			write("â”€â”€â”€ä¿®ç‚¼æ°”è¡€ä¿æŠ¤åŠ›(defense_qi)â”€â”€â”€\n");
+			write("è¦æ±‚ï¼šé“è¡Œ"+chinese_number(dx_req/1000)+"å¹´ï¼Œå†…åŠ›ä¿®ä¸º"+chinese_number(neili_req/100)+"å¹´ã€‚\n");
+			write("æŸè€—ï¼šé“è¡Œ"+chinese_number(dx_cost/1000)+"å¹´ï¼Œå†…åŠ›ä¿®ä¸º"+chinese_number(neili_cost)+"ç‚¹(100ç‚¹ç›¸å½“äºä¸€å¹´)ã€‚\n\n");
 		}
 
 		if( d_shen >= 25 )
-			write("¾«Éñ±£»¤Á¦ÒÑĞŞÁ·µ½¶¥¡£\n\n");
+			write("ç²¾ç¥ä¿æŠ¤åŠ›å·²ä¿®ç»ƒåˆ°é¡¶ã€‚\n\n");
 		else
 		{
 			dx_req = ( d_shen + 1)*100000;
@@ -766,13 +766,13 @@ int do_cost(string arg)
 			dx_cost = ( d_shen + 1)*1000;
 			fali_cost = ( d_shen + 1)*3;
 			
-			write("©¤©¤©¤ĞŞÁ¶¾«ÉñÉËº¦Á¦(defense_shen)©¤©¤©¤\n");
-			write("ÒªÇó£ºµÀĞĞ"+chinese_number(dx_req/1000)+"Äê£¬·¨Á¦ĞŞÎª"+RANK_D->describe_fali(fali_req)+"¡£\n");
-			write("ËğºÄ£ºµÀĞĞ"+chinese_number(dx_cost/1000)+"Äê£¬·¨Á¦ĞŞÎª"+chinese_number(fali_cost)+"µã¡£\n\n");
+			write("â”€â”€â”€ä¿®ç‚¼ç²¾ç¥ä¼¤å®³åŠ›(defense_shen)â”€â”€â”€\n");
+			write("è¦æ±‚ï¼šé“è¡Œ"+chinese_number(dx_req/1000)+"å¹´ï¼Œæ³•åŠ›ä¿®ä¸º"+RANK_D->describe_fali(fali_req)+"ã€‚\n");
+			write("æŸè€—ï¼šé“è¡Œ"+chinese_number(dx_cost/1000)+"å¹´ï¼Œæ³•åŠ›ä¿®ä¸º"+chinese_number(fali_cost)+"ç‚¹ã€‚\n\n");
 		}
 
 		if( d_shou >= 25 )
-			write("·¨±¦ÊÕÈ¡Á¦ÒÑĞŞÁ·µ½¶¥¡£\n\n");
+			write("æ³•å®æ”¶å–åŠ›å·²ä¿®ç»ƒåˆ°é¡¶ã€‚\n\n");
 		else
 		{
 			dx_req = ( d_shou + 1)*100000;
@@ -782,9 +782,9 @@ int do_cost(string arg)
 			fali_cost = ( d_shou + 1)*3;
 			neili_cost = ( d_shou + 1)*3;
 			
-			write("©¤©¤©¤ĞŞÁ¶·¨±¦ÊÕÈ¡Á¦(defense_shou)©¤©¤©¤\n");
-			write("ÒªÇó£ºµÀĞĞ"+chinese_number(dx_req/1000)+"Äê£¬·¨Á¦ĞŞÎª"+RANK_D->describe_fali(fali_req)+"£¬ÄÚÁ¦ĞŞÎª"+chinese_number(neili_req/100)+"Äê¡£\n");
-			write("ËğºÄ£ºµÀĞĞ"+chinese_number(dx_cost/1000)+"Äê£¬·¨Á¦ĞŞÎª"+chinese_number(fali_cost)+"µã£¬ÄÚÁ¦ĞŞÎª"+chinese_number(neili_cost)+"µã(100µãÏàµ±ÓÚÒ»Äê)¡£\n\n");
+			write("â”€â”€â”€ä¿®ç‚¼æ³•å®æ”¶å–åŠ›(defense_shou)â”€â”€â”€\n");
+			write("è¦æ±‚ï¼šé“è¡Œ"+chinese_number(dx_req/1000)+"å¹´ï¼Œæ³•åŠ›ä¿®ä¸º"+RANK_D->describe_fali(fali_req)+"ï¼Œå†…åŠ›ä¿®ä¸º"+chinese_number(neili_req/100)+"å¹´ã€‚\n");
+			write("æŸè€—ï¼šé“è¡Œ"+chinese_number(dx_cost/1000)+"å¹´ï¼Œæ³•åŠ›ä¿®ä¸º"+chinese_number(fali_cost)+"ç‚¹ï¼Œå†…åŠ›ä¿®ä¸º"+chinese_number(neili_cost)+"ç‚¹(100ç‚¹ç›¸å½“äºä¸€å¹´)ã€‚\n\n");
 		}
 	}
    
@@ -803,26 +803,26 @@ int  do_upgrade(string arg)
   
 	if( !arg || arg == "")   
 	{
-		write("ÇëÓÃ upgrade <·¨±¦Ãû> for <ĞŞÁ¶ÌØĞÔ> À´ĞŞÁ¶¡£\n");
-		write("ĞŞÁ¶ÌØĞÔ¿ÉÓÃ cost <·¨±¦Ãû> À´²é¿´¡£\n");
+		write("è¯·ç”¨ upgrade <æ³•å®å> for <ä¿®ç‚¼ç‰¹æ€§> æ¥ä¿®ç‚¼ã€‚\n");
+		write("ä¿®ç‚¼ç‰¹æ€§å¯ç”¨ cost <æ³•å®å> æ¥æŸ¥çœ‹ã€‚\n");
 		return 1;
 	}
       
 	if( sscanf(arg, "%s for %s", name, property) != 2)  
 	{
-		write("ÇëÓÃ upgrade <·¨±¦Ãû> for <ĞŞÁ¶ÌØĞÔ> À´ĞŞÁ¶¡£\n");
-		write("ĞŞÁ¶ÌØĞÔ¿ÉÓÃ cost <·¨±¦Ãû> À´²é¿´¡£\n");
+		write("è¯·ç”¨ upgrade <æ³•å®å> for <ä¿®ç‚¼ç‰¹æ€§> æ¥ä¿®ç‚¼ã€‚\n");
+		write("ä¿®ç‚¼ç‰¹æ€§å¯ç”¨ cost <æ³•å®å> æ¥æŸ¥çœ‹ã€‚\n");
 		return 1;
 	}
    
 	if( !objectp(fabao_ob=present(name, me)) )
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷°¡¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿å•Šã€‚\n");
       
 	if(!fabao_ob->query("owner_id") || !fabao_ob->query("series_no")) 
-		return notify_fail("ÄÇ¸ö²»ÊÇ·¨±¦Ò®£¡\n");
+		return notify_fail("é‚£ä¸ªä¸æ˜¯æ³•å®è€¶ï¼\n");
      
 	if( fabao_ob->query("equipped") )
-		return notify_fail("Äã±ØĞë·ÅÏÂ·¨±¦²ÅÄÜĞŞÁ¶¡£\n");
+		return notify_fail("ä½ å¿…é¡»æ”¾ä¸‹æ³•å®æ‰èƒ½ä¿®ç‚¼ã€‚\n");
 
 	a_qi = fabao_ob->query("fabao/max_attack_qi");
 	a_shen = fabao_ob->query("fabao/max_attack_shen");
@@ -839,7 +839,7 @@ int  do_upgrade(string arg)
 		if( property == "attack_qi" )
 		{
 			if(a_qi >= 25 )
-				return notify_fail("Õâ¼ş·¨±¦µÄÆøÑªÉËº¦Á¦ÒÑĞŞÁ·µ½¶¥¡£\n");
+				return notify_fail("è¿™ä»¶æ³•å®çš„æ°”è¡€ä¼¤å®³åŠ›å·²ä¿®ç»ƒåˆ°é¡¶ã€‚\n");
 
 			dx_req = (a_qi + 1)*100000;
 			neili_req =  ( a_qi + 1)*200;
@@ -847,9 +847,9 @@ int  do_upgrade(string arg)
 			neili_cost = (a_qi + 1)*3;
 			
 			if( my_dx < dx_req )
-				return notify_fail("ÒÔÄãµÄµÀĞĞ£¬Ä¿Ç°»¹²»ÄÜĞŞÁ¶Õâ¸ö·¨±¦µÄÆøÑªÉËº¦Á¦¡£\n");
+				return notify_fail("ä»¥ä½ çš„é“è¡Œï¼Œç›®å‰è¿˜ä¸èƒ½ä¿®ç‚¼è¿™ä¸ªæ³•å®çš„æ°”è¡€ä¼¤å®³åŠ›ã€‚\n");
 			if( my_neili < neili_req )
-				return notify_fail("ÒÔÄãµÄÄÚÁ¦ĞŞÎª£¬Ä¿Ç°»¹²»ÄÜĞŞÁ¶Õâ¸ö·¨±¦µÄÆøÑªÉËº¦Á¦¡£\n");
+				return notify_fail("ä»¥ä½ çš„å†…åŠ›ä¿®ä¸ºï¼Œç›®å‰è¿˜ä¸èƒ½ä¿®ç‚¼è¿™ä¸ªæ³•å®çš„æ°”è¡€ä¼¤å®³åŠ›ã€‚\n");
 			//now, let's upgrade...
 			me->add("daoxing", -dx_cost);
 			//me->add("max_force", -neili_cost);
@@ -858,14 +858,14 @@ int  do_upgrade(string arg)
 			fabao_ob->add("weapon_prop/damage", 3);//will be 75+10 in max.
 			me->save();
 			fabao_ob->save();
-			message_vision(HIR "$N»º»º½«ÄÚÁ¦×¢Èë$nÖĞ£¬Ö»¼û$n·Å³öÎå²ÊÏ¼¹â£¬»¶Ìø²»Ö¹£¡\n" NOR, me, fabao_ob);
+			message_vision(HIR "$Nç¼“ç¼“å°†å†…åŠ›æ³¨å…¥$nä¸­ï¼Œåªè§$næ”¾å‡ºäº”å½©éœå…‰ï¼Œæ¬¢è·³ä¸æ­¢ï¼\n" NOR, me, fabao_ob);
 			return 1;
 		}
 
 		else if( property == "attack_shen" )
 		{
 			if(a_shen >= 25 )
-				return notify_fail("Õâ¼ş·¨±¦µÄ¾«ÉñÉËº¦Á¦ÒÑĞŞÁ·µ½¶¥¡£\n");
+				return notify_fail("è¿™ä»¶æ³•å®çš„ç²¾ç¥ä¼¤å®³åŠ›å·²ä¿®ç»ƒåˆ°é¡¶ã€‚\n");
 
 			dx_req = (a_shen + 1)*100000;
 			fali_req =  ( a_shen + 1)*200;
@@ -873,9 +873,9 @@ int  do_upgrade(string arg)
 			fali_cost = (a_shen + 1)*3;
 			
 			if( my_dx < dx_req )
-				return notify_fail("ÒÔÄãµÄµÀĞĞ£¬Ä¿Ç°»¹²»ÄÜĞŞÁ¶Õâ¸ö·¨±¦µÄ¾«ÉñÉËº¦Á¦¡£\n");
+				return notify_fail("ä»¥ä½ çš„é“è¡Œï¼Œç›®å‰è¿˜ä¸èƒ½ä¿®ç‚¼è¿™ä¸ªæ³•å®çš„ç²¾ç¥ä¼¤å®³åŠ›ã€‚\n");
 			if( my_fali < fali_req )
-				return notify_fail("ÒÔÄãµÄ·¨Á¦ĞŞÎª£¬Ä¿Ç°»¹²»ÄÜĞŞÁ¶Õâ¸ö·¨±¦µÄ¾«ÉñÉËº¦Á¦¡£\n");
+				return notify_fail("ä»¥ä½ çš„æ³•åŠ›ä¿®ä¸ºï¼Œç›®å‰è¿˜ä¸èƒ½ä¿®ç‚¼è¿™ä¸ªæ³•å®çš„ç²¾ç¥ä¼¤å®³åŠ›ã€‚\n");
 			//now, let's upgrade...
 			me->add("daoxing", -dx_cost);
 			//me->add("max_mana", -fali_cost);
@@ -883,13 +883,13 @@ int  do_upgrade(string arg)
 			fabao_ob->set("fabao/max_attack_shen", a_shen+1);
 			me->save();
 			fabao_ob->save();
-			message_vision(HIR "$N»º»º½«·¨Á¦×¢Èë$nÖĞ£¬Ö»¼û$n·Å³öÎå²ÊÏ¼¹â£¬»¶Ìø²»Ö¹£¡\n" NOR, me, fabao_ob);
+			message_vision(HIR "$Nç¼“ç¼“å°†æ³•åŠ›æ³¨å…¥$nä¸­ï¼Œåªè§$næ”¾å‡ºäº”å½©éœå…‰ï¼Œæ¬¢è·³ä¸æ­¢ï¼\n" NOR, me, fabao_ob);
 			return 1;
 		}
 
 		else 
 		{
-			return notify_fail("Õâ¼ş·¨±¦Ã»ÓĞÕâ¸öĞŞÁ¶ÌØĞÔ£¬ÇëÓÃ cost <·¨±¦Ãû> À´²é¿´¡£\n");
+			return notify_fail("è¿™ä»¶æ³•å®æ²¡æœ‰è¿™ä¸ªä¿®ç‚¼ç‰¹æ€§ï¼Œè¯·ç”¨ cost <æ³•å®å> æ¥æŸ¥çœ‹ã€‚\n");
 		}
 	}
 	
@@ -898,7 +898,7 @@ int  do_upgrade(string arg)
 		if( property == "defense_qi" )
 		{
 			if(d_qi >= 25 )
-				return notify_fail("Õâ¼ş·¨±¦µÄÆøÑª±£»¤Á¦ÒÑĞŞÁ·µ½¶¥¡£\n");
+				return notify_fail("è¿™ä»¶æ³•å®çš„æ°”è¡€ä¿æŠ¤åŠ›å·²ä¿®ç»ƒåˆ°é¡¶ã€‚\n");
 
 			dx_req = (d_qi + 1)*100000;
 			neili_req =  ( d_qi + 1)*200;
@@ -906,9 +906,9 @@ int  do_upgrade(string arg)
 			neili_cost = (d_qi + 1)*3;
 			
 			if( my_dx < dx_req )
-				return notify_fail("ÒÔÄãµÄµÀĞĞ£¬Ä¿Ç°»¹²»ÄÜĞŞÁ¶Õâ¸ö·¨±¦µÄÆøÑª±£»¤Á¦¡£\n");
+				return notify_fail("ä»¥ä½ çš„é“è¡Œï¼Œç›®å‰è¿˜ä¸èƒ½ä¿®ç‚¼è¿™ä¸ªæ³•å®çš„æ°”è¡€ä¿æŠ¤åŠ›ã€‚\n");
 			if( my_neili < neili_req )
-				return notify_fail("ÒÔÄãµÄÄÚÁ¦ĞŞÎª£¬Ä¿Ç°»¹²»ÄÜĞŞÁ¶Õâ¸ö·¨±¦µÄÆøÑª±£»¤Á¦¡£\n");
+				return notify_fail("ä»¥ä½ çš„å†…åŠ›ä¿®ä¸ºï¼Œç›®å‰è¿˜ä¸èƒ½ä¿®ç‚¼è¿™ä¸ªæ³•å®çš„æ°”è¡€ä¿æŠ¤åŠ›ã€‚\n");
 			//now, let's upgrade...
 			me->add("daoxing", -dx_cost);
 			//me->add("max_force", -neili_cost);
@@ -916,14 +916,14 @@ int  do_upgrade(string arg)
 			fabao_ob->set("fabao/max_defense_qi", d_qi+1);
 			me->save();
 			fabao_ob->save();
-			message_vision(HIR "$N»º»º½«ÄÚÁ¦×¢Èë$nÖĞ£¬Ö»¼û$n·Å³öÎå²ÊÏ¼¹â£¬»¶Ìø²»Ö¹£¡\n" NOR, me, fabao_ob);
+			message_vision(HIR "$Nç¼“ç¼“å°†å†…åŠ›æ³¨å…¥$nä¸­ï¼Œåªè§$næ”¾å‡ºäº”å½©éœå…‰ï¼Œæ¬¢è·³ä¸æ­¢ï¼\n" NOR, me, fabao_ob);
 			return 1;
 		}
 
 		else if( property == "defense_shen" )
 		{
 			if(d_shen >= 25 )
-				return notify_fail("Õâ¼ş·¨±¦µÄ¾«Éñ±£»¤Á¦ÒÑĞŞÁ·µ½¶¥¡£\n");
+				return notify_fail("è¿™ä»¶æ³•å®çš„ç²¾ç¥ä¿æŠ¤åŠ›å·²ä¿®ç»ƒåˆ°é¡¶ã€‚\n");
 
 			dx_req = (d_shen + 1)*100000;
 			fali_req =  ( d_shen + 1)*200;
@@ -931,9 +931,9 @@ int  do_upgrade(string arg)
 			fali_cost = (d_shen + 1)*3;
 			
 			if( my_dx < dx_req )
-				return notify_fail("ÒÔÄãµÄµÀĞĞ£¬Ä¿Ç°»¹²»ÄÜĞŞÁ¶Õâ¸ö·¨±¦µÄ¾«Éñ±£»¤Á¦¡£\n");
+				return notify_fail("ä»¥ä½ çš„é“è¡Œï¼Œç›®å‰è¿˜ä¸èƒ½ä¿®ç‚¼è¿™ä¸ªæ³•å®çš„ç²¾ç¥ä¿æŠ¤åŠ›ã€‚\n");
 			if( my_fali < fali_req )
-				return notify_fail("ÒÔÄãµÄ·¨Á¦ĞŞÎª£¬Ä¿Ç°»¹²»ÄÜĞŞÁ¶Õâ¸ö·¨±¦µÄ¾«Éñ±£»¤Á¦¡£\n");
+				return notify_fail("ä»¥ä½ çš„æ³•åŠ›ä¿®ä¸ºï¼Œç›®å‰è¿˜ä¸èƒ½ä¿®ç‚¼è¿™ä¸ªæ³•å®çš„ç²¾ç¥ä¿æŠ¤åŠ›ã€‚\n");
 			//now, let's upgrade...
 			me->add("daoxing", -dx_cost);
 			//me->add("max_mana", -fali_cost);
@@ -941,14 +941,14 @@ int  do_upgrade(string arg)
 			fabao_ob->set("fabao/max_defense_shen", d_shen+1);
 			me->save();
 			fabao_ob->save();
-			message_vision(HIR "$N»º»º½«·¨Á¦×¢Èë$nÖĞ£¬Ö»¼û$n·Å³öÎå²ÊÏ¼¹â£¬»¶Ìø²»Ö¹£¡\n" NOR, me, fabao_ob);
+			message_vision(HIR "$Nç¼“ç¼“å°†æ³•åŠ›æ³¨å…¥$nä¸­ï¼Œåªè§$næ”¾å‡ºäº”å½©éœå…‰ï¼Œæ¬¢è·³ä¸æ­¢ï¼\n" NOR, me, fabao_ob);
 			return 1;
 		}
 
 		else if( property == "defense_shou" )
 		{
 			if(d_shou >= 25 )
-				return notify_fail("Õâ¼ş·¨±¦µÄ·¨±¦ÊÕÈ¡Á¦ÒÑĞŞÁ·µ½¶¥¡£\n");
+				return notify_fail("è¿™ä»¶æ³•å®çš„æ³•å®æ”¶å–åŠ›å·²ä¿®ç»ƒåˆ°é¡¶ã€‚\n");
 
 			dx_req = (d_shou + 1)*100000;
 			fali_req =  ( d_shou + 1)*200;
@@ -956,9 +956,9 @@ int  do_upgrade(string arg)
 			fali_cost = (d_shou + 1)*3;
 			
 			if( my_dx < dx_req )
-				return notify_fail("ÒÔÄãµÄµÀĞĞ£¬Ä¿Ç°»¹²»ÄÜĞŞÁ¶Õâ¸ö·¨±¦µÄ·¨±¦ÊÕÈ¡Á¦¡£\n");
+				return notify_fail("ä»¥ä½ çš„é“è¡Œï¼Œç›®å‰è¿˜ä¸èƒ½ä¿®ç‚¼è¿™ä¸ªæ³•å®çš„æ³•å®æ”¶å–åŠ›ã€‚\n");
 			if( my_fali < fali_req )
-				return notify_fail("ÒÔÄãµÄ·¨Á¦ĞŞÎª£¬Ä¿Ç°»¹²»ÄÜĞŞÁ¶Õâ¸ö·¨±¦µÄ·¨±¦ÊÕÈ¡Á¦¡£\n");
+				return notify_fail("ä»¥ä½ çš„æ³•åŠ›ä¿®ä¸ºï¼Œç›®å‰è¿˜ä¸èƒ½ä¿®ç‚¼è¿™ä¸ªæ³•å®çš„æ³•å®æ”¶å–åŠ›ã€‚\n");
 			//now, let's upgrade...
 			me->add("daoxing", -dx_cost);
 			//me->add("max_mana", -fali_cost);
@@ -966,13 +966,13 @@ int  do_upgrade(string arg)
 			fabao_ob->set("fabao/max_defense_shou", d_shou+1);
 			me->save();
 			fabao_ob->save();
-			message_vision(HIR "$N»º»º½«·¨Á¦×¢Èë$nÖĞ£¬Ö»¼û$n·Å³öÎå²ÊÏ¼¹â£¬»¶Ìø²»Ö¹£¡\n" NOR, me, fabao_ob);
+			message_vision(HIR "$Nç¼“ç¼“å°†æ³•åŠ›æ³¨å…¥$nä¸­ï¼Œåªè§$næ”¾å‡ºäº”å½©éœå…‰ï¼Œæ¬¢è·³ä¸æ­¢ï¼\n" NOR, me, fabao_ob);
 			return 1;
 		}
 
 		else 
 		{
-			return notify_fail("Õâ¼ş·¨±¦Ã»ÓĞÕâ¸öĞŞÁ¶ÌØĞÔ£¬ÇëÓÃ cost <·¨±¦Ãû> À´²é¿´¡£\n");
+			return notify_fail("è¿™ä»¶æ³•å®æ²¡æœ‰è¿™ä¸ªä¿®ç‚¼ç‰¹æ€§ï¼Œè¯·ç”¨ cost <æ³•å®å> æ¥æŸ¥çœ‹ã€‚\n");
 		}
 	}      
 }
@@ -983,19 +983,19 @@ int  do_change_name(string arg)
    object fabao_ob, me=this_player();
   
    if( !arg || arg == "") 
-      return notify_fail("ÇëÓÃ change_name <·¨±¦> <ĞÂÖĞÎÄÃû> À´¸ÄÃû¡£\n");
+      return notify_fail("è¯·ç”¨ change_name <æ³•å®> <æ–°ä¸­æ–‡å> æ¥æ”¹åã€‚\n");
       
    if( sscanf(arg, "%s %s", name, newname) != 2)
-      return notify_fail("ÇëÓÃ change_name <·¨±¦> <ĞÂÖĞÎÄÃû> À´¸ÄÃû¡£\n");
+      return notify_fail("è¯·ç”¨ change_name <æ³•å®> <æ–°ä¸­æ–‡å> æ¥æ”¹åã€‚\n");
    
    if( !objectp(fabao_ob=present(name, me)) )
-      return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷°¡¡£\n");
+      return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿å•Šã€‚\n");
 
    if(!fabao_ob->query("owner_id") || !fabao_ob->query("series_no")) 
-      return notify_fail("ÄÇ¸ö²»ÊÇ·¨±¦Ò®£¡\n");
+      return notify_fail("é‚£ä¸ªä¸æ˜¯æ³•å®è€¶ï¼\n");
 
    if( fabao_ob->query("equipped") )
-      return notify_fail("Äã±ØĞë·ÅÏÂ·¨±¦²ÅÄÜ¸ÄÃû¡£\n");
+      return notify_fail("ä½ å¿…é¡»æ”¾ä¸‹æ³•å®æ‰èƒ½æ”¹åã€‚\n");
    
    newname += "$NOR$";      
    arg = newname;
@@ -1043,7 +1043,7 @@ int  do_change_name(string arg)
    fabao_ob->set("name", arg);
    fabao_ob->save();     
    
-   write("¸Ä¶¯³É¹¦¡£\n");
+   write("æ”¹åŠ¨æˆåŠŸã€‚\n");
    return 1;
 }
       
@@ -1054,19 +1054,19 @@ int  do_change_id(string arg)
    string *id_list, *t_list;
   
    if( !arg || arg == "") 
-      return notify_fail("ÇëÓÃ change_id <·¨±¦> <ĞÂÓ¢ÎÄÃû> À´¸ÄÃû¡£\n");
+      return notify_fail("è¯·ç”¨ change_id <æ³•å®> <æ–°è‹±æ–‡å> æ¥æ”¹åã€‚\n");
       
    if( sscanf(arg, "%s %s", name, newname) != 2)
-      return notify_fail("ÇëÓÃ change_id <·¨±¦> <ĞÂÓ¢ÎÄÃû> À´¸ÄÃû¡£\n");
+      return notify_fail("è¯·ç”¨ change_id <æ³•å®> <æ–°è‹±æ–‡å> æ¥æ”¹åã€‚\n");
    
    if( !objectp(fabao_ob=present(name, me)) )
-      return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷°¡¡£\n");
+      return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿å•Šã€‚\n");
 
    if(!fabao_ob->query("owner_id") || !fabao_ob->query("series_no")) 
-      return notify_fail("ÄÇ¸ö²»ÊÇ·¨±¦Ò®£¡\n");
+      return notify_fail("é‚£ä¸ªä¸æ˜¯æ³•å®è€¶ï¼\n");
 
    if( fabao_ob->query("equipped") )
-      return notify_fail("Äã±ØĞë·ÅÏÂ·¨±¦²ÅÄÜ¸ÄÃû¡£\n");
+      return notify_fail("ä½ å¿…é¡»æ”¾ä¸‹æ³•å®æ‰èƒ½æ”¹åã€‚\n");
 
    if( !check_legal_id( newname ) )		return 1;
   
@@ -1081,7 +1081,7 @@ int  do_change_id(string arg)
    fabao_ob->set_name( fabao_ob->query("name"), id_list ); 
    fabao_ob->save();
 	
-   write("¸Ä¶¯³É¹¦¡£\n");
+   write("æ”¹åŠ¨æˆåŠŸã€‚\n");
    return 1;
 }
 
@@ -1092,26 +1092,26 @@ int  do_change_desc(string arg)
    object fabao_ob, me=this_player();
   
    if( !arg || arg == "") 
-      return notify_fail("ÇëÓÃ change_desc <·¨±¦> <ĞÂÃèÊö> À´ÖØĞÂÃèÊö·¨±¦¡£\n");
+      return notify_fail("è¯·ç”¨ change_desc <æ³•å®> <æ–°æè¿°> æ¥é‡æ–°æè¿°æ³•å®ã€‚\n");
       
    if( sscanf(arg, "%s %s", name, newname) != 2)
-      return notify_fail("ÇëÓÃ change_desc <·¨±¦> <ĞÂÃèÊö> À´ÖØĞÂÃèÊö·¨±¦¡£\n");
+      return notify_fail("è¯·ç”¨ change_desc <æ³•å®> <æ–°æè¿°> æ¥é‡æ–°æè¿°æ³•å®ã€‚\n");
    
    if( !objectp(fabao_ob=present(name, me)) )
-      return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷°¡¡£\n");
+      return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿å•Šã€‚\n");
 
    if(!fabao_ob->query("owner_id") || !fabao_ob->query("series_no")) 
-      return notify_fail("ÄÇ¸ö²»ÊÇ·¨±¦Ò®£¡\n");
+      return notify_fail("é‚£ä¸ªä¸æ˜¯æ³•å®è€¶ï¼\n");
 
    if( fabao_ob->query("equipped") )
-      return notify_fail("Äã±ØĞë·ÅÏÂ·¨±¦²ÅÄÜ¸ÄÃû¡£\n");
+      return notify_fail("ä½ å¿…é¡»æ”¾ä¸‹æ³•å®æ‰èƒ½æ”¹åã€‚\n");
 
    if( !check_legal_name(newname, 60 ) )		return 1;
    
    fabao_ob->set("long", newname);
    fabao_ob->save();
    
-   write("¸Ä¶¯³É¹¦¡£\n");
+   write("æ”¹åŠ¨æˆåŠŸã€‚\n");
    return 1;
 }
       
@@ -1121,25 +1121,25 @@ int  do_change_unit(string arg)
    object fabao_ob, me=this_player();
   
    if( !arg || arg == "") 
-      return notify_fail("ÇëÓÃ change_unit <·¨±¦> <µ¥Î»> À´Ö¸¶¨·¨±¦µ¥Î»¡£\n");
+      return notify_fail("è¯·ç”¨ change_unit <æ³•å®> <å•ä½> æ¥æŒ‡å®šæ³•å®å•ä½ã€‚\n");
       
    if( sscanf(arg, "%s %s", name, newname) != 2)
-      return notify_fail("ÇëÓÃ change_unit <·¨±¦> <µ¥Î»> À´Ö¸¶¨·¨±¦µ¥Î»¡£\n");
+      return notify_fail("è¯·ç”¨ change_unit <æ³•å®> <å•ä½> æ¥æŒ‡å®šæ³•å®å•ä½ã€‚\n");
    
    if( !objectp(fabao_ob=present(name, me)) )
-      return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷°¡¡£\n");
+      return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿å•Šã€‚\n");
 
    if(!fabao_ob->query("owner_id") || !fabao_ob->query("series_no")) 
-      return notify_fail("ÄÇ¸ö²»ÊÇ·¨±¦Ò®£¡\n");
+      return notify_fail("é‚£ä¸ªä¸æ˜¯æ³•å®è€¶ï¼\n");
 
    if( fabao_ob->query("equipped") )
-      return notify_fail("Äã±ØĞë·ÅÏÂ·¨±¦²ÅÄÜ¸ÄÃû¡£\n");
+      return notify_fail("ä½ å¿…é¡»æ”¾ä¸‹æ³•å®æ‰èƒ½æ”¹åã€‚\n");
 
    if( !check_legal_name(newname, 2 ) )		return 1;
    
    fabao_ob->set("unit", newname);
    fabao_ob->save();
    
-   write("¸Ä¶¯³É¹¦¡£\n");
+   write("æ”¹åŠ¨æˆåŠŸã€‚\n");
    return 1;
 }

@@ -1,45 +1,45 @@
 
-//¶¨Ê±Õ¨µ¯ by hexiu
+//å®šæ—¶ç‚¸å¼¹ by hexiu
 
 #include <ansi.h>
 inherit ITEM;
 //inherit NPC;
 
 mapping default_dirs = ([
-        "north":        "±±",
-        "south":        "ÄÏ",
-        "east":         "¶«",
-        "west":         "Î÷",
-        "northup":      "±±±ß",
-        "southup":      "ÄÏ±ß",
-        "eastup":       "¶«±ß",
-        "westup":       "Î÷±ß",
-        "northdown":    "±±±ß",
-        "southdown":    "ÄÏ±ß",
-        "eastdown":     "¶«±ß",
-        "westdown":     "Î÷±ß",
-        "northeast":    "¶«±±",
-        "northwest":    "Î÷±±",
-        "southeast":    "¶«ÄÏ",
-        "southwest":    "Î÷ÄÏ",
-        "up":           "ÉÏ",
-        "down":         "ÏÂ",
-        "out":          "Íâ",
-        "enter":        "Àï",
+        "north":        "åŒ—",
+        "south":        "å—",
+        "east":         "ä¸œ",
+        "west":         "è¥¿",
+        "northup":      "åŒ—è¾¹",
+        "southup":      "å—è¾¹",
+        "eastup":       "ä¸œè¾¹",
+        "westup":       "è¥¿è¾¹",
+        "northdown":    "åŒ—è¾¹",
+        "southdown":    "å—è¾¹",
+        "eastdown":     "ä¸œè¾¹",
+        "westdown":     "è¥¿è¾¹",
+        "northeast":    "ä¸œåŒ—",
+        "northwest":    "è¥¿åŒ—",
+        "southeast":    "ä¸œå—",
+        "southwest":    "è¥¿å—",
+        "up":           "ä¸Š",
+        "down":         "ä¸‹",
+        "out":          "å¤–",
+        "enter":        "é‡Œ",
 ]);
 
 
 
 void create()
 {
-        set_name(HIG"ÃÔÄãÕ¨µ¯"NOR, ({"mini bomb", "bomb"}));
+        set_name(HIG"è¿·ä½ ç‚¸å¼¹"NOR, ({"mini bomb", "bomb"}));
         set_weight(100);
         if(clonep())
                 set_default_object(__FILE__);
         else {
-	set("long", "Ò»¿ÅĞ¡ĞÍÕ¨µ¯£¬ËÆºõ¿ÉÒÔ·Åµ½Ä³ÈËÉíÉÏ(putin)¡£\n");
-//»¹ÓĞÒ»¸ö¿ª¹Ø¿ÉÒÔÉè¶¨µµÎ»¡£(turnoff:"HIG"·ÇÖÂËÀ"NOR"/turnon:"HIR"ÖÂËÀ"NOR")\n
-        set("unit", "¿Å");
+	set("long", "ä¸€é¢—å°å‹ç‚¸å¼¹ï¼Œä¼¼ä¹å¯ä»¥æ”¾åˆ°æŸäººèº«ä¸Š(putin)ã€‚\n");
+//è¿˜æœ‰ä¸€ä¸ªå¼€å…³å¯ä»¥è®¾å®šæ¡£ä½ã€‚(turnoff:"HIG"éè‡´æ­»"NOR"/turnon:"HIR"è‡´æ­»"NOR")\n
+        set("unit", "é¢—");
         set("value", 1000);
         set("no_put",1);
         set("no_sell",1);
@@ -72,7 +72,7 @@ if(!this_object()) return 1;
 
 if (!living(env))
 {
-tell_object(env,"Ò»Éù¾ŞÏì£¬Õ¨µ¯±¬Õ¨ÁË£¡\n");
+tell_object(env,"ä¸€å£°å·¨å“ï¼Œç‚¸å¼¹çˆ†ç‚¸äº†ï¼\n");
 
 
       for(i=0; i<sizeof(ob); i++) 
@@ -84,10 +84,10 @@ tell_object(env,"Ò»Éù¾ŞÏì£¬Õ¨µ¯±¬Õ¨ÁË£¡\n");
                 
                         ob[i]->receive_damage("sen", damage,this_object());
                         
-                        tell_object(ob[i], "Äã¾õµÃÑÛÇ°Ò»Õó½ğĞÇÂÒÃ°£¬¶ú¶äÍ´µÃÏñÊÇÒªÁÑ¿ªÒ»Ñù£¡\n");
+                        tell_object(ob[i], "ä½ è§‰å¾—çœ¼å‰ä¸€é˜µé‡‘æ˜Ÿä¹±å†’ï¼Œè€³æœµç—›å¾—åƒæ˜¯è¦è£‚å¼€ä¸€æ ·ï¼\n");
 						COMBAT_D->report_sen_status(ob[i]);
 			  
-						msg = HIC "¾Ş´óµÄ³å»÷²¨°Ñ"+ob[i]->name()+"Õ¨µÄ" NOR;
+						msg = HIC "å·¨å¤§çš„å†²å‡»æ³¢æŠŠ"+ob[i]->name()+"ç‚¸çš„" NOR;
                         exit=env->query("exits");
 
 
@@ -103,9 +103,9 @@ tell_object(env,"Ò»Éù¾ŞÏì£¬Õ¨µ¯±¬Õ¨ÁË£¡\n");
 
 				if( obj=load_object(dest)) {
 					success=1;
-					msg+= HIC "Ïò" +target_dir+ NOR;
+					msg+= HIC "å‘" +target_dir+ NOR;
 				}
-msg += HIC "·ÉÁË³öÈ¥£¡\n\n" NOR;
+msg += HIC "é£äº†å‡ºå»ï¼\n\n" NOR;
 			}
 
   
@@ -114,7 +114,7 @@ msg += HIC "·ÉÁË³öÈ¥£¡\n\n" NOR;
 
 				if( ob[i]->move(obj) ) {
 
-					tell_object(environment(ob[i]),HIR"\nÖ»¼û"+ob[i]->name()+"ÏóÀ¦µ¾²İ°ãµÄ·ÉÁË¹ıÀ´£¡\n" NOR);}
+					tell_object(environment(ob[i]),HIR"\nåªè§"+ob[i]->name()+"è±¡æ†ç¨»è‰èˆ¬çš„é£äº†è¿‡æ¥ï¼\n" NOR);}
 
 										}
 
@@ -125,7 +125,7 @@ msg += HIC "·ÉÁË³öÈ¥£¡\n\n" NOR;
 		  for(i=0; i<sizeof(ob); i++) 
 		{
 			if( !living(ob[i]) || ob[i]==this_object() || wizardp(ob[i])) continue;
-			if(userp(ob[i])) ob[i]->set_temp("death_msg", "±»Õ¨µ¯Õ¨ËÀÁË¡£\n");
+			if(userp(ob[i])) ob[i]->set_temp("death_msg", "è¢«ç‚¸å¼¹ç‚¸æ­»äº†ã€‚\n");
 			ob[i]->die();
 	  
 	    }
@@ -139,10 +139,10 @@ else
 	 {
 		 if(ob[i]==this_object() || wizardp(ob[i])) continue;
 		 if(ob[i]->move(environment(env)))
-		 tell_object(environment(env),ob[i]->query("name")+"±»Õ¨µÄ´Ó"+env->query("name")+"ÉíÉÏ·ÉÁË³öÀ´£¡\n");
+		 tell_object(environment(env),ob[i]->query("name")+"è¢«ç‚¸çš„ä»"+env->query("name")+"èº«ä¸Šé£äº†å‡ºæ¥ï¼\n");
 
 	 }
-     message_vision("$N¾õµÃÒ»ÕóÑ£ÔÎ£¡\n",env);
+     message_vision("$Nè§‰å¾—ä¸€é˜µçœ©æ™•ï¼\n",env);
 	 env->unconcious();
 
 }
@@ -170,23 +170,23 @@ int do_settime(string arg)
 {
 	int timea,k,d;
 	if ( this_object()->query("set_done")==1 )
-         return notify_fail("»¹²»¿ìÅÜ£¡£¡£¡\n");
+         return notify_fail("è¿˜ä¸å¿«è·‘ï¼ï¼ï¼\n");
 	if( !arg
         ||      !sscanf(arg, "%d", timea) )
-                return notify_fail("ÄãÒª¶¨Ê±¶àÉÙ£¿\n");
+                return notify_fail("ä½ è¦å®šæ—¶å¤šå°‘ï¼Ÿ\n");
 
 	if( timea < 20)
-		return notify_fail("Çë¸ø×Ô¼ºÁôÏÂ×ã¹»ÅÜÂ·µÄÊ±¼ä£¡\n");
+		return notify_fail("è¯·ç»™è‡ªå·±ç•™ä¸‹è¶³å¤Ÿè·‘è·¯çš„æ—¶é—´ï¼\n");
 	if( timea > 60)
-		return notify_fail("Õ¨µ¯¶¨²»ÁËÄÇÃ´³¤Ê±¼ä£¡\n");
+		return notify_fail("ç‚¸å¼¹å®šä¸äº†é‚£ä¹ˆé•¿æ—¶é—´ï¼\n");
 
 //	if (this_object()->move(environment( this_player() )))
 //	{	
 		//this_object()->set("no_get",1);
 		this_object()->set("set_done",1);
-		this_object()->set("name",HIG"ÃÔÄãÕ¨µ¯<ÒÑÆô¶¯>"NOR);
+		this_object()->set("name",HIG"è¿·ä½ ç‚¸å¼¹<å·²å¯åŠ¨>"NOR);
 
-	    tell_object(environment(this_player()),HIW"Ä³ÈË²¦ÅªÒ»¸öµÎµÎÏìµÄ¶«Î÷£¡\n"NOR);
+	    tell_object(environment(this_player()),HIW"æŸäººæ‹¨å¼„ä¸€ä¸ªæ»´æ»´å“çš„ä¸œè¥¿ï¼\n"NOR);
 
 
        for(k=timea-1;k>=1;k--)
@@ -209,10 +209,10 @@ int do_putin(string arg)
 	obj=this_object();
 
 	if( sscanf(arg, "%s", target)==1);
-	else return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+	else return notify_fail("ä½ è¦ç»™è°ä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
 	if(!objectp(who = present(target, environment(me))) || !living(who))
-		return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+		return notify_fail("è¿™é‡Œæ²¡æœ‰è¿™ä¸ªäººã€‚\n");
 
 	if( me == who )  {
 		write("Ok.\n");
@@ -220,10 +220,10 @@ int do_putin(string arg)
 	}
 
 	if(me->is_busy())
-	   return notify_fail("ÄãÕıÃ¦×ÅÄØ£®£®£®\n");
+	   return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼ï¼ï¼\n");
 
 	if(wizardp(who))
-		return notify_fail("²»ÄÜ·ÅÖÃµ½Î×Ê¦ÉíÉÏ£¡\n");
+		return notify_fail("ä¸èƒ½æ”¾ç½®åˆ°å·«å¸ˆèº«ä¸Šï¼\n");
 
 
 	//write("here"+who->query("name")+"\n");
@@ -233,13 +233,13 @@ int do_putin(string arg)
 	if( obj->move(who) )
 	{
      obj->set("no_drop",1);
-	message_vision(HIW"$N°ÑÒ»¸öµÎµÎÏìµÄ¶«Î÷·Åµ½$nÉíÉÏ£¡\n"NOR,me,who);
+	message_vision(HIW"$NæŠŠä¸€ä¸ªæ»´æ»´å“çš„ä¸œè¥¿æ”¾åˆ°$nèº«ä¸Šï¼\n"NOR,me,who);
 	call_out("bomb",3,obj);
 
 	}
 	else
 	{
-	write("Ã»³É¹¦£¡\n");
+	write("æ²¡æˆåŠŸï¼\n");
 	}
 return 1;
 }
@@ -248,24 +248,24 @@ return 1;
 /*
 int do_turnon()
 {   if (!wizardp(this_player()) )
-         return notify_fail("ÖÂËÀµ²Ö»ÓĞÎ×Ê¦¿ÉÒÔÉèÖÃ£¡\n");
+         return notify_fail("è‡´æ­»æŒ¡åªæœ‰å·«å¸ˆå¯ä»¥è®¾ç½®ï¼\n");
     if ( this_object()->query("set_done")==1 )
-         return notify_fail("»¹²»¿ìÅÜ£¡£¡£¡\n");
+         return notify_fail("è¿˜ä¸å¿«è·‘ï¼ï¼ï¼\n");
 
-	message_vision(HIW"$N°ÑÕ¨µ¯µÄµµÎ»²¦µ½"HIR"ÖÂËÀ"HIW"ÉÏ¡£\n"NOR,this_player());
+	message_vision(HIW"$NæŠŠç‚¸å¼¹çš„æ¡£ä½æ‹¨åˆ°"HIR"è‡´æ­»"HIW"ä¸Šã€‚\n"NOR,this_player());
         this_object()->set("no_give",1);
 	this_object()->set("dead",1);
-	this_object()->set("name",HIR"¶¨Ê±Õ¨µ¯<ÖÂËÀ>"NOR);
+	this_object()->set("name",HIR"å®šæ—¶ç‚¸å¼¹<è‡´æ­»>"NOR);
 	return 1;
 }
 
 int do_turnoff()
 {
 	if ( this_object()->query("set_done")==1 )
-         return notify_fail("»¹²»¿ìÅÜ£¡£¡£¡\n");
-	message_vision(HIW"$N°ÑÕ¨µ¯µÄµµÎ»²¦µ½"HIG"·ÇÖÂËÀ"HIW"ÉÏ¡£\n"NOR,this_player());
+         return notify_fail("è¿˜ä¸å¿«è·‘ï¼ï¼ï¼\n");
+	message_vision(HIW"$NæŠŠç‚¸å¼¹çš„æ¡£ä½æ‹¨åˆ°"HIG"éè‡´æ­»"HIW"ä¸Šã€‚\n"NOR,this_player());
 	this_object()->set("dead",0);
-	this_object()->set("name",HIG"¶¨Ê±Õ¨µ¯<·ÇÖÂËÀ>"NOR);
+	this_object()->set("name",HIG"å®šæ—¶ç‚¸å¼¹<éè‡´æ­»>"NOR);
 	return 1;
 }
 
@@ -277,7 +277,7 @@ void show_time(int d)
 	if(!this_object()) return ;
 	if( d<=3 ) 
 	{
-		tell_object(environment( this_object() ),HIR"\n"+chinese_number(d)+"\nµÎµÎµÎ£¡£¡£¡\n"NOR);
+		tell_object(environment( this_object() ),HIR"\n"+chinese_number(d)+"\næ»´æ»´æ»´ï¼ï¼ï¼\n"NOR);
 		return;}
 	else
 	{

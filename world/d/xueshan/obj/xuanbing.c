@@ -8,12 +8,12 @@ int do_make(string);
 void create() 
   {
 	seteuid(getuid());
-   set_name("Ğş±ù",({"xuan bing"}));
+   set_name("ç„å†°",({"xuan bing"}));
         set ("long", @LONG
-Ò»¿éĞş±ù£¬Ã°×ÅË¿Ë¿°×Æø£¬²»Öªµ½µ×ÓĞ¶àÀä¡£
+ä¸€å—ç„å†°ï¼Œå†’ç€ä¸ä¸ç™½æ°”ï¼Œä¸çŸ¥åˆ°åº•æœ‰å¤šå†·ã€‚
 LONG);
    set_weight(10);
-   set("unit","¿é");
+   set("unit","å—");
    set("cook/allow",1);
    set("cook/value",5);
    set("cook/type","shui");
@@ -39,13 +39,13 @@ int do_make(string arg)
 	me = this_player();
 
 	if( !arg || (arg != "blade" && arg != "dao" && arg != "sword" && arg != "jian" ) )
-		return notify_fail("ÄãÒª×öÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åšä»€ä¹ˆï¼Ÿ\n");
 	if( arg == "sword" || arg =="jian" )
-		return notify_fail("ÕâÆ¬±ùÊÇÍäµÄ£¬×ö²»ÁË½£¡£\n");
+		return notify_fail("è¿™ç‰‡å†°æ˜¯å¼¯çš„ï¼Œåšä¸äº†å‰‘ã€‚\n");
 
 	if( (int)me->query("force") < 200 || (int)me->query_skill("ningxie-force", 1) < 20 )
 	{
-		message_vision("$NÄÃÆğ±ù¿éÄóÀ´ÄóÈ¥£¬½á¹û±ù¿éºÜ¿ì¾Í»¯µôÁË¡£\n", me);
+		message_vision("$Næ‹¿èµ·å†°å—ææ¥æå»ï¼Œç»“æœå†°å—å¾ˆå¿«å°±åŒ–æ‰äº†ã€‚\n", me);
 		destruct(this_object());
 		return 1;
 	}	
@@ -53,7 +53,7 @@ int do_make(string arg)
 	ob=new("/d/obj/weapon/blade/xiceblade");
 	ob->move(me);
 	me->add("force", -100);
-	message_vision("$NÄÃÆğ±ù¿éÄóÀ´ÄóÈ¥£¬¾ÓÈ»×ö³öÁËÒ»°ÑÍäÍäµÄĞş±ùµ¶£¡\n", me);
+	message_vision("$Næ‹¿èµ·å†°å—ææ¥æå»ï¼Œå±…ç„¶åšå‡ºäº†ä¸€æŠŠå¼¯å¼¯çš„ç„å†°åˆ€ï¼\n", me);
 	destruct(this_object());
 
 	return 1;

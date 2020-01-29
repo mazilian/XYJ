@@ -6,19 +6,19 @@ int _do_drop(object me, object obj);
 
 void create ()
 {
-//        set ("short", "·ÏÆ·»ØÊÕÖĞĞÄ")
-        set ("short", "ÍßÀù³¡");
+//        set ("short", "åºŸå“å›æ”¶ä¸­å¿ƒ")
+        set ("short", "ç“¦ç ¾åœº");
         set ("long", @LONG
 
-ÄãÑÛÇ°³öÏÖÒ»×ùË¶´óµÄÀ¬»ø¶Ñ¡£ÕâÀïÊÇ³¤°²³ÇÄÚ×î´óµÄ·ÏÎï¶Ñ»ı´¦£¬
-ÓĞ»·±£ÒâÊ¶µÄºÃĞÄÍæ¼Ò£¬´ÓÀ´²»ËæµØÂÒÈÓ·ÏÎï£¬×ÜÊÇ°ÑËûÃÇÈÓ(drop)
-µ½ÕâÀïÀ´¡£
+ä½ çœ¼å‰å‡ºç°ä¸€åº§ç¡•å¤§çš„åƒåœ¾å †ã€‚è¿™é‡Œæ˜¯é•¿å®‰åŸå†…æœ€å¤§çš„åºŸç‰©å †ç§¯å¤„ï¼Œ
+æœ‰ç¯ä¿æ„è¯†çš„å¥½å¿ƒç©å®¶ï¼Œä»æ¥ä¸éšåœ°ä¹±æ‰”åºŸç‰©ï¼Œæ€»æ˜¯æŠŠä»–ä»¬æ‰”(drop)
+åˆ°è¿™é‡Œæ¥ã€‚
 
 LONG);
 /*
-Ê±ÍÍ»ıÔÚÕâÀï£¬µÈ´ı½øÒ»²½´¦Àí¡£·ÏÆ·¶ÑÀïÌÉ×Å¸öÈË£¬»ëÉíÉÏÏÂÉ¢·¢
-×ÅÀ¬»øµÄÆøÎ¶£¬»³Àï±§×Å¸öÇ®Ïä£¬ÕıÊÇ±¾·ÏÆ·Õ¾µÄ´´Ê¹ÈËÉñÄ§(devv)¡£
-Ã¿ÈÓÒ»Ñù·ÏÆ·£¬Ëû¶¼»á¸øÄãÒ»¸öÍ­°å×÷³êÀÍ¡£
+æ—¶å±¯ç§¯åœ¨è¿™é‡Œï¼Œç­‰å¾…è¿›ä¸€æ­¥å¤„ç†ã€‚åºŸå“å †é‡Œèººç€ä¸ªäººï¼Œæµ‘èº«ä¸Šä¸‹æ•£å‘
+ç€åƒåœ¾çš„æ°”å‘³ï¼Œæ€€é‡ŒæŠ±ç€ä¸ªé’±ç®±ï¼Œæ­£æ˜¯æœ¬åºŸå“ç«™çš„åˆ›ä½¿äººç¥é­”(devv)ã€‚
+æ¯æ‰”ä¸€æ ·åºŸå“ï¼Œä»–éƒ½ä¼šç»™ä½ ä¸€ä¸ªé“œæ¿ä½œé…¬åŠ³ã€‚
 
 LONG);
 
@@ -52,9 +52,9 @@ int do_drop(string arg)
         object me=this_player();
 
         if(me->is_busy())
-           return notify_fail("ÄãÕıÃ¦×ÅÄØ£®£®£®\n");
+           return notify_fail("ä½ æ­£å¿™ç€å‘¢ï¼ï¼ï¼\n");
  
-        if(!arg) return notify_fail("ÄãÒª¶ªÆúÊ²Ã´¶«Î÷£¿\n");
+        if(!arg) return notify_fail("ä½ è¦ä¸¢å¼ƒä»€ä¹ˆä¸œè¥¿ï¼Ÿ\n");
 
         if(arg=="all") {
                 inv = all_inventory(me);
@@ -62,7 +62,7 @@ int do_drop(string arg)
                       reward+= _do_drop(me, inv[i]);
         } else {
             if(!objectp(obj = present(arg, me)))
-                  return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                  return notify_fail("ä½ èº«ä¸Šæ²¡æœ‰è¿™æ ·ä¸œè¥¿ã€‚\n");
             reward+= _do_drop(me, obj);
         }
   reward=0;
@@ -71,7 +71,7 @@ int do_drop(string arg)
           money=new("/obj/money/coin");
           money->set_amount(reward);
           if (money->move(me))
-             write("ÄãµÃµ½ÁË"+chinese_number(reward)+"Ã¶Í­°åµÄ³êÀÍ¡£\n");
+             write("ä½ å¾—åˆ°äº†"+chinese_number(reward)+"æšé“œæ¿çš„é…¬åŠ³ã€‚\n");
 
     }
         return 1;
@@ -82,19 +82,19 @@ int _do_drop(object me, object obj)
    if (!obj->move(this_object())) return 0;
     if((obj->query_temp("d_mana"))>0) {
        if( obj->query_temp("is_living")==1 )
-            message_vision("$N½«$n´Ó±³ÉÏ·ÅÁËÏÂÀ´£¬ÌÉÔÚµØÉÏ¡£\n", me, obj);
-       else  message_vision( sprintf("$N¶ªÏÂÒ»%s$n¡£\n", 
+            message_vision("$Nå°†$nä»èƒŒä¸Šæ”¾äº†ä¸‹æ¥ï¼Œèººåœ¨åœ°ä¸Šã€‚\n", me, obj);
+       else  message_vision( sprintf("$Nä¸¢ä¸‹ä¸€%s$nã€‚\n", 
               undefinedp(obj->query_temp("unit"))?
-              "¸ö":obj->query_temp("unit")
+              "ä¸ª":obj->query_temp("unit")
               ), me, obj );
         return 0;          
     } 
 
    if( obj->is_character() ) {
-       message_vision("$N½«$n´Ó±³ÉÏ·ÅÁËÏÂÀ´£¬ÌÉÔÚµØÉÏ¡£\n", me, obj);
+       message_vision("$Nå°†$nä»èƒŒä¸Šæ”¾äº†ä¸‹æ¥ï¼Œèººåœ¨åœ°ä¸Šã€‚\n", me, obj);
        return 0;
    }
-   message_vision("$N°Ñ$nÈÓ½øÀ¬»ø¶Ñ¡£\n", me, obj );
+   message_vision("$NæŠŠ$næ‰”è¿›åƒåœ¾å †ã€‚\n", me, obj );
    destruct(obj);
    return 1;
 }

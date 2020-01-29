@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ºó¶´");
+  set ("short", "åŽæ´ž");
   set ("long", @LONG
 
-ºó¶´Àï÷××ÅÒ»¶ÑÒ»¶ÑµÄóô»ð£¬¶´µÄ¶«±ßÆöÁËÒ»¸öÊ¯Ôî£¬ÉÏÓÐÒ»
-¿Ú´óÍ­¹ø¡£Î÷±ßÓÐÒ»ÄÚÌü£¬ÌüÀïÆÌÓÐ¸÷Ê½ÊÞÆ¤£¬ÕýÖÐÓÐÒ»´ó´²
-ÆÌ×ÅÈÞÃ«µæ¡£¶´±ÚÉÏÓÐÒ»µÀÁÑºÛ£¬ÑÓÉìµ½¶´¶¥¡£
+åŽæ´žé‡Œé«¯ç€ä¸€å †ä¸€å †çš„ç¯ç«ï¼Œæ´žçš„ä¸œè¾¹ç Œäº†ä¸€ä¸ªçŸ³ç¶ï¼Œä¸Šæœ‰ä¸€
+å£å¤§é“œé”…ã€‚è¥¿è¾¹æœ‰ä¸€å†…åŽ…ï¼ŒåŽ…é‡Œé“ºæœ‰å„å¼å…½çš®ï¼Œæ­£ä¸­æœ‰ä¸€å¤§åºŠ
+é“ºç€ç»’æ¯›åž«ã€‚æ´žå£ä¸Šæœ‰ä¸€é“è£‚ç—•ï¼Œå»¶ä¼¸åˆ°æ´žé¡¶ã€‚
 
 LONG);
 
@@ -35,11 +35,11 @@ int do_climb ()
   object who = this_player ();
   string midong = __DIR__"midong1";
 
-  message_vision ("$NÅÊ×¡ÑÒ±Ú£¬ÏòÉÏÅÀÈ¥¡£\n",who);  
+  message_vision ("$Næ”€ä½å²©å£ï¼Œå‘ä¸Šçˆ¬åŽ»ã€‚\n",who);  
   if (who->is_busy() || who->is_fighting() || 
 	  present ("yao guai",this_object()))
   {
-    message_vision ("$N´ÓÑÒ±ÚÉÏ»¬ÁËÏÂÀ´£¡\n",who);  
+    message_vision ("$Nä»Žå²©å£ä¸Šæ»‘äº†ä¸‹æ¥ï¼\n",who);  
     return 1;
   }
   midong[strlen(midong)-1] = '1'+random(5);
@@ -56,14 +56,14 @@ int do_climb ()
 
 void sleeping (object who)
 {
-  message_vision ("ÃØ¶´ÀïÉ¢·¢×ÅÒ»¹É´Ì±ÇµÄÐÈÆø£¬$N¶ÙÊ±»è»èÈ»¡£\n\n",who);  
-  message_vision ("$NÃãÇ¿Õ£ÁËÕ£ÐÊâìµÄÑÛ¾¦£¬´òÁË¸ö¹þÇ·¡£\n",who);  
+  message_vision ("ç§˜æ´žé‡Œæ•£å‘ç€ä¸€è‚¡åˆºé¼»çš„è…¥æ°”ï¼Œ$Né¡¿æ—¶æ˜æ˜ç„¶ã€‚\n\n",who);  
+  message_vision ("$Nå‹‰å¼ºçœ¨äº†çœ¨æƒºå¿ªçš„çœ¼ç›ï¼Œæ‰“äº†ä¸ªå“ˆæ¬ ã€‚\n",who);  
   who->set("last_sleep",time()-270);
   who->interrupt_me();
   who->command_function("sleep"); 
 }
 void fainting (object who)
 {
-	message_vision("Í»È»´Ó°µ¿ÚÖÐÅç³öÒ»¹É×ÏÑÌ£¬$N¶ÙÊ±Í·ÖØ½ÅÇá¡£¡£¡£\n", who);
+	message_vision("çªç„¶ä»Žæš—å£ä¸­å–·å‡ºä¸€è‚¡ç´«çƒŸï¼Œ$Né¡¿æ—¶å¤´é‡è„šè½»ã€‚ã€‚ã€‚\n", who);
 	who->unconcious();
 }

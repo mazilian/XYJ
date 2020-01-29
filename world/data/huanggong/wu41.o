@@ -1,9 +1,9 @@
 #/d/huanggong/npc/wu41.c
-dbase (["age":14,"kee":250,"weapon":"/d/city/npc/obj_ex/zhua","max_kee":250,"eff_gin":100,"eff_kee":250,"potential":1,"can_speak":1,"unit":"Î»","title":"Ìú°ñ×´Ôª","per":16,"spi":16,"force_factor":0,"con":22,"cor":20,"int":22,"cps":25,"mana":0,"str":30,"kar":21,"gender":"ÄĞĞÔ","startroom":"/d/huanggong/ywc4b","name":"ÖíĞ¡½ä","id":"jin shi","sen":200,"combat_exp":1551,"max_gin":100,"daoxing":504,"armor":"/d/city/npc/obj_ex/cloth","gin":100,"long":"Ìú°ñ×´Ôª¡£","limbs":({"Í·²¿","¾±²¿","ĞØ¿Ú","ºóĞÄ","×ó¼ç","ÓÒ¼ç","×ó±Û","ÓÒ±Û","×óÊÖ","ÓÒÊÖ","Ñü¼ä","Ğ¡¸¹","×óÍÈ","ÓÒÍÈ","×ó½Å","ÓÒ½Å",}),"current_player":"lanmo","attitude":"heroism","actions":,"new_player":0,"max_force":0,"force":0,"short":"ÖíĞ¡½ä(Jin shi)","eff_sen":200,"default_actions":,"no_unconcious":1,"max_mana":0,"max_sen":200,"race":"ÈËÀà",])
+dbase (["age":14,"kee":250,"weapon":"/d/city/npc/obj_ex/zhua","max_kee":250,"eff_gin":100,"eff_kee":250,"potential":1,"can_speak":1,"unit":"ä½","title":"é“æ¦œçŠ¶å…ƒ","per":16,"spi":16,"force_factor":0,"con":22,"cor":20,"int":22,"cps":25,"mana":0,"str":30,"kar":21,"gender":"ç”·æ€§","startroom":"/d/huanggong/ywc4b","name":"çŒªå°æˆ’","id":"jin shi","sen":200,"combat_exp":1551,"max_gin":100,"daoxing":504,"armor":"/d/city/npc/obj_ex/cloth","gin":100,"long":"é“æ¦œçŠ¶å…ƒã€‚","limbs":({"å¤´éƒ¨","é¢ˆéƒ¨","èƒ¸å£","åå¿ƒ","å·¦è‚©","å³è‚©","å·¦è‡‚","å³è‡‚","å·¦æ‰‹","å³æ‰‹","è…°é—´","å°è…¹","å·¦è…¿","å³è…¿","å·¦è„š","å³è„š",}),"current_player":"lanmo","attitude":"heroism","actions":,"new_player":0,"max_force":0,"force":0,"short":"çŒªå°æˆ’(Jin shi)","eff_sen":200,"default_actions":,"no_unconcious":1,"max_mana":0,"max_sen":200,"race":"äººç±»",])
 skills (["dodge":3,"dragonstep":1,"mace":4,"parry":3,])
 learned (["dodge":0,"dragonstep":0,"mace":0,"parry":0,])
 skill_map (["dodge":"dragonstep",])
-categories ({"½ğ°ñ","Òø°ñ","Í­°ñ","Ìú°ñ","Îı°ñ",})
-positions ({"×´Ôª","°ñÑÛ","Ì½»¨",})
+categories ({"é‡‘æ¦œ","é“¶æ¦œ","é“œæ¦œ","é“æ¦œ","é”¡æ¦œ",})
+positions ({"çŠ¶å…ƒ","æ¦œçœ¼","æ¢èŠ±",})
 limits ({200000,100000,50000,10000,1000,})
 rooms ({"b","a","c",})
