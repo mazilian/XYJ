@@ -165,4 +165,174 @@ int do_sell(string arg)
       message_vision(CYN"$N高兴地说道：嘿，这个特新鲜，直接蒸了吧！\n"NOR, cook);
       message_vision("$N将$n扔进了蒸笼。\n", cook,ob);
       CHANNEL_D->do_channel(this_object(), "rumor",
-	sprintf("%s
+	sprintf("%s�%s饺プ隽税印n",ob->name(1), me->name(1)));
+      ob->move("/d/qujing/wudidong/steamer");
+      message("vision", "只听「咚」的一声，"+ob->name()+"被扔了进来。\n",
+			environment(ob), ob);
+      ob->set("startroom_old", ob->query("startroom"));
+      ob->set("startroom", environment(ob));
+      ob->save();
+      ob->revive();
+  }
+  else
+  {
+      message_vision("$N利索地将$n放在案板上，剁成了肉馅。\n",cook,ob);
+      message_vision("$N将肉馅裹上面粉，扔进了蒸笼。\n",cook);
+      ob->move("/d/qujing/wudidong/steamer");
+      destruct(ob);
+  }
+  return 1;
+}
+
+int check_ratio(object me, object ob)
+{
+    int ratio;
+    int myexp, baoziexp;
+
+    baoziexp=(ob->query("combat_exp")+ob->query("daoxing"))/2;// baoziexp 是被卖者的强度。
+    myexp=me->query("combat_exp")+me->query("daoxing");// myexp 是卖者的强度。
+
+    if (myexp==0) myexp=1;
+    ratio=baoziexp*100/myexp;		// ratio 是被卖者除卖着的百分比。
+    if (ratio>150) ratio = 150;		// 如果百分比太高（>2），则当作幸运处理。设回100%
+    else if (ratio < 100)
+      ratio = ratio * ratio / 100;	// 如果太低，平方，防止高手杀太低的NPC、玩家。
+    return ratio;
+}
+
+int check_base_reward(object baozi, int ratio)
+{ 
+    int base_reward;
+    int baoziexp=baozi->query("combat_exp")+baozi->query("daoxing");
+    int adjust=ratio/10;
+
+    //increased to be compatible with other quests...weiqi, 990220
+    if(baoziexp>1000000)
+        base_reward=1000;
+    else if(baoziexp>500000)
+        base_reward=800;
+    else if(baoziexp>100000)
+        base_reward=500;
+    else if(baoziexp>50000)
+        base_reward=350;
+    else if(baoziexp>10000)
+        base_reward=200;
+    else if(baoziexp>5000)
+        base_reward=100;
+    else if(baoziexp>1000)
+        base_reward=50;
+    else base_reward=30;
+
+    if (userp(baozi)) base_reward *= 2;		// 若卖玩家，奖励加倍。
+
+    return base_reward;
+}
+
+void move_ob(object ob)
+{
+  return;
+}
+
+void destroy(object ob)
+{
+  destruct(ob);
+  return;
+}
+/************************************************************/
+
+void give_baozi(object cook, object me, string OBNAME, int reward)
+{
+    object baozi;
+
+    delete_temp("processing");
+    message_vision(CYN"$N揭开蒸笼的盖子闻了闻，眼睛一亮，道：熟了！\n"NOR, cook);
+    if(!me || me->query("env/invisibility") || !present(me, environment(cook)))
+    {
+	tell_room(environment(cook), CYN"鼹鼠精叹了口气，道：唉，这么香的包子，看来"+me->name()+"是没福享受了。\n"NOR);
+	return;
+    }
+    baozi=new(__DIR__"obj/renroubao");
+    baozi->set("type", "有奖励");
+    baozi->set("reward", reward);
+    baozi->set("owner", me->query("id"));
+    baozi->set("long", "
+一个香喷喷、热腾腾的人肉包子，据说肉馅是
+"+OBNAME+"的肉做的，上面还沾着一些血丝。
+其肉味道之鲜美，不由得让人垂涎欲滴。\n");
+    baozi->move(cook);
+    command("give baozi to "+me->query("id"));
+    return;
+}
+
+/************************************************************/
+int do_manifest(string arg)
+{
+    object me=this_player();
+    mapping list, ind_list;
+    int i, j;
+
+    if(!wizardp(me)) return 0;
+    list=query("pot_monitor");
+    i=sizeof(keys(list));
+    while(i--)
+    {
+	tell_object(me, keys(list)[i]+"\n");
+	ind_list=list[i];
+	j=sizeof(ind_list);
+	tell_object(me, "j is "+j);
+	while(j--)
+	{
+	    tell_object(me, "\t"+keys(ind_list)[j]);
+	    tell_object(me, "\t: "+ind_list[keys(ind_list)[j]]+"\n");
+	}
+    }
+    return 1;
+}
+
+int do_tellme(string arg)
+{
+    object me=this_player(), seller, baozi;
+    string butcher, meat, msg;
+    int ratio, baoziexp, sellerexp, base_reward, pot_reward, reward;
+
+    if (!wizardp(me)) return 0;
+    if (!arg) return notify_fail(SYNTAX);
+    sscanf(arg, "%s sell %s", butcher, meat);
+
+    if (!meat) return notify_fail("必须提供被卖者的名字。\n");
+    if (!objectp(baozi=present(meat, environment(me))))
+	baozi=find_player(meat);
+    if (!baozi) baozi=find_living(meat);
+    if (!baozi) return notify_fail("目前游戏中找不到这位 "+meat+" 。\n");
+    if (!butcher) seller=this_player();
+    else 
+    {
+	seller=find_player(butcher);
+	if (!seller) return notify_fail("这位 "+butcher+" 现在不在游戏中。\n");    
+    }
+    ratio=check_ratio(seller, baozi);
+    base_reward=check_base_reward(baozi, ratio);
+    reward=ratio*base_reward/100;
+    msg=GRN+seller->query("name")+"（经验："+(seller->query("combat_exp")+seller->query("daoxing"))+"），";
+    msg+="卖"+baozi->query("name")+"（经验："+(baozi->query("combat_exp")+baozi->query("daoxing"))+"）。\n";
+    msg+="基本奖励为 "+base_reward+" 经验，二人强度比例为 "+ratio+"％\n";
+    msg+=seller->query("name")+"得 "+reward+" 经验。\n"NOR;
+    tell_object(me, msg);
+    return 1;
+}
+
+int do_giveme(string arg)
+{
+    int exp;
+    object me=this_player(), dummy;
+
+    if (!arg) exp=2*me->query("combat_exp");
+
+    dummy=new(__DIR__"dummy");
+    dummy->move(me);
+    tell_object(me, "你得到了一个测试大米。\n");
+    dummy->unconcious();
+    dummy->set("combat_exp", exp);
+    dummy->set_temp("last_fainted_from", me->query("id"));
+    return 1;
+}

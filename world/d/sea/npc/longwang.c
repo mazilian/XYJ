@@ -147,4 +147,206 @@ int do_learn(string arg)
 
 	if( (int)me->query("learned_points") >= (int)me->query("potential") )
 		return notify_fail("你的潜能已经发挥到极限了，没有办法再成长了。\n");
-	printf("你向%s虢逃泄亍
+	printf("你向%s虢逃泄亍�%s沟囊晌省n", ob->name(),
+		to_chinese(skill));
+
+	if( ob->query("env/no_teach") )
+		return notify_fail("但是" + ob->name() + "现在并不准备回答你的问题。\n");
+
+	tell_object(ob, sprintf("%s蚰闱虢逃泄亍�%s沟奈侍狻n",
+		me->name(), to_chinese(skill)));
+
+	if( (int)ob->query("sen") > sen_cost/5 + 1 ) {
+		if( userp(ob) ) ob->receive_damage("sen", sen_cost/5 + 1);
+	} else {
+		write("但是" + ob->name() + "显然太累了，没有办法教你什么。\n");
+		tell_object(ob, "但是你太累了，没有办法教" + me->name() + "。\n");
+		return 1;
+	}
+		
+
+	if( (int)me->query("sen") > sen_cost ) {
+		if( (string)SKILL_D(skill)->type()=="martial"
+		&&	my_skill * my_skill * my_skill / 10 > (int)me->query("combat_exp") ) {
+			printf("也许是道行不够，你对%s幕卮鹱苁俏薹旎帷n", ob->name() );
+		} else {
+			printf("你听了%s闹傅迹坪跤行┬牡谩n", ob->name());
+			me->add("learned_points", 1);
+			me->improve_skill(skill, random(me->query_int()));
+		}
+	} else {
+		sen_cost = me->query("sen");
+		write("你今天太累了，结果什么也没有学到。\n");
+	}
+
+	me->receive_damage("sen", sen_cost );
+
+	return 1;
+}
+
+void attempt_apprentice(object ob)
+{	
+	if( (int)ob->query_skill("dragonforce",1) < 50
+	|| (int)ob->query_skill("seashentong", 1) < 50) {
+	command("say " + RANK_D->query_respect(ob) +
+		"还是先到大将军或小女处把基础打好了再来我这儿吧。\n");
+	return;
+	}	
+        command("smile");
+        command("say 难得" + RANK_D->query_respect(ob) +
+		"有此心志，还望日后多加努力，为我东海龙宫争光。\n");
+        command("recruit " + ob->query("id") );
+	return;
+}
+
+int recruit_apprentice(object ob)
+{
+        if( ::recruit_apprentice(ob) )
+                ob->set("class", "dragon");
+}
+
+string expell_me(object me)
+{
+  me=this_player();
+  if((string)me->query("family/family_name")=="东海龙宫")
+    {
+      me->set_temp("betray", 1);
+      command("sigh");
+      return ("你要离开我也不能强留。只是按我东海规矩，却须受罚。
+恐怕既是身非龙类，这龙神心法与博击并不能如前般运转，你可愿意(agree)?\n");
+    }
+  return ("去问问袁先生吧，或许他知道！\n");
+}
+
+int do_agree(string arg)
+{
+  object me;
+  me = this_player();
+  if(me->query_temp("betray"))
+    {
+      message_vision("$N答道：弟子愿意。\n\n", me);
+      command("say 人各有志，既是" + RANK_D->query_respect(me) +
+        "不愿留在东海，就请出宫去吧。只是江湖险恶，" + RANK_D->query_respect(me) +
+	"当好自为之。。。\n");
+      me->set_skill("dragonforce", (int)me->query_skill("dragonforce",1)/2);
+      me->set_skill("dragonfight", (int)me->query_skill("dragonfight",1)/3);
+      me->set("combat_exp", me->query("combat_exp")*80/100);
+      me->set("daoxing", me->query("daoxing")*80/100);
+      me->delete("family");
+      me->delete("class");
+      me->set("title", "普通百姓");
+      me->set_temp("betray", 0);
+      me->add("betray/count", 1);
+      me->add("betray/longgong", 1);
+      me->save();
+      return 1;
+    }
+  return 0;
+}
+
+int donghai_quest(object who)
+{
+  object me=this_object();
+  object fighter;
+  string weapon_name,weapon_id,weapon_unit,temp_flag;
+
+  who=this_player();
+  if (who->query("dntg/donghai")=="done") {
+    message_vision("$N面色惨淡，不情愿地说：“那神兵还在老地方，且随我来。”\n",this_object());
+    call_out("sendto_maze",2,who);
+    return 1;
+  }
+
+  if (
+      who->query("dntg/donghai") == "begin"
+      || who->query("dntg/donghai") == "da kan dao"
+      || who->query("dntg/donghai") == "jiu gu cha"
+      || who->query("dntg/donghai") == "mei hua chui"
+     )
+
+    {
+        if (who->query("dntg/donghai") == "begin")
+           {weapon_name="大砍刀"; weapon_id="da kan dao";weapon_unit="柄";temp_flag="try_dao";}
+        if (who->query("dntg/donghai") == "da kan dao")
+           {weapon_name="九股叉"; weapon_id="jiu gu cha";weapon_unit="支";temp_flag="try_cha";}
+        if (who->query("dntg/donghai") == "jiu gu cha")
+           {weapon_name="梅花锤"; weapon_id="mei hua chui";weapon_unit="对";temp_flag="try_chui";}
+        if (who->query("dntg/donghai") == "mei hua chui")
+           {weapon_name="画杆戟"; weapon_id="hua gan ji";weapon_unit="柄";temp_flag="try_ji";}
+
+        
+        if (present(weapon_id, this_player()) && present("ye cha", environment()))
+          message_vision("龙王道：您先拿这"+weapon_name+"和夜叉练练吧！\n",me);
+        else if (present(weapon_id, environment()) && present("ye cha", environment()))
+          message_vision("龙王道：您先拿这"+weapon_name+"和夜叉练练吧！\n",me);
+        else if (present(weapon_id, this_player()) || present(weapon_id, environment()))
+          {
+          message_vision("东海龙王说道：让我找个人先陪您练练？\n",me);
+          message_vision("东海龙王一招手，一个夜叉走了过来。\n",me);
+          fighter = new ("/d/dntg/donghai/npc/fighter");
+          fighter->move(environment(me));
+          } 
+        else if (present("ye cha", environment()))
+          message_vision("龙王道：不知那"+weapon_name+"被谁拿去了！\n",me);
+        else
+          {
+          message_vision("$N连忙起身说道："+RANK_D->query_respect(who)+"稍侯，待我想想？\n",me,who);
+          message_vision("我这龙宫中有"+weapon_unit+weapon_name+"还凑合着能使，"+RANK_D->query_respect(who)+"若不嫌弃，就送与"+RANK_D->query_respect(who)+"用吧！\n",who);
+          who->set_temp("dntg/donghai",temp_flag);
+          call_out ("fight_quest",2,who);
+          }
+        return 1;
+    } 
+
+  else if (who->query("dntg/donghai") == "hua gan ji" )
+    {
+    me->command("consider");
+    message_vision("从后宫跑来一个龙婆，在龙王耳边小声说了几句话。\n",me);
+    call_out ("sendto_maze",3,who);
+    return 1;
+    }
+   command("nod");
+  message_vision("$N懒洋洋的说：“要兵器啊？傲来国有的是，去那里弄些吧。”\n",me);
+  message_vision("$N顿了顿，又说：“我龙宫的兵器，谅你们这些凡夫俗子也使不了。”\n",me);
+  command("wave");
+  return 1;
+}
+
+void fight_quest (object who)
+{
+  object me=this_object();
+  object fighter,fa_bao;
+  string weapon_name,weapon_id,weapon_unit;
+
+
+  if (who->query("dntg/donghai") == "begin")
+    {weapon_name="大砍刀"; fa_bao = new ("/d/dntg/donghai/obj/dakandao");weapon_unit="柄";}
+  if (who->query("dntg/donghai") == "da kan dao")
+    {weapon_name="九股叉"; fa_bao = new ("/d/dntg/donghai/obj/jiugucha");weapon_unit="支";}
+  if (who->query("dntg/donghai") == "jiu gu cha")
+    {weapon_name="梅花锤"; fa_bao = new ("/d/dntg/donghai/obj/meihuachui");weapon_unit="对";}
+  if (who->query("dntg/donghai") == "mei hua chui")
+    {weapon_name="画杆戟"; fa_bao = new ("/d/dntg/donghai/obj/huaganji");weapon_unit="柄";}
+
+  message_vision("东海龙王一招手，一个夜叉抬过一"+weapon_unit+weapon_name+"。\n",me);
+  fighter = new ("/d/dntg/donghai/npc/fighter");
+  fighter->move(environment(me));
+  fa_bao->move(environment(me));
+  message_vision("东海龙王说道：＂要我要和我的手下先练练？＂\n",me);
+}
+
+void sendto_maze (object who)
+{
+  object me=this_object();
+  message_vision("$N说道："+RANK_D->query_respect(who)+"武功盖世，可到后面的海藏中试一试定海神针铁。\n",me,who);
+  call_out ("send_maze",3,who);
+}
+
+void send_maze (object who)
+{
+  object me=this_object();
+  message_vision("说着，东海龙王把$N送到了一个地方。\n",who);
+  who->move("/d/dntg/donghai/haidimigong");
+  message_vision("$N一拱手道："+RANK_D->query_respect(who)+"向前走即可看到那神铁，恕老夫不奉陪了。\n",me,who);
+  message_vision("说罢，龙王转身回宫了。\n",me);
+}
